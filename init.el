@@ -107,11 +107,10 @@
 ;;----------------------------------------------------------------------------
 ;; keybind
 ;;----------------------------------------------------------------------------
-;;(define-key global-map "\C-h" 'delete-backward-char) ; 削除
 (global-set-key "\C-h" 'delete-backward-char) ; 削除
 (global-set-key "\M-h" 'backward-kill-word)
-(pc-selection-mode) ;; Shift + 矢印キーで範囲選択
 (global-set-key "\C-z" 'undo) ;; undo
+(pc-selection-mode) ;; Shift + 矢印キーで範囲選択
 (setq kill-whole-line t) ;; C-k で改行を含め切り取り
 ;; 改行時にインデント
 (global-set-key "\C-m" 'newline-and-indent)
@@ -159,7 +158,6 @@
 ;; https://github.com/ongaeshi/duplicate-thing
 ;; https://raw.github.com/ongaeshi/duplicate-thing/master/duplicate-thing.el
 ;; http://d.hatena.ne.jp/syohex/20120325/1332641491
-;; 上の自作よりリージョンの複製とかできて便利
 (require 'duplicate-thing)
 (global-set-key (kbd "C-M-y") 'duplicate-thing)
 
@@ -272,8 +270,7 @@
 (line-number-mode t)
 ;; カーソルの場所を保存する
 (when (require 'saveplace nil t)
-  (setq save-place-file "~/.emacs.d/.emacs-places")
-  )
+  (setq save-place-file "~/.emacs.d/.emacs-places"))
 
 (setq-default save-place t)
 ;; スクロール時のカーソル位置維持
@@ -323,8 +320,7 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 ;; M-x を補完
 (when (require 'mcomplete nil t)
-  (turn-on-mcomplete-mode)
-  )
+  (turn-on-mcomplete-mode))
 
 ;; メニューバーにファイルパスを表示する
 (setq frame-title-format
@@ -405,9 +401,10 @@
 ;;----------------------------------------------------------------------------
 ;; filecache
 ;;----------------------------------------------------------------------------
-(require 'filecache)
+(when (require 'filecache nil t)
 ;;(file-cache-add-directory-list
 ;;  (list "~" "~/.emacs.d/")) ;; ディレクトリを追加
+  )
 
 (file-cache-add-directory-using-find "~/Workspace/hoge")
 (define-key minibuffer-local-completion-map "\C-c\C-i"
@@ -509,8 +506,7 @@ The file cache can be saved to a file using
 ;; https://github.com/jixiuf/joseph-single-dired
 ;; https://raw.github.com/jixiuf/joseph-single-dired/master/joseph-single-dired.el
 (when (require 'joseph-single-dired nil t)
-  (eval-after-load 'dired '(require 'joseph-single-dired))
-  )
+  (eval-after-load 'dired '(require 'joseph-single-dired)))
 
 ;; dired-filetype-face.el
 ;; diredの表示をファイルタイプ毎に色分けしてカラフルにする
@@ -563,7 +559,6 @@ The file cache can be saved to a file using
   (run-with-idle-timer 30 t 'recentf-save-list)
   (recentf-mode 1)
   )
-;;(recentf-mode 1)
 ;; 最近使ったファイル500件を履歴として保存する
 ;;(setq recentf-max-saved-items 500)
 ;; .recentfを自動保存する
@@ -775,14 +770,12 @@ do nothing. And suppress the output from `message' and
 ;; savekill.el
 ;; http://d.hatena.ne.jp/rubikitch/20110226/
 (when (require 'savekill nil t)
-  (setq save-kill-file-name "~/.emacs.d/resource/kill-ring-saved.el")
-  )
+  (setq save-kill-file-name "~/.emacs.d/resource/kill-ring-saved.el"))
 
 ;; quickrun.el
 ;; https://github.com/syohex/emacs-quickrun
 (when (require 'quickrun nil t)
-  (global-set-key [(f9)] 'quickrun)
-  )
+  (global-set-key [(f9)] 'quickrun))
 
 ;; redmine.el
 ;; http://e-arrows.sakura.ne.jp/2010/03/released-redmine-el.html
@@ -794,8 +787,7 @@ do nothing. And suppress the output from `message' and
 ;; sticky.el
 ;; 大文字入力を楽にする
 (when (require 'sticky nil t)
-  (use-sticky-key ";" sticky-alist:ja)
-  )
+  (use-sticky-key ";" sticky-alist:ja))
 
 ;; google
 (load "google2")
@@ -838,8 +830,7 @@ do nothing. And suppress the output from `message' and
 
 ;; ipa.el
 (when (require 'ipa nil t)
-  (setq ipa-file "~/.emacs.d/resource/.ipa")
-  )
+  (setq ipa-file "~/.emacs.d/resource/.ipa"))
 
 ;; expand-region.el
 ;; https://github.com/magnars/expand-region.el
@@ -920,15 +911,13 @@ do nothing. And suppress the output from `message' and
 ;; http://www.bookshelf.jp/elc/color-grep.el
 (when (require 'color-grep nil t)
   ;; grep バッファを kill 時に，開いたバッファを消す
-  (setq color-grep-sync-kill-buffer t)
-  )
+  (setq color-grep-sync-kill-buffer t))
 
 ;; goto-chg.el
 ;; Emacs tech book p117
 (when (require 'goto-chg nil t)
   (define-key global-map (kbd "<f8>") 'goto-last-change)
-  (define-key global-map (kbd "S-<f8>") 'goto-last-change-reverse)
-  )
+  (define-key global-map (kbd "S-<f8>") 'goto-last-change-reverse))
 
 ;; key-chord.el
 ;; http://d.hatena.ne.jp/rubikitch/20081104/1225745862
@@ -939,8 +928,7 @@ do nothing. And suppress the output from `message' and
   (key-chord-define-global "kl" 'jaunte)
   (key-chord-define-global "ij" 'iy-go-to-char)
   (key-chord-define-global "bg" 'iy-go-to-char-backward)
-  (key-chord-define-global "oj" 'ace-jump-mode)
-  )
+  (key-chord-define-global "oj" 'ace-jump-mode))
 
 
 ;; deferred.el
@@ -981,15 +969,13 @@ do nothing. And suppress the output from `message' and
 ;; https://github.com/yoshiki/yaml-mode
 ;; https://raw.github.com/yoshiki/yaml-mode/master/yaml-mode.el
 (when (require 'yaml-mode nil t)
-  (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-  )
+  (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode)))
 
 ;; ctags-update.el
 ;; from marmalede.el
 ;; http://marmalade-repo.org/packages/ctags-update
 (when (require 'ctags-update nil t)
-  (ctags-update-minor-mode 1)
-  )
+  (ctags-update-minor-mode 1))
 
 ;; windows.el
 ;;(require 'windows)
@@ -2081,6 +2067,9 @@ print (which_library (%%[%%s]))'" name name)))
 ;; anything-migemo.el
 (require 'anything-migemo nil t)
 
+;; anything-dired-tree.el
+;; https://gist.github.com/2271938
+
 ;;---------------------------------------------------------
 ;; eshell
 ;;---------------------------------------------------------
@@ -2249,70 +2238,7 @@ print (which_library (%%[%%s]))'" name name)))
 ;; http://quruli.ivory.ne.jp/document/ddskk_14.2/skk_toc.html#SEC_Contents
 ;; http://www.bookshelf.jp/texi/skk/skk_4.html#SEC15
 ;;---------------------------------------------------------
-;; http://sheephead.homelinux.org/2010/06/18/1894/
-(setq load-path (cons "~/.emacs.d/elisp/skk/" load-path))
-(setq skk-user-directory "~/.emacs.d/ddskk/") ; ディレクトリ指定
-(setq skk-large-jisyo "~/.emacs.d/ddskk/SKK-JISYO.L")
-
-;; skk用にshift-stickyを";"に設定する
-(setq skk-sticky-key ";")
-
-(when (require 'skk-autoloads nil t)
-  ;; C-x C-j で skk モードを起動
-  (define-key global-map (kbd "C-x j") 'skk-mode)
-  ;; .skk を自動的にバイトコンパイル
-  (setq skk-byte-compile-init-file t))
-(require 'info)
-(add-to-list 'Info-additional-directory-list "~/.emacs.d/info")
-;;(global-set-key [?\S- ] 'skk-mode)
-;;チュートリアルの場所設定
-(setq skk-tut-file "~/.emacs.d/ddskk-14.2/etc/SKK.tut")
-;; メッセージを日本語で通知する
-(setq skk-japanese-message-and-error t)
-;; メニューを英語で表示する
-(setq skk-show-japanese-menu t)
-;; 変換時に注釈 (annotation) を表示する
-(setq skk-show-annotation t)
-;; 変換候補一覧と注釈 (annotation) を GUI ぽく表示する
-(setq skk-show-tooltip t)
-;; 変換候補をインラインに表示する
-(setq skk-show-inline t)
-;; Enter キーを押したときには確定する
-(setq skk-egg-like-newline t)
-;; 対応する閉括弧を自動的に挿入する
-(setq skk-auto-insert-paren t)
-;; 句読点を動的に決定する
-;; (add-hook 'skk-mode-hook
-;;           (lambda ()
-;;             (save-excursion
-;;               (goto-char 0)
-;;               (make-local-variable 'skk-kutouten-type)
-;;               (if (re-search-forward "。" 10000 t)
-;;                   (setq skk-kutouten-type 'en)
-;;                 (setq skk-kutouten-type 'jp)))))
-;; 送り仮名が厳密に正しい候補を優先して表示する
-(setq skk-henkan-strict-okuri-precedence t)
-;; 辞書登録のとき、余計な送り仮名を送らないようにする
-(setq skk-check-okurigana-on-touroku 'auto)
-;; 変換の学習
-(require 'skk-study)
-;;単漢字検索のキーを!にする
-(setq skk-tankan-search-key ?!)
-;; モード表示の色を設定する
-(setq skk-indicator-use-cursor-color nil)
-(setq skk-emacs-hiragana-face "LimeGreen")
-;; 動的補完の可否を判定するより高度な設定例
-(setq skk-dcomp-activate
-      #'(lambda ()
-          (and
-           ;; -nw では動的補完をしない。
-           window-system
-           ;; 基本的に行末のときのみ補完する。ただし行末でなくても現在の
-           ;; ポイントから行末までの文字が空白のみだったら補完する。
-           (or (eolp)
-               (looking-at "[ \t]+$")))))
-;; 動的補完で候補を複数表示する
-(setq skk-dcomp-multiple-activate t)
+(require 'init-ddskk)
 
 ;;---------------------------------------------------------
 ;; Filer
