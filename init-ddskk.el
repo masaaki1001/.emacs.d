@@ -69,3 +69,5 @@
                (looking-at "[ \t]+$")))))
 ;; 動的補完で候補を複数表示する
 (setq skk-dcomp-multiple-activate t)
+
+(provide 'init-ddskk)

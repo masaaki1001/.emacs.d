@@ -2223,8 +2223,7 @@ print (which_library (%%[%%s]))'" name name)))
 ;; Google Chrome edit with emacs
 ;;---------------------------------------------------------
 (when (require 'edit-server nil t)
-  (edit-server-start)
-  )
+  (edit-server-start))
 
 ;; (if (locate-library "edit-server")
 ;;     (progn
@@ -2238,7 +2237,7 @@ print (which_library (%%[%%s]))'" name name)))
 ;; http://quruli.ivory.ne.jp/document/ddskk_14.2/skk_toc.html#SEC_Contents
 ;; http://www.bookshelf.jp/texi/skk/skk_4.html#SEC15
 ;;---------------------------------------------------------
-(require 'init-ddskk)
+(require 'init-ddskk nil t)
 
 ;;---------------------------------------------------------
 ;; Filer
