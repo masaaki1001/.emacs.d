@@ -513,18 +513,6 @@ The file cache can be saved to a file using
 ;; Emacs mail magazine
 (require 'dired-filetype-face nil t)
 
-;; マークしたファイルを引数にeshellを起動する
-;; Emacs mail magazine
-(defun dired-start-eshell (arg)
-  "diredで選択されたファイル名がペーストされた状態で、eshellを起動する。"
-  (interactive "P")
-  (let ((files (mapconcat 'shell-quote-argument
-                          (dired-get-marked-files (not arg))
-                          " ")))
-    (if (fboundp 'shell-pop) (shell-pop) (eshell t))
-    (save-excursion (insert " " files))))
-(define-key dired-mode-map [remap dired-do-shell-command] 'dired-start-eshell)
-
 ;; diredでマークをつけたファイルを開く
 ;; http://d.hatena.ne.jp/oh_cannot_angel/20101216/1292506110
 ;; (eval-after-load "dired"
@@ -1193,6 +1181,40 @@ do nothing. And suppress the output from `message' and
 ;; rainbow-mode.el
 (require 'rainbow-mode nil t)
 
+;; flex-autopair.el
+;; http://d.hatena.ne.jp/uk-ar/20120401
+;; https://github.com/uk-ar/flex-autopair/
+;; https://raw.github.com/uk-ar/flex-autopair/master/flex-autopair.el
+(when (require 'flex-autopair nil t)
+  (flex-autopair-mode -1))
+
+;; acp.el
+;; http://d.hatena.ne.jp/buzztaiki/20061204/1165207521
+;; http://d.hatena.ne.jp/kitokitoki/20090823/p1
+(when (require 'acp nil t)
+
+  (add-hook 'emacs-lisp-mode-hook 'acp-mode)
+  (add-hook 'lisp-mode-hook 'acp-mode)
+
+  (setq acp-paren-alist
+        '((?( . ?))
+          (?[ . ?])))
+
+  (setq acp-insertion-functions
+        '((mark-active . acp-surround-with-paren)
+          ((thing-at-point 'symbol) . acp-surround-symbol-with-paren)
+          (t . acp-insert-paren)))
+
+  (defun acp-surround-symbol-with-paren (n)
+    (save-excursion
+      (save-restriction
+        (narrow-to-region (car (bounds-of-thing-at-point 'symbol)) (cdr (bounds-of-thing-at-point 'symbol)))
+        (goto-char (point-min))
+        (insert-char (car (acp-current-pair)) n)
+        (goto-char (point-max))
+        (insert-char (cdr (acp-current-pair)) n))))
+  )
+
 ;;----------------------------------------------------------------------------
 ;; bm.el
 ;; from marmalade
@@ -1595,121 +1617,7 @@ http://www.nongnu.org/bm/")
 ;;----------------------------------------------------------------------------
 ;; org-mode
 ;;----------------------------------------------------------------------------
-;; Emacsでメモ・TODO管理
-;; http://d.hatena.ne.jp/rubikitch/20090121/1232468026
-;; http://e-arrows.sakura.ne.jp/2010/02/vim-to-emacs.html
-
-(when (require 'org-install nil t)
-  (define-key global-map "\C-cl" 'org-store-link)
-  (define-key global-map "\C-ca" 'org-agenda)
-  (define-key global-map "\C-cr" 'org-remember)
-  (define-key global-map "\C-cc" 'org-remember-code-reading)
-  (setq org-startup-truncated nil)
-  (setq org-return-follows-link t)
-  (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-  (org-remember-insinuate)
-  (setq org-directory "~/.emacs.d/memo/")
-  (setq org-default-notes-file (concat org-directory "agenda.org"))
-  (setq org-agenda-files '("~/.emacs.d/memo/agenda.org" "~/.emacs.d/memo/code-reading.org"))
-  (setq org-remember-templates
-      '(("Todo" ?t "** TODO %?\n   %i\n   %a\n   %t" nil "Inbox")
-        ("Bug" ?b "** TODO %?   :bug:\n   %i\n   %a\n   %t" nil "Inbox")
-        ("Idea" ?i "** %?\n   %i\n   %a\n   %t" nil "New Ideas")
-        ))
-
-  ;; org-remember-code-reading-mode
-  ;; http://d.hatena.ne.jp/rubikitch/20090121/1232468026
-  (defvar org-code-reading-software-name nil)
-  ;; ~/memo/code-reading.org に記録する
-  (defvar org-code-reading-file "~/.emacs.d/memo/code-reading.org")
-  (defun org-code-reading-read-software-name ()
-    (set (make-local-variable 'org-code-reading-software-name)
-         (read-string "Code Reading Software: "
-                      (or org-code-reading-software-name
-                          (file-name-nondirectory
-                           (buffer-file-name))))))
-  (defun org-code-reading-get-prefix (lang)
-    (concat "[" lang "]"
-            "[" (org-code-reading-read-software-name) "]"))
-  (defun org-remember-code-reading ()
-    (interactive)
-    (let* ((prefix (org-code-reading-get-prefix (substring (symbol-name major-mode) 0 -5)))
-           (org-remember-templates
-            `(("CodeReading" ?r "** %(identity prefix)%?\n   \n   %a\n   %t"
-               ,org-code-reading-file "Memo"))))
-      (org-remember)))
-
-  ;; http://d.hatena.ne.jp/rubikitch/20090121/1232468026
-  (defun org-next-visible-link ()
-    "Move forward to the next link.
-If the link is in hidden text, expose it."
-    (interactive)
-    (when (and org-link-search-failed (eq this-command last-command))
-      (goto-char (point-min))
-      (message "Link search wrapped back to beginning of buffer"))
-    (setq org-link-search-failed nil)
-    (let* ((pos (point))
-           (ct (org-context))
-           (a (assoc :link ct))
-           srch)
-      (if a (goto-char (nth 2 a)))
-      (while (and (setq srch (re-search-forward org-any-link-re nil t))
-                  (goto-char (match-beginning 0))
-                  (prog1 (not (eq (org-invisible-p) 'org-link))
-                    (goto-char (match-end 0)))))
-      (if srch
-          (goto-char (match-beginning 0))
-        (goto-char pos)
-        (setq org-link-search-failed t)
-        (error "No further link found"))))
-  
-  (defun org-previous-visible-link ()
-    "Move backward to the previous link.
-If the link is in hidden text, expose it."
-    (interactive)
-    (when (and org-link-search-failed (eq this-command last-command))
-      (goto-char (point-max))
-      (message "Link search wrapped back to end of buffer"))
-    (setq org-link-search-failed nil)
-    (let* ((pos (point))
-           (ct (org-context))
-           (a (assoc :link ct))
-           srch)
-      (if a (goto-char (nth 1 a)))
-      (while (and (setq srch (re-search-backward org-any-link-re nil t))
-                  (goto-char (match-beginning 0))
-                  (not (eq (org-invisible-p) 'org-link))))
-      (if srch
-          (goto-char (match-beginning 0))
-        (goto-char pos)
-        (setq org-link-search-failed t)
-        (error "No further link found"))))
-  (define-key org-mode-map "\M-n" 'org-next-visible-link)
-  (define-key org-mode-map "\M-p" 'org-previous-visible-link)
-  
-  
-  ;; M-x anything-org-agenda
-  ;; http://d.hatena.ne.jp/r_takaishi/20101218/1292641216
-  (when (require 'anything-org-mode nil t))
-  
-  ;; Emacs tech Book p282
-  (setq org-use-fast-todo-selection t)
-  (setq org-todo-keywords
-        '((sequence "TODO(t)" "STARTED(s)" "WAITING(w)" "|" "DONE" "CANCEL(c)")
-          (sequence "APPT(A)" "|" "DONE(x)" "CANCEL(c)")))
-  (setq org-log-done 'time)
-)
-
-;; org-tree-slide.el
-;; http://pastelwill.jp/wiki/doku.php?id=emacs:org-tree-slide
-;; https://github.com/takaxp/org-tree-slide
-;; https://raw.github.com/takaxp/org-tree-slide/master/org-tree-slide.el
-(when (require 'org-tree-slide nil t)
-  (global-set-key (kbd "<f6>") 'org-tree-slide-mode)
-  (global-set-key (kbd "S-<f6>") 'org-tree-slide-skip-done-toggle)
-  ;; エフェクト無効化
-  (org-tree-slide-simple-profile)
-  )
+(require 'init-org nil t)
 
 ;;----------------------------------------------------------------------------
 ;; ruby
@@ -2073,151 +1981,14 @@ print (which_library (%%[%%s]))'" name name)))
 ;;---------------------------------------------------------
 ;; eshell
 ;;---------------------------------------------------------
-;; esh-myparser.el
-;; コマンド解釈乗っ取り
-;; Emacs mail magazine
-(when (require 'esh-myparser nil t)
-  (defun eshell-parser/b (str) (eshell-parser/b str "bash"))
-  )
-
-;; esh-cmdline-stack.el
-;; eshellでコマンドラインスタック機能を実現する
-;; Emacs mail magazine
-(require 'esh-cmdline-stack nil t)
-
-;; eshellでの実行をbashなどのシェルを利用するように変更
-;; Emacs mail magazines
-(progn
-  (defmacro eval-after-load* (name &rest body)
-    (declare (indent 1))
-    `(eval-after-load ,name '(progn ,@body)))
-  (defun eshell-disable-unix-command-emulation ()
-    (eval-after-load* "em-ls"
-      (fmakunbound 'eshell/ls))
-    (eval-after-load* "em-unix"
-      (mapc 'fmakunbound '(eshell/agrep
-                           eshell/basename
-                           eshell/cat
-                           eshell/cp
-                           eshell/date
-                           eshell/diff
-                           eshell/dirname
-                           eshell/du
-                           eshell/egrep
-                           eshell/fgrep
-                           eshell/glimpse
-                           eshell/grep
-                           eshell/info
-                           eshell/ln
-                           eshell/locate
-                           eshell/make
-                           eshell/man
-                           eshell/mkdir
-                           eshell/mv
-                           eshell/occur
-                           eshell/rm
-                           eshell/rmdir
-                           eshell/su
-                           eshell/sudo
-                           eshell/git
-                           eshell/time
-                           eshell/rake
-                           eshell/rspec))))
-  (eshell-disable-unix-command-emulation))
-
-;; shell-pop.el and eshell-pop.el
-;; Emacs mail magazine
-(when (require 'shell-pop nil t)
-  (when (require 'eshell-pop nil t)
-    (global-set-key (kbd "C-x C-z") 'shell-pop)
-    (setq shell-pop-window-height 50) ;; eshell popup window size
-    ))
-
-;; キーバインドをshellらしくする
-(progn
-(defun eshell-in-command-line-p ()
-  (<= eshell-last-output-end (point)))
-(defmacro defun-eshell-cmdline (key &rest body)
-  (let ((cmd (intern (format "eshell-cmdline/%s" key))))
-    `(progn
-       (add-hook 'eshell-mode-hook
-                 (lambda () (define-key eshell-mode-map
-(read-kbd-macro ,key) ',cmd)))
-       (defun ,cmd ()
-         (interactive)
-         (if (not (eshell-in-command-line-p))
-             (call-interactively (lookup-key (current-global-map)
-(read-kbd-macro ,key)))
-           ,@body)))))
-(defun eshell-history-and-bol (func)
-  (delete-region eshell-last-output-end (point-max))
-  (funcall func 1)
-  (goto-char eshell-last-output-end)))
-;; 範囲指定していないとき、C-wで前の単語を削除
-;; http://dev.ariel-networks.com/wp/documents/aritcles/emacs/part16
-(defadvice kill-region (around kill-word-or-kill-region activate)
-  (if (and (interactive-p) transient-mark-mode (not mark-active))
-      (backward-kill-word 1)
-    ad-do-it))
-;; 前のコマンドの履歴取得
-(defun-eshell-cmdline "C-p"
-(let ((last-command 'eshell-previous-matching-input-from-input))
-  (eshell-history-and-bol 'eshell-previous-matching-input-from-input)))
-;; 次のコマンドの履歴取得
-(defun-eshell-cmdline "C-n"
-(let ((last-command 'eshell-previous-matching-input-from-input))
-  (eshell-history-and-bol 'eshell-next-input)))
-;; 直前の履歴を取得
-(defadvice eshell-send-input (after history-position activate)
-(setq eshell-history-index -1))
+(require 'init-eshell nil t)
 
 ;;---------------------------------------------------------
 ;; moz.el
 ;; Firefoxを操作する
 ;; http://skalldan.wordpress.com/2011/06/26/firefox-%E3%81%A8-emacs-%E3%81%AE%E4%BC%9A%E8%A9%B1/
 ;;---------------------------------------------------------
-;; (autoload 'moz-minor-mode "moz" "Mozilla Minor and Inferior Mozilla Modes" t)
-;; (moz-minor-mode t)
-
-;; (defun moz-send-message (moz-command)
-;;   (comint-send-string
-;;    (inferior-moz-process)
-;;    (concat moz-repl-name ".pushenv('printPrompt', 'inputMode'); "
-;;            moz-repl-name ".setenv('inputMode', 'line'); "
-;;            moz-repl-name ".setenv('printPrompt', false); undefined; "))
-;;   (comint-send-string
-;;    (inferior-moz-process)
-;;    (concat moz-command
-;;            moz-repl-name ".popenv('inputMode', 'printPrompt'); undefined;\n")))
-
-;; (defun moz-scrolldown ()
-;;   (interactive)
-;;    (moz-send-message "goDoCommand('cmd_scrollLineDown');\n")) ; 下スクロール
-;; (global-set-key (kbd "M-n") 'moz-scrolldown)
-
-;; (defun moz-scrollup ()
-;;   (interactive)
-;;    (moz-send-message "goDoCommand('cmd_scrollLineUp');\n")) ; 上スクロール
-;; (global-set-key (kbd "M-p") 'moz-scrollup)
-
-;; ;; http://blog.livedoor.jp/k1LoW/archives/65023888.html
-;; (defun moz-send-reload ()
-;;   (interactive)
-;;   (comint-send-string (inferior-moz-process)
-;;                       (concat moz-repl-name ".pushenv('printPrompt', 'inputMode'); "
-;;                               moz-repl-name ".setenv('inputMode', 'line'); "
-;;                               moz-repl-name ".setenv('printPrompt', false); undefined; "))
-;;   (comint-send-string (inferior-moz-process)
-;;                       (concat "content.location.reload();\n"
-;;                               moz-repl-name ".popenv('inputMode', 'printPrompt'); undefined;\n"))
-;; )
-
-;; (defun reload-moz()
-;; (if (string-match "\.\\(css\\|js\\|rb\\|erb\\)$" (buffer-file-name))
-;; (moz-send-reload)))
-;; (add-hook 'after-save-hook 'reload-moz)
-
-;; ;; ... (適宜追加) ...
+(require 'init-moz nil t)
 
 ;;---------------------------------------------------------
 ;; Google Chrome edit with emacs
