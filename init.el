@@ -5,7 +5,8 @@
 ;;http://d.hatena.ne.jp/omochist/20070207/1170872589
 (setq load-path (append '("~/.emacs.d/"
                           "~/.emacs.d/elisp"
-                          "~/.emacs.d/auto-install/"
+                          "~/.emacs.d/config/"
+			  "~/.emacs.d/auto-install/"
                           "~/.emacs.d/yasnippet/"
                           "~/.emacs.d/auto-complete/")
                         load-path))
