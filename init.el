@@ -955,6 +955,11 @@
         (insert-char (cdr (acp-current-pair)) n))))
   )
 
+;; drag-stuff.el
+;; https://github.com/rejeep/drag-stuff
+(when (require 'drag-stuff nil t)
+  (drag-stuff-mode t))
+
 ;;----------------------------------------------------------------------------
 ;; bm.el
 ;;----------------------------------------------------------------------------
