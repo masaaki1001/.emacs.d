@@ -6,7 +6,7 @@
 (setq load-path (append '("~/.emacs.d/"
                           "~/.emacs.d/elisp"
                           "~/.emacs.d/config/"
-			  "~/.emacs.d/auto-install/"
+                          "~/.emacs.d/auto-install/"
                           "~/.emacs.d/yasnippet/"
                           "~/.emacs.d/auto-complete/")
                         load-path))
