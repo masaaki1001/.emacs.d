@@ -391,6 +391,8 @@
     (if (not (member ruby-mode-hs-info hs-special-modes-alist))
         (setq hs-special-modes-alist
               (cons ruby-mode-hs-info hs-special-modes-alist))))
+    (global-set-key (kbd "C-(") 'hs-hide-block)
+    (global-set-key (kbd "C-)") 'hs-show-block)
   )
 
 ;; hiwin.el
