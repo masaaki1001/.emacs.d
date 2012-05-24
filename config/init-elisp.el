@@ -629,5 +629,11 @@
 (when (require 'drag-stuff nil t)
   (drag-stuff-mode t))
 
+;; close all buffers
+(defun close-all-buffers ()
+  (interactive)
+  (loop for buffer being the buffers
+     do (kill-buffer buffer)))
+
 (provide 'init-elisp)
 
