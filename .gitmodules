@@ -133,3 +133,6 @@
 [submodule "repositories/minimap"]
 	path = repositories/minimap
 	url = git://randomsample.de/minimap.git
+[submodule "repositories/magit"]
+	path = repositories/magit
+	url = git://github.com/magit/magit.git
