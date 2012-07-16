@@ -110,6 +110,7 @@
 
 ;; rhtml-mode.el
 ;; http://d.hatena.ne.jp/willnet/20090110/1231595231
+;; https://github.com/eschulte/rhtml
 (when (require 'rhtml-mode nil t)
   (add-hook 'rhtml-mode-hook
             (lambda () (rinari-launch)))
