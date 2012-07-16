@@ -8,7 +8,8 @@
                           "~/.emacs.d/config/"
                           "~/.emacs.d/auto-install/"
                           "~/.emacs.d/yasnippet/"
-                          "~/.emacs.d/auto-complete/")
+                          "~/.emacs.d/auto-complete/"
+                          )
                         load-path))
 
 ;; 再帰的に指定ディレクトリ以下をload-pathに追加する
@@ -58,22 +59,22 @@
 ;; auto-install.el
 ;;----------------------------------------------------------------------------
 (when (require 'auto-install nil t)
-  (setq auto-install-directory "~/.emacs.d/auto-install/")
-  (auto-install-update-emacswiki-package-name t)
-  (auto-install-compatibility-setup)             ; 互換性確保
+ (setq auto-install-directory "~/.emacs.d/auto-install/")
+ (auto-install-update-emacswiki-package-name t)
+ (auto-install-compatibility-setup)             ; 互換性確保
 
-  ;; auto-installのバッファ削除
-  (require 'cl)
-  (defun my-erase-auto-install-buffer ()
-    ;;(interactive)
-    (dolist (buf (buffer-list))
-      (if (eq (string-match "^\\*auto-install " (buffer-name buf)) 0)
-          (progn
-            ;; (print "ok")
-            (kill-buffer buf)))))
-  ;;実行する
-  (my-erase-auto-install-buffer)
-  )
+ ;; auto-installのバッファ削除
+ (require 'cl)
+ (defun my-erase-auto-install-buffer ()
+   ;;(interactive)
+   (dolist (buf (buffer-list))
+     (if (eq (string-match "^\\*auto-install " (buffer-name buf)) 0)
+         (progn
+           ;; (print "ok")
+           (kill-buffer buf)))))
+ ;;実行する
+ (my-erase-auto-install-buffer)
+ )
 
 ;;----------------------------------------------------------------------------
 ;; package.el(marmalade) ちなみにEmacs24からは標準搭載
@@ -81,7 +82,7 @@
 ;;----------------------------------------------------------------------------
 (when (require 'package nil t)
   (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-  (add-to-list 'package-archives '("ELPA" . "http://tromey.com/elpa/"))
+  ;; (add-to-list 'package-archives '("ELPA" . "http://tromey.com/elpa/"))
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
   (package-initialize)
 
@@ -101,8 +102,8 @@
 ;; 半透明にする
 ;; パラメータは、順に通常のフレーム、アクティブでないフレーム、移動中のフレームの透明度を表す
 ;; (modify-all-frames-parameters
-;;  (list (cons 'alpha  '(nil 80 50 30)))) ;; 直近
-;; (list (cons 'alpha  '(nil 70 50 30))))
+ ;;(list (cons 'alpha  '(nil 80 50 30)))) ;; 直近
+ ;; (list (cons 'alpha  '(nil 70 50 30))))
 ;; Scrollを１行毎に
 (setq scroll-step 1)
 ;; Widow設定
@@ -116,8 +117,10 @@
   (menu-bar-mode -1) ;; メニューバーを消す
   (tool-bar-mode -1) ;; ツールバーを消す
   (toggle-scroll-bar nil) ;; スクロールバーを消す
-  (create-fontset-from-ascii-font "Inconsolata-16:weight=normal:slant=normal" nil "Inconsolata") ;;フォントをInconsolateにする
-  (set-default-font "Inconsolata-13")
+  ;;(create-fontset-from-ascii-font "Inconsolata-16:weight=normal:slant=normal" nil "Inconsolata") ;;フォントをInconsolateにする
+  (create-fontset-from-ascii-font "Inconsolata-12:weight=normal:slant=normal" nil "Inconsolata") ;;フォントをInconsolateにする
+  (set-default-font "Inconsolata-12")
+  ;;(set-default-font "Inconsolata-13")
   ;;(set-default-font "Inconsolata-16")
   (set-fontset-font (frame-parameter nil 'font)
                     'japanese-jisx0208
@@ -228,7 +231,7 @@
       ;(format "%%f - Emacs@%s" (system-name)))
       (format "%%f - Emacs" (system-name)))
 
-;; multti-term
+;; multi-term
 ;; terminal soft
 (when (require 'multi-term nil t)
   (setq multi-term-program "/bin/bash"))
@@ -236,6 +239,17 @@
 ;; 一行が 80 字以上になった時には自動改行する
 (setq fill-column 80)
 (setq-default auto-fill-mode t)
+;; 画面端で折り返さない
+;; http://valvallow.blogspot.jp/2010/04/emacs.html
+;; (setq truncate-lines t)
+;; (setq truncate-partial-width-windows t)
+;; (defun togle-truncate-line ()
+;;   (interactive)
+;;   (let ((p (null truncate-lines)))
+;;     (setq truncate-lines p)
+;;     (setq truncate-partial-width-windows p)
+;;     p))
+
 ;; 行間を開く
 (setq-default line-spacing 0.1) ;my setting
 ;;(setq-default line-spacing 0)
@@ -342,31 +356,37 @@
 ;; calfw.el
 ;; http://d.hatena.ne.jp/kiwanami/20110723/1311434175
 ;;----------------------------------------------------------------------------
-(when (require 'calfw nil t) ; 初回一度だけ
-  (cfw:open-calendar-buffer) ; カレンダー表示
-  )
+;; (when (require 'calfw nil t) ; 初回一度だけ
+;;   (cfw:open-calendar-buffer) ; カレンダー表示
+;;   )
 
-;; calfw-org.el
-(require 'calfw-org nil t)
+;; ;; calfw-org.el
+;; (require 'calfw-org nil t)
 
-;; japanese-holiday.el
-(add-hook 'calendar-load-hook
-          (lambda ()
-            (when (require 'japanese-holidays nil t)
-              (setq calendar-holidays
-                    (append japanese-holidays local-holidays other-holidays)))))
+;; ;; 月
+;; (setq calendar-month-name-array
+;;   ["January" "February" "March"     "April"   "May"      "June"
+;;    "July"    "August"   "September" "October" "November" "December"])
 
-;; 月
-(setq calendar-month-name-array
-  ["January" "February" "March"     "April"   "May"      "June"
-   "July"    "August"   "September" "October" "November" "December"])
+;; ;; 曜日
+;; (setq calendar-day-name-array
+;;       ["Sunday" "Monday" "Tuesday" "Wednesday" "Thursday" "Friday" "Saturday"])
 
-;; 曜日
-(setq calendar-day-name-array
-      ["Sunday" "Monday" "Tuesday" "Wednesday" "Thursday" "Friday" "Saturday"])
+;; ;; 週の先頭の曜日
+;; (setq calendar-week-start-day 0) ; 日曜日は0, 月曜日は1
 
-;; 週の先頭の曜日
-(setq calendar-week-start-day 0) ; 日曜日は0, 月曜日は1
+;; (require 'calendar)
+;; (setq  number-of-diary-entries 31)
+;; (define-key calendar-mode-map "f" 'calendar-forward-day)
+;; (define-key calendar-mode-map "n" 'calendar-forward-day)
+;; (define-key calendar-mode-map "b" 'calendar-backward-day)
+;; (setq mark-holidays-in-calendar t)
+;; (require 'japanese-holidays)
+;; (setq calendar-holidays
+;;       (append japanese-holidays local-holidays other-holidays))
+;; (setq calendar-weekend-marker 'diary)
+;; (add-hook 'today-visible-calendar-hook 'calendar-mark-weekend)
+;; (add-hook 'today-invisible-calendar-hook 'calendar-mark-weekend)
 
 ;;----------------------------------------------------------------------------
 ;; Smartrep.el
@@ -401,7 +421,7 @@
 ;;----------------------------------------------------------------------------
 ;; flymake
 ;;----------------------------------------------------------------------------
-(require 'init-flymake nil t)
+;;(require 'init-flymake nil t)
 
 ;;----------------------------------------------------------------------------
 ;; anything.el
