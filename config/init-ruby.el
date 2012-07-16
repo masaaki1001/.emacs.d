@@ -17,6 +17,24 @@
           '(lambda ()
              (inf-ruby-keys)))
 
+;; http://willnet.in/13
+;; (setq ruby-deep-indent-paren-style nil)
+;; (defadvice ruby-indent-line (after unindent-closing-paren activate)
+;;   (let ((column (current-column))
+;;         indent offset)
+;;     (save-excursion
+;;       (back-to-indentation)
+;;       (let ((state (syntax-ppss)))
+;;         (setq offset (- column (current-column)))
+;;         (when (and (eq (char-after) ?\))
+;;                    (not (zerop (car state))))
+;;           (goto-char (cadr state))
+;;           (setq indent (current-indentation)))))
+;;     (when indent
+;;       (indent-line-to indent)
+;;       (when (> offset 0) (forward-char offset)))))
+
+
 ;; http://d.hatena.ne.jp/odz/20071222/1198288746
 ;; 最終行に空白行を挿入しないようにする
 ;;(add-hook 'ruby-mode-hook '(lambda () (setq require-final-newline nil)))
@@ -24,6 +42,9 @@
 ;; ruby-electric.el
 (when (require 'ruby-electric nil t)
   (add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
+  ;; ruby-electric.el --- electric editing commands for ruby files
+  ;; http://d.hatena.ne.jp/authorNari/20081203/1228285596
+  (setq ruby-electric-expand-delimiters-list nil)
   )
 
 ;; ruby-block.el
@@ -41,7 +62,8 @@
 ;;(ido-mode t)
 ;; Rinari
 ;; https://github.com/eschulte/rinari
-(require 'rinari nil t)
+(when (require 'rinari nil t)
+  (setq rinari-rgrep-file-endings "*.rb *.erb *.yml *.js"))
 ;; yasnippet
 (when (require 'yasnippet nil t) ;; not yasnippet-bundle
   (yas/initialize)
@@ -58,7 +80,6 @@
   )
 
 
-
 ;; yasnippetのインデント
 ;; http://d.hatena.ne.jp/rubikitch/20080420/1208697562
 (defun yas/indent-snippet ()
@@ -67,6 +88,7 @@
 (add-hook 'yas/after-exit-snippet-hook 'yas/indent-snippet)
 
 ;; rvm.el
+;; https://github.com/senny/rvm.el
 (when (require 'rvm nil t)
   (rvm-use-default) ;; use rvm's default ruby for the current Emacs session
   (defcustom rspec-use-rvm nil
@@ -123,12 +145,15 @@ print (which_library (%%[%%s]))'" name name)))
   (find-file (ffap-ruby-mode name)))
 
 ;; ffap
-(when (require 'ffap nil t)
-  (add-to-list 'ffap-alist '(ruby-mode . ffap-ruby-mode))
-  )
+;; (when (require 'ffap nil t)
+;;   (add-to-list 'ffap-alist '(ruby-mode . ffap-ruby-mode))
+;;   )
 
 ;; ruby-interpolation.el
 ;; https://github.com/leoc/ruby-interpolation.el
 (require 'ruby-interpolation nil t)
+
+;; https://github.com/tobiassvn/bundler.el
+(require 'bundler nil t)
 
 (provide 'init-ruby)
