@@ -124,3 +124,12 @@
 [submodule "repositories/emacs-yafastnav"]
 	path = repositories/emacs-yafastnav
 	url = git://github.com/tm8st/emacs-yafastnav.git
+[submodule "repositories/undo-tree"]
+	path = repositories/undo-tree
+	url = http://www.dr-qubit.org/git/undo-tree.git
+[submodule "repositories/bundler"]
+	path = repositories/bundler
+	url = git://github.com/tobiassvn/bundler.el.git
+[submodule "repositories/minimap"]
+	path = repositories/minimap
+	url = git://randomsample.de/minimap.git
