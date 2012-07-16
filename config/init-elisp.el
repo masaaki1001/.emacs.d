@@ -669,4 +669,8 @@
     (save-excursion
       (insert s)))))
 
+;; magit
+;; https://github.com/magit/magit
+(require 'magit nil t)
+
 (provide 'init-elisp)
