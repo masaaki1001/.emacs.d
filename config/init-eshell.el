@@ -18,7 +18,7 @@
 ;; コマンド解釈乗っ取り
 ;; Emacs mail magazine
 (when (require 'esh-myparser nil t)
-  (defun eshell-parser/b (str) (eshell-parser/b str "bash"))
+  ;; (defun eshell-parser/b (str) (eshell-parser/b str "bash"))
   )
 
 ;; esh-cmdline-stack.el
@@ -117,5 +117,7 @@
 (setq eshell-hist-ignoredups t)
 ;; 確認なしでヒストリ保存
 (setq eshell-ask-to-save-history (quote always))
+
+(setq eshell-directory-name "~/.emacs.d/resource/.eshell/")
 
 (provide 'init-eshell)

@@ -39,6 +39,7 @@
 (setq ls-lisp-dirs-first t)
 ;; ディレクトリ内のファイル名を編集できるようにする
 ;; Emacs tech book p102
+(require 'wdired)
 (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
 ;; 削除したらごみ箱行き
 (setq delete-by-moving-to-trash t)

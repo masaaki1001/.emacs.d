@@ -7,7 +7,7 @@
   ;;(add-to-list 'anything-sources 'anything-c-source-file-cache)
 
   ;; https://bitbucket.org/kshimo69/dot_emacs.d/src/33ceff9c8095/conf/init-anything.el
-  ;;(defun my-anything ()
+  ;; (defun my-anything ()
   ;;   (interactive)
   ;;   (anything-other-buffer
   ;;    '(anything-c-source-buffers+
@@ -15,19 +15,14 @@
   ;;      anything-c-source-files-in-current-dir
   ;;      anything-c-source-bm-global
   ;;      anything-c-source-emacs-commands
-  ;;      anything-c-source-yaetags-)
+  ;;      anything-c-source-yaetags-select)
   ;;    " *my-anything*"))
-  ;;(global-set-key (kbd "C-;") 'my-anything)
+  ;; (global-set-key (kbd "C-;") 'my-anything)
 
   (setq anything-sources
         '(anything-c-source-buffers+
           anything-c-source-recentf
-          ;;anything-c-source-file-name-history;; 追加
-          ;;anything-c-source-locate;; 追加
-          ;;anything-c-source-imenu;; 追加
-          ;;anything-c-source-emacs-functions
           anything-c-source-files-in-current-dir
-          ;;anything-c-source-file-cache
           anything-c-source-bm-global
           anything-c-source-emacs-commands
           anything-c-source-yaetags-select
@@ -115,7 +110,7 @@
   (ap:add-project
    :name 'hoge
    :look-for '("Rakefile")
-   :include-regexp '("\\.rb$" "\\.html$" "\\.erb$" "\\.js$" "\\.yml$" "\\Gemfile$")
+   :include-regexp '("\\.rb$" "\\.html$" "\\.erb$" "\\.js$" "\\.yml$" "\\.css$" "\\Gemfile$")
    ;:exclude-regexp "/test_files" ; can be regexp or list of regexp
    )
   ;; 候補にディレクトリが含まれないようにする
@@ -152,5 +147,23 @@
 
 ;; anything-dired-tree.el
 ;; https://gist.github.com/2271938
+
+;; anything-c-source-junk-files
+;; http://qiita.com/items/eba6bc64f66d278f0032
+(require 'em-glob)
+(defvar junk-file-dir "~/.emacs.d/junk/")
+(defvar junk-file-list
+  (reverse (eshell-extended-glob (concat
+                                  (file-name-as-directory junk-file-dir)
+                                  "????-??-??-??????*.*"))))
+(defvar anything-c-source-junk-files
+  '((name . "Junk Files")
+    (candidates . junk-file-list)
+    (type . file)))
+(defun anything-open-junk-file ()
+  (interactive)
+  (anything-other-buffer 'anything-c-source-junk-files "*anything for junk file"))
+(global-set-key (kbd "C-x M-j") 'anything-open-junk-file)
+
 
 (provide 'init-anything)

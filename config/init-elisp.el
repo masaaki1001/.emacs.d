@@ -16,17 +16,15 @@
   (push '("*anything*" :height 20) popwin:special-display-config)
   (push '("*Warnings*" :height 20) popwin:special-display-config)
   (push '("*anything complete*" :height 20) popwin:special-display-config)
-  (push '("*MozRepl*" :height 20) popwin:special-display-config)
-  (push '("*MozRepl Error*" :height 20) popwin:special-display-config)
   (push '("*Procces List*" :height 20) popwin:special-display-config)
   (push '("*Messages*" :height 20) popwin:special-display-config)
   (push '("*Backtrace*" :height 20) popwin:special-display-config)
   (push '("*Compile-Log*" :height 20) popwin:special-display-config)
   ;; http://valvallow.blogspot.com/2011/03/emacs-popwinel.html
   (push '("*Remember*" :height 20) popwin:special-display-config)
-  ;(push '("*Selection Ring: `kill-ring'*" :height 20) popwin:special-display-config)
   (push '("*undo-tree*" :height 20) popwin:special-display-config)
   )
+
 
 ;; color-moccur.el
 ;; http://d.hatena.ne.jp/IMAKADO/20080724/1216882563
@@ -56,6 +54,7 @@
 ;; http://d.hatena.ne.jp/khiker/20100123/undo_tree
 ;; http://www.dr-qubit.org/undo-tree/undo-tree.el
 (when (require 'undo-tree nil t)
+  (setq undo-tree-mode-lighter "")
   (global-undo-tree-mode))
 
 ;; undohist.el
@@ -67,10 +66,6 @@
 (when (require 'point-undo nil t)
   (define-key global-map (kbd "<f7>") 'point-undo)
   (define-key global-map (kbd "S-<f7>") 'point-redo))
-
-;; redo+.el
-;; (when (require 'redo+ nil t)
-;;   (define-key global-map (kbd "C-_") 'redo))
 
 ;; sequential-command.el C-a C-e の挙動変更
 ;; http://emacs.g.hatena.ne.jp/k1LoW/20101211/1292046538
@@ -87,19 +82,18 @@
 
 ;; smartchr.el =文字列まとめ
 ;; http://tech.kayac.com/archive/emacs-tips-smartchr.html
-(when (require 'smartchr nil t)
-  (global-set-key (kbd "=") (smartchr '("=" " = " " == " " === ")))
-  (global-set-key (kbd ">") (smartchr '(">" " => " " => '`!!''" " => \"`!!'\"")))
-  (global-set-key (kbd "<") (smartchr '("<" " << ")))
-  (global-set-key (kbd "&") (smartchr '("&" " && ")))
-  (global-set-key (kbd "|") (smartchr '("|" " || ")))
-  )
+;; (when (require 'smartchr nil t)
+;;   (global-set-key (kbd "=") (smartchr '("=" " = " " == " " === ")))
+;;   (global-set-key (kbd ">") (smartchr '(">" " => " " => '`!!''" " => \"`!!'\"")))
+;;   (global-set-key (kbd "<") (smartchr '("<" " << ")))
+;;   (global-set-key (kbd "&") (smartchr '("&" " && ")))
+;;   (global-set-key (kbd "|") (smartchr '("|" " || ")))
+;;   )
 
 ;; key-combo.el
 ;; smartchr.elとsequential-command.el両方行ける
 ;; http://d.hatena.ne.jp/uk-ar/searchdiary?word=%2A%5BKey-combo%5D
 ;; https://github.com/uk-ar/key-combo/
-;; https://github.com/uk-ar/key-combo/raw/177bf94345c532e3dc4c29388a4f160b5241e818/key-combo.el
 ;;(require 'key-combo)
 ;;(key-combo-load-default)
 
@@ -124,6 +118,10 @@
 (setq default-file-name-coding-system 'utf-8)
 (setq svn-status-svn-file-coding-system 'utf-8)
 (setq svn-status-svn-process-coding-system 'utf-8)
+(setq exec-path (cons "/usr/local/bin/" exec-path))
+;; http://d.hatena.ne.jp/yuto_sasaki/20120116/1326708562
+(setenv "LC_ALL" "ja_JP.UTF-8") ;; svn log が文字化けする対策
+
 (add-hook 'diff-mode-hook
           (lambda ()
             (set-face-foreground 'diff-context-face "grey50")
@@ -172,27 +170,10 @@
 (when (require 'quickrun nil t)
   (global-set-key [(f9)] 'quickrun))
 
-;; redmine.el
-;; http://e-arrows.sakura.ne.jp/2010/03/released-redmine-el.html
-;; (when (require 'redmine nil t)
-;;   (setq redmine-project-alist
-;;         '(("hoge" "http://hogehoge" "hoge")))
-;;   )
-
 ;; sticky.el
 ;; 大文字入力を楽にする
 (when (require 'sticky nil t)
   (use-sticky-key ";" sticky-alist:ja))
-
-;; google
-(load "google2")
-
-;; suggest-restart.el
-;; Emacsでメモリ使用量から再起動をおすすめする
-;; http://d.hatena.ne.jp/hitode909/20111223
-;; https://gist.github.com/1513345
-;;(require 'suggest-restart)
-;;(suggest-restart t)
 
 ;; 鬼軍曹.el
 ;; https://github.com/k1LoW/emacs-drill-instructor/wiki
@@ -276,25 +257,33 @@
 
 ;; grep-a-lot.el
 ;; Emacs tech book p162
-;;(require 'grep-a-lot)
-;;(grep-a-lot-setup-keys)
+;; https://github.com/ZungBang/emacs-grep-a-lot
+(when (require 'grep-a-lot nil t)
+  (defvar my-grep-a-lot-search-word nil)
+  ;;上書き
+  (defun grep-a-lot-buffer-name (position)
+    "Return name of grep-a-lot buffer at POSITION."
+    (concat "*grep*<" my-grep-a-lot-search-word ">"))
 
-;; http://d.hatena.ne.jp/kitokitoki/20110213/p1
-(defvar my-grep-a-lot-search-word nil)
-;;上書き
-(defun grep-a-lot-buffer-name (position)
-  "Return name of grep-a-lot buffer at POSITION."
-  (concat "*grep*<" my-grep-a-lot-search-word ">"))
+  (defadvice rgrep (before my-rgrep (regexp &optional files dir) activate)
+    (setq my-grep-a-lot-search-word regexp))
 
-(defadvice rgrep (before my-rgrep (regexp &optional files dir) activate)
-  (setq my-grep-a-lot-search-word regexp))
+  (defadvice lgrep (before my-lgrep (regexp &optional files dir) activate)
+    (setq my-grep-a-lot-search-word regexp))
 
-(defadvice lgrep (before my-lgrep (regexp &optional files dir) activate)
-  (setq my-grep-a-lot-search-word regexp))
+  ;; http://d.hatena.ne.jp/kitokitoki/20110213/p1
+  (defvar my-grep-a-lot-search-word nil)
+  ;;上書き
+  (defun grep-a-lot-buffer-name (position)
+    "Return name of grep-a-lot buffer at POSITION."
+    (concat "*grep*<" my-grep-a-lot-search-word ">"))
 
-;; grep-edit.el
-;; Emacs tech book p163
-;;(require 'grep-edit) ; wgrep.elに移行
+  (defadvice rgrep (before my-rgrep (regexp &optional files dir) activate)
+    (setq my-grep-a-lot-search-word regexp))
+
+  (defadvice lgrep (before my-lgrep (regexp &optional files dir) activate)
+    (setq my-grep-a-lot-search-word regexp))
+  )
 
 ;; wgrep.el
 ;; https://github.com/mhayashi1120/Emacs-wgrep
@@ -321,9 +310,10 @@
   (key-chord-mode 1)
   (key-chord-define-global "jk" 'view-mode)
   (key-chord-define-global "kl" 'jaunte)
-  (key-chord-define-global "ij" 'iy-go-to-char)
-  (key-chord-define-global "bg" 'iy-go-to-char-backward)
-  (key-chord-define-global "oj" 'ace-jump-mode))
+  ;; (key-chord-define-global "ij" 'iy-go-to-char)
+  ;; (key-chord-define-global "bg" 'iy-go-to-char-backward)
+  ;;(key-chord-define-global "oj" 'ace-jump-mode)
+  )
 
 
 ;; deferred.el
@@ -351,10 +341,6 @@
 ;; https://github.com/wakaran/github-search
 ;; https://raw.github.com/wakaran/github-search/master/github-search.el
 (require 'github-search nil t)
-;; (defalias 'g 'gs:code-search)
-;; (defalias 'ga 'gs:all-search)
-;; (defalias 'gu 'gs:user-search)
-;; (defalias 'gr 'gs:repositories-search)
 
 ;; Evil.el
 ;; (require 'evil)
@@ -369,11 +355,23 @@
 ;; ctags-update.el
 ;; from marmalede.el
 ;; http://marmalade-repo.org/packages/ctags-update
-(when (require 'ctags-update nil t)
-  (ctags-update-minor-mode 1))
+;; (when (require 'ctags-update nil t)
+;;   (ctags-update-minor-mode 1))
 
 ;; windows.el
-;;(require 'windows)
+(when (require 'windows nil t)
+  (setq win:use-frame nil)
+  (win:startup-with-window)
+  (global-set-key (kbd "C-M-k") 'win-prev-window)
+  (global-set-key (kbd "C-M-j") 'win-next-window)
+  ;; M-数字で窓を選択する
+  (setq win:switch-prefix [esc])
+  (loop for i from 1 to 9 do
+        (define-key esc-map (number-to-string i) 'win-switch-to-window))
+  ;; winner-mode.el is default
+  (winner-mode 1)
+  (global-set-key (kbd "C-c C-u") 'winner-undo)
+  )
 
 (when (require 'fold-dwim nil t)
   ;; http://www.bookshelf.jp/pukiwiki/pukiwiki.php?cmd=read&page=Elisp%2Fhideshow.el
@@ -391,18 +389,16 @@
     (if (not (member ruby-mode-hs-info hs-special-modes-alist))
         (setq hs-special-modes-alist
               (cons ruby-mode-hs-info hs-special-modes-alist))))
-    (global-set-key (kbd "C-(") 'hs-hide-block)
-    (global-set-key (kbd "C-)") 'hs-show-block)
+
+  (global-set-key (kbd "C-(") 'hs-hide-block)
+  (global-set-key (kbd "C-)") 'hs-show-block)
   )
 
 ;; hiwin.el
 ;; http://d.hatena.ne.jp/ksugita0510/20111223/p1
-;;(require 'hiwin)
-;;(hiwin-activate)                           ;; hiwin-modeを有効化
-;;(set-face-background 'hiwin-face "gray80") ;; 非アクティブウィンドウの背景色を設定
-
-;; fsvn.el
-;;(require 'fsvn)
+;; (require 'hiwin)
+;; (hiwin-activate)                           ;; hiwin-modeを有効化
+;; (set-face-background 'hiwin-face "gray80") ;; 非アクティブウィンドウの背景色を設定
 
 ;; yafastnav.el
 ;; https://github.com/tm8st/emacs-yafastnav
@@ -485,9 +481,7 @@
 
 ;; auto-highlight-symbol-mode.el
 ;; https://github.com/mitsuo-saito/auto-highlight-symbol-mode
-;; https://raw.github.com/mitsuo-saito/auto-highlight-symbol-mode/master/auto-highlight-symbol.el
 ;; https://github.com/mhayashi1120/auto-highlight-symbol-mode
-;; https://raw.github.com/mhayashi1120/auto-highlight-symbol-mode/master/auto-highlight-symbol.el
 ;; http://d.hatena.ne.jp/yuheiomori0718/20111222/1324562208
 ;; http://d.hatena.ne.jp/syohex/20110126/1296048465
 (when (require 'auto-highlight-symbol nil t)
@@ -530,8 +524,7 @@
 ;; *Completions*バッファを，使用後に消してくれる
 ;; http://dev.ariel-networks.com/wp/documents/aritcles/emacs/part11
 (when (require 'lcomp nil t)
-  (lcomp-install)
-  )
+  (lcomp-install))
 
 ;; maximize.el
 ;; https://github.com/izawa/maximize
@@ -547,20 +540,24 @@
 ;; https://raw.github.com/winterTTr/ace-jump-mode/master/ace-jump-mode.el
 (when (require 'ace-jump-mode nil t)
   (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
+  (global-set-key (kbd "C-.") 'ace-jump-mode)
   )
+
+;; jump-char.el
+;; https://github.com/lewang/jump-char
+(require 'jump-char)
+(global-set-key [(meta m)] 'jump-char-forward)
+(global-set-key [(shift meta m)] 'jump-char-backward)
 
 ;; file-column-indicator.el
 ;; https://github.com/alpaker/Fill-Column-Indicator
-(when (require 'fill-column-indicator nil t)
-  (setq fci-rule-column 160)
-  )
+;; (when (require 'fill-column-indicator nil t)
+;;   (setq fci-rule-column 160))
 
 ;; pomodoro.el
 ;; https://github.com/docgnome/pomodoro.el
 ;; https://raw.github.com/docgnome/pomodoro.el/master/pomodoro.el
 (require 'pomodoro nil t)
-;; 別の作者。違いは要確認
-;; https://github.com/vderyagin/pomodoro.el
 
 ;; diminish.el
 ;; (when (require 'diminish nil t)
@@ -572,18 +569,17 @@
 ;; fic-mode.el
 ;; https://github.com/lewang/fic-mode
 ;; highlight word is TODO or FIXME
-(require 'fic-mode nil t)
+;; (require 'fic-mode nil t)
 
 ;; 自動コンパイル
 ;; http://www.emacswiki.org/emacs/auto-async-byte-compile.el
 (when (require 'auto-async-byte-compile nil t)
   ;; 自動コンパイルを無効にするファイル名の正規表現
-  (setq auto-async-byte-compile-exclude-files-regexp "init.el")
+  (setq auto-async-byte-compile-exclude-files-regexp "init")
   (add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
   )
 
 ;; fcopy.el
-;; https://aw.github.com/ataka/fcopy/master/fcopy.el
 ;; https://raw.github.com/ataka/fcopy/master/fcopy.el
 (autoload 'fcopy-mode "fcopy" "copy lines or region without editing." t)
 
@@ -594,46 +590,94 @@
 ;; http://d.hatena.ne.jp/uk-ar/20120401
 ;; https://github.com/uk-ar/flex-autopair/
 ;; https://raw.github.com/uk-ar/flex-autopair/master/flex-autopair.el
-(when (require 'flex-autopair nil t)
-  (flex-autopair-mode -1))
+;; (when (require 'flex-autopair nil t)
+;;   (flex-autopair-mode -1))
 
 ;; acp.el
 ;; http://d.hatena.ne.jp/buzztaiki/20061204/1165207521
 ;; http://d.hatena.ne.jp/kitokitoki/20090823/p1
-(when (require 'acp nil t)
+;; (when (require 'acp nil t)
 
-  (add-hook 'emacs-lisp-mode-hook 'acp-mode)
-  (add-hook 'lisp-mode-hook 'acp-mode)
+;;   (add-hook 'emacs-lisp-mode-hook 'acp-mode)
+;;   (add-hook 'lisp-mode-hook 'acp-mode)
 
-  (setq acp-paren-alist
-        '((?( . ?))
-          (?[ . ?])))
+;;   (setq acp-paren-alist
+;;         '((?( . ?))
+;;           (?[ . ?])))
 
-  (setq acp-insertion-functions
-        '((mark-active . acp-surround-with-paren)
-          ((thing-at-point 'symbol) . acp-surround-symbol-with-paren)
-          (t . acp-insert-paren)))
+;;   (setq acp-insertion-functions
+;;         '((mark-active . acp-surround-with-paren)
+;;           ((thing-at-point 'symbol) . acp-surround-symbol-with-paren)
+;;           (t . acp-insert-paren)))
 
-  (defun acp-surround-symbol-with-paren (n)
-    (save-excursion
-      (save-restriction
-        (narrow-to-region (car (bounds-of-thing-at-point 'symbol)) (cdr (bounds-of-thing-at-point 'symbol)))
-        (goto-char (point-min))
-        (insert-char (car (acp-current-pair)) n)
-        (goto-char (point-max))
-        (insert-char (cdr (acp-current-pair)) n))))
-  )
+;;   (defun acp-surround-symbol-with-paren (n)
+;;     (save-excursion
+;;       (save-restriction
+;;         (narrow-to-region (car (bounds-of-thing-at-point 'symbol)) (cdr (bounds-of-thing-at-point 'symbol)))
+;;         (goto-char (point-min))
+;;         (insert-char (car (acp-current-pair)) n)
+;;         (goto-char (point-max))
+;;         (insert-char (cdr (acp-current-pair)) n))))
+;;   )
 
 ;; drag-stuff.el
 ;; https://github.com/rejeep/drag-stuff
 (when (require 'drag-stuff nil t)
   (drag-stuff-mode t))
 
-;; close all buffers
+;; 全てのバッファを閉じる
 (defun close-all-buffers ()
   (interactive)
   (loop for buffer being the buffers
      do (kill-buffer buffer)))
 
-(provide 'init-elisp)
+;; https://github.com/TeMPOraL/nyan-mode
+(require 'nyan-mode nil t)
 
+;; grep-o-matic.el
+;; https://github.com/ZungBang/emacs-grep-o-matic
+(require 'grep-o-matic nil t)
+
+;; http://d.hatena.ne.jp/kitokitoki/20091129/p1
+(defun sqlf (start end)
+  "リージョンのSQLを整形する"
+  (interactive "r")
+  (let ((case-fold-search t))
+    (let* ((s (buffer-substring-no-properties start end))
+           (s (replace-regexp-in-string "\\(select \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(update \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(insert into \\)\\(fuga\\)\\(fuga\\)" "\n\\2\n  " s))
+           (s (replace-regexp-in-string "\\(delete from \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(create table \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(alter table \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(drop constraint \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(from \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(exists \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(where \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(values \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(order by \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(group by \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(having \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(left join \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(left outer join )\\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(right join \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(right outer join \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(inner join \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(cross join \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(union join \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(and \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(or \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(any \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(on update restrict \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(on update cascade \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(on update set null \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(on update no action \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(on delete restrict \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(on delete cascade \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(on delete set null \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(on delete no action \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(,\\)" "\\1\n  " s)))
+    (save-excursion
+      (insert s)))))
+
+(provide 'init-elisp)

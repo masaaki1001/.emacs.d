@@ -5,7 +5,12 @@
 (global-set-key "\C-h" 'delete-backward-char) ; 削除
 (global-set-key "\M-h" 'backward-kill-word)
 (global-set-key "\C-z" 'undo) ;; undo
-(pc-selection-mode) ;; Shift + 矢印キーで範囲選択
+(if (= emacs-major-version 23)
+  (progn
+    (pc-selection-mode) ;; Shift + 矢印キーで範囲選択
+    )
+  (progn))
+
 (setq kill-whole-line t) ;; C-k で改行を含め切り取り
 ;; 改行時にインデント
 (global-set-key "\C-m" 'newline-and-indent)
@@ -37,24 +42,12 @@
 ;; http://d.hatena.ne.jp/kbkbkbkb1/20111205/1322988550
 (setq set-mark-command-repeat-pop t)
 
-;; 一行複製
-;; https://gist.github.com/1708398
-;; https://gist.github.com/897494
-;; (defun duplicate-line()
-;;   (interactive)
-;;   (save-excursion
-;;     (move-beginning-of-line 1)
-;;     (kill-line)
-;;     (yank)
-;;     (yank)))
-;; (global-set-key (kbd "C-M-y") 'duplicate-line)
-
 ;; duplicate-thing.el
 ;; https://github.com/ongaeshi/duplicate-thing
 ;; https://raw.github.com/ongaeshi/duplicate-thing/master/duplicate-thing.el
 ;; http://d.hatena.ne.jp/syohex/20120325/1332641491
-(require 'duplicate-thing)
-(global-set-key (kbd "C-M-y") 'duplicate-thing)
+(when (require 'duplicate-thing nil t)
+  (global-set-key (kbd "C-M-y") 'duplicate-thing))
 
 ;; emacsのc-u-c-uを8回繰り返しにする
 ;; http://d.akinori.org/2010/03/05/emacsのc-u-c-uを8回繰り返しにする/
@@ -70,5 +63,9 @@
 ;; http://d.hatena.ne.jp/kbkbkbkb1/20111205/1322988550
 ;; enable to pop `mark-ring' repeatedly like C-u C-SPC C-SPC ...
 (setq set-mark-command-repeat-pop t)
+
+;; Use C-x C-m to do M-x per Steve Yegge's advice
+;; https://github.com/magnars/.emacs.d/commit/0291309114029e1402fc59b84050a069f9e89b2c
+(global-set-key "\C-x\C-m" 'execute-extended-command)
 
 (provide 'init-keybind)

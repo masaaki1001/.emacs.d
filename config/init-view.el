@@ -81,6 +81,8 @@
     (newline)))
 (define-key view-mode-map (kbd "O") 'my/view-insert-prev-line)
 
+(define-key view-mode-map (kbd "SPC") 'ace-jump-mode)
+
 ;; bm.elの設定
 ;; Emacs tech Book p218
 (define-key view-mode-map (kbd "m") 'bm-toggle)
