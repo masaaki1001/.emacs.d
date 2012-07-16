@@ -337,15 +337,6 @@
 ;; (setq inertias-update-time 60)      ; 画面描画のwait時間（msec）
   )
 
-;; github-search.el
-;; https://github.com/wakaran/github-search
-;; https://raw.github.com/wakaran/github-search/master/github-search.el
-(require 'github-search nil t)
-
-;; Evil.el
-;; (require 'evil)
-;; (evil-mode nil)
-
 ;; yaml-mode.el
 ;; https://github.com/yoshiki/yaml-mode
 ;; https://raw.github.com/yoshiki/yaml-mode/master/yaml-mode.el
@@ -420,13 +411,11 @@
   )
 
 ;; volatile-highlights.el
-;; from marmalade
 (when (require 'volatile-highlights nil t)
   (volatile-highlights-mode t)
   )
 
 ;; smooth-scroll.el
-;; from marmalade
 ;;(require 'smooth-scroll)
 ;;(smooth-scroll-mode t)
 

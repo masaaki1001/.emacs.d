@@ -124,16 +124,6 @@
               (define-key ruby-mode-map (kbd "C-@") 'anything-rdefs)))
   )
 
-;; yarm.el (Yet Another Ruby on Rails Minor Mode)
-;; https://github.com/k1LoW/emacs-yarm
-;; 依存パッケージ historyf.el
-;; https://github.com/k1LoW/emacs-historyf
-;; https://raw.github.com/k1LoW/emacs-historyf/master/historyf.el
-(when (require 'yarm nil t)
-;;(global-yarm t)
-  )
-
-
 ;; http://d.hatena.ne.jp/kitokitoki/20120310/p1
 (defun ffap-ruby-mode (name)
   (shell-command-to-string
