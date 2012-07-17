@@ -5,6 +5,7 @@
 ;; バッファ一覧を詳細に
 (global-set-key "\C-x\C-b" 'bs-show)
 ;; ミニバッファの履歴を【C-r】でインクリメンタルサーチできるように
+;; http://www.sodan.org/~knagano/emacs/minibuf-isearch/minibuf-isearch.el
 (require 'minibuf-isearch)
 
 ;; i-searchでのBS有効

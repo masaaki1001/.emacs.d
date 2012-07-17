@@ -84,19 +84,6 @@
 ;;(setq anything-kill-ring-threshold 5) ;;デフォルトは 10.
 ;;(global-set-key (kbd "M-y") 'anything-show-kill-ring)
 
-;; split-root.el
-;; anythingを常に下部に表示する設定
-;; http://emacs.g.hatena.ne.jp/k1LoW/20090713/1247496970
-;; (require 'split-root)
-;; (defvar anything-compilation-window-height-percent 50.0)
-;; (defun anything-compilation-window-root (buf)
-;;   (setq anything-compilation-window
-;;         (split-root-window (truncate (* (window-height)
-;;                                         (/ anything-compilation-window-height-percent
-;;                                            100.0)))))
-;;   (set-window-buffer anything-compilation-window buf))
-;; (setq anything-display-function 'anything-compilation-window-root)
-
 ;; anythingで正規表現のかわりにglobを使えるようにする
 ;; http://d.hatena.ne.jp/buzztaiki/20110123
 ;;(require 'amp-glob)
