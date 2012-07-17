@@ -148,3 +148,18 @@
 [submodule "repositories/rspec-mode"]
 	path = repositories/rspec-mode
 	url = git://github.com/pezra/rspec-mode.git
+[submodule "repositories/dired-filetype-face"]
+	path = repositories/dired-filetype-face
+	url = git://github.com/jixiuf/dired-filetype-face.git
+[submodule "repositories/deferred"]
+	path = repositories/deferred
+	url = git://github.com/kiwanami/emacs-deferred.git
+[submodule "repositories/emacs-window-layout"]
+	path = repositories/emacs-window-layout
+	url = git://github.com/kiwanami/emacs-window-layout.git
+[submodule "gist-1101202"]
+	path = gist-1101202
+	url = git://gist.github.com/1101202.git
+[submodule "repositories/undohist"]
+	path = repositories/undohist
+	url = git://github.com/m2ym/undohist-el.git
