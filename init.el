@@ -117,11 +117,8 @@
   (menu-bar-mode -1) ;; メニューバーを消す
   (tool-bar-mode -1) ;; ツールバーを消す
   (toggle-scroll-bar nil) ;; スクロールバーを消す
-  ;;(create-fontset-from-ascii-font "Inconsolata-16:weight=normal:slant=normal" nil "Inconsolata") ;;フォントをInconsolateにする
   (create-fontset-from-ascii-font "Inconsolata-12:weight=normal:slant=normal" nil "Inconsolata") ;;フォントをInconsolateにする
   (set-default-font "Inconsolata-12")
-  ;;(set-default-font "Inconsolata-13")
-  ;;(set-default-font "Inconsolata-16")
   (set-fontset-font (frame-parameter nil 'font)
                     'japanese-jisx0208
                     '("Hiragino Kaku Gothic ProN" . "unicode-bmp"))
@@ -131,13 +128,6 @@
 ;; color-theme
 ;;----------------------------------------------------------------------------
 (require 'init-theme nil t)
-
-;;----------------------------------------------------------------------------
-;; Power Line for Emacs
-;; from EmacsWiki
-;; http://www.emacswiki.org/emacs-en/PowerLinen
-;;----------------------------------------------------------------------------
-;;(require 'powerline)
 
 ;;----------------------------------------------------------------------------
 ;; 表示
@@ -442,12 +432,6 @@
 ;;---------------------------------------------------------
 (when (require 'edit-server nil t)
   (edit-server-start))
-
-;; (if (locate-library "edit-server")
-;;     (progn
-;;       (require 'edit-server)
-;;       (setq edit-server-new-frame nil)
-;;       (edit-server-start)))
 
 ;;---------------------------------------------------------
 ;; ddskk

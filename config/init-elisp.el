@@ -483,7 +483,7 @@
   )
 
 ;; minimap.el
-;; emacs wiki
+;; http://www.randomsample.de/minimap.el
 (require 'minimap nil t)
 
 ;; zlc.el
@@ -627,6 +627,13 @@
 ;; https://github.com/ZungBang/emacs-grep-o-matic
 (require 'grep-o-matic nil t)
 
+;; duplicate-thing.el
+;; https://github.com/ongaeshi/duplicate-thing
+;; https://raw.github.com/ongaeshi/duplicate-thing/master/duplicate-thing.el
+;; http://d.hatena.ne.jp/syohex/20120325/1332641491
+(when (require 'duplicate-thing nil t)
+  (global-set-key (kbd "C-M-y") 'duplicate-thing))
+
 ;; http://d.hatena.ne.jp/kitokitoki/20091129/p1
 (defun sqlf (start end)
   "リージョンのSQLを整形する"
@@ -672,5 +679,8 @@
 ;; magit
 ;; https://github.com/magit/magit
 (require 'magit nil t)
+
+;; powerline
+;; (require 'powerline nil t)
 
 (provide 'init-elisp)

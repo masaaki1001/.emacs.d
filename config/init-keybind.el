@@ -42,13 +42,6 @@
 ;; http://d.hatena.ne.jp/kbkbkbkb1/20111205/1322988550
 (setq set-mark-command-repeat-pop t)
 
-;; duplicate-thing.el
-;; https://github.com/ongaeshi/duplicate-thing
-;; https://raw.github.com/ongaeshi/duplicate-thing/master/duplicate-thing.el
-;; http://d.hatena.ne.jp/syohex/20120325/1332641491
-(when (require 'duplicate-thing nil t)
-  (global-set-key (kbd "C-M-y") 'duplicate-thing))
-
 ;; emacsのc-u-c-uを8回繰り返しにする
 ;; http://d.akinori.org/2010/03/05/emacsのc-u-c-uを8回繰り返しにする/
 (defadvice universal-argument-more
