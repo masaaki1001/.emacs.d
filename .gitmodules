@@ -163,3 +163,6 @@
 [submodule "repositories/undohist"]
 	path = repositories/undohist
 	url = git://github.com/m2ym/undohist-el.git
+[submodule "repositories/amp-glob"]
+	path = repositories/amp-glob
+	url = git://gist.github.com/792217.git
