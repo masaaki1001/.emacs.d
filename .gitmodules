@@ -166,3 +166,6 @@
 [submodule "repositories/volatile-highlight"]
 	path = repositories/volatile-highlight
 	url = git://gist.github.com/1101202.git
+[submodule "repositories/yasnippets-rails"]
+	path = repositories/yasnippets-rails
+	url = git://github.com/eschulte/yasnippets-rails.git
