@@ -169,3 +169,6 @@
 [submodule "repositories/anything-rdefs"]
 	path = repositories/anything-rdefs
 	url = https://github.com/mori-dev/anything-rdefs
+[submodule "repositories/smartchr"]
+	path = repositories/smartchr
+	url = git://github.com/imakado/emacs-smartchr.git
