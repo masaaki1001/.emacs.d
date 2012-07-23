@@ -199,12 +199,12 @@
 [submodule "repositories/multiverse"]
 	path = repositories/multiverse
 	url = git://github.com/emacsmirror/multiverse.git
-[submodule "git"]
-	path = git
-	url = git://github.com/emacsmirror/ipa.git
 [submodule "repositories/open-junk-file"]
 	path = repositories/open-junk-file
 	url = git://github.com/emacsmirror/open-junk-file.git
 [submodule "repositories/browse-kill-ring-plus"]
 	path = repositories/browse-kill-ring-plus
 	url = https://github.com/emacsmirror/browse-kill-ring-plus
+[submodule "repositories/ipa"]
+	path = repositories/ipa
+	url = git://github.com/emacsmirror/ipa.git
