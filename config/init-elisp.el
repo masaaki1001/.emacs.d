@@ -385,12 +385,6 @@
   (global-set-key (kbd "C-)") 'hs-show-block)
   )
 
-;; hiwin.el
-;; http://d.hatena.ne.jp/ksugita0510/20111223/p1
-;; (require 'hiwin)
-;; (hiwin-activate)                           ;; hiwin-modeを有効化
-;; (set-face-background 'hiwin-face "gray80") ;; 非アクティブウィンドウの背景色を設定
-
 ;; yafastnav.el
 ;; https://github.com/tm8st/emacs-yafastnav
 ;; https://raw.github.com/tm8st/emacs-yafastnav/master/yafastnav.el
@@ -428,24 +422,6 @@
   (global-set-key (kbd "C-c ,") 'iy-go-to-char-continue-backward)
   )
 
-;; wrap-region.el sticky.elと競合するのでコメントアウト
-;; https://github.com/rejeep/wrap-region
-;; http://d.hatena.ne.jp/syohex/20120207/1328629972
-;; (when (require 'wrap-region nil t)
-;;   ;;グローバルに有効。個別の場合は (wrap-region-mode t)
-;;   (wrap-region-global-mode t)
-;;   (wrap-region-add-wrapper "$" "$")
-;;   (wrap-region-add-wrapper "{-" "-}" "#")
-;;   (wrap-region-add-wrapper "/" "/" nil 'ruby-mode)
-;;   (wrap-region-add-wrapper "/* " " */" "#" '(java-mode javascript-mode css-mode))
-;;   (wrap-region-add-wrapper "`" "`" nil '(markdown-mode ruby-mode))
-;;   paredit.elで同様の機能があるため、念の為
-;;   (add-to-list 'wrap-region-except-modes 'emacs-lisp-mode)
-;;   (add-to-list 'wrap-region-except-modes 'scheme-mode)
-;;   (add-to-list 'wrap-region-except-modes 'lisp-mode)
-;;   (add-to-list 'wrap-region-except-modes 'clojure-mode)
-;;   )
-
 ;; open-junk-file.el
 (when (require 'open-junk-file nil t)
   (setq open-junk-file-format "~/.emacs.d/junk/%Y-%m-%d-%H%M%S.")
@@ -478,10 +454,6 @@
   (ahs-set-idle-interval 5) ;ハイライトまでの待機時間 デフォルトは1秒
   )
 
-(when (require 'image+ nil t)
-  (imagex-auto-adjust-mode 1)
-  )
-
 ;; minimap.el
 ;; http://www.randomsample.de/minimap.el
 (require 'minimap nil t)
@@ -503,12 +475,6 @@
             (lambda ()
               (define-key browse-kill-ring-mode-map (kbd "\C-g") 'browse-kill-ring-quit)))
   )
-
-;; quick-jump.el
-;; https://github.com/jixiuf/quick-jump
-;; https://raw.github.com/jixiuf/quick-jump/master/quick-jump.el
-;; bm.elがあれば不要かも？
-(require 'quick-jump nil t)
 
 ;; *Completions*バッファを，使用後に消してくれる
 ;; http://dev.ariel-networks.com/wp/documents/aritcles/emacs/part11
@@ -560,27 +526,13 @@
 ;; highlight word is TODO or FIXME
 ;; (require 'fic-mode nil t)
 
-;; 自動コンパイル
-;; http://www.emacswiki.org/emacs/auto-async-byte-compile.el
-(when (require 'auto-async-byte-compile nil t)
-  ;; 自動コンパイルを無効にするファイル名の正規表現
-  (setq auto-async-byte-compile-exclude-files-regexp "init")
-  (add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
-  )
-
 ;; fcopy.el
 ;; https://raw.github.com/ataka/fcopy/master/fcopy.el
 (autoload 'fcopy-mode "fcopy" "copy lines or region without editing." t)
 
 ;; rainbow-mode.el
+;; elpa
 (require 'rainbow-mode nil t)
-
-;; flex-autopair.el
-;; http://d.hatena.ne.jp/uk-ar/20120401
-;; https://github.com/uk-ar/flex-autopair/
-;; https://raw.github.com/uk-ar/flex-autopair/master/flex-autopair.el
-;; (when (require 'flex-autopair nil t)
-;;   (flex-autopair-mode -1))
 
 ;; acp.el
 ;; http://d.hatena.ne.jp/buzztaiki/20061204/1165207521
