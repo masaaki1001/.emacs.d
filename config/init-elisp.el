@@ -343,12 +343,6 @@
 (when (require 'yaml-mode nil t)
   (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode)))
 
-;; ctags-update.el
-;; from marmalede.el
-;; http://marmalade-repo.org/packages/ctags-update
-;; (when (require 'ctags-update nil t)
-;;   (ctags-update-minor-mode 1))
-
 ;; windows.el
 (when (require 'windows nil t)
   (setq win:use-frame nil)
@@ -524,7 +518,7 @@
 ;; fic-mode.el
 ;; https://github.com/lewang/fic-mode
 ;; highlight word is TODO or FIXME
-;; (require 'fic-mode nil t)
+(require 'fic-mode nil t)
 
 ;; fcopy.el
 ;; https://raw.github.com/ataka/fcopy/master/fcopy.el
@@ -533,33 +527,6 @@
 ;; rainbow-mode.el
 ;; elpa
 (require 'rainbow-mode nil t)
-
-;; acp.el
-;; http://d.hatena.ne.jp/buzztaiki/20061204/1165207521
-;; http://d.hatena.ne.jp/kitokitoki/20090823/p1
-;; (when (require 'acp nil t)
-
-;;   (add-hook 'emacs-lisp-mode-hook 'acp-mode)
-;;   (add-hook 'lisp-mode-hook 'acp-mode)
-
-;;   (setq acp-paren-alist
-;;         '((?( . ?))
-;;           (?[ . ?])))
-
-;;   (setq acp-insertion-functions
-;;         '((mark-active . acp-surround-with-paren)
-;;           ((thing-at-point 'symbol) . acp-surround-symbol-with-paren)
-;;           (t . acp-insert-paren)))
-
-;;   (defun acp-surround-symbol-with-paren (n)
-;;     (save-excursion
-;;       (save-restriction
-;;         (narrow-to-region (car (bounds-of-thing-at-point 'symbol)) (cdr (bounds-of-thing-at-point 'symbol)))
-;;         (goto-char (point-min))
-;;         (insert-char (car (acp-current-pair)) n)
-;;         (goto-char (point-max))
-;;         (insert-char (cdr (acp-current-pair)) n))))
-;;   )
 
 ;; drag-stuff.el
 ;; https://github.com/rejeep/drag-stuff
