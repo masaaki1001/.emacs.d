@@ -34,11 +34,6 @@
 ;;       (indent-line-to indent)
 ;;       (when (> offset 0) (forward-char offset)))))
 
-
-;; http://d.hatena.ne.jp/odz/20071222/1198288746
-;; 最終行に空白行を挿入しないようにする
-;;(add-hook 'ruby-mode-hook '(lambda () (setq require-final-newline nil)))
-
 ;; ruby-electric.el
 (when (require 'ruby-electric nil t)
   (add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
@@ -57,9 +52,6 @@
 (setq ruby-indent-level 2)
 (setq ruby-indent-tabs-mode nil)
 
-;; Interactively Do Things (highly recommended, but not strictly required)
-;;(require 'ido)
-;;(ido-mode t)
 ;; Rinari
 ;; https://github.com/eschulte/rinari
 (when (require 'rinari nil t)
@@ -71,6 +63,7 @@
   ;; rails-snippets
   (yas/load-directory "~/.emacs.d/repositories/yasnippets-rails/rails-snippets")
   )
+
 ;; anything-c-yasnjppet.el
 ;; http://d.hatena.ne.jp/shiba_yu36/20100615/1276612642
 ;; http://d.hatena.ne.jp/sugyan/20120111/1326288445
