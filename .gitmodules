@@ -211,3 +211,18 @@
 [submodule "repositories/package-spec"]
 	path = repositories/package-spec
 	url = git://github.com/rejeep/package-spec.git
+[submodule "repositories/recentf-ext"]
+	path = repositories/recentf-ext
+	url = git://github.com/emacsmirror/recentf-ext.git
+[submodule "repositories/viewer"]
+	path = repositories/viewer
+	url = git://github.com/emacsmirror/viewer.git
+[submodule "repositories/shell-pop"]
+	path = repositories/shell-pop
+	url = git://github.com/whitypig/shell-pop.git
+[submodule "repositories/anything-replace-string"]
+	path = repositories/anything-replace-string
+	url = git://github.com/k1LoW/anything-replace-string.git
+[submodule "repositories/anything-css"]
+	path = repositories/anything-css
+	url = git://github.com/k1LoW/anything-css.git
