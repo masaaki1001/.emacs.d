@@ -17,6 +17,7 @@
 ;; esh-myparser.el
 ;; コマンド解釈乗っ取り
 ;; Emacs mail magazine
+;; emacswiki
 (when (require 'esh-myparser nil t)
   ;; (defun eshell-parser/b (str) (eshell-parser/b str "bash"))
   )
@@ -24,6 +25,7 @@
 ;; esh-cmdline-stack.el
 ;; eshellでコマンドラインスタック機能を実現する
 ;; Emacs mail magazine
+;; emacswiki
 (require 'esh-cmdline-stack nil t)
 
 ;; eshellでの実行をbashなどのシェルを利用するように変更

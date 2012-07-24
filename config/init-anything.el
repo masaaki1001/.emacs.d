@@ -73,10 +73,6 @@
 ;; http://emacs.g.hatena.ne.jp/k1LoW/20110107/1294408979
 (require 'anything-replace-string nil t)
 
-;; anything-advent-calendar.el (期間限定)
-;; http://gongo.hatenablog.com/entry/2011/12/12/000301
-(require 'anything-advent-calendar nil t)
-
 ;; anything-c-kill-ring
 ;; yankをpopupで表示する
 ;; http://www.flatz.jp/archives/2172

@@ -2,7 +2,7 @@
 ;;----------------------------------------------------------------------------
 ;; keybind
 ;;----------------------------------------------------------------------------
-(global-set-key "\C-h" 'delete-backward-char) ; 削除
+;; (global-set-key "\C-h" 'delete-backward-char) ; 削除
 (global-set-key "\M-h" 'backward-kill-word)
 (global-set-key "\C-z" 'undo) ;; undo
 (if (= emacs-major-version 23)
@@ -37,10 +37,6 @@
 ;; http://www23.atwiki.jp/selflearn/pages/41.html
 (global-set-key [?\C-{] 'backward-list)
 (global-set-key [?\C-}] 'forward-list)
-
-;; enable to pop `mark-ring' repeatedly like C-u C-SPC C-SPC ...
-;; http://d.hatena.ne.jp/kbkbkbkb1/20111205/1322988550
-(setq set-mark-command-repeat-pop t)
 
 ;; emacsのc-u-c-uを8回繰り返しにする
 ;; http://d.akinori.org/2010/03/05/emacsのc-u-c-uを8回繰り返しにする/
