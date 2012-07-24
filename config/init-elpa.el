@@ -27,6 +27,7 @@
         (require-package package min-version t)))))
 
 ;; package-spec
+(setq package-spec-file-name "~/.emacs.d/package-spec.el")
 (require 'package-spec)
 
 (provide 'init-elpa)
