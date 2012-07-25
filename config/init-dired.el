@@ -2,6 +2,8 @@
 ;;----------------------------------------------------------------------------
 ;; dired
 ;;----------------------------------------------------------------------------
+(add-hook 'dired-mode-hook 'turn-on-gnus-dired-mode)
+
 ;; emacs wiki
 ;; http://xahlee.org/emacs/emacs_diredplus_mode.html
 ;;(require 'dired+)
@@ -75,24 +77,24 @@
 
 ;; diredでマークをつけたファイルを開く
 ;; http://d.hatena.ne.jp/oh_cannot_angel/20101216/1292506110
-;; (eval-after-load "dired"
-;;   '(progn
-;;      (define-key dired-mode-map (kbd "F") 'my-dired-find-marked-files)
-;;      (defun my-dired-find-marked-files (&optional arg)
-;;        "Open each of the marked files, or the file under the point, or when prefix arg, the next N files "
-;;        (interactive "P")
-;;        (let* ((fn-list (dired-get-marked-files nil arg)))
-;;          (mapc 'find-file fn-list)))))
+(eval-after-load "dired"
+  '(progn
+     (define-key dired-mode-map (kbd "F") 'my-dired-find-marked-files)
+     (defun my-dired-find-marked-files (&optional arg)
+       "Open each of the marked files, or the file under the point, or when prefix arg, the next N files "
+       (interactive "P")
+       (let* ((fn-list (dired-get-marked-files nil arg)))
+         (mapc 'find-file fn-list)))))
 
 ;; diredでマークをつけたファイルをviewモードで開く
 ;; http://d.hatena.ne.jp/oh_cannot_angel/20101216/1292506110
-;; (eval-after-load "dired"
-;;   '(progn
-;;      (define-key dired-mode-map (kbd "V") 'my-dired-view-marked-files)
-;;      (defun my-dired-view-marked-files (&optional arg)
-;;        "Open each of the marked files, or the file under the point, or when prefix arg, the next N files "
-;;        (interactive "P")
-;;        (let* ((fn-list (dired-get-marked-files nil arg)))
-;;          (mapc 'view-file fn-list)))))
+(eval-after-load "dired"
+  '(progn
+     (define-key dired-mode-map (kbd "V") 'my-dired-view-marked-files)
+     (defun my-dired-view-marked-files (&optional arg)
+       "Open each of the marked files, or the file under the point, or when prefix arg, the next N files "
+       (interactive "P")
+       (let* ((fn-list (dired-get-marked-files nil arg)))
+         (mapc 'view-file fn-list)))))
 
 (provide 'init-dired)
