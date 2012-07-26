@@ -8,3 +8,4 @@
 (package "fold-dwim")
 (package "goto-chg")
 (package "key-chord")
+(package "maxframe")
