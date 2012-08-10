@@ -226,3 +226,6 @@
 [submodule "repositories/anything-css"]
 	path = repositories/anything-css
 	url = git://github.com/k1LoW/anything-css.git
+[submodule "repositories/change-inner"]
+	path = repositories/change-inner
+	url = git://github.com/magnars/change-inner.el.git
