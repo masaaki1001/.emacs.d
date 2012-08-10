@@ -238,6 +238,12 @@
   ;;             (modify-syntax-entry ?! "_" ruby-mode-syntax-table)))
   )
 
+;; change-inner.el
+;; https://github.com/magnars/change-inner.el
+(when (require 'change-inner nil t)
+  (global-set-key (kbd "M-i") 'change-inner)
+  (global-set-key (kbd "M-o") 'change-outer)
+  )
 
 ;; mark-multiple.el
 ;; https://github.com/magnars/mark-multiple.el
