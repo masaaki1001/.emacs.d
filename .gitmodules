@@ -229,3 +229,9 @@
 [submodule "repositories/change-inner"]
 	path = repositories/change-inner
 	url = git://github.com/magnars/change-inner.el.git
+[submodule "repositories/ace-jump-mode"]
+	path = repositories/ace-jump-mode
+	url = git://github.com/winterTTr/ace-jump-mode.git
+[submodule "ace-jump-mode"]
+	path = ace-jump-mode
+	url = git://github.com/winterTTr/ace-jump-mode.git
