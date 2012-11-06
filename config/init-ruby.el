@@ -64,7 +64,7 @@
   (yas/load-directory "~/.emacs.d/repositories/yasnippets-rails/rails-snippets")
   )
 
-;; anything-c-yasnjppet.el
+;; anything-c-yasnippet.el
 ;; http://d.hatena.ne.jp/shiba_yu36/20100615/1276612642
 ;; http://d.hatena.ne.jp/sugyan/20120111/1326288445
 (when (require 'anything-c-yasnippet nil t)
