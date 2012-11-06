@@ -25,7 +25,7 @@
           anything-c-source-files-in-current-dir
           anything-c-source-bm-global
           anything-c-source-emacs-commands
-          ;;anything-c-source-yaetags-select
+          anything-c-source-yaetags-select
           ))
 
   (setq anything-candidate-number-limit 300) ; 表示する最大候補数。デフォルトで 50
