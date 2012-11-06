@@ -232,6 +232,6 @@
 [submodule "repositories/ace-jump-mode"]
 	path = repositories/ace-jump-mode
 	url = git://github.com/winterTTr/ace-jump-mode.git
-[submodule "ace-jump-mode"]
-	path = ace-jump-mode
-	url = git://github.com/winterTTr/ace-jump-mode.git
+[submodule "repositories/auto-complete"]
+	path = repositories/auto-complete
+	url = git://github.com/auto-complete/auto-complete.git

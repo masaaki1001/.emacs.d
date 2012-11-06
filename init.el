@@ -7,8 +7,8 @@
                           "~/.emacs.d/elisp"
                           "~/.emacs.d/config/"
                           "~/.emacs.d/auto-install/"
-                          "~/.emacs.d/yasnippet/"
-                          "~/.emacs.d/auto-complete/"
+                          ;;"~/.emacs.d/yasnippet/"
+                          ;;"~/.emacs.d/auto-complete/"
                           )
                         load-path))
 
@@ -28,7 +28,8 @@
 
 ;; load-path
 ;; e.g. (add-to-load-path "elisp" "xxx" "xxx")
-(add-to-load-path "repositories" "color-theme")
+;;(add-to-load-path "repositories" "color-theme")
+(add-to-load-path "repositories")
 
 ;;----------------------------------------------------------------------------
 ;; emacsclient
@@ -79,7 +80,7 @@
 ;;----------------------------------------------------------------------------
 ;; elpa, marmalade, melpa etc...
 ;;----------------------------------------------------------------------------
-(require 'init-elpa nil t)
+;;(require 'init-elpa nil t)
 
 ;;----------------------------------------------------------------------------
 ;; keybind
@@ -107,11 +108,11 @@
   (menu-bar-mode -1) ;; メニューバーを消す
   (tool-bar-mode -1) ;; ツールバーを消す
   (toggle-scroll-bar nil) ;; スクロールバーを消す
-  (create-fontset-from-ascii-font "Inconsolata-12:weight=normal:slant=normal" nil "Inconsolata") ;;フォントをInconsolateにする
-  (set-default-font "Inconsolata-12")
-  (set-fontset-font (frame-parameter nil 'font)
-                    'japanese-jisx0208
-                    '("Hiragino Kaku Gothic ProN" . "unicode-bmp"))
+;;  (create-fontset-from-ascii-font "Inconsolata-12:weight=normal:slant=normal" nil "Inconsolata") ;;フォントをInconsolateにする
+;;  (set-default-font "Inconsolata-12")
+;;  (set-fontset-font (frame-parameter nil 'font)
+;;                    'japanese-jisx0208
+;;                    '("Hiragino Kaku Gothic ProN" . "unicode-bmp"))
   ))
 
 ;;----------------------------------------------------------------------------
@@ -397,11 +398,11 @@
 ;;----------------------------------------------------------------------------
 ;; ruby
 ;;----------------------------------------------------------------------------
-(require 'init-ruby nil t)
+;;(require 'init-ruby nil t)
 ;;----------------------------------------------------------------------------
 ;; flymake
 ;;----------------------------------------------------------------------------
-(require 'init-flymake nil t)
+;;(require 'init-flymake nil t)
 
 ;;----------------------------------------------------------------------------
 ;; anything.el
@@ -426,7 +427,7 @@
 ;;---------------------------------------------------------
 ;; ddskk
 ;;---------------------------------------------------------
-(require 'init-ddskk nil t)
+;;(require 'init-ddskk nil t)
 
 ;;----------------------------------------------------------------------------
 ;; revive.el

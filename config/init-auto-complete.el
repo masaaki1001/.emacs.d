@@ -4,7 +4,7 @@
 ;; http://cx4a.org/software/auto-complete/manual.ja.html
 ;;----------------------------------------------------------------------------
 (when (require 'auto-complete-config nil t)
-  (add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete/ac-dict")
+  (add-to-list 'ac-dictionary-directories "~/.emacs.d/repositories/auto-complete/dict")
   (ac-config-default)
   ;; (add-hook 'auto-complete-mode-hook
   ;;           (lambda ()

@@ -25,7 +25,7 @@
           anything-c-source-files-in-current-dir
           anything-c-source-bm-global
           anything-c-source-emacs-commands
-          anything-c-source-yaetags-select
+          ;;anything-c-source-yaetags-select
           ))
 
   (setq anything-candidate-number-limit 300) ; 表示する最大候補数。デフォルトで 50
@@ -133,20 +133,20 @@
 
 ;; anything-c-source-junk-files
 ;; http://qiita.com/items/eba6bc64f66d278f0032
-(require 'em-glob)
-(defvar junk-file-dir "~/.emacs.d/junk/")
-(defvar junk-file-list
-  (reverse (eshell-extended-glob (concat
-                                  (file-name-as-directory junk-file-dir)
-                                  "????-??-??-??????*.*"))))
-(defvar anything-c-source-junk-files
-  '((name . "Junk Files")
-    (candidates . junk-file-list)
-    (type . file)))
-(defun anything-open-junk-file ()
-  (interactive)
-  (anything-other-buffer 'anything-c-source-junk-files "*anything for junk file"))
-(global-set-key (kbd "C-x M-j") 'anything-open-junk-file)
+;; (require 'em-glob)
+;; (defvar junk-file-dir "~/.emacs.d/junk/")
+;; (defvar junk-file-list
+;;   (reverse (eshell-extended-glob (concat
+;;                                   (file-name-as-directory junk-file-dir)
+;;                                   "*"))))
+;; (defvar anything-c-source-junk-files
+;;   '((name . "Junk Files")
+;;     (candidates . junk-file-list)
+;;     (type . file)))
+;; (defun anything-open-junk-file ()
+;;   (interactive)
+;;   (anything-other-buffer 'anything-c-source-junk-files "*anything for junk file"))
+;; (global-set-key (kbd "C-x M-j") 'anything-open-junk-file)
 
 
 (provide 'init-anything)
