@@ -8,10 +8,6 @@
   (add-to-list 'package-archives '("ELPA" . "http://tromey.com/elpa/") t)
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
   (package-initialize)
-
-  ;; marmalade.el
-  ;; http://sheephead.homelinux.org/2011/06/17/6724/
-  ;;(load "~/.emacs.d/elpa/marmalade-0.0.4/marmalade.el")
   )
 
 
