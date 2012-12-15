@@ -229,3 +229,6 @@
 [submodule "repositories/auto-complete"]
 	path = repositories/auto-complete
 	url = git://github.com/auto-complete/auto-complete.git
+[submodule "repositories/scss-mode"]
+	path = repositories/scss-mode
+	url = git://github.com/antonj/scss-mode.git
