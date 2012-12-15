@@ -54,7 +54,7 @@
 ;; http://d.hatena.ne.jp/khiker/20100123/undo_tree
 ;; http://www.dr-qubit.org/undo-tree/undo-tree.el
 (when (require 'undo-tree nil t)
-  (setq undo-tree-mode-lighter "")
+  ;;(setq undo-tree-mode-lighter "")
   (global-undo-tree-mode))
 
 ;; undohist.el

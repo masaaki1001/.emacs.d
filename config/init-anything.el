@@ -80,11 +80,6 @@
 ;;(setq anything-kill-ring-threshold 5) ;;デフォルトは 10.
 ;;(global-set-key (kbd "M-y") 'anything-show-kill-ring)
 
-;; anythingで正規表現のかわりにglobを使えるようにする
-;; http://d.hatena.ne.jp/buzztaiki/20110123
-;;(require 'amp-glob)
-;;(amp-glob-mode 1)
-
 ;; anything-project.el
 ;; http://d.hatena.ne.jp/yuheiomori0718/20111226/1324902529
 (when (require 'anything-project nil t)

@@ -157,12 +157,6 @@
 [submodule "repositories/undohist"]
 	path = repositories/undohist
 	url = git://github.com/m2ym/undohist-el.git
-[submodule "repositories/amp-glob"]
-	path = repositories/amp-glob
-	url = git://gist.github.com/792217.git
-[submodule "repositories/volatile-highlight"]
-	path = repositories/volatile-highlight
-	url = git://gist.github.com/1101202.git
 [submodule "repositories/yasnippets-rails"]
 	path = repositories/yasnippets-rails
 	url = git://github.com/eschulte/yasnippets-rails.git
