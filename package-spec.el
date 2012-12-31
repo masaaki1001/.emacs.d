@@ -11,3 +11,4 @@
 (package "key-chord")
 (package "maxframe")
 (package "color-moccur")
+(package "diminish")
