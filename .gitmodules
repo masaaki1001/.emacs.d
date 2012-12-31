@@ -76,9 +76,6 @@
 [submodule "repositories/jump-char"]
 	path = repositories/jump-char
 	url = git://github.com/lewang/jump-char.git
-[submodule "repositories/pomodoro"]
-	path = repositories/pomodoro
-	url = git://github.com/docgnome/pomodoro.el.git
 [submodule "repositories/maximize"]
 	path = repositories/maximize
 	url = git://github.com/izawa/maximize.git
@@ -232,3 +229,18 @@
 [submodule "repositories/scss-mode"]
 	path = repositories/scss-mode
 	url = git://github.com/antonj/scss-mode.git
+[submodule "repositories/multiple-cursors"]
+	path = repositories/multiple-cursors
+	url = git://github.com/magnars/multiple-cursors.el.git
+[submodule "repositories/yasnippet"]
+	path = repositories/yasnippet
+	url = git://github.com/capitaomorte/yasnippet.git
+[submodule "repositories/scala-mode2"]
+	path = repositories/scala-mode2
+	url = git://github.com/hvesalai/scala-mode2.git
+[submodule "repositories/pomodoro"]
+	path = repositories/pomodoro
+	url = https://github.com/baudtack/pomodoro.el
+[submodule "repositories/shell-pop-el"]
+	path = repositories/shell-pop-el
+	url = git://github.com/kyagi/shell-pop-el.git
