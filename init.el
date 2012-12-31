@@ -7,6 +7,8 @@
                           "~/.emacs.d/elisp"
                           "~/.emacs.d/config/"
                           "~/.emacs.d/auto-install/"
+                          "~/.emacs.d/scala-mode/"
+                          "~./emacs.d/el-get/"
                           )
                         load-path))
 
@@ -32,7 +34,7 @@
 ;;----------------------------------------------------------------------------
 ;; emacsclient
 ;;----------------------------------------------------------------------------
-;(server-start t)
+(server-start t)
 
 ;;----------------------------------------------------------------------------
 ;; encoding
@@ -142,9 +144,6 @@
 ;;   "hl-line's my face")
 ;; (setq hl-line-face 'my-hl-line-face)
 
-;; カーソルの形を指定
-;; http://homepage.mac.com/zenitani/elisp-j.html#modeline
-;;(add-to-list 'default-frame-alist '(cursor-type . 'box)) ;; ボックス型カーソル
 ;; カーソルの点滅を止める
 (blink-cursor-mode 0)
 ;; カーソルの位置が何文字目かを表示する
@@ -153,7 +152,7 @@
 (line-number-mode t)
 ;; カーソルの場所を保存する
 (when (require 'saveplace nil t)
-  (setq save-place-file "~/.emacs.d/.emacs-places"))
+  (setq save-place-file "~/.emacs.d/resource/.emacs-places"))
 
 (setq-default save-place t)
 ;; スクロール時のカーソル位置維持
@@ -212,8 +211,8 @@
 
 ;; multi-term
 ;; terminal soft
-(when (require 'multi-term nil t)
-  (setq multi-term-program "/bin/bash"))
+;; (when (require 'multi-term nil t)
+;;   (setq multi-term-program "/bin/bash"))
 
 ;; 一行が 80 字以上になった時には自動改行する
 (setq fill-column 80)
@@ -292,6 +291,22 @@
 (setq use-dialog-box nil)
 (defalias 'message-box 'message)
 
+;; find file (or url) at point
+;; C-x C-f
+(ffap-bindings)
+
+(put 'upcase-region 'disabled nil)
+(put 'set-goal-column 'disabled nil)
+(put 'downcase-region 'disabled nil)
+
+(add-to-list 'auto-mode-alist '("\\(?:\\.gitconfig\\|\\.gitmodules\\|config\\)\\'" . conf-mode))
+
+;; Auto refresh buffers
+(global-auto-revert-mode 1)
+;; Also auto refresh dired, but be quiet about it
+(setq global-auto-revert-non-file-buffers t)
+(setq auto-revert-verbose nil)
+
 ;;----------------------------------------------------------------------------
 ;; filecache
 ;;----------------------------------------------------------------------------
@@ -322,7 +337,8 @@
 ;; http://www.emacswiki.org/emacs/TwitteringMode-ja
 ;;----------------------------------------------------------------------------
 (when (require 'twittering-mode nil t)
-  ;;(setq twittering-use-master-password t)
+  ;; (setq twittering-use-master-password t)
+  ;; (setq twittering-private-info-file "~/.emacs.d/resource/twittering-mode.gpg")
   (setq twittering-icon-mode nil)
   )
 
@@ -335,24 +351,22 @@
 ;; calfw.el
 ;; http://d.hatena.ne.jp/kiwanami/20110723/1311434175
 ;;----------------------------------------------------------------------------
-;; (when (require 'calfw nil t) ; 初回一度だけ
-;;   (cfw:open-calendar-buffer) ; カレンダー表示
-;;   )
+(when (require 'calfw nil t)
+  ;;(cfw:open-calendar-buffer) ; カレンダー表示
+  ;; calfw-org.el
+  (require 'calfw-org nil t)
+  ;; ;; 月
+  ;; (setq calendar-month-name-array
+  ;;   ["January" "February" "March"     "April"   "May"      "June"
+  ;;    "July"    "August"   "September" "October" "November" "December"])
 
-;; ;; calfw-org.el
-;; (require 'calfw-org nil t)
+  ;; ;; 曜日
+  ;; (setq calendar-day-name-array
+  ;;       ["Sunday" "Monday" "Tuesday" "Wednesday" "Thursday" "Friday" "Saturday"])
 
-;; ;; 月
-;; (setq calendar-month-name-array
-;;   ["January" "February" "March"     "April"   "May"      "June"
-;;    "July"    "August"   "September" "October" "November" "December"])
-
-;; ;; 曜日
-;; (setq calendar-day-name-array
-;;       ["Sunday" "Monday" "Tuesday" "Wednesday" "Thursday" "Friday" "Saturday"])
-
-;; ;; 週の先頭の曜日
-;; (setq calendar-week-start-day 0) ; 日曜日は0, 月曜日は1
+  ;; ;; 週の先頭の曜日
+  (setq calendar-week-start-day 0) ; 日曜日は0, 月曜日は1
+  )
 
 ;; (require 'calendar)
 ;; (setq  number-of-diary-entries 31)
@@ -399,6 +413,11 @@
 (require 'init-ruby nil t)
 
 ;;----------------------------------------------------------------------------
+;; scala
+;;----------------------------------------------------------------------------
+(require 'init-scala nil t)
+
+;;----------------------------------------------------------------------------
 ;; flymake
 ;;----------------------------------------------------------------------------
 (require 'init-flymake nil t)
@@ -419,15 +438,33 @@
 (require 'init-moz nil t)
 
 ;;---------------------------------------------------------
+;; magit.el
+;;---------------------------------------------------------
+(require 'init-magit nil t)
+
+;;---------------------------------------------------------
 ;; Google Chrome edit with emacs
 ;;---------------------------------------------------------
 (when (require 'edit-server nil t)
-  (edit-server-start))
+  (setq edit-server-new-frame nil)
+  (edit-server-start)
+  )
 
 ;;---------------------------------------------------------
 ;; ddskk
 ;;---------------------------------------------------------
 ;;(require 'init-ddskk nil t)
+
+;;---------------------------------------------------------
+;; yasnippet
+;;---------------------------------------------------------
+(require 'init-yasnippet nil t)
+
+(put 'upcase-region 'disabled nil)
+(put 'set-goal-column 'disabled nil)
+(put 'downcase-region 'disabled nil)
+
+(add-to-list 'auto-mode-alist '("\\(?:\\.gitconfig\\|\\.gitmodules\\|config\\)\\'" . conf-mode))
 
 ;;----------------------------------------------------------------------------
 ;; revive.el
@@ -444,6 +481,3 @@
 (define-key ctl-x-map "K" 'wipe)                          ; C-x K で Kill
 (add-hook 'kill-emacs-hook 'save-current-configuration)   ; 終了時に保存
 (resume) ; 起動時に復元
-(put 'upcase-region 'disabled nil)
-(put 'set-goal-column 'disabled nil)
-(put 'downcase-region 'disabled nil)

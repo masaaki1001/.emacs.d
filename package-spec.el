@@ -1,6 +1,7 @@
 (package "ruby-mode")
 (package "ruby-electric")
 (package "ruby-block")
+(package "inf-ruby")
 (package "dired+")
 (package "dsvn")
 (package "iy-go-to-char")
@@ -9,3 +10,4 @@
 (package "goto-chg")
 (package "key-chord")
 (package "maxframe")
+(package "color-moccur")

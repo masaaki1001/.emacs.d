@@ -248,17 +248,20 @@
 ;; mark-multiple.el
 ;; https://github.com/magnars/mark-multiple.el
 ;; http://d.hatena.ne.jp/syohex/20120206/1328540927
-(when (require 'mark-more-like-this nil t)
-  (global-set-key (kbd "C-<") 'mark-previous-like-this)
-  (global-set-key (kbd "C->") 'mark-next-like-this)
-  (global-set-key (kbd "C-M-m") 'mark-more-like-this) ; like the other two, but takes an argument (negative is previous)
-  )
+;(when (require 'mark-more-like-this nil t)
+  ;(global-set-key (kbd "C-<") 'mark-previous-like-this)
+  ;(global-set-key (kbd "C->") 'mark-next-like-this)
+  ;(global-set-key (kbd "C-M-m") 'mark-more-like-this) ; like the other two, but takes an argument (negative is previous)
+;  )
 
 ;; Experimental multiple-cursors
 (when (require 'multiple-cursors nil t)
-  ;; (global-set-key (kbd "C-S-c C-S-c") 'mc/add-multiple-cursors-to-region-lines)
+  ;;(global-set-key (kbd "C-S-c C-S-c") 'mc/add-multiple-cursors-to-region-lines)
   ;; (global-set-key (kbd "C-S-c C-e") 'mc/edit-ends-of-lines)
   ;; (global-set-key (kbd "C-S-c C-a") 'mc/edit-beginnings-of-lines)
+  (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+  (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
   )
 
 ;; grep-a-lot.el
@@ -510,16 +513,17 @@
 ;;   (setq fci-rule-column 160))
 
 ;; pomodoro.el
-;; https://github.com/docgnome/pomodoro.el
-;; https://raw.github.com/docgnome/pomodoro.el/master/pomodoro.el
-(require 'pomodoro nil t)
+;; https://github.com/baudtack/pomodoro.el
+(when (require 'pomodoro nil t)
+  (pomodoro-add-to-mode-line)
+  )
 
 ;; diminish.el
-;; (when (require 'diminish nil t)
-;;   (diminish 'undo-tree-mode)
-;;   (diminish 'yas/minor-mode)
-;;   (diminish 'volatile-highlights-mode)
-;;   )
+(when (require 'diminish nil t)
+  (diminish 'undo-tree-mode)
+  (diminish 'yas/minor-mode)
+  (diminish 'volatile-highlights-mode)
+  )
 
 ;; fic-mode.el
 ;; https://github.com/lewang/fic-mode
@@ -601,10 +605,6 @@
     (save-excursion
       (insert s)))))
 
-;; magit
-;; https://github.com/magit/magit
-(require 'magit nil t)
-
 ;; powerline
 ;; (require 'powerline nil t)
 
@@ -612,5 +612,15 @@
 (autoload 'scss-mode "scss-mode")
 (setq scss-compile-at-save nil) ;; 自動コンパイルをオフにする
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+
+;; git-gutter.el
+;; https://github.com/syohex/emacs-git-gutter
+;; (require 'fringe-helper)
+;; (when (require 'git-gutter nil t)
+;;   (add-hook 'after-save-hook
+;;           (lambda ()
+;;             (if (zerop (call-process-shell-command "git rev-parse --show-toplevel"))
+;;                 (git-gutter))))
+;;   )
 
 (provide 'init-elisp)

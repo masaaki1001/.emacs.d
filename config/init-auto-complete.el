@@ -6,10 +6,10 @@
 (when (require 'auto-complete-config nil t)
   (add-to-list 'ac-dictionary-directories "~/.emacs.d/repositories/auto-complete/dict")
   (ac-config-default)
-  ;; (add-hook 'auto-complete-mode-hook
-  ;;           (lambda ()
-  ;;             (define-key ac-completing-map (kbd "C-n") 'ac-next)
-  ;;             (define-key ac-completing-map (kbd "C-p") 'ac-previous)))
+  (add-hook 'auto-complete-mode-hook
+            (lambda ()
+              (define-key ac-completing-map (kbd "C-n") 'ac-next)
+              (define-key ac-completing-map (kbd "C-p") 'ac-previous)))
 )
 
 ;; auto-complete-ruby.el

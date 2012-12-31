@@ -4,21 +4,6 @@
 ;;----------------------------------------------------------------------------
 (when (require 'anything-startup nil t)
   (when (require 'anything-config nil t))
-  ;;(add-to-list 'anything-sources 'anything-c-source-file-cache)
-
-  ;; https://bitbucket.org/kshimo69/dot_emacs.d/src/33ceff9c8095/conf/init-anything.el
-  ;; (defun my-anything ()
-  ;;   (interactive)
-  ;;   (anything-other-buffer
-  ;;    '(anything-c-source-buffers+
-  ;;      anything-c-source-recentf
-  ;;      anything-c-source-files-in-current-dir
-  ;;      anything-c-source-bm-global
-  ;;      anything-c-source-emacs-commands
-  ;;      anything-c-source-yaetags-select)
-  ;;    " *my-anything*"))
-  ;; (global-set-key (kbd "C-;") 'my-anything)
-
   (setq anything-sources
         '(anything-c-source-buffers+
           anything-c-source-recentf
@@ -55,30 +40,9 @@
                (local-set-key (kbd "O") 'anything-c-moccur-dired-do-moccur-by-moccur)))
   )
 
-(custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(rspec-use-rake-flag nil)
- '(safe-local-variable-values (quote ((encoding . utf-8) (encoding . UTF-8) (ruby-compilation-executable . "ruby") (ruby-compilation-executable . "ruby1.8") (ruby-compilation-executable . "ruby1.9") (ruby-compilation-executable . "rbx") (ruby-compilation-executable . "jruby")))))
-(custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- )
-
 ;; anything-replace-string.el
 ;; http://emacs.g.hatena.ne.jp/k1LoW/20110107/1294408979
 (require 'anything-replace-string nil t)
-
-;; anything-c-kill-ring
-;; yankをpopupで表示する
-;; http://www.flatz.jp/archives/2172
-;;anything で対象とするkill-ring の要素の長さの最小値.
-;;(setq anything-kill-ring-threshold 5) ;;デフォルトは 10.
-;;(global-set-key (kbd "M-y") 'anything-show-kill-ring)
 
 ;; anything-project.el
 ;; http://d.hatena.ne.jp/yuheiomori0718/20111226/1324902529
@@ -86,10 +50,14 @@
 ;(global-set-key (kbd "C-c C-f") 'anything-project)
   (global-set-key (kbd "C-:") 'anything-project)
   (ap:add-project
-   :name 'hoge
-   :look-for '("Rakefile")
-   :include-regexp '("\\.rb$" "\\.html$" "\\.erb$" "\\.js$" "\\.yml$" "\\.css$" "\\Gemfile$")
+   ;; templete
+   ;; :name 'hoge
+   ;; :look-for '("Rakefile")
+   ;; :include-regexp '("\\.rb$" "\\.html$" "\\.erb$" "\\.js$" "\\.yml$" "\\.css$" "\\Gemfile$")
    ;:exclude-regexp "/test_files" ; can be regexp or list of regexp
+   :name 'Ripple
+   :look-for '(".gitignore")
+   :include-regexp '("\\.scala$" "\\.html$" "\\.conf$" "\\.properties$" "\\.sbt$" "\\.sql$" "\\routes$")
    )
   ;; 候補にディレクトリが含まれないようにする
   ;; http://d.hatena.ne.jp/IMAKADO/20090823/1250963119
@@ -128,20 +96,19 @@
 
 ;; anything-c-source-junk-files
 ;; http://qiita.com/items/eba6bc64f66d278f0032
-;; (require 'em-glob)
-;; (defvar junk-file-dir "~/.emacs.d/junk/")
-;; (defvar junk-file-list
-;;   (reverse (eshell-extended-glob (concat
-;;                                   (file-name-as-directory junk-file-dir)
-;;                                   "*"))))
-;; (defvar anything-c-source-junk-files
-;;   '((name . "Junk Files")
-;;     (candidates . junk-file-list)
-;;     (type . file)))
-;; (defun anything-open-junk-file ()
-;;   (interactive)
-;;   (anything-other-buffer 'anything-c-source-junk-files "*anything for junk file"))
-;; (global-set-key (kbd "C-x M-j") 'anything-open-junk-file)
-
+(require 'em-glob)
+(defvar junk-file-dir "~/.emacs.d/junk/")
+(defvar junk-file-list
+  (reverse (eshell-extended-glob (concat
+                                  (file-name-as-directory junk-file-dir)
+                                  "*"))))
+(defvar anything-c-source-junk-files
+  '((name . "Junk Files")
+    (candidates . junk-file-list)
+    (type . file)))
+(defun anything-open-junk-file ()
+  (interactive)
+  (anything-other-buffer 'anything-c-source-junk-files "*anything for junk file"))
+(global-set-key (kbd "C-x M-j") 'anything-open-junk-file)
 
 (provide 'init-anything)

@@ -3,25 +3,17 @@
 ;; recentf
 ;;----------------------------------------------------------------------------
 ;; 最近使ったファイル M-x recentf-open-files　を有効化
+;; .recentfを自動保存する
+;; http://d.hatena.ne.jp/tomoya/20110217/1297928222
 (when (require 'recentf nil t)
   (setq recentf-exclude '("~/.emacs.d/resource/.recentf"))
   (setq recentf-save-file (expand-file-name "~/.emacs.d/resource/.recentf" user-emacs-directory))
   (setq recentf-max-saved-items 2000)
   (setq recentf-auto-cleanup 10)
-  (run-with-idle-timer 30 t 'recentf-save-list)
+  (setq recentf-auto-save-timer
+      (run-with-idle-timer 30 t 'recentf-save-list))
   (recentf-mode 1)
   )
-;; 最近使ったファイル500件を履歴として保存する
-;;(setq recentf-max-saved-items 500)
-;; .recentfを自動保存する
-;; http://d.hatena.ne.jp/tomoya/20110217/1297928222
-; (when (require 'recentf nil t)
-;;   (setq recentf-max-saved-items 2000)
-;;  (setq recentf-exclude '(".recentf"))
-;; (setq recentf-auto-cleanup 10)
-;; (setq recentf-auto-save-timer
-;;       (run-with-idle-timer 30 t 'recentf-save-list))
-;; (recentf-mode 1))
 
 ;; recentf-ext.el
 ;; http://d.hatena.ne.jp/rubikitch/20091224/recentf

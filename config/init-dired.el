@@ -97,4 +97,10 @@
        (let* ((fn-list (dired-get-marked-files nil arg)))
          (mapc 'view-file fn-list)))))
 
+;;;;ファイル作成
+(defun dired-create-file (file-name)
+  (interactive "F Create file: ")
+  (write-region "" nil file-name nil nil nil))
+(define-key dired-mode-map "i" 'dired-create-file)
+
 (provide 'init-dired)

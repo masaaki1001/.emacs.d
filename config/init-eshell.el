@@ -19,7 +19,7 @@
 ;; Emacs mail magazine
 ;; emacswiki
 (when (require 'esh-myparser nil t)
-  ;; (defun eshell-parser/b (str) (eshell-parser/b str "bash"))
+  (defun eshell-parser/b (str) (eshell-parser/b str "bash"))
   )
 
 ;; esh-cmdline-stack.el
@@ -96,12 +96,6 @@
   (delete-region eshell-last-output-end (point-max))
   (funcall func 1)
   (goto-char eshell-last-output-end)))
-;; 範囲指定していないとき、C-wで前の単語を削除
-;; http://dev.ariel-networks.com/wp/documents/aritcles/emacs/part16
-(defadvice kill-region (around kill-word-or-kill-region activate)
-  (if (and (interactive-p) transient-mark-mode (not mark-active))
-      (backward-kill-word 1)
-    ad-do-it))
 ;; 前のコマンドの履歴取得
 (defun-eshell-cmdline "C-p"
 (let ((last-command 'eshell-previous-matching-input-from-input))

@@ -44,9 +44,8 @@ Global means All bookmarks exist in `bm-repository'.
 Needs bm.el.
 http://www.nongnu.org/bm/")
   )
-;; (anything 'anything-c-source-bm-global-use-candidates-in-buffer)
+
 (defvaralias 'anything-c-source-bm-global 'anything-c-source-bm-global-use-candidates-in-buffer)
-;; (anything 'anything-c-source-bm-global)
 
 (defun anything-c-bm-global-init ()
   "Init function for `anything-c-source-bm-global'."

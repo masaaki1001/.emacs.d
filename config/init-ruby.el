@@ -56,29 +56,6 @@
 ;; https://github.com/eschulte/rinari
 (when (require 'rinari nil t)
   (setq rinari-rgrep-file-endings "*.rb *.erb *.yml *.js"))
-;; yasnippet
-(when (require 'yasnippet nil t) ;; not yasnippet-bundle
-  (yas/initialize)
-  (yas/load-directory "~/.emacs.d/snippets")
-  ;; rails-snippets
-  (yas/load-directory "~/.emacs.d/repositories/yasnippets-rails/rails-snippets")
-  )
-
-;; anything-c-yasnippet.el
-;; http://d.hatena.ne.jp/shiba_yu36/20100615/1276612642
-;; http://d.hatena.ne.jp/sugyan/20120111/1326288445
-(when (require 'anything-c-yasnippet nil t)
-  (setq anything-c-yas-space-match-any-greedy t) ;スペース区切りで絞り込めるようにする デフォルトは nil
-  (global-set-key (kbd "C-c y") 'anything-c-yas-complete) ;C-c yで起動
-  )
-
-
-;; yasnippetのインデント
-;; http://d.hatena.ne.jp/rubikitch/20080420/1208697562
-(defun yas/indent-snippet ()
-  (indent-region yas/snippet-beg yas/snippet-end)
-  (indent-according-to-mode))
-(add-hook 'yas/after-exit-snippet-hook 'yas/indent-snippet)
 
 ;; rvm.el
 ;; https://github.com/senny/rvm.el
@@ -139,5 +116,19 @@ print (which_library (%%[%%s]))'" name name)))
 
 ;; https://github.com/tobiassvn/bundler.el
 (require 'bundler nil t)
+
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(rspec-use-rake-flag nil)
+ '(safe-local-variable-values (quote ((encoding . utf-8) (encoding . UTF-8) (ruby-compilation-executable . "ruby") (ruby-compilation-executable . "ruby1.8") (ruby-compilation-executable . "ruby1.9") (ruby-compilation-executable . "rbx") (ruby-compilation-executable . "jruby")))))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
 
 (provide 'init-ruby)
