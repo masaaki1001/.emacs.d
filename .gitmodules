@@ -244,3 +244,6 @@
 [submodule "repositories/shell-pop-el"]
 	path = repositories/shell-pop-el
 	url = git://github.com/kyagi/shell-pop-el.git
+[submodule "repositories/emacs-calfw"]
+	path = repositories/emacs-calfw
+	url = git://github.com/kiwanami/emacs-calfw.git
