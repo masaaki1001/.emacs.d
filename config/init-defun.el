@@ -1,0 +1,68 @@
+; -*- mode: lisp; coding: utf-8 -*-
+;; 縦分割と横分割を切り替える M-x window-toggle-divisionでできるようにする
+;; http://d.hatena.ne.jp/himadatanode/20061011/p2
+(defun window-toggle-division ()
+  "ウィンドウ 2 分割時に、縦分割<->横分割"
+  (interactive)
+  (unless (= (count-windows 1) 2)
+    (error "ウィンドウが 2 分割されていません。"))
+  (let (before-height (other-buf (window-buffer (next-window))))
+    (setq before-height (window-height))
+    (delete-other-windows)
+
+    (if (= (window-height) before-height)
+        (split-window-vertically)
+      (split-window-horizontally)
+      )
+    (switch-to-buffer-other-window other-buf)
+    (other-window -1)))
+
+;; 全てのバッファを閉じる
+(defun close-all-buffers ()
+  (interactive)
+  (loop for buffer being the buffers
+     do (kill-buffer buffer)))
+
+;; http://d.hatena.ne.jp/kitokitoki/20091129/p1
+(defun sqlf (start end)
+  "リージョンのSQLを整形する"
+  (interactive "r")
+  (let ((case-fold-search t))
+    (let* ((s (buffer-substring-no-properties start end))
+           (s (replace-regexp-in-string "\\(select \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(update \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(insert into \\)\\(fuga\\)\\(fuga\\)" "\n\\2\n  " s))
+           (s (replace-regexp-in-string "\\(delete from \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(create table \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(alter table \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(drop constraint \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(from \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(exists \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(where \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(values \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(order by \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(group by \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(having \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(left join \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(left outer join )\\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(right join \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(right outer join \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(inner join \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(cross join \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(union join \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(and \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(or \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(any \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(on update restrict \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(on update cascade \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(on update set null \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(on update no action \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(on delete restrict \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(on delete cascade \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(on delete set null \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(on delete no action \\)" "\n\\1\n  " s))
+           (s (replace-regexp-in-string "\\(,\\)" "\\1\n  " s)))
+    (save-excursion
+      (insert s)))))
+
+(provide 'init-defun)

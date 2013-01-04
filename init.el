@@ -253,24 +253,6 @@
 ;; beepを消す
 (setq ring-bell-function 'ignore)
 
-;; 縦分割と横分割を切り替える M-x window-toggle-divisionでできるようにする
-;; http://d.hatena.ne.jp/himadatanode/20061011/p2
-(defun window-toggle-division ()
-  "ウィンドウ 2 分割時に、縦分割<->横分割"
-  (interactive)
-  (unless (= (count-windows 1) 2)
-    (error "ウィンドウが 2 分割されていません。"))
-  (let (before-height (other-buf (window-buffer (next-window))))
-    (setq before-height (window-height))
-    (delete-other-windows)
-
-    (if (= (window-height) before-height)
-        (split-window-vertically)
-      (split-window-horizontally)
-      )
-    (switch-to-buffer-other-window other-buf)
-    (other-window -1)))
-
 ;; uniquify.el (デフォルトで入っている)
 ;; http://d.hatena.ne.jp/yuheiomori0718/20111214/1323864339
 (require 'uniquify)
@@ -428,7 +410,7 @@
 (require 'init-anything nil t)
 
 ;;---------------------------------------------------------
-;; eshell
+;; Eshell
 ;;---------------------------------------------------------
 (require 'init-eshell nil t)
 
@@ -459,6 +441,11 @@
 ;; yasnippet
 ;;---------------------------------------------------------
 (require 'init-yasnippet nil t)
+
+;;---------------------------------------------------------
+;; defun
+;;---------------------------------------------------------
+(require 'init-defun nil t)
 
 (put 'upcase-region 'disabled nil)
 (put 'set-goal-column 'disabled nil)

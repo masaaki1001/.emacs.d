@@ -54,7 +54,6 @@
 ;; http://d.hatena.ne.jp/khiker/20100123/undo_tree
 ;; http://www.dr-qubit.org/undo-tree/undo-tree.el
 (when (require 'undo-tree nil t)
-  ;;(setq undo-tree-mode-lighter "")
   (global-undo-tree-mode))
 
 ;; undohist.el
@@ -193,16 +192,9 @@
   ;; (setq sl-prohibit-kill-scratch-buffer-p nil)
   )
 
-;; scratch-ext.el
-;; https://github.com/kyanagi/scratch-ext-el
-;; https://raw.github.com/kyanagi/scratch-ext-el/master/scratch-ext.el
-;; (when (require 'scratch-ext nil t)
-;;   (setq scratch-ext-log-directory "~/.emacs.d/.scratch-ext")
-;;   )
-
 ;; multiverse.el
 ;; ファイルのスナップショットを取得する
-(require 'multiverse nil t)
+(when (require 'multiverse nil t))
 
 ;; ipa.el
 (when (require 'ipa nil t)
@@ -225,17 +217,11 @@
             (lambda ()
               (require 'rename-sgml-tag)
               (define-key sgml-mode-map (kbd "C-c C-r") 'rename-sgml-tag)))
-  ;;(require 'js2-rename-var)
-  ;;(define-key js2-mode-map (kbd "C-c C-r") 'js2-rename-var)
-  ;;(require 'inline-string-rectangle)
-  ;;(global-set-key (kbd "C-x r t") 'inline-string-rectangle)
 
-  ;;http://d.hatena.ne.jp/kitokitoki/20120326
-  ;; (add-hook 'ruby-mode-hook
-  ;;           (lambda ()
-  ;;             (modify-syntax-entry ?@ "_" ruby-mode-syntax-table)
-  ;;             (modify-syntax-entry ?: "_" ruby-mode-syntax-table)
-  ;;             (modify-syntax-entry ?! "_" ruby-mode-syntax-table)))
+  (require 'js2-refactor)
+  (define-key js2-mode-map (kbd "C-c C-r") 'js2-rename-var)
+  (require 'inline-string-rectangle)
+  (global-set-key (kbd "C-x r t") 'inline-string-rectangle)
   )
 
 ;; change-inner.el
@@ -245,20 +231,8 @@
   (global-set-key (kbd "M-o") 'change-outer)
   )
 
-;; mark-multiple.el
-;; https://github.com/magnars/mark-multiple.el
-;; http://d.hatena.ne.jp/syohex/20120206/1328540927
-;(when (require 'mark-more-like-this nil t)
-  ;(global-set-key (kbd "C-<") 'mark-previous-like-this)
-  ;(global-set-key (kbd "C->") 'mark-next-like-this)
-  ;(global-set-key (kbd "C-M-m") 'mark-more-like-this) ; like the other two, but takes an argument (negative is previous)
-;  )
-
 ;; Experimental multiple-cursors
 (when (require 'multiple-cursors nil t)
-  ;;(global-set-key (kbd "C-S-c C-S-c") 'mc/add-multiple-cursors-to-region-lines)
-  ;; (global-set-key (kbd "C-S-c C-e") 'mc/edit-ends-of-lines)
-  ;; (global-set-key (kbd "C-S-c C-a") 'mc/edit-beginnings-of-lines)
   (global-set-key (kbd "C->") 'mc/mark-next-like-this)
   (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
   (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
@@ -369,7 +343,7 @@
 
 (when (require 'fold-dwim nil t)
   ;; http://www.bookshelf.jp/pukiwiki/pukiwiki.php?cmd=read&page=Elisp%2Fhideshow.el
-  ;; Ruby編集時もソースを隠したり、表示したり・・・
+  ;; Ruby編集時もソースを隠したり、表示したり
   (add-hook 'ruby-mode-hook
             '(lambda()
                (hs-minor-mode 1)))
@@ -403,7 +377,7 @@
 ;; https://raw.github.com/kawaguchi/jaunte.el/master/jaunte.el
 (when (require 'jaunte nil t)
   (global-set-key (kbd "C-c C-j") 'jaunte)
-  (setq jaunte-hint-unit 'word);default
+  (setq jaunte-hint-unit 'word) ;default
   ;;(setq jaunte-global-hint-unit 'symbol)
   )
 
@@ -521,7 +495,6 @@
 ;; diminish.el
 (when (require 'diminish nil t)
   (diminish 'undo-tree-mode)
-  (diminish 'yas-minor-mode)
   (diminish 'volatile-highlights-mode)
   )
 
@@ -543,12 +516,6 @@
 (when (require 'drag-stuff nil t)
   (drag-stuff-mode t))
 
-;; 全てのバッファを閉じる
-(defun close-all-buffers ()
-  (interactive)
-  (loop for buffer being the buffers
-     do (kill-buffer buffer)))
-
 ;; https://github.com/TeMPOraL/nyan-mode
 (require 'nyan-mode nil t)
 
@@ -562,48 +529,6 @@
 ;; http://d.hatena.ne.jp/syohex/20120325/1332641491
 (when (require 'duplicate-thing nil t)
   (global-set-key (kbd "C-M-y") 'duplicate-thing))
-
-;; http://d.hatena.ne.jp/kitokitoki/20091129/p1
-(defun sqlf (start end)
-  "リージョンのSQLを整形する"
-  (interactive "r")
-  (let ((case-fold-search t))
-    (let* ((s (buffer-substring-no-properties start end))
-           (s (replace-regexp-in-string "\\(select \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(update \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(insert into \\)\\(fuga\\)\\(fuga\\)" "\n\\2\n  " s))
-           (s (replace-regexp-in-string "\\(delete from \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(create table \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(alter table \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(drop constraint \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(from \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(exists \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(where \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(values \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(order by \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(group by \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(having \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(left join \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(left outer join )\\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(right join \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(right outer join \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(inner join \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(cross join \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(union join \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(and \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(or \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(any \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(on update restrict \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(on update cascade \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(on update set null \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(on update no action \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(on delete restrict \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(on delete cascade \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(on delete set null \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(on delete no action \\)" "\n\\1\n  " s))
-           (s (replace-regexp-in-string "\\(,\\)" "\\1\n  " s)))
-    (save-excursion
-      (insert s)))))
 
 ;; powerline
 ;; (require 'powerline nil t)
