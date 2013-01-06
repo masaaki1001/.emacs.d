@@ -259,3 +259,6 @@
 [submodule "repositories/fold-this"]
 	path = repositories/fold-this
 	url = git://github.com/magnars/fold-this.el.git
+[submodule "repositories/js2-refactor"]
+	path = repositories/js2-refactor
+	url = git://github.com/magnars/js2-refactor.el.git
