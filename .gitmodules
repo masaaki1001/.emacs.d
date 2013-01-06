@@ -253,3 +253,9 @@
 [submodule "repositories/web-mode"]
 	path = repositories/web-mode
 	url = git://github.com/fxbois/web-mode.git
+[submodule "repositories/emacs_chrome"]
+	path = repositories/emacs_chrome
+	url = git://github.com/stsquad/emacs_chrome.git
+[submodule "repositories/fold-this"]
+	path = repositories/fold-this
+	url = git://github.com/magnars/fold-this.el.git
