@@ -1,4 +1,5 @@
 (package "ruby-mode")
+(package "robe")
 (package "ruby-electric")
 (package "ruby-block")
 (package "inf-ruby")
@@ -12,3 +13,7 @@
 (package "maxframe")
 (package "color-moccur")
 (package "diminish")
+(package "git-commit-mode")
+(package "gitconfig-mode")
+(package "gitignore-mode")
+(package "elscreen")

@@ -238,12 +238,18 @@
 [submodule "repositories/scala-mode2"]
 	path = repositories/scala-mode2
 	url = git://github.com/hvesalai/scala-mode2.git
-[submodule "repositories/pomodoro"]
-	path = repositories/pomodoro
-	url = https://github.com/baudtack/pomodoro.el
 [submodule "repositories/shell-pop-el"]
 	path = repositories/shell-pop-el
 	url = git://github.com/kyagi/shell-pop-el.git
 [submodule "repositories/emacs-calfw"]
 	path = repositories/emacs-calfw
 	url = git://github.com/kiwanami/emacs-calfw.git
+[submodule "repositories/pomodoro"]
+	path = repositories/pomodoro
+	url = git://github.com/baudtack/pomodoro.el.git
+[submodule "repositories/js3-mode"]
+	path = repositories/js3-mode
+	url = git://github.com/thomblake/js3-mode.git
+[submodule "repositories/web-mode"]
+	path = repositories/web-mode
+	url = git://github.com/fxbois/web-mode.git
