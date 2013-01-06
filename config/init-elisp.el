@@ -147,6 +147,12 @@
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.js.erb$" . js2-mode)) ;; for rails
 
+;; js3-mode
+;; https://github.com/thomblake/js3-mode
+(autoload 'js3-mode "js3" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js3-mode))
+(add-to-list 'auto-mode-alist '("\\.js.erb$" . js3-mode)) ;; for rails
+
 ;; session.el
 ;; http://maruta.be/intfloat_staff/101
 (when (require 'session nil t)
@@ -233,6 +239,8 @@
 
 ;; Experimental multiple-cursors
 (when (require 'multiple-cursors nil t)
+  (setq mc/list-file "~/.emacs.d/resource/.mc-lists.el")
+
   (global-set-key (kbd "C->") 'mc/mark-next-like-this)
   (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
   (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
@@ -525,6 +533,7 @@
 
 ;; duplicate-thing.el
 ;; https://github.com/ongaeshi/duplicate-thing
+;; https://raw.github.com/ongaeshi/duplicate-thing/master/duplicate-thing.el
 ;; http://d.hatena.ne.jp/syohex/20120325/1332641491
 (when (require 'duplicate-thing nil t)
   (global-set-key (kbd "C-M-y") 'duplicate-thing))
@@ -537,14 +546,13 @@
 (setq scss-compile-at-save nil) ;; 自動コンパイルをオフにする
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 
-;; git-gutter.el
-;; https://github.com/syohex/emacs-git-gutter
-;; (require 'fringe-helper)
-;; (when (require 'git-gutter nil t)
-;;   (add-hook 'after-save-hook
-;;           (lambda ()
-;;             (if (zerop (call-process-shell-command "git rev-parse --show-toplevel"))
-;;                 (git-gutter))))
-;;   )
+(when (require 'web-mode nil t)
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.jsp\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+  ;; (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+  )
 
 (provide 'init-elisp)

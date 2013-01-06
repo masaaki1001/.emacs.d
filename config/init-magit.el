@@ -5,6 +5,8 @@
 ;;----------------------------------------------------------------------------
 (when (require 'magit nil t)
 
+  (global-set-key (kbd "C-c g") 'magit-status)
+
   ;; full screen magit-status
   (defadvice magit-status (around magit-fullscreen activate)
     (window-configuration-to-register :magit-fullscreen)
@@ -35,6 +37,8 @@
     (magit-refresh))
 
   (define-key magit-status-mode-map (kbd "W") 'magit-toggle-whitespace)
+
+  (require 'magit-blame nil t)
   )
 
 ;; diffの表示方法を変更

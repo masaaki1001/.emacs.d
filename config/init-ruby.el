@@ -117,6 +117,14 @@ print (which_library (%%[%%s]))'" name name)))
 ;; https://github.com/tobiassvn/bundler.el
 (require 'bundler nil t)
 
+;; robe
+;; https://github.com/dgutov/robe
+(add-hook 'ruby-mode-hook 'robe-mode)
+(add-hook 'robe-mode-hook
+          (lambda ()
+            (add-to-list 'ac-sources 'ac-source-robe)
+            (setq completion-at-point-functions '(auto-complete))))
+
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
