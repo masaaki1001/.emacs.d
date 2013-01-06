@@ -247,9 +247,3 @@
 [submodule "repositories/pomodoro"]
 	path = repositories/pomodoro
 	url = git://github.com/baudtack/pomodoro.el.git
-[submodule "repositories/js3-mode"]
-	path = repositories/js3-mode
-	url = git://github.com/thomblake/js3-mode.git
-[submodule "repositories/web-mode"]
-	path = repositories/web-mode
-	url = git://github.com/fxbois/web-mode.git
