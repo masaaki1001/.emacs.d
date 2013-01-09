@@ -430,8 +430,6 @@
 (put 'set-goal-column 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
-(add-to-list 'auto-mode-alist '("\\(?:\\.gitconfig\\|\\.gitmodules\\|config\\)\\'" . conf-mode))
-
 ;;----------------------------------------------------------------------------
 ;; revive.el
 ;; 前回emacsを終了したときの状態を復元してくれる (resume)を実行すれば復元してくれるが、
