@@ -53,5 +53,13 @@
 (when (require 'helm-git nil t)
   (global-set-key (kbd "C-:") 'helm-git-find-files))
 
+(global-set-key (kbd "C-x b") 'helm-buffers-list)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-c h") 'helm-mini)
+
+(define-key helm-map (kbd "C-p")   'helm-previous-line)
+(define-key helm-map (kbd "C-n")   'helm-next-line)
+(define-key helm-map (kbd "C-M-n") 'helm-next-source)
+(define-key helm-map (kbd "C-M-p") 'helm-previous-source)
 
 (provide 'init-helm)

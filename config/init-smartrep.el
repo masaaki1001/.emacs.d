@@ -23,12 +23,12 @@
   ;;(global-set-key "\C-l" orig-binding) ; default key bind revert
 
 
-  ;; mark-multiple
+  ;; multiple-cursors
   (progn
     (smartrep-define-key
         global-map "C-l"
-      '(("n" . 'mark-next-like-this)
-        ("p" . 'mark-previous-like-this))))
+      '(("n" . 'mc/mark-next-like-this)
+        ("p" . 'mc/mark-previous-like-this))))
 
   ;; org-mode
   (eval-after-load "org"
