@@ -15,4 +15,6 @@
 (eval-after-load 'hatena-diary
   '(load "~/.emacs.d/resource/.hatena-credentials.gpg"))
 
+(global-set-key (kbd "C-c d") 'hatena:d:new)
+
 (provide 'init-hatena)
