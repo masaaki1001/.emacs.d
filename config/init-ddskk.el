@@ -6,26 +6,25 @@
 ;; http://www.bookshelf.jp/texi/skk/skk_4.html#SEC15
 ;;---------------------------------------------------------
 ;; http://sheephead.homelinux.org/2010/06/18/1894/
-(setq load-path (cons "~/.emacs.d/elisp/skk/" load-path))
 (setq skk-user-directory "~/.emacs.d/ddskk/") ; ディレクトリ指定
 (setq skk-large-jisyo "~/.emacs.d/ddskk/SKK-JISYO.L")
 
 ;; skk用にshift-stickyを";"に設定する
 (setq skk-sticky-key ";")
 
-(when (require 'skk-autoloads nil t)
-  ;; C-x C-j で skk モードを起動
-  (define-key global-map (kbd "C-x j") 'skk-mode)
-  ;; .skk を自動的にバイトコンパイル
-  (setq skk-byte-compile-init-file t))
+(require 'skk-autoloads nil t)
+;; C-x C-j で skk モードを起動
+(global-set-key (kbd "C-x j") 'skk-mode)
+;; .skk を自動的にバイトコンパイル
+(setq skk-byte-compile-init-file t)
 (require 'info)
-(add-to-list 'Info-additional-directory-list "~/.emacs.d/info")
+(add-to-list 'Info-additional-directory-list "~/.emacs.d/ddskk/info")
 ;;(global-set-key [?\S- ] 'skk-mode)
 ;;チュートリアルの場所設定
-(setq skk-tut-file "~/.emacs.d/ddskk-14.2/etc/SKK.tut")
+(setq skk-tut-file "~/.emacs.d/ddskk/SKK.tut")
 ;; メッセージを日本語で通知する
 (setq skk-japanese-message-and-error t)
-;; メニューを英語で表示する
+;; メニューを日本語で表示する
 (setq skk-show-japanese-menu t)
 ;; 変換時に注釈 (annotation) を表示する
 (setq skk-show-annotation t)

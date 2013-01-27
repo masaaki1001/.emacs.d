@@ -3,12 +3,12 @@
 ;; load-path
 ;;----------------------------------------------------------------------------
 ;;http://d.hatena.ne.jp/omochist/20070207/1170872589
-(setq load-path (append '("~/.emacs.d/"
+(setq load-path (append '("~/.emacs.d"
                           "~/.emacs.d/elisp"
-                          "~/.emacs.d/config/"
-                          "~/.emacs.d/auto-install/"
-                          "~/.emacs.d/scala-mode/"
-                          "~./emacs.d/el-get/"
+                          "~/.emacs.d/config"
+                          "~/.emacs.d/auto-install"
+                          "~/.emacs.d/scala-mode"
+                          "~/.emacs.d/ddskk/elisp"
                           )
                         load-path))
 
@@ -71,8 +71,8 @@
 ;;----------------------------------------------------------------------------
 ;; 半透明にする
 ;; パラメータは、順に通常のフレーム、アクティブでないフレーム、移動中のフレームの透明度を表す
-;; (modify-all-frames-parameters
- ;;(list (cons 'alpha  '(nil 80 50 30)))) ;; 直近
+(modify-all-frames-parameters
+ (list (cons 'alpha  '(nil 80 50 30)))) ;; 直近
  ;; (list (cons 'alpha  '(nil 70 50 30))))
 ;; Scrollを１行毎に
 (setq scroll-step 1)
@@ -416,7 +416,7 @@
 ;;---------------------------------------------------------
 ;; ddskk
 ;;---------------------------------------------------------
-;;(require 'init-ddskk nil t)
+(require 'init-ddskk nil t)
 
 ;;---------------------------------------------------------
 ;; yasnippet
@@ -428,14 +428,15 @@
 ;;---------------------------------------------------------
 (require 'init-defun nil t)
 
-(put 'upcase-region 'disabled nil)
-(put 'set-goal-column 'disabled nil)
-(put 'downcase-region 'disabled nil)
-
 ;;---------------------------------------------------------
 ;; hatena-mode
 ;;---------------------------------------------------------
-(require 'init-hatena)
+(require 'init-hatena nil t)
+
+;;---------------------------------------------------------
+;; slime
+;;---------------------------------------------------------
+(require 'init-slime nil t)
 
 ;;----------------------------------------------------------------------------
 ;; revive.el
