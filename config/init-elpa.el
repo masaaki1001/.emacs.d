@@ -83,6 +83,7 @@
    (cons 'gitconfig-mode melpa)
    (cons 'gitignore-mode melpa)
    (cons 'elscreen melpa)
+   (cons 'flycheck melpa)
    (cons 'slime-js marmalade)
    ))
 
