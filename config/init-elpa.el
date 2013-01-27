@@ -61,9 +61,36 @@
   (package-initialize)
   (delete-other-windows))
 
-;; package-spec
-(when (require 'package-spec nil t)
-  (setq package-spec-file-name "~/.emacs.d/package-spec.el"))
+(defun init-install-packages ()
+  (packages-install
+   (cons 'browse-kill-ring melpa)
+   (cons 'ruby-mode melpa)
+   (cons 'robe melpa)
+   (cons 'ruby-electric melpa)
+   (cons 'ruby-block melpa)
+   (cons 'inf-ruby melpa)
+   (cons 'dired+ melpa)
+   (cons 'dsvn melpa)
+   (cons 'iy-go-to-char melpa)
+   (cons 'rainbow-mode gnu)
+   (cons 'fold-dwim melpa)
+   (cons 'goto-chg melpa)
+   (cons 'key-chord melpa)
+   (cons 'maxframe melpa)
+   (cons 'color-moccur melpa)
+   (cons 'diminish melpa)
+   (cons 'git-commit-mode melpa)
+   (cons 'gitconfig-mode melpa)
+   (cons 'gitignore-mode melpa)
+   (cons 'elscreen melpa)
+   (cons 'slime-js marmalade)
+   ))
+
+(condition-case nil
+    (init-install-packages)
+  (error
+   (package-refresh-contents)
+   (init-install-packages)))
 
 ;; el-get
 ;; el-get インストール後のロードパスの用意
