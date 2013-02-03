@@ -96,7 +96,6 @@
  )
 
 ;; el-get
-;; el-get インストール後のロードパスの用意
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 ;; もし el-get がなければインストールを行う
 (unless (require 'el-get nil t)
