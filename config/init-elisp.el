@@ -52,6 +52,8 @@
 ;; http://www.bookshelf.jp/elc/moccur-edit.el
 (require 'moccur-edit nil t)
 
+(when (require 'all-ext nil t))
+
 ;; undo-tree.el
 ;; http://d.hatena.ne.jp/khiker/20100123/undo_tree
 ;; http://www.dr-qubit.org/undo-tree/undo-tree.el
@@ -553,11 +555,13 @@
   (define-key web-mode-map (kbd "C-;") nil)
   )
 
-(when (require 'all-ext nil t))
-
 (when (require 'edit-server nil t)
   (setq edit-server-new-frame nil)
   (edit-server-start)
   )
+
+;; multi-term
+(when (require 'multi-term nil t)
+  (setq multi-term-program "/bin/bash"))
 
 (provide 'init-elisp)
