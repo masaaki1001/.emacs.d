@@ -66,6 +66,11 @@
    (cons 'slime-js marmalade)
    (cons 'point-undo melpa)
    (cons 'all-ext melpa)
+   (cons 'multi-term melpa)
+   (cons 'fold-dwim melpa)
+   (cons 'helm melpa)
+   (cons 'helm-c-moccur melpa)
+   (cons 'helm-git melpa)
    ))
 
 (condition-case nil
