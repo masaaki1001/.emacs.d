@@ -488,11 +488,6 @@
 (global-set-key [(meta m)] 'jump-char-forward)
 (global-set-key [(shift meta m)] 'jump-char-backward)
 
-;; file-column-indicator.el
-;; https://github.com/alpaker/Fill-Column-Indicator
-;; (when (require 'fill-column-indicator nil t)
-;;   (setq fci-rule-column 160))
-
 ;; pomodoro.el
 ;; https://github.com/baudtack/pomodoro.el
 (when (require 'pomodoro nil t)
