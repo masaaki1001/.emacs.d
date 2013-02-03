@@ -105,15 +105,6 @@
 ;; 現在行を目立たせる
 ;; http://d.hatena.ne.jp/khyiker/20070409/emacs_hl_line
 (global-hl-line-mode) ;デフォルトはこの行だけでOK
-;; ;;(set-face-background 'hl-line "DarkSlateBlue")
-;; (defface my-hl-line-face
-;;   '((((class color) (background dark))  ; カラーかつ, 背景が dark ならば,
-;;      (:background "DarkSlateBlue" t))   ; 背景を黒に.
-;;     (((class color) (background light)) ; カラーかつ, 背景が light ならば,
-;;      (:background "ForestGreen" t))     ; 背景を ForestGreen に.
-;;     (t (:bold t)))
-;;   "hl-line's my face")
-;; (setq hl-line-face 'my-hl-line-face)
 
 ;; カーソルの点滅を止める
 (blink-cursor-mode 0)
