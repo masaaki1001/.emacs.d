@@ -1,10 +1,10 @@
 ; -*- mode: lisp; coding: utf-8 -*-
 ;; http://d.hatena.ne.jp/tarao/20130110/1357821338
 ;; (require 'hatena-diary)
-(require 'hatena-markup-mode)
-(setq hatena:d:major-mode 'hatena:markup-mode)
-(require 'hatena-multi-mode)
-(add-hook 'hatena:markup-mode-hook #'hatena:multi-mode)
+(when (require 'hatena-markup-mode nil t)
+  (setq hatena:d:major-mode 'hatena:markup-mode))
+(when (require 'hatena-multi-mode nil t)
+(add-hook 'hatena:markup-mode-hook #'hatena:multi-mode))
 
 (autoload 'hatena:d:new "hatena-diary"
   "List Hatena::Diary new entries in a buffer." t)

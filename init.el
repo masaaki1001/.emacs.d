@@ -12,11 +12,6 @@
                           )
                         load-path))
 
-;; 再帰的に指定ディレクトリ以下をload-pathに追加する
-;; (let ((default-directory "~/.emacs.d/color-theme/"))
-;;   (setq load-path (cons default-directory load-path))
-;;   (normal-top-level-add-subdirs-to-load-path))
-
 ;; function add to load-path
 (defun add-to-load-path (&rest paths)
   (let (path)
@@ -28,7 +23,6 @@
 
 ;; load-path
 ;; e.g. (add-to-load-path "elisp" "xxx" "xxx")
-;;(add-to-load-path "repositories" "color-theme")
 (add-to-load-path "repositories")
 
 ;;----------------------------------------------------------------------------
@@ -37,12 +31,16 @@
 (server-start t)
 
 ;;----------------------------------------------------------------------------
+;; env
+;;----------------------------------------------------------------------------
+(require 'env)
+
+;;----------------------------------------------------------------------------
 ;; encoding
 ;;----------------------------------------------------------------------------
 ;; 日本語に設定
 (set-language-environment 'Japanese)
 ;; UTF-8に設定
-;(require 'ucs-normalize) ;; Mac用
 (prefer-coding-system           'utf-8)
 (set-buffer-file-coding-system  'utf-8)
 (set-terminal-coding-system     'utf-8)
@@ -72,8 +70,7 @@
 ;; 半透明にする
 ;; パラメータは、順に通常のフレーム、アクティブでないフレーム、移動中のフレームの透明度を表す
 (modify-all-frames-parameters
- (list (cons 'alpha  '(nil 80 50 30)))) ;; 直近
- ;; (list (cons 'alpha  '(nil 70 50 30))))
+ (list (cons 'alpha  '(nil 80 50 30))))
 ;; Scrollを１行毎に
 (setq scroll-step 1)
 ;; Widow設定
@@ -87,11 +84,6 @@
   (menu-bar-mode -1) ;; メニューバーを消す
   (tool-bar-mode -1) ;; ツールバーを消す
   (toggle-scroll-bar nil) ;; スクロールバーを消す
-;;  (create-fontset-from-ascii-font "Inconsolata-12:weight=normal:slant=normal" nil "Inconsolata") ;;フォントをInconsolateにする
-;;  (set-default-font "Inconsolata-12")
-;;  (set-fontset-font (frame-parameter nil 'font)
-;;                    'japanese-jisx0208
-;;                    '("Hiragino Kaku Gothic ProN" . "unicode-bmp"))
   ))
 
 ;;----------------------------------------------------------------------------
@@ -161,11 +153,6 @@
 ;;			   (t
 ;;			    (move-beginning-of-line arg)))))
 
-;; 置換時に大文字小文字を区別する
-;; (setq case-replace nil)
-;; 検索時に大文字小文字を区別する
-;; (setq case-fold-search nil)
-
 ;; cua-mode 矩形選択 C-RETで起動 M-x cua-modeでenabledにする
 ;; http://e-arrows.sakura.ne.jp/2010/02/vim-to-emacs.html
 (cua-mode t)
@@ -190,8 +177,8 @@
 
 ;; multi-term
 ;; terminal soft
-;; (when (require 'multi-term nil t)
-;;   (setq multi-term-program "/bin/bash"))
+(when (require 'multi-term nil t)
+  (setq multi-term-program "/bin/bash"))
 
 ;; 一行が 80 字以上になった時には自動改行する
 (setq fill-column 80)
@@ -209,7 +196,6 @@
 
 ;; 行間を開く
 (setq-default line-spacing 0.1) ;my setting
-;;(setq-default line-spacing 0)
 
 ;; モードラインに時間を表示する
 (setq display-time-24hr-format t)
@@ -259,8 +245,6 @@
 (put 'upcase-region 'disabled nil)
 (put 'set-goal-column 'disabled nil)
 (put 'downcase-region 'disabled nil)
-
-(add-to-list 'auto-mode-alist '("\\(?:\\.gitconfig\\|\\.gitmodules\\|config\\)\\'" . conf-mode))
 
 ;; Auto refresh buffers
 (global-auto-revert-mode 1)
@@ -404,14 +388,6 @@
 ;; magit.el
 ;;---------------------------------------------------------
 (require 'init-magit nil t)
-
-;;---------------------------------------------------------
-;; Google Chrome edit with emacs
-;;---------------------------------------------------------
-(when (require 'edit-server nil t)
-  (setq edit-server-new-frame nil)
-  (edit-server-start)
-  )
 
 ;;---------------------------------------------------------
 ;; ddskk

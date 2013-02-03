@@ -59,7 +59,6 @@
   (ad-activate 'flymake-post-syntax-check)
   )
 
-;; (require 'flymake-ruby)
-;; (add-hook 'ruby-mode-hook 'flymake-ruby-load) ; anything-rdefsと競合する
+(add-hook 'ruby-mode-hook 'flycheck-mode)
 
 (provide 'init-flymake)

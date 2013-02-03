@@ -125,8 +125,6 @@ print (which_library (%%[%%s]))'" name name)))
             (add-to-list 'ac-sources 'ac-source-robe)
             (setq completion-at-point-functions '(auto-complete))))
 
-(add-hook 'ruby-mode-hook 'flycheck-mode)
-
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.

@@ -23,6 +23,7 @@
   ;; http://valvallow.blogspot.com/2011/03/emacs-popwinel.html
   (push '("*Remember*" :height 20) popwin:special-display-config)
   (push '("*undo-tree*" :height 20) popwin:special-display-config)
+  (push '("*All*" :height 20) popwin:special-display-config)
   )
 
 
@@ -179,11 +180,6 @@
 ;; 大文字入力を楽にする
 (when (require 'sticky nil t)
   (use-sticky-key ";" sticky-alist:ja))
-
-;; 鬼軍曹.el
-;; https://github.com/k1LoW/emacs-drill-instructor/wiki
-;;(require 'drill-instructor)
-;;(setq drill-instructor-global t) ;; コメントアウト時はCtrl-hの設定を復活させる
 
 ;; scratch-log.el
 ;; http://d.hatena.ne.jp/kitokitoki/20100612/p1
@@ -546,13 +542,21 @@
 (setq scss-compile-at-save nil) ;; 自動コンパイルをオフにする
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 
-;; (when (require 'web-mode nil t)
-;;   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-;;   (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
-;;   (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
-;;   (add-to-list 'auto-mode-alist '("\\.jsp\\'" . web-mode))
-;;   (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
-;;   (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-;;   )
+(when (require 'web-mode nil t)
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.jsp\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+  (define-key web-mode-map (kbd "C-;") nil)
+  )
+
+(when (require 'all-ext nil t))
+
+(when (require 'edit-server nil t)
+  (setq edit-server-new-frame nil)
+  (edit-server-start)
+  )
 
 (provide 'init-elisp)

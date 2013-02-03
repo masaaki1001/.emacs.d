@@ -1,27 +1,6 @@
 ; -*- mode: lisp; coding: utf-8 -*-
 ;;----------------------------------------------------------------------------
-;; auto-install.el
-;;----------------------------------------------------------------------------
-(when (require 'auto-install nil t)
- (setq auto-install-directory "~/.emacs.d/auto-install/")
- (auto-install-update-emacswiki-package-name t)
- (auto-install-compatibility-setup)             ; 互換性確保
-
- ;; auto-installのバッファ削除
- (require 'cl)
- (defun my-erase-auto-install-buffer ()
-   ;;(interactive)
-   (dolist (buf (buffer-list))
-     (if (eq (string-match "^\\*auto-install " (buffer-name buf)) 0)
-         (progn
-           ;; (print "ok")
-           (kill-buffer buf)))))
- ;;実行する
- (my-erase-auto-install-buffer)
- )
-
-;;----------------------------------------------------------------------------
-;; package.el(marmalade) Emacs24からは標準搭載
+;; package.el
 ;; http://repo.or.cz/w/emacs.git/blob_plain/1a0a666f941c99882093d7bd08ced15033bc3f0c:/lisp/emacs-lisp/package.el
 ;;----------------------------------------------------------------------------
 (require 'package)
@@ -31,7 +10,6 @@
 (defvar melpa '("melpa" . "http://melpa.milkbox.net/packages/"))
 
 (add-to-list 'package-archives gnu t)
-;; (add-to-list 'package-archives '("ELPA" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives marmalade t)
 (add-to-list 'package-archives melpa t)
 
@@ -63,6 +41,7 @@
 
 (defun init-install-packages ()
   (packages-install
+   (cons 'auto-install melpa)
    (cons 'browse-kill-ring melpa)
    (cons 'ruby-mode melpa)
    (cons 'robe melpa)
@@ -85,6 +64,8 @@
    (cons 'elscreen melpa)
    (cons 'flycheck melpa)
    (cons 'slime-js marmalade)
+   (cons 'point-undo melpa)
+   (cons 'all-ext melpa)
    ))
 
 (condition-case nil
@@ -92,6 +73,27 @@
   (error
    (package-refresh-contents)
    (init-install-packages)))
+
+;;----------------------------------------------------------------------------
+;; auto-install.el
+;;----------------------------------------------------------------------------
+(when (require 'auto-install nil t)
+ (setq auto-install-directory "~/.emacs.d/auto-install/")
+ (auto-install-update-emacswiki-package-name t)
+ (auto-install-compatibility-setup)             ; 互換性確保
+
+  ;; auto-installのバッファ削除
+ (require 'cl)
+ (defun my-erase-auto-install-buffer ()
+   ;;(interactive)
+   (dolist (buf (buffer-list))
+     (if (eq (string-match "^\\*auto-install " (buffer-name buf)) 0)
+         (progn
+           ;; (print "ok")
+           (kill-buffer buf)))))
+ ;;実行する
+ (my-erase-auto-install-buffer)
+ )
 
 ;; el-get
 ;; el-get インストール後のロードパスの用意
