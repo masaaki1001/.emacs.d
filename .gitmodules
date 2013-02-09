@@ -118,9 +118,6 @@
 [submodule "repositories/auto-highlight-symbol-mode"]
 	path = repositories/auto-highlight-symbol-mode
 	url = git://github.com/mitsuo-saito/auto-highlight-symbol-mode.git
-[submodule "repositories/emacs-yafastnav"]
-	path = repositories/emacs-yafastnav
-	url = git://github.com/tm8st/emacs-yafastnav.git
 [submodule "repositories/undo-tree"]
 	path = repositories/undo-tree
 	url = http://www.dr-qubit.org/git/undo-tree.git
