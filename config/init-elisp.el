@@ -300,9 +300,6 @@
   (key-chord-mode 1)
   (key-chord-define-global "jk" 'view-mode)
   (key-chord-define-global "kl" 'jaunte)
-  ;; (key-chord-define-global "ij" 'iy-go-to-char)
-  ;; (key-chord-define-global "bg" 'iy-go-to-char-backward)
-  ;;(key-chord-define-global "oj" 'ace-jump-mode)
   )
 
 
