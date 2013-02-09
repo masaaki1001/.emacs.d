@@ -486,6 +486,7 @@
 (when (require 'diminish nil t)
   (diminish 'undo-tree-mode)
   (diminish 'volatile-highlights-mode)
+  (diminish 'view-mode)
   )
 
 ;; fic-mode.el
