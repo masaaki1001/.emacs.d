@@ -369,15 +369,6 @@
   (global-set-key (kbd "C-)") 'hs-show-block)
   )
 
-;; yafastnav.el
-;; https://github.com/tm8st/emacs-yafastnav
-;; https://raw.github.com/tm8st/emacs-yafastnav/master/yafastnav.el
-(when (require 'yafastnav nil t)
-  ;;(global-set-key (kbd "C-l C-c") 'yafastnav-jump-to-current-screen)
-  ;;(global-set-key (kbd "C-l C-f") 'yafastnav-jump-to-forward)
-  ;;(global-set-key (kbd "C-l C-r") 'yafastnav-jump-to-backward)
-  )
-
 ;; jaunte.el
 ;; http://kawaguchi.posterous.com/emacshit-a-hint
 ;; https://github.com/kawaguchi/jaunte.el
