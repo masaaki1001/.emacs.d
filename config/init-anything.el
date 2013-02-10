@@ -111,4 +111,11 @@
   (anything-other-buffer 'anything-c-source-junk-files "*anything for junk file"))
 (global-set-key (kbd "C-x M-j") 'anything-open-junk-file)
 
+(defun anything-for-elscreen ()
+  "preconfigured `anything' for anything-for-elscreen"
+  (interactive)
+  (anything anything-c-source-elscreen
+	    nil nil nil nil "*anything for elscreen*"))
+(define-key global-map (kbd "C-c e") 'anything-for-elscreen)
+
 (provide 'init-anything)
