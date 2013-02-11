@@ -259,3 +259,6 @@
 [submodule "repositories/js2-refactor"]
 	path = repositories/js2-refactor
 	url = git://github.com/magnars/js2-refactor.el.git
+[submodule "repositories/helm-project"]
+	path = repositories/helm-project
+	url = git://github.com/shishi/helm-project.git

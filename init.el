@@ -7,7 +7,6 @@
                           "~/.emacs.d/elisp"
                           "~/.emacs.d/config"
                           "~/.emacs.d/auto-install"
-                          "~/.emacs.d/scala-mode"
                           "~/.emacs.d/ddskk/elisp"
                           )
                         load-path))
@@ -158,9 +157,10 @@
 (require 'init-flymake nil t)
 
 ;;----------------------------------------------------------------------------
-;; anything.el
+;; anything.el or helm.el
 ;;----------------------------------------------------------------------------
-(require 'init-anything nil t)
+;; (require 'init-anything nil t)
+(require 'init-helm nil t)
 
 ;;---------------------------------------------------------
 ;; Eshell
