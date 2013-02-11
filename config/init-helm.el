@@ -107,7 +107,6 @@ To get non-interactive functions listed, use
 (defun helm-open-junk-file ()
   (interactive)
   (helm-other-buffer 'helm-c-source-junk-files "*helm for junk file"))
-(global-set-key (kbd "C-x M-j") 'helm-open-junk-file)
 
 ;; helm-project.el
 (when (require 'helm-project nil t)
@@ -140,6 +139,8 @@ To get non-interactive functions listed, use
 ;; (global-set-key (kbd "C-c i") 'helm-imenu)
 (global-set-key (kbd "C-c e") 'helm-elscreen)
 (global-set-key (kbd "C-M-z") 'helm-resume)
+(global-set-key (kbd "C-x M-j") 'helm-open-junk-file)
+
 
 (define-key helm-map (kbd "C-p")   'helm-previous-line)
 (define-key helm-map (kbd "C-n")   'helm-next-line)
