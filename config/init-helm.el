@@ -29,17 +29,6 @@
                        )
                      "*helm mini*"))
 
-;; (defun helm-c-source-emacs-commands (&optional default)
-;;   `((name . "Commands")
-;;     (init . (lambda ()
-;;               (helm-c-apropos-init 'commandp ,default)))
-;;     (persistent-action . helm-lisp-completion-persistent-action)
-;;     (persistent-help . "Show brief doc in mode-line")
-;;     (candidates-in-buffer)
-;;     (action . (lambda (candidate)
-;;                 (describe-function (intern candidate))))))
-
-
 (defvar helm-c-source-emacs-commands
   '((name . "Emacs Commands")
     (candidates . (lambda ()
