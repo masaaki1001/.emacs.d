@@ -68,6 +68,7 @@
    (cons 'all-ext melpa)
    (cons 'multi-term melpa)
    (cons 'fold-dwim melpa)
+   (cons 'scala-mode melpa)
    (cons 'helm melpa)
    (cons 'helm-c-moccur melpa)
    (cons 'helm-git melpa)
