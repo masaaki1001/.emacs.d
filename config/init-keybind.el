@@ -4,7 +4,6 @@
 ;;----------------------------------------------------------------------------
 ;; (global-set-key "\C-h" 'delete-backward-char) ; 削除
 (global-set-key "\M-h" 'backward-kill-word)
-(global-set-key "\C-z" 'undo) ;; undo
 (if (= emacs-major-version 23)
   (progn
     (pc-selection-mode) ;; Shift + 矢印キーで範囲選択
