@@ -167,6 +167,7 @@
   ;;      session-globals-include '((kill-ring 50)             ;; kill-ring の保存件数
   ;;                                (session-file-alist 50 t)  ;; カーソル位置を保存する件数
   ;;                                (file-name-history 200)))  ;; ファイルを開いた履歴を保存する件数
+  (setq session-save-print-spec '(t nil nil))
   )
 
 ;; savekill.el
@@ -547,5 +548,19 @@
 ;; multi-term
 (when (require 'multi-term nil t)
   (setq multi-term-program "/bin/bash"))
+
+;; redo+
+(when (require 'redo+ nil t)
+  (global-set-key (kbd "C-M-/") 'redo)
+  (setq undo-no-redo t) ; 過去のundoがredoされないようにする
+  (setq undo-limit 600000)
+  (setq undo-strong-limit 900000))
+
+;; yagist.el
+(when (require 'yagist nil t))
+
+;; emacs-bash-completion
+(when (require 'bash-completion nil t)
+  (bash-completion-setup))
 
 (provide 'init-elisp)
