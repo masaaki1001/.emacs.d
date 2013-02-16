@@ -53,6 +53,7 @@
 (setq set-mark-command-repeat-pop t)
 
 ;; Use C-x C-m to do M-x per Steve Yegge's advice
+;; https://sites.google.com/site/steveyegge2/effective-emacs
 ;; https://github.com/magnars/.emacs.d/commit/0291309114029e1402fc59b84050a069f9e89b2c
 (global-set-key "\C-x\C-m" 'execute-extended-command)
 
