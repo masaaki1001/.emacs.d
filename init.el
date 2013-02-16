@@ -24,6 +24,13 @@
 ;; e.g. (add-to-load-path "elisp" "xxx" "xxx")
 (add-to-load-path "repositories")
 
+
+;; load environment value
+;; http://d.hatena.ne.jp/syohex/20111117/1321503477
+(load-file (expand-file-name "~/.emacs.d/shellenv.el"))
+(dolist (path (split-string (getenv "PATH") ":"))
+  (add-to-list 'exec-path path))
+
 ;;----------------------------------------------------------------------------
 ;; emacsclient
 ;;----------------------------------------------------------------------------
