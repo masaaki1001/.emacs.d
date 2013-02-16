@@ -368,16 +368,6 @@
   (global-set-key (kbd "C-)") 'hs-show-block)
   )
 
-;; jaunte.el
-;; http://kawaguchi.posterous.com/emacshit-a-hint
-;; https://github.com/kawaguchi/jaunte.el
-;; https://raw.github.com/kawaguchi/jaunte.el/master/jaunte.el
-(when (require 'jaunte nil t)
-  (global-set-key (kbd "C-c C-j") 'jaunte)
-  (setq jaunte-hint-unit 'word) ;default
-  ;;(setq jaunte-global-hint-unit 'symbol)
-  )
-
 ;; volatile-highlights.el
 (when (require 'volatile-highlights nil t)
   (volatile-highlights-mode t)
@@ -386,15 +376,6 @@
 ;; smooth-scroll.el
 ;;(require 'smooth-scroll)
 ;;(smooth-scroll-mode t)
-
-;; iy-go-to-char.el
-;; from marmalade
-(when (require 'iy-go-to-char nil t)
-  (global-set-key (kbd "C-c f") 'iy-go-to-char)
-  (global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
-  (global-set-key (kbd "C-c ;") 'iy-go-to-char-continue)
-  (global-set-key (kbd "C-c ,") 'iy-go-to-char-continue-backward)
-  )
 
 ;; open-junk-file.el
 (when (require 'open-junk-file nil t)
@@ -461,6 +442,25 @@
 (when (require 'maximize nil t)
   (global-set-key [(f12)] 'maximize-toggle-frame-vmax)
   (global-set-key [(shift f12)] 'maximize-toggle-frame-hmax)
+  )
+
+;; iy-go-to-char.el
+;; from marmalade
+(when (require 'iy-go-to-char nil t)
+  (global-set-key (kbd "C-c f") 'iy-go-to-char)
+  (global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
+  (global-set-key (kbd "C-c ;") 'iy-go-to-char-continue)
+  (global-set-key (kbd "C-c ,") 'iy-go-to-char-continue-backward)
+  )
+
+;; jaunte.el
+;; http://kawaguchi.posterous.com/emacshit-a-hint
+;; https://github.com/kawaguchi/jaunte.el
+;; https://raw.github.com/kawaguchi/jaunte.el/master/jaunte.el
+(when (require 'jaunte nil t)
+  (global-set-key (kbd "C-c C-j") 'jaunte)
+  (setq jaunte-hint-unit 'word) ;default
+  ;;(setq jaunte-global-hint-unit 'symbol)
   )
 
 ;; ace-jump-mode.el
