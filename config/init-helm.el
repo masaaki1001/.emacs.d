@@ -100,15 +100,15 @@ To get non-interactive functions listed, use
 ;; helm-project.el
 (when (require 'helm-project nil t)
 ;(global-set-key (kbd "C-c C-f") 'anything-project)
-  (global-set-key (kbd "C-:") 'hlm-project)
+  (global-set-key (kbd "C-:") 'helm-project)
   (hp:add-project
-   ;; templete
+   ;; setting templete
    ;; :name 'hoge
    ;; :look-for '("Rakefile")
    ;; :include-regexp '("\\.rb$" "\\.html$" "\\.erb$" "\\.js$" "\\.yml$" "\\.css$" "\\Gemfile$")
    ;:exclude-regexp "/test_files" ; can be regexp or list of regexp
    :name 'Ripple
-   :look-for '(".gitignore")
+   :look-for '(".git")
    :include-regexp '("\\.scala$" "\\.html$" "\\.conf$" "\\.properties$" "\\.sbt$" "\\.sql$" "\\routes$" "\\.js$")
    )
   ;; 候補にディレクトリが含まれないようにする
@@ -120,7 +120,7 @@ To get non-interactive functions listed, use
   )
 
 (global-set-key (kbd "C-c h") 'helm-mini)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-x f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "M-z") 'helm-do-grep)
