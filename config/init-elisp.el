@@ -50,7 +50,7 @@
 
 ;; moccur-edit.el
 ;; http://www.bookshelf.jp/elc/moccur-edit.el
-(require 'moccur-edit nil t)
+(when (require 'moccur-edit nil t))
 
 (when (require 'all-ext nil t))
 
@@ -279,7 +279,7 @@
 ;; wgrep.el
 ;; https://github.com/mhayashi1120/Emacs-wgrep
 ;; https://raw.github.com/mhayashi1120/Emacs-wgrep/master/wgrep.el
-(require 'wgrep nil t)
+(when (require 'wgrep nil t))
 
 ;; color-grep.el
 ;; http://www.bookshelf.jp/soft/meadow_51.html#SEC778
