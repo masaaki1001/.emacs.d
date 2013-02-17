@@ -41,7 +41,6 @@
 (defun init-install-packages ()
   (packages-install
    (cons 'auto-install melpa)
-   (cons 'browse-kill-ring melpa)
    (cons 'ruby-mode melpa)
    (cons 'robe melpa)
    (cons 'ruby-electric melpa)

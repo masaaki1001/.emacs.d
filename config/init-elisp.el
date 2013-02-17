@@ -414,16 +414,6 @@
 ;;(setq zlc-select-completion-immediately t)
   )
 
-;; browse-kill-ring+.el
-;; from emacs wiki
-(when (require 'browse-kill-ring+ nil t)
-  ;; C-g で終了
-  ;; http://d.hatena.ne.jp/gan2/20070928/1190989859
-  (add-hook 'browse-kill-ring-hook
-            (lambda ()
-              (define-key browse-kill-ring-mode-map (kbd "\C-g") 'browse-kill-ring-quit)))
-  )
-
 ;; *Completions*バッファを，使用後に消してくれる
 ;; http://dev.ariel-networks.com/wp/documents/aritcles/emacs/part11
 (when (require 'lcomp nil t)
