@@ -86,14 +86,13 @@
 
 ;; smartchr.el =文字列まとめ
 ;; http://tech.kayac.com/archive/emacs-tips-smartchr.html
-;; (when (require 'smartchr nil t)
-;;   (global-set-key (kbd "=") (smartchr '("=" " = " " == " " === ")))
-;;   (global-set-key (kbd ">") (smartchr '(">" " => " " => '`!!''" " => \"`!!'\"")))
-;;   (global-set-key (kbd "<") (smartchr '("<" " << ")))
-;;   (global-set-key (kbd "&") (smartchr '("&" " && ")))
-;;   (global-set-key (kbd "|") (smartchr '("|" " || ")))
-;;   )
-
+(when (require 'smartchr nil t)
+  (global-set-key (kbd "=") (smartchr '("=" " = " " == " " === ")))
+  (global-set-key (kbd ">") (smartchr '(">" " -> " " => " " -> '`!!''" " => '`!!''" " -> \"`!!'\"" " => \"`!!'\"")))
+  (global-set-key (kbd "<") (smartchr '("<" " << ")))
+  (global-set-key (kbd "&") (smartchr '("&" " && ")))
+  (global-set-key (kbd "|") (smartchr '("|" " || ")))
+  )
 
 ;; e2wm.el
 ;; http://d.hatena.ne.jp/kiwanami/20100528/1275038929
