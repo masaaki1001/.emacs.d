@@ -384,14 +384,6 @@
   (global-set-key (kbd "C-3") 'ndmacro)
   )
 
-;; Highlighting indentation for Emacs
-;; https://github.com/antonj/Highlight-Indentation-for-Emacs
-;; https://raw.github.com/antonj/Highlight-Indentation-for-Emacs/master/highlight-indentation.el
-(when (require 'highlight-indentation nil t)
-  (set-face-background 'highlight-indentation-face "#e3e3d3")
-  (set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
-  )
-
 ;; auto-highlight-symbol-mode.el
 ;; https://github.com/mitsuo-saito/auto-highlight-symbol-mode
 ;; https://github.com/mhayashi1120/auto-highlight-symbol-mode
