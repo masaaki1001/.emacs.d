@@ -1,5 +1,3 @@
-; -*- mode: lisp; coding: utf-8 -*-
-;;(eval-when-compile (require 'cl))
 (require 'helm-config)
 (require 'helm-command)
 (require 'helm-elisp)

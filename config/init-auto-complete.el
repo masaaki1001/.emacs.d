@@ -1,4 +1,3 @@
-; -*- mode: lisp; coding: utf-8 -*-
 ;;----------------------------------------------------------------------------
 ;; auto-complete
 ;; http://cx4a.org/software/auto-complete/manual.ja.html

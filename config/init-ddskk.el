@@ -1,4 +1,3 @@
-; -*- mode: lisp; coding: utf-8 -*-
 ;;---------------------------------------------------------
 ;; ddskk
 ;; http://openlab.ring.gr.jp/skk/index-j.html

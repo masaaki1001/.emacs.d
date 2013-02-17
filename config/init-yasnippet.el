@@ -1,4 +1,3 @@
-; -*- mode: lisp; coding: utf-8 -*-
 ;; yasnippet
 (when (require 'yasnippet nil t) ;; not yasnippet-bundle
   (setq yas-snippet-dirs
@@ -14,10 +13,6 @@
   (define-key yas-minor-mode-map (kbd "C-x i n") 'yas-new-snippet)
   ;; 既存スニペットを閲覧・編集する
   (define-key yas-minor-mode-map (kbd "C-x i v") 'yas-visit-snippet-file)
-  ;; (yas/initialize)
-  ;; (yas/load-directory "~/.emacs.d/snippets")
-  ;; rails-snippets
-  ;; (yas/load-directory "~/.emacs.d/repositories/yasnippets-rails/rails-snippets")
  )
 
 ;; yasnippetのインデント
