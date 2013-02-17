@@ -139,7 +139,6 @@
 
 ;; js2-mode
 ;; https://github.com/mooz/js2-mode
-;; https://raw.github.com/mooz/js2-mode/04fbc13b5be66bf9876560e3be33dfd486e9fa56/js2-mode.el
 ;; originalではなくid:moozの拡張版を利用
 (autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
@@ -401,7 +400,6 @@
 ;; zlc.el
 ;; http://d.hatena.ne.jp/mooz/20101003/p1
 ;; https://github.com/mooz/emacs-zlc/
-;; https://raw.github.com/mooz/emacs-zlc/master/zlc.el
 (when (require 'zlc nil t)
 ;;(setq zlc-select-completion-immediately t)
   )
@@ -413,7 +411,6 @@
 
 ;; maximize.el
 ;; https://github.com/izawa/maximize
-;; https://raw.github.com/izawa/maximize/master/maximize.el
 (when (require 'maximize nil t)
   ;; (global-set-key [(f12)] 'maximize-toggle-frame-vmax)
   ;; (global-set-key [(shift f12)] 'maximize-toggle-frame-hmax)
