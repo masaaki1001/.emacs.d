@@ -52,6 +52,7 @@
 ;; http://www.bookshelf.jp/elc/moccur-edit.el
 (when (require 'moccur-edit nil t))
 
+;; all-ext.el
 (when (require 'all-ext nil t))
 
 ;; undo-tree.el
