@@ -84,7 +84,11 @@ To get non-interactive functions listed, use
   )
 
 (require 'em-glob)
-(defvar junk-file-dir "~/.emacs.d/junk/")
+(defvar junk-file-dir
+  (expand-file-name (concat (if (boundp 'user-emacs-directory)
+                                (file-name-as-directory user-emacs-directory)
+                              "~/.emacs.d/")
+                            "junk")))
 (defvar junk-file-list
   (reverse (eshell-extended-glob (concat
                                   (file-name-as-directory junk-file-dir)
@@ -96,6 +100,7 @@ To get non-interactive functions listed, use
 (defun helm-open-junk-file ()
   (interactive)
   (helm-other-buffer 'helm-c-source-junk-files "*helm for junk file"))
+
 
 ;; helm-project.el
 (when (require 'helm-project nil t)
@@ -110,6 +115,7 @@ To get non-interactive functions listed, use
    :name 'Ripple
    :look-for '(".git")
    :include-regexp '("\\.scala$" "\\.html$" "\\.conf$" "\\.properties$" "\\.sbt$" "\\.sql$" "\\routes$" "\\.js$")
+   :exclude-regexp "/target*"
    )
   ;; 候補にディレクトリが含まれないようにする
   ;; http://d.hatena.ne.jp/IMAKADO/20090823/1250963119

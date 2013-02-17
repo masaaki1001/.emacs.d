@@ -91,18 +91,6 @@
  (setq auto-install-directory "~/.emacs.d/auto-install/")
  (auto-install-update-emacswiki-package-name t)
  (auto-install-compatibility-setup)             ; 互換性確保
-
-  ;; auto-installのバッファ削除
- (require 'cl)
- (defun my-erase-auto-install-buffer ()
-   ;;(interactive)
-   (dolist (buf (buffer-list))
-     (if (eq (string-match "^\\*auto-install " (buffer-name buf)) 0)
-         (progn
-           ;; (print "ok")
-           (kill-buffer buf)))))
- ;;実行する
- (my-erase-auto-install-buffer)
  )
 
 ;; el-get

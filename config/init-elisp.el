@@ -440,12 +440,12 @@
 ;; https://github.com/izawa/maximize
 ;; https://raw.github.com/izawa/maximize/master/maximize.el
 (when (require 'maximize nil t)
-  (global-set-key [(f12)] 'maximize-toggle-frame-vmax)
-  (global-set-key [(shift f12)] 'maximize-toggle-frame-hmax)
+  ;; (global-set-key [(f12)] 'maximize-toggle-frame-vmax)
+  ;; (global-set-key [(shift f12)] 'maximize-toggle-frame-hmax)
+  (global-set-key [(f12)] 'maximize-frame)
   )
 
 ;; iy-go-to-char.el
-;; from marmalade
 (when (require 'iy-go-to-char nil t)
   (global-set-key (kbd "C-c f") 'iy-go-to-char)
   (global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
@@ -494,15 +494,17 @@
 ;; fic-mode.el
 ;; https://github.com/lewang/fic-mode
 ;; highlight word is TODO or FIXME
-(require 'fic-mode nil t)
+(when (require 'fic-mode nil t))
 
 ;; fcopy.el
 ;; https://raw.github.com/ataka/fcopy/master/fcopy.el
 (autoload 'fcopy-mode "fcopy" "copy lines or region without editing." t)
 
 ;; rainbow-mode.el
-;; elpa
-(require 'rainbow-mode nil t)
+(when (require 'rainbow-mode nil t)
+  (add-hook 'css-mode-hook 'rainbow-mode)
+  (add-hook 'scss-mode-hook 'rainbow-mode)
+  )
 
 ;; drag-stuff.el
 ;; https://github.com/rejeep/drag-stuff
@@ -510,11 +512,11 @@
   (drag-stuff-mode t))
 
 ;; https://github.com/TeMPOraL/nyan-mode
-(require 'nyan-mode nil t)
+(when (require 'nyan-mode nil t))
 
 ;; grep-o-matic.el
 ;; https://github.com/ZungBang/emacs-grep-o-matic
-(require 'grep-o-matic nil t)
+(when (require 'grep-o-matic nil t))
 
 ;; duplicate-thing.el
 ;; https://github.com/ongaeshi/duplicate-thing
@@ -532,6 +534,7 @@
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 
 (when (require 'web-mode nil t)
+  (setq web-mode-markup-indent-offset 4)
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
@@ -540,6 +543,9 @@
   (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
   (define-key web-mode-map (kbd "C-;") nil)
   )
+
+;; css-mode indent
+(setq cssm-indent-function #'cssm-c-style-indenter)
 
 (when (require 'edit-server nil t)
   (setq edit-server-new-frame nil)
