@@ -93,12 +93,6 @@
 ;;   (global-set-key (kbd "|") (smartchr '("|" " || ")))
 ;;   )
 
-;; key-combo.el
-;; smartchr.elとsequential-command.el両方行ける
-;; http://d.hatena.ne.jp/uk-ar/searchdiary?word=%2A%5BKey-combo%5D
-;; https://github.com/uk-ar/key-combo/
-;;(require 'key-combo)
-;;(key-combo-load-default)
 
 ;; e2wm.el
 ;; http://d.hatena.ne.jp/kiwanami/20100528/1275038929
