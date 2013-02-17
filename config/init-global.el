@@ -37,9 +37,8 @@
 (line-number-mode t)
 ;; カーソルの場所を保存する
 (when (require 'saveplace nil t)
-  (setq save-place-file "~/.emacs.d/resource/.emacs-places"))
-
-(setq-default save-place t)
+  (setq save-place-file "~/.emacs.d/resource/.emacs-places")
+  (setq-default save-place t))
 ;; スクロール時のカーソル位置維持
 (setq scroll-preserve-screen-position t)
 ;; 対応する括弧を光らせる。
