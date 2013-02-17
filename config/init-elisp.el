@@ -552,10 +552,6 @@
   (edit-server-start)
   )
 
-;; multi-term
-(when (require 'multi-term nil t)
-  (setq multi-term-program "/bin/bash"))
-
 ;; redo+
 (when (require 'redo+ nil t)
   (global-set-key (kbd "C-M-/") 'redo)
@@ -565,9 +561,5 @@
 
 ;; yagist.el
 (when (require 'yagist nil t))
-
-;; emacs-bash-completion
-(when (require 'bash-completion nil t)
-  (bash-completion-setup))
 
 (provide 'init-elisp)
