@@ -74,6 +74,7 @@
    (cons 'helm melpa)
    (cons 'helm-c-moccur melpa)
    (cons 'helm-git melpa)
+   (cons 'zencoding-mode melpa)
    ))
 
 (condition-case nil
