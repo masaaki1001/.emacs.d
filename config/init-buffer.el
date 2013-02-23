@@ -20,16 +20,6 @@
              ((eq last-input-char ?\M-m)
               (goto-char (match-beginning 0))))))
 
-;; iswitchb.el
-;; Emacs本より
-;;(iswitchb-mode t) ;; anythingがあるのでコメントアウト
-;; バッファ読み取り関数を iswitchb にする
-(setq read-buffer-function 'iswitchb-read-buffer)
-;; 部分文字列の代わりに正規表現を使う場合はtに設定
-(setq iswitchb-regexp nil)
-;; 新しいバッファを作成するときにいちいち聞いてこない
-(setq iswitchb-prompt-newbuffer nil)
-
 ;; バッファ移動を一瞬で行う
 ;; http://d.hatena.ne.jp/rubikitch/20111211/smalldisplay
 ;;; last-buffer
