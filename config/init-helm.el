@@ -74,6 +74,8 @@ To get non-interactive functions listed, use
                (local-set-key (kbd "O") 'helm-c-moccur-dired-do-moccur-by-moccur)))
   (global-set-key (kbd "C-M-s") 'helm-c-moccur-isearch-forward)
   (global-set-key (kbd "C-M-r") 'helm-c-moccur-isearch-backward)
+
+  (setq helm-c-moccur-enable-auto-look-flag t)
   )
 
 (when (require 'helm-git nil t)

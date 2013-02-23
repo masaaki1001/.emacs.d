@@ -12,6 +12,7 @@
 (when (require 'popwin nil t)
   (setq display-buffer-function 'popwin:display-buffer)
   (setq anything-samewindow nil)
+  (setq helm-samewindow nil)
   (push '("*anything*" :height 20) popwin:special-display-config)
   (push '("*helm*" :height 20) popwin:special-display-config)
   (push '("*Warnings*" :height 20) popwin:special-display-config)
