@@ -74,6 +74,7 @@
    (cons 'helm melpa)
    (cons 'helm-c-moccur melpa)
    (cons 'helm-git melpa)
+   (cons 'htmlize melpa)
    (cons 'zencoding-mode melpa)
    ))
 
