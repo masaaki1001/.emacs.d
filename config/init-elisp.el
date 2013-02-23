@@ -182,7 +182,6 @@
 ;; scratch-log.el
 ;; http://d.hatena.ne.jp/kitokitoki/20100612/p1
 ;; https://github.com/wakaran/scratch-log
-;; https://raw.github.com/wakaran/scratch-log/master/scratch-log.el
 (when (require 'scratch-log nil t)
   (setq sl-scratch-log-file "~/.emacs.d/resource/.scratch-log")
   (setq sl-prev-scratch-string-file "~/.emacs.d/resource/.scratch-log-prev")
@@ -272,7 +271,6 @@
 
 ;; wgrep.el
 ;; https://github.com/mhayashi1120/Emacs-wgrep
-;; https://raw.github.com/mhayashi1120/Emacs-wgrep/master/wgrep.el
 (when (require 'wgrep nil t))
 
 ;; color-grep.el
@@ -321,7 +319,6 @@
 
 ;; yaml-mode.el
 ;; https://github.com/yoshiki/yaml-mode
-;; https://raw.github.com/yoshiki/yaml-mode/master/yaml-mode.el
 (when (require 'yaml-mode nil t)
   (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode)))
 
@@ -377,7 +374,6 @@
 
 ;; ndmacro.el
 ;; https://github.com/snj14/ndmacro.el
-;; https://raw.github.com/snj14/ndmacro.el/master/ndmacro.el
 ;; e.g. hoge C-m hoge C-m C-t C-t C-t ....
 ;;      10   C-m 11   C-m C-t C-t C-t ....
 (when (require 'ndmacro nil t)
@@ -429,7 +425,6 @@
 ;; jaunte.el
 ;; http://kawaguchi.posterous.com/emacshit-a-hint
 ;; https://github.com/kawaguchi/jaunte.el
-;; https://raw.github.com/kawaguchi/jaunte.el/master/jaunte.el
 (when (require 'jaunte nil t)
   (global-set-key (kbd "C-c C-j") 'jaunte)
   (setq jaunte-hint-unit 'word) ;default
@@ -439,7 +434,6 @@
 ;; ace-jump-mode.el
 ;; http://d.hatena.ne.jp/syohex/20120304/1330822993
 ;; https://github.com/winterTTr/ace-jump-mode
-;; https://raw.github.com/winterTTr/ace-jump-mode/master/ace-jump-mode.el
 (when (require 'ace-jump-mode nil t)
   (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
   (global-set-key (kbd "C-.") 'ace-jump-mode)
@@ -470,7 +464,6 @@
 (when (require 'fic-mode nil t))
 
 ;; fcopy.el
-;; https://raw.github.com/ataka/fcopy/master/fcopy.el
 (autoload 'fcopy-mode "fcopy" "copy lines or region without editing." t)
 
 ;; rainbow-mode.el
@@ -493,7 +486,6 @@
 
 ;; duplicate-thing.el
 ;; https://github.com/ongaeshi/duplicate-thing
-;; https://raw.github.com/ongaeshi/duplicate-thing/master/duplicate-thing.el
 ;; http://d.hatena.ne.jp/syohex/20120325/1332641491
 (when (require 'duplicate-thing nil t)
   (global-set-key (kbd "C-M-y") 'duplicate-thing))
