@@ -26,7 +26,6 @@
                        helm-c-source-recentf
                        helm-c-source-files-in-current-dir
                        helm-c-source-emacs-commands
-                       ;; helm-c-source-elscreen
                        helm-c-source-bookmarks-local
                        helm-c-source-buffer-not-found
                        )
@@ -55,7 +54,6 @@ To get non-interactive functions listed, use
   (let ((default (thing-at-point 'symbol)))
     (helm
      :prompt "Info about: "
-     :candidate-number-limit 15
      :sources
      (append '(helm-c-source-buffers-list
                helm-c-source-recentf
