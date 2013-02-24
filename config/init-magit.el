@@ -69,4 +69,7 @@
     (set-face-attribute 'magit-item-highlight nil :inherit nil))
   (add-hook 'magit-mode-hook 'magit-setup-diff)
 )
+
+(add-to-list 'auto-mode-alist '(".gitmodules"   . gitconfig-mode))
+
 (provide 'init-magit)
