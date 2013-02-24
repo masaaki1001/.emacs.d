@@ -91,9 +91,6 @@
 [submodule "repositories/joseph-single-dired"]
 	path = repositories/joseph-single-dired
 	url = git://github.com/jixiuf/joseph-single-dired.git
-[submodule "repositories/quick-jump"]
-	path = repositories/quick-jump
-	url = git://github.com/jixiuf/quick-jump.git
 [submodule "repositories/org-tree-slide"]
 	path = repositories/org-tree-slide
 	url = git://github.com/takaxp/org-tree-slide.git
