@@ -100,9 +100,6 @@
 [submodule "repositories/quick-jump"]
 	path = repositories/quick-jump
 	url = git://github.com/jixiuf/quick-jump.git
-[submodule "repositories/Highlight-Indentation-for-Emacs"]
-	path = repositories/Highlight-Indentation-for-Emacs
-	url = git://github.com/antonj/Highlight-Indentation-for-Emacs.git
 [submodule "repositories/org-tree-slide"]
 	path = repositories/org-tree-slide
 	url = git://github.com/takaxp/org-tree-slide.git
