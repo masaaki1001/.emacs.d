@@ -14,6 +14,11 @@
 
 ;; (helm-mode 1)
 
+(setq helm-idle-delay 0.1)
+(setq helm-input-idle-delay 0)
+(setq helm-candidate-number-limit 300)
+(setq helm-samewindow nil)
+
 (defun helm-mini ()
   "Preconfigured `helm' lightweight version \(buffer -> recentf\)."
   (interactive)

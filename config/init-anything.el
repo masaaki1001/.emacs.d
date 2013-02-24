@@ -12,6 +12,7 @@
           anything-c-source-yaetags-select
           ))
 
+  (setq anything-samewindow nil)
   (setq anything-candidate-number-limit 300) ; 表示する最大候補数。デフォルトで 50
 
   ;; anything 起動
