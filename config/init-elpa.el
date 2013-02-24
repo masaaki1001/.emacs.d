@@ -46,6 +46,7 @@
    (cons 'ruby-electric melpa)
    (cons 'ruby-block melpa)
    (cons 'inf-ruby melpa)
+   (cons 'rbenv melpa)
    (cons 'dired+ melpa)
    (cons 'dsvn melpa)
    (cons 'iy-go-to-char melpa)

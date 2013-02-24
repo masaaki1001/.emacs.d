@@ -124,6 +124,11 @@ print (which_library (%%[%%s]))'" name name)))
             (add-to-list 'ac-sources 'ac-source-robe)
             (setq completion-at-point-functions '(auto-complete))))
 
+;; rbenv
+;; https://github.com/senny/rbenv.el
+(when (require 'rbenv nil t)
+  (global-rbenv-mode))
+
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
