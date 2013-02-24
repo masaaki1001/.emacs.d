@@ -114,15 +114,16 @@ print (which_library (%%[%%s]))'" name name)))
 (when (require 'ruby-interpolation nil t))
 
 ;; https://github.com/tobiassvn/bundler.el
-(require 'bundler nil t)
+(when (require 'bundler nil t))
 
 ;; robe
 ;; https://github.com/dgutov/robe
-(add-hook 'ruby-mode-hook 'robe-mode)
-(add-hook 'robe-mode-hook
-          (lambda ()
-            (add-to-list 'ac-sources 'ac-source-robe)
-            (setq completion-at-point-functions '(auto-complete))))
+(when (require 'robe nil t)
+  (add-hook 'ruby-mode-hook 'robe-mode)
+  (add-hook 'robe-mode-hook
+            (lambda ()
+              (add-to-list 'ac-sources 'ac-source-robe)
+              (setq completion-at-point-functions '(auto-complete)))))
 
 ;; rbenv
 ;; https://github.com/senny/rbenv.el
