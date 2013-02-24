@@ -478,10 +478,6 @@
 ;; https://github.com/TeMPOraL/nyan-mode
 (when (require 'nyan-mode nil t))
 
-;; grep-o-matic.el
-;; https://github.com/ZungBang/emacs-grep-o-matic
-(when (require 'grep-o-matic nil t))
-
 ;; duplicate-thing.el
 ;; https://github.com/ongaeshi/duplicate-thing
 ;; http://d.hatena.ne.jp/syohex/20120325/1332641491
