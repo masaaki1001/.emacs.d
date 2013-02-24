@@ -467,12 +467,6 @@
 ;; fcopy.el
 (autoload 'fcopy-mode "fcopy" "copy lines or region without editing." t)
 
-;; rainbow-mode.el
-(when (require 'rainbow-mode nil t)
-  (add-hook 'css-mode-hook 'rainbow-mode)
-  (add-hook 'scss-mode-hook 'rainbow-mode)
-  )
-
 ;; drag-stuff.el
 ;; https://github.com/rejeep/drag-stuff
 (when (require 'drag-stuff nil t)

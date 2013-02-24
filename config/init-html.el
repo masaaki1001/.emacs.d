@@ -25,6 +25,12 @@
   (define-key web-mode-map (kbd "C-;") nil)
   )
 
+;; rainbow-mode
+(when (require 'rainbow-mode nil t)
+  (add-hook 'css-mode-hook 'rainbow-mode)
+  (add-hook 'scss-mode-hook 'rainbow-mode)
+  )
+
 ;; zencoding-mode
 (when (require 'zencoding-mode nil t)
   (add-hook 'html-mode-hook 'zencoding-mode)
