@@ -379,7 +379,6 @@
   )
 
 ;; auto-highlight-symbol-mode.el
-;; https://github.com/mitsuo-saito/auto-highlight-symbol-mode
 ;; https://github.com/mhayashi1120/auto-highlight-symbol-mode
 ;; http://d.hatena.ne.jp/yuheiomori0718/20111222/1324562208
 ;; http://d.hatena.ne.jp/syohex/20110126/1296048465
