@@ -3,15 +3,6 @@
 (require 'helm-elisp)
 (require 'helm-misc)
 
-;; (let ((key-and-func
-;;        `((,(kbd "M-s")   helm-occur)
-;;          (,(kbd "M-x")   helm-M-x)
-;;          (,(kbd "M-y")   helm-show-kill-ring)
-;;          (,(kbd "M-z")   helm-do-grep)
-;;          )))
-;;   (loop for (key func) in key-and-func
-;;         do (global-set-key key func)))
-
 ;; (helm-mode 1)
 
 (setq helm-idle-delay 0.1)
