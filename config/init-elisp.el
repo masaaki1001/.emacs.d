@@ -441,9 +441,10 @@
 
 ;; jump-char.el
 ;; https://github.com/lewang/jump-char
-(require 'jump-char)
-(global-set-key [(meta m)] 'jump-char-forward)
-(global-set-key [(shift meta m)] 'jump-char-backward)
+(when (require 'jump-char nil t)
+  (global-set-key [(meta m)] 'jump-char-forward)
+  (global-set-key [(shift meta m)] 'jump-char-backward)
+  )
 
 ;; pomodoro.el
 ;; https://github.com/baudtack/pomodoro.el
@@ -500,9 +501,6 @@
   (setq undo-no-redo t) ; 過去のundoがredoされないようにする
   (setq undo-limit 600000)
   (setq undo-strong-limit 900000))
-
-;; yagist.el
-(when (require 'yagist nil t))
 
 (when (require 'ack-and-a-half nil t)
   ;; Create shorter aliases

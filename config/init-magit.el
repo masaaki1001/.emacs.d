@@ -70,6 +70,9 @@
   (add-hook 'magit-mode-hook 'magit-setup-diff)
 )
 
+;; yagist.el
+(when (require 'yagist nil t))
+
 (add-to-list 'auto-mode-alist '(".gitmodules"   . gitconfig-mode))
 
 (provide 'init-magit)
