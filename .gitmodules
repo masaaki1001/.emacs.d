@@ -61,9 +61,6 @@
 [submodule "repositories/wrap-region"]
 	path = repositories/wrap-region
 	url = git://github.com/rejeep/wrap-region.git
-[submodule "repositories/ruby-interpolation"]
-	path = repositories/ruby-interpolation
-	url = git://github.com/leoc/ruby-interpolation.el.git
 [submodule "repositories/fic-mode"]
 	path = repositories/fic-mode
 	url = git://github.com/lewang/fic-mode.git

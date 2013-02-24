@@ -111,7 +111,7 @@ print (which_library (%%[%%s]))'" name name)))
 
 ;; ruby-interpolation.el
 ;; https://github.com/leoc/ruby-interpolation.el
-(require 'ruby-interpolation nil t)
+(when (require 'ruby-interpolation nil t))
 
 ;; https://github.com/tobiassvn/bundler.el
 (require 'bundler nil t)
