@@ -28,9 +28,6 @@
 [submodule "repositories/wgrep"]
 	path = repositories/wgrep
 	url = git://github.com/mhayashi1120/Emacs-wgrep.git
-[submodule "repositories/grep-o-matic"]
-	path = repositories/grep-o-matic
-	url = git://github.com/ZungBang/emacs-grep-o-matic.git
 [submodule "repositories/grep-a-lot"]
 	path = repositories/grep-a-lot
 	url = git://github.com/ZungBang/emacs-grep-a-lot.git
