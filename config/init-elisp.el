@@ -412,6 +412,9 @@
   (global-set-key [(f12)] 'maximize-frame)
   )
 
+(when (require 'maxframe nil t)
+  (add-hook 'window-setup-hook 'maximize-frame t))
+
 ;; iy-go-to-char.el
 (when (require 'iy-go-to-char nil t)
   (global-set-key (kbd "C-c f") 'iy-go-to-char)
