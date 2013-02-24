@@ -77,6 +77,7 @@
    (cons 'helm-git melpa)
    (cons 'htmlize melpa)
    (cons 'zencoding-mode melpa)
+   (cons 'ack-and-a-half melpa)
    ))
 
 (condition-case nil
