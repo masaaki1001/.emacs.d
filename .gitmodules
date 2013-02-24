@@ -100,9 +100,6 @@
 [submodule "repositories/anything-project"]
 	path = repositories/anything-project
 	url = git://github.com/imakado/anything-project.git
-[submodule "repositories/auto-highlight-symbol-mode"]
-	path = repositories/auto-highlight-symbol-mode
-	url = git://github.com/mitsuo-saito/auto-highlight-symbol-mode.git
 [submodule "repositories/undo-tree"]
 	path = repositories/undo-tree
 	url = http://www.dr-qubit.org/git/undo-tree.git
@@ -244,3 +241,9 @@
 [submodule "repositories/helm-project"]
 	path = repositories/helm-project
 	url = git://github.com/shishi/helm-project.git
+[submodule "repositories/auto-highlight-symbol-mode"]
+	path = repositories/auto-highlight-symbol-mode
+	url = git://github.com/mhayashi1120/auto-highlight-symbol-mode.git
+[submodule "repositories/helm-open-junk-file"]
+	path = repositories/helm-open-junk-file
+	url = https://gist.github.com/4754272.git
