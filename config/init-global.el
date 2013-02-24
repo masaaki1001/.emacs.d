@@ -9,8 +9,8 @@
 (if window-system (progn
   (set-background-color "Black")
   (set-foreground-color "White")
-  (set-frame-height (selected-frame) 49) ;; 全画面表示用 縦
-  (set-frame-width (selected-frame) 179) ;; 全画面表示用 横
+  ;; (set-frame-height (selected-frame) 49) ;; 全画面表示用 縦
+  ;; (set-frame-width (selected-frame) 179) ;; 全画面表示用 横
   (set-cursor-color "Gray")
   (menu-bar-mode -1) ;; メニューバーを消す
   (tool-bar-mode -1) ;; ツールバーを消す
@@ -57,15 +57,6 @@
 ;; find-fileのファイル名補完時に大文字小文字を区別しない
 (setq read-file-name-completion-ignore-case t)
 (setq completion-ignore-case t)
-;; C-a の挙動を変える
-;;(global-set-key "\C-a" '(lambda (arg)
-;;			  (interactive "^p")
-;;			  (cond
-;;			   ((bolp)
-;;			    (call-interactively 'back-to-indentation))
-;;			   (t
-;;			    (move-beginning-of-line arg)))))
-
 ;; cua-mode 矩形選択 C-RETで起動 M-x cua-modeでenabledにする
 ;; http://e-arrows.sakura.ne.jp/2010/02/vim-to-emacs.html
 (cua-mode t)
