@@ -104,6 +104,12 @@ To get non-interactive functions listed, use
            (remove-if 'file-directory-p files))))
   )
 
+;; helm-c-yasnippet.el
+(when (require 'helm-c-yasnippet nil t)
+  (setq helm-c-yas-space-match-any-greedy t) ;スペース区切りで絞り込めるようにする デフォルトは nil
+  (global-set-key (kbd "C-c y") 'helm-c-yas-complete) ;C-c yで起動
+  )
+
 (global-set-key (kbd "C-c h") 'helm-mini)
 (global-set-key (kbd "C-x f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
