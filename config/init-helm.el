@@ -77,24 +77,6 @@ To get non-interactive functions listed, use
   (global-set-key (kbd "C-c :") 'helm-git-find-files)
   )
 
-;; (require 'em-glob)
-;; (defvar junk-file-dir
-;;   (expand-file-name (concat (if (boundp 'user-emacs-directory)
-;;                                 (file-name-as-directory user-emacs-directory)
-;;                               "~/.emacs.d/")
-;;                             "junk")))
-;; (defvar junk-file-list
-;;   (reverse (eshell-extended-glob (concat
-;;                                   (file-name-as-directory junk-file-dir)
-;;                                   "*"))))
-;; (defvar helm-c-source-junk-files
-;;   '((name . "Junk Files")
-;;     (candidates . junk-file-list)
-;;     (type . file)))
-;; (defun helm-open-junk-file ()
-;;   (interactive)
-;;   (helm-other-buffer 'helm-c-source-junk-files "*helm for junk file"))
-
 (when (require 'helm-open-junk-file nil t)
   (global-set-key (kbd "C-x M-j") 'helm-open-junk-file)
   )
