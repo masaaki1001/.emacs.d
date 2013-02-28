@@ -72,9 +72,8 @@ To get non-interactive functions listed, use
   (setq helm-c-moccur-enable-auto-look-flag t)
   )
 
-(when (require 'helm-git nil t)
-  ;; (global-set-key (kbd "C-:") 'helm-git-find-files)
-  (global-set-key (kbd "C-c :") 'helm-git-find-files)
+(when (require 'helm-ls-git nil t)
+  (global-set-key (kbd "C-c :") 'helm-ls-git-ls)
   )
 
 (when (require 'helm-open-junk-file nil t)
