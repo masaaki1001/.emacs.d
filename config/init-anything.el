@@ -94,6 +94,14 @@
 ;; anything-dired-tree.el
 ;; https://gist.github.com/2271938
 
+;; anything-c-yasnippet.el
+;; http://d.hatena.ne.jp/shiba_yu36/20100615/1276612642
+;; http://d.hatena.ne.jp/sugyan/20120111/1326288445
+(when (require 'anything-c-yasnippet nil t)
+  (setq anything-c-yas-space-match-any-greedy t) ;スペース区切りで絞り込めるようにする デフォルトは nil
+  (global-set-key (kbd "C-c y") 'anything-c-yas-complete) ;C-c yで起動
+  )
+
 ;; anything-c-source-junk-files
 ;; http://qiita.com/items/eba6bc64f66d278f0032
 (require 'em-glob)

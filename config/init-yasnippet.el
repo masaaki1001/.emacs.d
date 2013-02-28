@@ -22,12 +22,4 @@
   (indent-according-to-mode))
 (add-hook 'yas/after-exit-snippet-hook 'yas/indent-snippet)
 
-;; anything-c-yasnippet.el
-;; http://d.hatena.ne.jp/shiba_yu36/20100615/1276612642
-;; http://d.hatena.ne.jp/sugyan/20120111/1326288445
-(when (require 'anything-c-yasnippet nil t)
-  (setq anything-c-yas-space-match-any-greedy t) ;スペース区切りで絞り込めるようにする デフォルトは nil
-  (global-set-key (kbd "C-c y") 'anything-c-yas-complete) ;C-c yで起動
-  )
-
 (provide 'init-yasnippet)
