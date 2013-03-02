@@ -37,7 +37,7 @@
 
   (define-key magit-status-mode-map (kbd "W") 'magit-toggle-whitespace)
 
-  (require 'magit-blame nil t)
+  (when (require 'magit-blame nil t))
 
   ;; diffの表示方法を変更
   (defun diff-mode-setup-faces ()
