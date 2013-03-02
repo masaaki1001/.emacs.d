@@ -45,12 +45,7 @@
                helm-c-source-files-in-current-dir
                helm-c-source-bookmarks-local
                helm-c-source-emacs-commands
-               ;; helm-def-source--emacs-commands
                )
-             ;; (mapcar (lambda (func)
-             ;;           (funcall func default))
-             ;;         '(helm-c-source-emacs-commands
-             ;;           ))
              ))))
 (global-set-key (kbd "C-;") 'my-helm)
 
