@@ -13,16 +13,16 @@
 (defun helm-mini ()
   "Preconfigured `helm' lightweight version \(buffer -> recentf\)."
   (interactive)
-  (helm-other-buffer '(helm-c-source-buffers-list
-                       helm-c-source-recentf
-                       helm-c-source-files-in-current-dir
-                       helm-c-source-emacs-commands
-                       helm-c-source-bookmarks-local
-                       helm-c-source-buffer-not-found
+  (helm-other-buffer '(helm-source-buffers-list
+                       helm-source-recentf
+                       helm-source-files-in-current-dir
+                       helm-source-emacs-commands
+                       helm-source-bookmarks-local
+                       helm-source-buffer-not-found
                        )
                      "*helm mini*"))
 
-(defvar helm-c-source-emacs-commands
+(defvar helm-source-emacs-commands
   '((name . "Emacs Commands")
     (candidates . (lambda ()
                     (let (commands)
@@ -40,11 +40,11 @@
     (helm
      :prompt "Info about: "
      :sources
-     (append '(helm-c-source-buffers-list
-               helm-c-source-recentf
-               helm-c-source-files-in-current-dir
-               helm-c-source-bookmarks-local
-               helm-c-source-emacs-commands
+     (append '(helm-source-buffers-list
+               helm-source-recentf
+               helm-source-files-in-current-dir
+               helm-source-bookmarks-local
+               helm-source-emacs-commands
                )
              ))))
 (global-set-key (kbd "C-;") 'my-helm)
