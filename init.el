@@ -23,36 +23,10 @@
 ;; e.g. (add-to-load-path "elisp" "xxx" "xxx")
 (add-to-load-path "repositories")
 
-
-;; load environment value
-;; http://d.hatena.ne.jp/syohex/20111117/1321503477
-(load-file (expand-file-name "~/.emacs.d/shellenv.el"))
-(dolist (path (split-string (getenv "PATH") ":"))
-  (add-to-list 'exec-path path))
-
-;;----------------------------------------------------------------------------
-;; emacsclient
-;;----------------------------------------------------------------------------
-(server-start t)
-
 ;;----------------------------------------------------------------------------
 ;; env
 ;;----------------------------------------------------------------------------
 (require 'env)
-
-;;----------------------------------------------------------------------------
-;; encoding
-;;----------------------------------------------------------------------------
-;; 日本語に設定
-(set-language-environment 'Japanese)
-;; UTF-8に設定
-(prefer-coding-system           'utf-8)
-(set-buffer-file-coding-system  'utf-8)
-(set-terminal-coding-system     'utf-8)
-(set-keyboard-coding-system     'utf-8)
-(set-clipboard-coding-system    'utf-8)
-(setq file-name-coding-system   'utf-8)
-(setq locale-coding-system      'utf-8)
 
 ;;----------------------------------------------------------------------------
 ;; Mac用設定

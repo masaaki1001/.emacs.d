@@ -1,3 +1,13 @@
+;; 日本語に設定
+(set-language-environment 'Japanese)
+;; UTF-8に設定
+(prefer-coding-system           'utf-8)
+(set-buffer-file-coding-system  'utf-8)
+(set-terminal-coding-system     'utf-8)
+(set-keyboard-coding-system     'utf-8)
+(set-clipboard-coding-system    'utf-8)
+(setq file-name-coding-system   'utf-8)
+(setq locale-coding-system      'utf-8)
 ;; 半透明にする
 ;; パラメータは、順に通常のフレーム、アクティブでないフレーム、移動中のフレームの透明度を表す
 (modify-all-frames-parameters
@@ -150,5 +160,7 @@
 ;; Also auto refresh dired, but be quiet about it
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-verbose nil)
+
+(server-start t)
 
 (provide 'init-global)
