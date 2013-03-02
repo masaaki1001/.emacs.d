@@ -32,13 +32,7 @@
                                             commands))))
                       (sort commands 'string-lessp))))
     (type . command)
-    (requires-pattern . 2))
-  "Source for completing and invoking Emacs commands.
-A command is a function with interactive spec that can
-be invoked with `M-x'.
-
-To get non-interactive functions listed, use
-`helm-c-source-emacs-functions'.")
+    (requires-pattern . 2)))
 
 (defun my-helm ()
   (interactive)
@@ -109,6 +103,8 @@ To get non-interactive functions listed, use
   (setq helm-c-yas-space-match-any-greedy t) ;スペース区切りで絞り込めるようにする デフォルトは nil
   (global-set-key (kbd "C-c y") 'helm-c-yas-complete) ;C-c yで起動
   )
+
+(when (require 'helm-replace-string nil t))
 
 (global-set-key (kbd "C-c h") 'helm-mini)
 (global-set-key (kbd "C-x f") 'helm-find-files)
