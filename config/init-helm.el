@@ -11,7 +11,6 @@
 (setq helm-samewindow nil)
 
 (defun helm-mini ()
-  "Preconfigured `helm' lightweight version \(buffer -> recentf\)."
   (interactive)
   (helm-other-buffer '(helm-source-buffers-list
                        helm-source-recentf
