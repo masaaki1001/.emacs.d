@@ -215,10 +215,10 @@
               (require 'rename-sgml-tag)
               (define-key sgml-mode-map (kbd "C-c C-r") 'rename-sgml-tag)))
 
-  (require 'js2-refactor)
-  (define-key js2-mode-map (kbd "C-c C-r") 'js2-rename-var)
-  (require 'inline-string-rectangle)
-  (global-set-key (kbd "C-x r t") 'inline-string-rectangle)
+  (when (require 'js2-refactor nil t)
+    (define-key js2-mode-map (kbd "C-c C-r") 'js2-rename-var))
+  (when (require 'inline-string-rectangle nil t)
+    (global-set-key (kbd "C-x r t") 'inline-string-rectangle))
   )
 
 ;; change-inner.el
