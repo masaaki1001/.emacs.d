@@ -75,7 +75,6 @@
    (cons 'scala-mode melpa)
    (cons 'helm melpa)
    (cons 'helm-c-moccur melpa)
-   ;; (cons 'helm-git melpa)
    (cons 'helm-ls-git melpa)
    (cons 'helm-c-yasnippet melpa)
    (cons 'htmlize melpa)
