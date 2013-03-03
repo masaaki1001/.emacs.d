@@ -389,7 +389,7 @@
 
 ;; minimap.el
 ;; http://www.randomsample.de/minimap.el
-(require 'minimap nil t)
+(when (require 'minimap nil t))
 
 ;; zlc.el
 ;; http://d.hatena.ne.jp/mooz/20101003/p1
