@@ -169,9 +169,6 @@
 [submodule "repositories/ipa"]
 	path = repositories/ipa
 	url = git://github.com/emacsmirror/ipa.git
-[submodule "repositories/package-spec"]
-	path = repositories/package-spec
-	url = git://github.com/rejeep/package-spec.git
 [submodule "repositories/recentf-ext"]
 	path = repositories/recentf-ext
 	url = git://github.com/emacsmirror/recentf-ext.git
