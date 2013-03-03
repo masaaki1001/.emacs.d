@@ -169,9 +169,6 @@
 [submodule "repositories/ipa"]
 	path = repositories/ipa
 	url = git://github.com/emacsmirror/ipa.git
-[submodule "repositories/browse-kill-ring-plus"]
-	path = repositories/browse-kill-ring-plus
-	url = git://github.com/emacsmirror/browse-kill-ring-plus.git
 [submodule "repositories/package-spec"]
 	path = repositories/package-spec
 	url = git://github.com/rejeep/package-spec.git
