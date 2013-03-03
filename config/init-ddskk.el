@@ -44,6 +44,8 @@
 ;;               (if (re-search-forward "。" 10000 t)
 ;;                   (setq skk-kutouten-type 'en)
 ;;                 (setq skk-kutouten-type 'jp)))))
+;; 句読点に ．， を使う
+(setq-default skk-kutouten-type 'en)
 ;; 送り仮名が厳密に正しい候補を優先して表示する
 (setq skk-henkan-strict-okuri-precedence t)
 ;; 辞書登録のとき、余計な送り仮名を送らないようにする
