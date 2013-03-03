@@ -14,17 +14,6 @@
 
 (package-initialize)
 
-;; https://github.com/purcell/emacs.d/blob/master/init-elpa.el
-(defun require-package (package &optional min-version no-refresh)
-  "Ask elpa to install given PACKAGE."
-  (if (package-installed-p package min-version)
-      t
-    (if (or (assoc package package-archive-contents) no-refresh)
-        (package-install package)
-      (progn
-        (package-refresh-contents)
-        (require-package package min-version t)))))
-
 ;; https://github.com/magnars/.emacs.d/blob/master/setup-package.el
 (defun packages-install (&rest packages)
   (mapc (lambda (package)
