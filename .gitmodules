@@ -55,9 +55,6 @@
 [submodule "repositories/drag-stuff"]
 	path = repositories/drag-stuff
 	url = git://github.com/rejeep/drag-stuff.git
-[submodule "repositories/wrap-region"]
-	path = repositories/wrap-region
-	url = git://github.com/rejeep/wrap-region.git
 [submodule "repositories/fic-mode"]
 	path = repositories/fic-mode
 	url = git://github.com/lewang/fic-mode.git
