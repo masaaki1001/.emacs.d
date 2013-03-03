@@ -414,14 +414,6 @@
 (when (require 'maxframe nil t)
   (add-hook 'window-setup-hook 'maximize-frame t))
 
-;; iy-go-to-char.el
-(when (require 'iy-go-to-char nil t)
-  (global-set-key (kbd "C-c f") 'iy-go-to-char)
-  (global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
-  (global-set-key (kbd "C-c ;") 'iy-go-to-char-continue)
-  (global-set-key (kbd "C-c ,") 'iy-go-to-char-continue-backward)
-  )
-
 ;; jaunte.el
 ;; http://kawaguchi.posterous.com/emacshit-a-hint
 ;; https://github.com/kawaguchi/jaunte.el
@@ -442,8 +434,8 @@
 ;; jump-char.el
 ;; https://github.com/lewang/jump-char
 (when (require 'jump-char nil t)
-  (global-set-key [(meta m)] 'jump-char-forward)
-  (global-set-key [(shift meta m)] 'jump-char-backward)
+  (global-set-key (kbd "C-c f") 'jump-char-forward)
+  (global-set-key (kbd "C-c F") 'jump-char-backward)
   )
 
 ;; pomodoro.el

@@ -50,7 +50,6 @@
    (cons 'rbenv melpa)
    (cons 'dired+ melpa)
    (cons 'dsvn melpa)
-   (cons 'iy-go-to-char melpa)
    (cons 'rainbow-mode gnu)
    (cons 'fold-dwim melpa)
    (cons 'goto-chg melpa)
