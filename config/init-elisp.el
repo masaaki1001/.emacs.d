@@ -154,11 +154,6 @@
 (when (require 'session nil t)
   (add-hook 'after-init-hook 'session-initialize)
   (setq session-save-file "~/.emacs.d/resource/.session")
-  ;;(setq history-length 200) ;; そもそものミニバッファ履歴リストの最大長
-  ;;(setq session-initialize '(de-saveplace session keys menus places)
-  ;;      session-globals-include '((kill-ring 50)             ;; kill-ring の保存件数
-  ;;                                (session-file-alist 50 t)  ;; カーソル位置を保存する件数
-  ;;                                (file-name-history 200)))  ;; ファイルを開いた履歴を保存する件数
   (setq session-save-print-spec '(t nil nil))
   )
 
@@ -183,10 +178,7 @@
 (when (require 'scratch-log nil t)
   (setq sl-scratch-log-file "~/.emacs.d/resource/.scratch-log")
   (setq sl-prev-scratch-string-file "~/.emacs.d/resource/.scratch-log-prev")
-  ;; nil なら emacs 起動時に，最後に終了したときの スクラッチバッファの内容を復元しない。初期値は t です。
   (setq sl-restore-scratch-p t)
-  ;; nil なら スクラッチバッファを削除できるままにする。初期値は t です。
-  ;; (setq sl-prohibit-kill-scratch-buffer-p nil)
   )
 
 ;; multiverse.el
@@ -295,25 +287,7 @@
 
 
 ;; deferred.el
-;; inertial-scroll.el
-;; 慣性スクロールする(Mac風)
-(when (require 'deferred nil t)
-;; (require 'inertial-scroll)
-;; (setq inertias-global-minor-mode-map
-;;       (inertias-define-keymap
-;;        '(
-;;          ("<next>"  . inertias-up)
-;;          ("<prior>" . inertias-down)
-;;          ("C-v"     . inertias-up)
-;;          ("M-v"     . inertias-down)
-;;          ) inertias-prefix-key))
-
-;; (inertias-global-minor-mode t)
-;; (setq inertias-initial-velocity 50) ; 初速（大きいほど一気にスクロールする）
-;; (setq inertias-friction 120)        ; 摩擦抵抗（大きいほどすぐ止まる）
-;; (setq inertias-rest-coef 0)         ; 画面端でのバウンド量（0はバウンドしない。1.0で弾性反発）
-;; (setq inertias-update-time 60)      ; 画面描画のwait時間（msec）
-  )
+(when (require 'deferred nil t))
 
 ;; yaml-mode.el
 ;; https://github.com/yoshiki/yaml-mode
