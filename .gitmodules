@@ -49,9 +49,6 @@
 [submodule "repositories/twittering-mode"]
 	path = repositories/twittering-mode
 	url = git://github.com/hayamiz/twittering-mode.git
-[submodule "repositories/powerline"]
-	path = repositories/powerline
-	url = git://github.com/yuanotes/powerline.git
 [submodule "repositories/scratch-ext-el"]
 	path = repositories/scratch-ext-el
 	url = git://github.com/kyanagi/scratch-ext-el.git

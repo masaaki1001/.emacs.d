@@ -481,9 +481,6 @@
 (when (require 'duplicate-thing nil t)
   (global-set-key (kbd "C-M-y") 'duplicate-thing))
 
-;; powerline
-;; (require 'powerline nil t)
-
 (when (require 'edit-server nil t)
   (setq edit-server-new-frame nil)
   (edit-server-start)
