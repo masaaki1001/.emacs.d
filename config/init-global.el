@@ -62,7 +62,9 @@
 ;; オートセーブファイルを作らない
 (setq make-backup-files nil)
 (setq auto-save-default nil)
-;;; 終了時にオートセーブファイルを消す
+;; 削除したらゴミ箱に
+(setq delete-by-moving-to-trash t)
+;; 終了時にオートセーブファイルを消す
 (setq delete-auto-save-files t)
 ;; find-fileのファイル名補完時に大文字小文字を区別しない
 (setq read-file-name-completion-ignore-case t)
