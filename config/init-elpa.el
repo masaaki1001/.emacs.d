@@ -61,6 +61,7 @@
    (cons 'bash-completion melpa)
    (cons 'yagist melpa)
    (cons 'scala-mode melpa)
+   (cons 'scala-mode2 melpa)
    (cons 'helm melpa)
    (cons 'helm-c-moccur melpa)
    (cons 'helm-ls-git melpa)
@@ -68,6 +69,13 @@
    (cons 'htmlize melpa)
    (cons 'zencoding-mode melpa)
    (cons 'ack-and-a-half melpa)
+   (cons 'color-moccur melpa)
+   (cons 'session melpa)
+   (cons 'savekill melpa)
+   (cons 'sticky melpa)
+   (cons 'open-junk-file melpa)
+   (cons 'recentf-ext melpa)
+   (cons 'viewer melpa)
    ))
 
 (condition-case nil

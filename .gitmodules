@@ -145,36 +145,9 @@
 [submodule "repositories/fcopy"]
 	path = repositories/fcopy
 	url = git://github.com/ataka/fcopy.git
-[submodule "repositories/color-moccur"]
-	path = repositories/color-moccur
-	url = git://github.com/emacsmirror/color-moccur.git
 [submodule "repositories/moccur-edit"]
 	path = repositories/moccur-edit
 	url = git://github.com/emacsmirror/moccur-edit.git
-[submodule "repositories/session"]
-	path = repositories/session
-	url = git://github.com/emacsmirror/session.git
-[submodule "repositories/savekill"]
-	path = repositories/savekill
-	url = git://github.com/emacsmirror/savekill.git
-[submodule "repositories/sticky"]
-	path = repositories/sticky
-	url = git://github.com/emacsmirror/sticky.git
-[submodule "repositories/multiverse"]
-	path = repositories/multiverse
-	url = git://github.com/emacsmirror/multiverse.git
-[submodule "repositories/open-junk-file"]
-	path = repositories/open-junk-file
-	url = git://github.com/emacsmirror/open-junk-file.git
-[submodule "repositories/ipa"]
-	path = repositories/ipa
-	url = git://github.com/emacsmirror/ipa.git
-[submodule "repositories/recentf-ext"]
-	path = repositories/recentf-ext
-	url = git://github.com/emacsmirror/recentf-ext.git
-[submodule "repositories/viewer"]
-	path = repositories/viewer
-	url = git://github.com/emacsmirror/viewer.git
 [submodule "repositories/anything-replace-string"]
 	path = repositories/anything-replace-string
 	url = git://github.com/k1LoW/anything-replace-string.git
@@ -199,9 +172,6 @@
 [submodule "repositories/yasnippet"]
 	path = repositories/yasnippet
 	url = git://github.com/capitaomorte/yasnippet.git
-[submodule "repositories/scala-mode2"]
-	path = repositories/scala-mode2
-	url = git://github.com/hvesalai/scala-mode2.git
 [submodule "repositories/shell-pop-el"]
 	path = repositories/shell-pop-el
 	url = git://github.com/kyagi/shell-pop-el.git
