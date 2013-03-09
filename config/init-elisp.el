@@ -181,10 +181,6 @@
   (setq sl-restore-scratch-p t)
   )
 
-;; multiverse.el
-;; ファイルのスナップショットを取得する
-(when (require 'multiverse nil t))
-
 ;; ipa.el
 (when (require 'ipa nil t)
   (setq ipa-file "~/.emacs.d/resource/.ipa"))
