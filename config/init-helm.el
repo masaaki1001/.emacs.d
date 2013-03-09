@@ -9,6 +9,7 @@
 (setq helm-input-idle-delay 0)
 (setq helm-candidate-number-limit 300)
 (setq helm-samewindow nil)
+(setq helm-quick-update t)
 
 (defun helm-mini ()
   (interactive)
@@ -44,6 +45,7 @@
                helm-source-files-in-current-dir
                helm-source-bookmarks-local
                helm-source-emacs-commands
+               helm-source-buffer-not-found
                )
              ))))
 (global-set-key (kbd "C-;") 'my-helm)
@@ -106,7 +108,7 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "M-z") 'helm-do-grep)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
-;; (global-set-key (kbd "C-c i") 'helm-imenu)
+(global-set-key (kbd "C-c i") 'helm-imenu)
 (global-set-key (kbd "C-c e") 'helm-elscreen)
 (global-set-key (kbd "C-M-z") 'helm-resume)
 
