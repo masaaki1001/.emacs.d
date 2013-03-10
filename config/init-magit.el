@@ -20,23 +20,6 @@
 
   (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 
-  (defun magit-toggle-whitespace ()
-    (interactive)
-    (if (member "-w" magit-diff-options)
-        (magit-dont-ignore-whitespace)
-      (magit-ignore-whitespace)))
-
-  (defun magit-ignore-whitespace ()
-    (interactive)
-    (add-to-list 'magit-diff-options "-w")
-    (magit-refresh))
-
-  (defun magit-dont-ignore-whitespace ()
-    (setq magit-diff-options (remove "-w" magit-diff-options))
-    (magit-refresh))
-
-  (define-key magit-status-mode-map (kbd "W") 'magit-toggle-whitespace)
-
   (when (require 'magit-blame nil t))
 
   ;; diffの表示方法を変更
@@ -51,7 +34,7 @@
     (set-face-attribute 'diff-refine-change nil
                         :foreground nil :background nil
                         :weight 'bold :inverse-video t))
-  (add-hook 'diff-mode-hook 'diff-mode-setup-faces)
+  (add-hook 'magit-diff-mode-hook 'diff-mode-setup-faces)
 
   ;; diffを表示したらすぐに文字単位での強調表示も行う
   (defun diff-mode-refine-automatically ()
