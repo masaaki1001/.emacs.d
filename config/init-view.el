@@ -29,7 +29,8 @@
   (defun view-mode-hook--pager ()
     (define-many-keys view-mode-map pager-keybind))
   (add-hook 'view-mode-hook 'view-mode-hook--pager)
-  (global-set-key [f11] 'view-mode)
+  ;; (global-set-key [f11] 'view-mode)
+  (global-set-key (kbd "C-c C-v") 'view-mode)
   )
 ;; 書き込み不能ファイルのバッファに対しては真赤
 ;; その他のview-modeバッファに対してはオレンジ

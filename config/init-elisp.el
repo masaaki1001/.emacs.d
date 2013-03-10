@@ -274,12 +274,13 @@
 
 ;; key-chord.el
 ;; http://d.hatena.ne.jp/rubikitch/20081104/1225745862
-(when (require 'key-chord nil t)
-  (setq key-chord-two-keys-delay 0.04) ;; 同時押しとみなす間隔
-  (key-chord-mode 1)
-  (key-chord-define-global "jk" 'view-mode)
-  (key-chord-define-global "kl" 'jaunte)
-  )
+;; anything or helm + popwin と競合する
+;; (when (require 'key-chord nil t)
+;;   (setq key-chord-two-keys-delay 0.04) ;; 同時押しとみなす間隔
+;;   (key-chord-mode 1)
+;;   (key-chord-define-global "jk" 'view-mode)
+;;   (key-chord-define-global "kl" 'jaunte)
+;;   )
 
 
 ;; deferred.el
