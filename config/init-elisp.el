@@ -11,10 +11,10 @@
 ;; http://d.hatena.ne.jp/m2ym/20110120
 (when (require 'popwin nil t)
   (setq display-buffer-function 'popwin:display-buffer)
-  (setq anything-samewindow nil)
-  (setq helm-samewindow nil)
-  (push '("^\*anything .+\*$" :regexp t :height 20) popwin:special-display-config)
-  (push '("^\*helm .+\*$" :regexp t :height 20) popwin:special-display-config)
+  ;; (push '("^\*anything .+\*$" :regexp t :height 20) popwin:special-display-config)
+  ;; (push '("^\*helm .+\*$" :regexp t :height 20) popwin:special-display-config)
+  (push '("*helm*" :height 20) popwin:special-display-config)
+  (push '("*helm M-x*" :height 20) popwin:special-display-config)
   (push '("*Warnings*" :height 20) popwin:special-display-config)
   (push '("*Procces List*" :height 20) popwin:special-display-config)
   (push '("*Messages*" :height 20) popwin:special-display-config)
@@ -23,7 +23,7 @@
   (push '("*Remember*" :height 20) popwin:special-display-config)
   (push '("*undo-tree*" :height 20) popwin:special-display-config)
   (push '("*All*" :height 20) popwin:special-display-config)
-  (push '("*eshell*" :height 20) popwin:special-display-config)
+  ;; (push '("*eshell*" :height 20) popwin:special-display-config)
   )
 
 
