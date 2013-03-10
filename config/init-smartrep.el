@@ -34,10 +34,16 @@
     '(progn
        (smartrep-define-key
            org-mode-map "C-c"
-         ;; '(("C-n" . 'outline-next-visible-heading)
-         ;;   ("C-p" . 'outline-previous-visible-heading)))))
          '(("n" . 'outline-next-visible-heading)
            ("p" . 'outline-previous-visible-heading)))))
+
+  (progn
+    (smartrep-define-key all-mode-map "M-g"
+       '(("n"   . 'next-error)
+         ("p"   . 'previous-error)
+         ("C-n" . 'next-error)
+         ("C-p" . 'previous-error))))
+
   )
 
 (provide 'init-smartrep)
