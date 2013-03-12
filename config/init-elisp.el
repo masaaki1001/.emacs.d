@@ -253,27 +253,6 @@
   (global-set-key (kbd "C-c C-u") 'winner-undo)
   )
 
-(when (require 'fold-dwim nil t)
-  ;; http://www.bookshelf.jp/pukiwiki/pukiwiki.php?cmd=read&page=Elisp%2Fhideshow.el
-  ;; Ruby編集時もソースを隠したり、表示したり
-  (add-hook 'ruby-mode-hook
-            '(lambda()
-               (hs-minor-mode 1)))
-  (let ((ruby-mode-hs-info
-         '( ruby-mode
-            "class\\|module\\|def\\|if\\|unless\\|case\\|while\\|until\\|for\\|begin\\|do"
-            "end"
-            "#"
-            ruby-move-to-block
-            nil)))
-    (if (not (member ruby-mode-hs-info hs-special-modes-alist))
-        (setq hs-special-modes-alist
-              (cons ruby-mode-hs-info hs-special-modes-alist))))
-
-  (global-set-key (kbd "C-(") 'hs-hide-block)
-  (global-set-key (kbd "C-)") 'hs-show-block)
-  )
-
 ;; volatile-highlights.el
 (when (require 'volatile-highlights nil t)
   (volatile-highlights-mode t)

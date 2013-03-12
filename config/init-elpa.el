@@ -57,7 +57,6 @@
    (cons 'all-ext melpa)
    (cons 'replace-from-region melpa)
    (cons 'multi-term melpa)
-   (cons 'fold-dwim melpa)
    (cons 'redo+ melpa)
    (cons 'bash-completion melpa)
    (cons 'yagist melpa)
