@@ -103,19 +103,6 @@
   ;; 終了する場合は「C-c ; Q」だけどsticky.elの影響でだめ
   )
 
-;; js2-mode
-;; https://github.com/mooz/js2-mode
-;; originalではなくid:moozの拡張版を利用
-(autoload 'js2-mode "js2-mode" nil t)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.js.erb$" . js2-mode)) ;; for rails
-
-;; js3-mode
-;; https://github.com/thomblake/js3-mode
-(autoload 'js3-mode "js3" nil t)
-(add-to-list 'auto-mode-alist '("\\.js$" . js3-mode))
-(add-to-list 'auto-mode-alist '("\\.js.erb$" . js3-mode)) ;; for rails
-
 ;; session.el
 ;; http://maruta.be/intfloat_staff/101
 (when (require 'session nil t)
@@ -162,9 +149,6 @@
   ;; transient-mark-modeが nilでは動作ないので注意
   (transient-mark-mode t)
 
-  ;;(require 'rename-sgml-tag)
-  ;;(define-key sgml-mode-map (kbd "C-c C-r") 'rename-sgml-tag)
-  ;; githubから持ってきただけだとエラーになる．作者のinit.elから設定を拝借
   (add-hook 'sgml-mode-hook
             (lambda ()
               (require 'rename-sgml-tag)
