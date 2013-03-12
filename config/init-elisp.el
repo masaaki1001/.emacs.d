@@ -135,10 +135,6 @@
   (setq sl-restore-scratch-p t)
   )
 
-;; ipa.el
-(when (require 'ipa nil t)
-  (setq ipa-file "~/.emacs.d/resource/.ipa"))
-
 ;; expand-region.el
 ;; https://github.com/magnars/expand-region.el
 ;; http://d.hatena.ne.jp/syohex/20120117/1326814127
