@@ -76,9 +76,6 @@
 [submodule "repositories/ndmacro"]
 	path = repositories/ndmacro
 	url = git://github.com/snj14/ndmacro.el.git
-[submodule "repositories/smooth-scroll"]
-	path = repositories/smooth-scroll
-	url = git://github.com/k-talo/smooth-scroll.el.git
 [submodule "repositories/scratch-log"]
 	path = repositories/scratch-log
 	url = git://github.com/mori-dev/scratch-log.git
@@ -100,9 +97,6 @@
 [submodule "repositories/bundler"]
 	path = repositories/bundler
 	url = git://github.com/tobiassvn/bundler.el.git
-[submodule "repositories/minimap"]
-	path = repositories/minimap
-	url = git://randomsample.de/minimap.git
 [submodule "repositories/magit"]
 	path = repositories/magit
 	url = git://github.com/magit/magit.git
@@ -142,9 +136,6 @@
 [submodule "repositories/revive"]
 	path = repositories/revive
 	url = git://github.com/emacsmirror/revive.git
-[submodule "repositories/fcopy"]
-	path = repositories/fcopy
-	url = git://github.com/ataka/fcopy.git
 [submodule "repositories/moccur-edit"]
 	path = repositories/moccur-edit
 	url = git://github.com/emacsmirror/moccur-edit.git

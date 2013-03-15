@@ -76,6 +76,7 @@
    (cons 'open-junk-file melpa)
    (cons 'recentf-ext melpa)
    (cons 'viewer melpa)
+   ;; (cons 'minimap melpa)
    ))
 
 (condition-case nil

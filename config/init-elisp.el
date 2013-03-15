@@ -258,10 +258,6 @@
   (volatile-highlights-mode t)
   )
 
-;; smooth-scroll.el
-;;(require 'smooth-scroll)
-;;(smooth-scroll-mode t)
-
 ;; open-junk-file.el
 (when (require 'open-junk-file nil t)
   (setq open-junk-file-format "~/.emacs.d/junk/%Y-%m-%d-%H%M%S.")
@@ -283,10 +279,6 @@
   (global-auto-highlight-symbol-mode t)
   (ahs-set-idle-interval 5) ;ハイライトまでの待機時間 デフォルトは1秒
   )
-
-;; minimap.el
-;; http://www.randomsample.de/minimap.el
-(when (require 'minimap nil t))
 
 ;; zlc.el
 ;; http://d.hatena.ne.jp/mooz/20101003/p1
@@ -352,9 +344,6 @@
 ;; https://github.com/lewang/fic-mode
 ;; highlight word is TODO or FIXME
 (when (require 'fic-mode nil t))
-
-;; fcopy.el
-(autoload 'fcopy-mode "fcopy" "copy lines or region without editing." t)
 
 ;; drag-stuff.el
 ;; https://github.com/rejeep/drag-stuff
