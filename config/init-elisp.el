@@ -333,13 +333,6 @@
   (pomodoro-add-to-mode-line)
   )
 
-;; diminish.el
-(when (require 'diminish nil t)
-  (diminish 'undo-tree-mode)
-  (diminish 'volatile-highlights-mode)
-  (diminish 'view-mode)
-  )
-
 ;; fic-mode.el
 ;; https://github.com/lewang/fic-mode
 ;; highlight word is TODO or FIXME
@@ -349,9 +342,6 @@
 ;; https://github.com/rejeep/drag-stuff
 (when (require 'drag-stuff nil t)
   (drag-stuff-mode t))
-
-;; https://github.com/TeMPOraL/nyan-mode
-(when (require 'nyan-mode nil t))
 
 ;; duplicate-thing.el
 ;; https://github.com/ongaeshi/duplicate-thing
