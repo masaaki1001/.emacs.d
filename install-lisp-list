@@ -1,0 +1,16 @@
+# anything
+(auto-install-batch "anything")
+# sequential-command
+(auto-install-batch "sequential-command")
+# cycle-buffer.el
+(auto-install-from-emacswiki "cycle-buffer.el")
+# moccur-edit.el
+(auto-install-from-url "http://www.bookshelf.jp/elc/moccur-edit.el")
+# lcomp.el
+(auto-install-from-emacswiki "lcomp.el")
+# mcomplete.el
+(auto-install-from-url "http://homepage1.nifty.com/bmonkey/emacs/elisp/mcomplete.el")
+# minibuffer-isearch
+(auto-install-from-url "http://www.sodan.org/~knagano/emacs/minibuf-isearch/minibuf-isearch.el")
+# sorter
+(auto-install-from-url "http://www.bookshelf.jp/elc/sorter.el")
