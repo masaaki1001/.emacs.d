@@ -1,12 +1,6 @@
 ;;----------------------------------------------------------------------------
 ;; 各種elisp
 ;;----------------------------------------------------------------------------
-;; switch-window.el
-;; http://d.hatena.ne.jp/tomoya/20100807/1281150227
-(when (require 'switch-window nil t) ; C-x o が dim:switch-window になる
-  (define-key global-map (kbd "C-t") 'other-window) ; C-t に other-window
-  )
-
 ;; popwin.el
 ;; http://d.hatena.ne.jp/m2ym/20110120
 (when (require 'popwin nil t)
@@ -70,29 +64,6 @@
   (define-key global-map (kbd "<f7>") 'point-undo)
   (define-key global-map (kbd "S-<f7>") 'point-redo))
 
-;; sequential-command.el C-a C-e の挙動変更
-;; http://emacs.g.hatena.ne.jp/k1LoW/20101211/1292046538
-(when (require 'sequential-command nil t)
-  (define-sequential-command seq-home
-    back-to-indentation  beginning-of-line beginning-of-buffer seq-return)
-  (global-set-key "\C-a" 'seq-home)
-  (define-sequential-command seq-end
-    end-of-line end-of-buffer seq-return)
-  (global-set-key "\C-e" 'seq-end)
-  ;; (require 'sequential-command-config)
-  ;; (sequential-command-setup-keys)
-  )
-
-;; smartchr.el =文字列まとめ
-;; http://tech.kayac.com/archive/emacs-tips-smartchr.html
-(when (require 'smartchr nil t)
-  (global-set-key (kbd "=") (smartchr '("=" " = " " == " " === ")))
-  (global-set-key (kbd ">") (smartchr '(">" " -> " " => " " -> '`!!''" " => '`!!''" " -> \"`!!'\"" " => \"`!!'\"")))
-  (global-set-key (kbd "<") (smartchr '("<" " << ")))
-  (global-set-key (kbd "&") (smartchr '("&" " && ")))
-  (global-set-key (kbd "|") (smartchr '("|" " || ")))
-  )
-
 ;; e2wm.el
 ;; http://d.hatena.ne.jp/kiwanami/20100528/1275038929
 ;; https://github.com/kiwanami/emacs-window-manager
@@ -120,11 +91,6 @@
 ;; https://github.com/syohex/emacs-quickrun
 (when (require 'quickrun nil t)
   (global-set-key [(f9)] 'quickrun))
-
-;; sticky.el
-;; 大文字入力を楽にする
-(when (require 'sticky nil t)
-  (use-sticky-key ";" sticky-alist:ja))
 
 ;; scratch-log.el
 ;; http://d.hatena.ne.jp/kitokitoki/20100612/p1
@@ -218,17 +184,6 @@
 (when (require 'goto-chg nil t)
   (define-key global-map (kbd "<f8>") 'goto-last-change)
   (define-key global-map (kbd "S-<f8>") 'goto-last-change-reverse))
-
-;; key-chord.el
-;; http://d.hatena.ne.jp/rubikitch/20081104/1225745862
-;; anything or helm + popwin と競合する
-;; (when (require 'key-chord nil t)
-;;   (setq key-chord-two-keys-delay 0.04) ;; 同時押しとみなす間隔
-;;   (key-chord-mode 1)
-;;   (key-chord-define-global "jk" 'view-mode)
-;;   (key-chord-define-global "kl" 'jaunte)
-;;   )
-
 
 ;; deferred.el
 (when (require 'deferred nil t))
@@ -337,17 +292,6 @@
 ;; https://github.com/lewang/fic-mode
 ;; highlight word is TODO or FIXME
 (when (require 'fic-mode nil t))
-
-;; drag-stuff.el
-;; https://github.com/rejeep/drag-stuff
-(when (require 'drag-stuff nil t)
-  (drag-stuff-mode t))
-
-;; duplicate-thing.el
-;; https://github.com/ongaeshi/duplicate-thing
-;; http://d.hatena.ne.jp/syohex/20120325/1332641491
-(when (require 'duplicate-thing nil t)
-  (global-set-key (kbd "C-M-y") 'duplicate-thing))
 
 (when (require 'edit-server nil t)
   (setq edit-server-new-frame nil)

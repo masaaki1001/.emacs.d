@@ -51,10 +51,64 @@
 ;; enable to pop `mark-ring' repeatedly like C-u C-SPC C-SPC ...
 (setq set-mark-command-repeat-pop t)
 
+;; sequential-command.el C-a C-e の挙動変更
+;; http://emacs.g.hatena.ne.jp/k1LoW/20101211/1292046538
+(when (require 'sequential-command nil t)
+  (define-sequential-command seq-home
+    back-to-indentation  beginning-of-line beginning-of-buffer seq-return)
+  (global-set-key "\C-a" 'seq-home)
+  (define-sequential-command seq-end
+    end-of-line end-of-buffer seq-return)
+  (global-set-key "\C-e" 'seq-end)
+  ;; (require 'sequential-command-config)
+  ;; (sequential-command-setup-keys)
+  )
+
+;; duplicate-thing.el
+;; https://github.com/ongaeshi/duplicate-thing
+;; http://d.hatena.ne.jp/syohex/20120325/1332641491
+(when (require 'duplicate-thing nil t)
+  (global-set-key (kbd "C-M-y") 'duplicate-thing))
+
+;; drag-stuff.el
+;; https://github.com/rejeep/drag-stuff
+(when (require 'drag-stuff nil t)
+  (drag-stuff-mode t))
+
 ;; Use C-x C-m to do M-x per Steve Yegge's advice
 ;; https://sites.google.com/site/steveyegge2/effective-emacs
-;; https://github.com/magnars/.emacs.d/commit/0291309114029e1402fc59b84050a069f9e89b2c
 (global-set-key "\C-x\C-m" 'execute-extended-command)
+
+;; switch-window.el
+;; http://d.hatena.ne.jp/tomoya/20100807/1281150227
+(when (require 'switch-window nil t) ; C-x o が dim:switch-window になる
+  (define-key global-map (kbd "C-t") 'other-window) ; C-t に other-window
+  )
+
+;; sticky.el
+;; 大文字入力を楽にする
+(when (require 'sticky nil t)
+  (use-sticky-key ";" sticky-alist:ja))
+
+;; smartchr.el =文字列まとめ
+;; http://tech.kayac.com/archive/emacs-tips-smartchr.html
+(when (require 'smartchr nil t)
+  (global-set-key (kbd "=") (smartchr '("=" " = " " == " " === ")))
+  (global-set-key (kbd ">") (smartchr '(">" " -> " " => " " -> '`!!''" " => '`!!''" " -> \"`!!'\"" " => \"`!!'\"")))
+  (global-set-key (kbd "<") (smartchr '("<" " << ")))
+  (global-set-key (kbd "&") (smartchr '("&" " && ")))
+  (global-set-key (kbd "|") (smartchr '("|" " || ")))
+  )
+
+;; key-chord.el
+;; http://d.hatena.ne.jp/rubikitch/20081104/1225745862
+;; anything or helm + popwin と競合する
+;; (when (require 'key-chord nil t)
+;;   (setq key-chord-two-keys-delay 0.04) ;; 同時押しとみなす間隔
+;;   (key-chord-mode 1)
+;;   (key-chord-define-global "jk" 'view-mode)
+;;   (key-chord-define-global "kl" 'jaunte)
+;;   )
 
 ;; 範囲指定していないとき、C-wで前の単語を削除
 ;; http://dev.ariel-networks.com/wp/documents/aritcles/emacs/part16
