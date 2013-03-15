@@ -235,13 +235,6 @@
   (ahs-set-idle-interval 5) ;ハイライトまでの待機時間 デフォルトは1秒
   )
 
-;; zlc.el
-;; http://d.hatena.ne.jp/mooz/20101003/p1
-;; https://github.com/mooz/emacs-zlc/
-(when (require 'zlc nil t)
-;;(setq zlc-select-completion-immediately t)
-  )
-
 ;; *Completions*バッファを，使用後に消してくれる
 ;; http://dev.ariel-networks.com/wp/documents/aritcles/emacs/part11
 (when (require 'lcomp nil t)

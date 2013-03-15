@@ -65,4 +65,12 @@
 (global-set-key [(shift f9)]  'cycle-buffer-backward-permissive)
 (global-set-key [(shift f10)] 'cycle-buffer-permissive)
 
+;; zlc.el
+;; http://d.hatena.ne.jp/mooz/20101003/p1
+;; https://github.com/mooz/emacs-zlc/
+(when (require 'zlc nil t)
+  (zlc-mode t)
+  ;;(setq zlc-select-completion-immediately t)
+  )
+
 (provide 'init-buffer)
