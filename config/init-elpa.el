@@ -62,6 +62,7 @@
    (cons 'yagist melpa)
    (cons 'scala-mode melpa)
    (cons 'scala-mode2 melpa)
+   (cons 'yaml-mode melpa)
    (cons 'helm melpa)
    (cons 'helm-c-moccur melpa)
    (cons 'helm-ls-git melpa)
