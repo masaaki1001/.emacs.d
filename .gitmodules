@@ -109,9 +109,6 @@
 [submodule "repositories/dired-filetype-face"]
 	path = repositories/dired-filetype-face
 	url = git://github.com/jixiuf/dired-filetype-face.git
-[submodule "repositories/deferred"]
-	path = repositories/deferred
-	url = git://github.com/kiwanami/emacs-deferred.git
 [submodule "repositories/emacs-window-layout"]
 	path = repositories/emacs-window-layout
 	url = git://github.com/kiwanami/emacs-window-layout.git

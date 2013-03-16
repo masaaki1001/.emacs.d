@@ -65,9 +65,6 @@
   (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
   )
 
-;; deferred.el
-(when (require 'deferred nil t))
-
 ;; yaml-mode.el
 ;; https://github.com/yoshiki/yaml-mode
 (when (require 'yaml-mode nil t)
