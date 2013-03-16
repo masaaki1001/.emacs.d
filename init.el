@@ -99,8 +99,6 @@
 
 ;;----------------------------------------------------------------------------
 ;; twittering-mode.el
-;; http://www.emacswiki.org/emacs/TwitteringMode-ja
-;; http://www.kototone.jp/com/how_to_use_twittering-mode.html
 ;;----------------------------------------------------------------------------
 (require 'init-twitter nil t)
 
