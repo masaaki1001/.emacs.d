@@ -19,12 +19,21 @@
 (if window-system (progn
   (set-background-color "Black")
   (set-foreground-color "White")
-  ;; (set-frame-height (selected-frame) 49) ;; 全画面表示用 縦
-  ;; (set-frame-width (selected-frame) 179) ;; 全画面表示用 横
   (set-cursor-color "Gray")
   (menu-bar-mode -1) ;; メニューバーを消す
   (tool-bar-mode -1) ;; ツールバーを消す
   (toggle-scroll-bar nil) ;; スクロールバーを消す
+
+  ;; maximize.el
+  ;; https://github.com/izawa/maximize
+  (when (require 'maximize nil t)
+    ;; (global-set-key [(f12)] 'maximize-toggle-frame-vmax)
+    ;; (global-set-key [(shift f12)] 'maximize-toggle-frame-hmax)
+    (global-set-key [(f12)] 'maximize-frame)
+    )
+
+  (when (require 'maxframe nil t)
+    (add-hook 'window-setup-hook 'maximize-frame t))
   ))
 
 ;; *scratch*の初期表示メッセージを消す
@@ -85,6 +94,10 @@
 ;; M-x を補完
 (when (require 'mcomplete nil t)
   (turn-on-mcomplete-mode))
+;; *Completions*バッファを，使用後に消してくれる
+;; http://dev.ariel-networks.com/wp/documents/aritcles/emacs/part11
+(when (require 'lcomp nil t)
+  (lcomp-install))
 
 ;; メニューバーにファイルパスを表示する
 (setq frame-title-format
@@ -122,10 +135,6 @@
 ;; モードラインに行番号、桁番号を表示
 (line-number-mode t)
 (column-number-mode t)
-;; パーセント表示ではなくて総行数で表示
-;; http://d.hatena.ne.jp/sandai/20120307/p1
-;;(setcar mode-line-position
-;;        '(:eval (format "%d" (count-lines (point-max) (point-min)))))
 ;; beepを消す
 (setq ring-bell-function 'ignore)
 

@@ -223,22 +223,6 @@
   (ahs-set-idle-interval 5) ;ハイライトまでの待機時間 デフォルトは1秒
   )
 
-;; *Completions*バッファを，使用後に消してくれる
-;; http://dev.ariel-networks.com/wp/documents/aritcles/emacs/part11
-(when (require 'lcomp nil t)
-  (lcomp-install))
-
-;; maximize.el
-;; https://github.com/izawa/maximize
-(when (require 'maximize nil t)
-  ;; (global-set-key [(f12)] 'maximize-toggle-frame-vmax)
-  ;; (global-set-key [(shift f12)] 'maximize-toggle-frame-hmax)
-  (global-set-key [(f12)] 'maximize-frame)
-  )
-
-(when (require 'maxframe nil t)
-  (add-hook 'window-setup-hook 'maximize-frame t))
-
 ;; pomodoro.el
 ;; https://github.com/baudtack/pomodoro.el
 (when (require 'pomodoro nil t)
