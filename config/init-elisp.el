@@ -58,12 +58,6 @@
 (when (require 'undohist nil t)
   (undohist-initialize))
 
-;; point-undo.el
-;; こんな対応が必要らしい http://randd.kwappa.net/2011/03/10/258
-(when (require 'point-undo nil t)
-  (define-key global-map (kbd "<f7>") 'point-undo)
-  (define-key global-map (kbd "S-<f7>") 'point-redo))
-
 ;; e2wm.el
 ;; http://d.hatena.ne.jp/kiwanami/20100528/1275038929
 ;; https://github.com/kiwanami/emacs-window-manager
@@ -179,12 +173,6 @@
   ;; grep バッファを kill 時に，開いたバッファを消す
   (setq color-grep-sync-kill-buffer t))
 
-;; goto-chg.el
-;; Emacs tech book p117
-(when (require 'goto-chg nil t)
-  (define-key global-map (kbd "<f8>") 'goto-last-change)
-  (define-key global-map (kbd "S-<f8>") 'goto-last-change-reverse))
-
 ;; deferred.el
 (when (require 'deferred nil t))
 
@@ -250,30 +238,6 @@
 
 (when (require 'maxframe nil t)
   (add-hook 'window-setup-hook 'maximize-frame t))
-
-;; jaunte.el
-;; http://kawaguchi.posterous.com/emacshit-a-hint
-;; https://github.com/kawaguchi/jaunte.el
-(when (require 'jaunte nil t)
-  (global-set-key (kbd "C-c C-j") 'jaunte)
-  (setq jaunte-hint-unit 'word) ;default
-  ;;(setq jaunte-global-hint-unit 'symbol)
-  )
-
-;; ace-jump-mode.el
-;; http://d.hatena.ne.jp/syohex/20120304/1330822993
-;; https://github.com/winterTTr/ace-jump-mode
-(when (require 'ace-jump-mode nil t)
-  (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
-  (global-set-key (kbd "C-.") 'ace-jump-mode)
-  )
-
-;; jump-char.el
-;; https://github.com/lewang/jump-char
-(when (require 'jump-char nil t)
-  (global-set-key (kbd "C-c f") 'jump-char-forward)
-  (global-set-key (kbd "C-c F") 'jump-char-backward)
-  )
 
 ;; pomodoro.el
 ;; https://github.com/baudtack/pomodoro.el
