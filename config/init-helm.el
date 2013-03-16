@@ -3,24 +3,11 @@
 (require 'helm-elisp)
 (require 'helm-misc)
 
-;; (helm-mode 1)
-
 (setq helm-idle-delay 0.1)
 (setq helm-input-idle-delay 0)
 (setq helm-candidate-number-limit 300)
 (setq helm-samewindow nil)
 (setq helm-quick-update t)
-
-(defun helm-mini ()
-  (interactive)
-  (helm-other-buffer '(helm-source-buffers-list
-                       helm-source-recentf
-                       helm-source-files-in-current-dir
-                       helm-source-emacs-commands
-                       helm-source-bookmarks-local
-                       helm-source-buffer-not-found
-                       )
-                     "*helm mini*"))
 
 (defvar helm-source-emacs-commands
   '((name . "Emacs Commands")
@@ -34,6 +21,17 @@
     (type . command)
     (requires-pattern . 2)))
 
+;; (defun helm-mini ()
+;;   (interactive)
+;;   (helm-other-buffer '(helm-source-buffers-list
+;;                        helm-source-recentf
+;;                        helm-source-files-in-current-dir
+;;                        helm-source-emacs-commands
+;;                        helm-source-bookmarks-local
+;;                        helm-source-buffer-not-found
+;;                        )
+;;                      "*helm mini*"))
+
 (defun my-helm ()
   (interactive)
   (let ((default (thing-at-point 'symbol)))
@@ -43,8 +41,8 @@
      (append '(helm-source-buffers-list
                helm-source-recentf
                helm-source-files-in-current-dir
-               helm-source-bookmarks-local
                helm-source-emacs-commands
+               helm-source-bookmarks-local
                helm-source-buffer-not-found
                )
              ))))
@@ -102,7 +100,7 @@
 
 (when (require 'helm-replace-string nil t))
 
-(global-set-key (kbd "C-c h") 'helm-mini)
+;; (global-set-key (kbd "C-c h") 'helm-mini)
 (global-set-key (kbd "C-x f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "M-x") 'helm-M-x)
