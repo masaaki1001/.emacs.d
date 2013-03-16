@@ -73,9 +73,6 @@
 [submodule "repositories/jaunte"]
 	path = repositories/jaunte
 	url = git://github.com/kawaguchi/jaunte.el.git
-[submodule "repositories/ndmacro"]
-	path = repositories/ndmacro
-	url = git://github.com/snj14/ndmacro.el.git
 [submodule "repositories/scratch-log"]
 	path = repositories/scratch-log
 	url = git://github.com/mori-dev/scratch-log.git

@@ -94,14 +94,6 @@
   (setq open-junk-file-format "~/.emacs.d/junk/%Y-%m-%d-%H%M%S.")
   )
 
-;; ndmacro.el
-;; https://github.com/snj14/ndmacro.el
-;; e.g. hoge C-m hoge C-m C-t C-t C-t ....
-;;      10   C-m 11   C-m C-t C-t C-t ....
-(when (require 'ndmacro nil t)
-  (global-set-key (kbd "C-3") 'ndmacro)
-  )
-
 ;; auto-highlight-symbol-mode.el
 ;; https://github.com/mhayashi1120/auto-highlight-symbol-mode
 ;; http://d.hatena.ne.jp/yuheiomori0718/20111222/1324562208
