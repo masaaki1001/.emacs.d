@@ -81,6 +81,8 @@
    (cons 'viewer melpa)
    (cons 'mainline melpa)
    ;; (cons 'minimap melpa)
+   (cons 'elisp-slime-nav melpa)
+   (cons 'paredit melpa)
    ))
 
 (condition-case nil
