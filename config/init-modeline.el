@@ -6,6 +6,7 @@
   (diminish 'undo-tree-mode)
   (diminish 'volatile-highlights-mode)
   (diminish 'view-mode)
+  (diminish 'elisp-slime-nav-mode)
   )
 
 (when (require 'mainline nil t))
