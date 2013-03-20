@@ -21,6 +21,19 @@
     (type . command)
     (requires-pattern . 2)))
 
+(defvar helm-source-spaces
+  '((name . "Spaces")
+    (candidates . sp-space-names)
+    (action ("Switch" . sp-apply-space-config))))
+
+(defun helm-spaces ()
+  (interactive)
+  (helm
+     :prompt "pattern: "
+     :sources
+     (append '(helm-source-spaces)
+             )))
+
 ;; (defun helm-mini ()
 ;;   (interactive)
 ;;   (helm-other-buffer '(helm-source-buffers-list
@@ -108,6 +121,7 @@
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-c i") 'helm-imenu)
 (global-set-key (kbd "C-c e") 'helm-elscreen)
+(global-set-key (kbd "C-c C-s") 'helm-spaces)
 (global-set-key (kbd "C-M-z") 'helm-resume)
 
 (define-key helm-map (kbd "C-p")   'helm-previous-line)

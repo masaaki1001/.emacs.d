@@ -83,6 +83,7 @@
    ;; (cons 'minimap melpa)
    (cons 'elisp-slime-nav melpa)
    (cons 'paredit melpa)
+   (cons 'spaces melpa)
    ))
 
 (condition-case nil

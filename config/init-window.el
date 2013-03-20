@@ -23,4 +23,6 @@
   (global-set-key (kbd "C-c C-u") 'winner-undo)
   )
 
+(when (require 'spaces nil t))
+
 (provide 'init-window)
