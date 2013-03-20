@@ -81,10 +81,8 @@
   (global-set-key (kbd "C-x M-j") 'helm-open-junk-file)
   )
 
-
 ;; helm-project.el
 (when (require 'helm-project nil t)
-;(global-set-key (kbd "C-c C-f") 'anything-project)
   (global-set-key (kbd "C-:") 'helm-project)
   (hp:add-project
    ;; setting templete
