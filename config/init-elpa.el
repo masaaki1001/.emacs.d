@@ -79,7 +79,7 @@
    (cons 'open-junk-file melpa)
    (cons 'recentf-ext melpa)
    (cons 'viewer melpa)
-   (cons 'mainline melpa)
+   (cons 'main-line melpa)
    ;; (cons 'minimap melpa)
    (cons 'elisp-slime-nav melpa)
    (cons 'paredit melpa)
