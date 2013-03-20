@@ -85,6 +85,7 @@
    (cons 'paredit melpa)
    (cons 'spaces melpa)
    (cons 'mc-jump melpa)
+   (cons 'imenu-anywhere melpa)
    ))
 
 (condition-case nil

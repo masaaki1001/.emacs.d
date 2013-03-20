@@ -111,6 +111,8 @@
 
 (when (require 'helm-replace-string nil t))
 
+(when (require 'imenu-anywhere nil t))
+
 ;; (global-set-key (kbd "C-c h") 'helm-mini)
 (global-set-key (kbd "C-x f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
@@ -118,6 +120,7 @@
 (global-set-key (kbd "M-z") 'helm-do-grep)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-c i") 'helm-imenu)
+(global-set-key (kbd "C-c I") 'helm-imenu-anywhere)
 (global-set-key (kbd "C-c e") 'helm-elscreen)
 (global-set-key (kbd "C-c C-s") 'helm-spaces)
 (global-set-key (kbd "C-M-z") 'helm-resume)
