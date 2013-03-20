@@ -49,7 +49,7 @@
   (interactive)
   (let ((default (thing-at-point 'symbol)))
     (helm
-     :prompt "Info about: "
+     :prompt "pattern: "
      :sources
      (append '(helm-source-buffers-list
                helm-source-recentf
