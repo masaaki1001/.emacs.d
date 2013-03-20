@@ -193,3 +193,6 @@
 [submodule "repositories/auto-highlight-symbol-mode"]
 	path = repositories/auto-highlight-symbol-mode
 	url = git://github.com/mhayashi1120/auto-highlight-symbol-mode.git
+[submodule "repositories/cl-lib"]
+	path = repositories/cl-lib
+	url = git://github.com/magit/cl-lib.git
