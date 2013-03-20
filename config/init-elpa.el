@@ -84,6 +84,7 @@
    (cons 'elisp-slime-nav melpa)
    (cons 'paredit melpa)
    (cons 'spaces melpa)
+   (cons 'mc-jump melpa)
    ))
 
 (condition-case nil

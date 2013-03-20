@@ -22,6 +22,11 @@
   (global-set-key (kbd "C-c F") 'jump-char-backward)
   )
 
+;; mc-jump.el
+(when (require 'mc-jump nil t)
+  (global-set-key (kbd "C-c C-f") 'mc-jump-char)
+  )
+
 ;; goto-chg.el
 ;; Emacs tech book p117
 (when (require 'goto-chg nil t)
