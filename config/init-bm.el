@@ -30,44 +30,6 @@
   (add-hook 'kill-emacs-hook '(lambda nil
                                 (bm-buffer-save-all)
                                 (bm-repository-save)))
-
-  ;; http://d.hatena.ne.jp/peccu/20100402/bmglobal
-  (defvar anything-c-source-bm-global-use-candidates-in-buffer
-    '((name . "Global Bookmarks")
-      (init . anything-c-bm-global-init)
-      (candidates-in-buffer)
-      (type . file-line))
-    "show global bookmarks list.
-Global means All bookmarks exist in `bm-repository'.
-
-Needs bm.el.
-http://www.nongnu.org/bm/")
   )
-
-(defvaralias 'anything-c-source-bm-global 'anything-c-source-bm-global-use-candidates-in-buffer)
-
-(defun anything-c-bm-global-init ()
-  "Init function for `anything-c-source-bm-global'."
-  (when (require 'bm nil t)
-    (with-no-warnings
-      (let ((files bm-repository)
-            (buf (anything-candidate-buffer 'global)))
-        (dolist (file files)            ;ブックマークされてるファイルリストから，1つ取り出す
-          (dolist (bookmark (cdr (assoc 'bookmarks (cdr file)))) ;1つのファイルに対して複数のブックマークがあるので
-            (let ((position (cdr (assoc 'position bookmark))) ;position
-                  (annotation (cdr (assoc 'annotation bookmark))) ;annotation
-                  (file (car file))                               ;file名を取り出す
-                  line
-                  str)
-              (setq str (with-temp-buffer (insert-file-contents-literally file) ;anything用の文字列にformat
-                               (goto-char position)
-                               (beginning-of-line)
-                               (unless annotation
-                                   (setq annotation ""))
-                               (if (string= "" line)
-                                   (setq line  "<EMPTY LINE>")
-                                 (setq line (car (split-string (thing-at-point 'line) "[\n\r]"))))
-                               (format "%s:%d: [%s]: %s\n" file (line-number-at-pos) annotation line)))
-              (with-current-buffer buf (insert str)))))))))
 
 (provide 'init-bm)
