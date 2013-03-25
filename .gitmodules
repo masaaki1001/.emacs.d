@@ -22,9 +22,6 @@
 [submodule "repositories/quickrun"]
 	path = repositories/quickrun
 	url = git://github.com/syohex/emacs-quickrun.git
-[submodule "repositories/rinari"]
-	path = repositories/rinari
-	url = git://github.com/eschulte/rinari.git
 [submodule "repositories/wgrep"]
 	path = repositories/wgrep
 	url = git://github.com/mhayashi1120/Emacs-wgrep.git
@@ -91,9 +88,6 @@
 [submodule "repositories/undo-tree"]
 	path = repositories/undo-tree
 	url = http://www.dr-qubit.org/git/undo-tree.git
-[submodule "repositories/bundler"]
-	path = repositories/bundler
-	url = git://github.com/tobiassvn/bundler.el.git
 [submodule "repositories/magit"]
 	path = repositories/magit
 	url = git://github.com/magit/magit.git
@@ -103,9 +97,6 @@
 [submodule "repositories/switch-window"]
 	path = repositories/switch-window
 	url = git://github.com/dimitri/switch-window.git
-[submodule "repositories/rspec-mode"]
-	path = repositories/rspec-mode
-	url = git://github.com/pezra/rspec-mode.git
 [submodule "repositories/dired-filetype-face"]
 	path = repositories/dired-filetype-face
 	url = git://github.com/jixiuf/dired-filetype-face.git
@@ -148,9 +139,6 @@
 [submodule "repositories/auto-complete"]
 	path = repositories/auto-complete
 	url = git://github.com/auto-complete/auto-complete.git
-[submodule "repositories/scss-mode"]
-	path = repositories/scss-mode
-	url = git://github.com/antonj/scss-mode.git
 [submodule "repositories/multiple-cursors"]
 	path = repositories/multiple-cursors
 	url = git://github.com/magnars/multiple-cursors.el.git

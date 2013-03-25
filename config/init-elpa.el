@@ -38,10 +38,12 @@
    (cons 'inf-ruby melpa)
    (cons 'ruby-interpolation melpa)
    (cons 'rbenv melpa)
+   (cons 'rspec-mode melpa)
+   (cons 'rinari melpa)
+   (cons 'bundler melpa)
    (cons 'dired+ melpa)
    (cons 'dsvn melpa)
    (cons 'rainbow-mode gnu)
-   (cons 'fold-dwim melpa)
    (cons 'goto-chg melpa)
    (cons 'key-chord melpa)
    (cons 'maxframe melpa)
@@ -86,6 +88,8 @@
    (cons 'spaces melpa)
    (cons 'mc-jump melpa)
    (cons 'imenu-anywhere melpa)
+   (cons 'less-css-mode melpa)
+   (cons 'scss-mode melpa)
    ))
 
 (condition-case nil
