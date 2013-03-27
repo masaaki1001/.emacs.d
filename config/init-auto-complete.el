@@ -4,6 +4,7 @@
 ;;----------------------------------------------------------------------------
 (when (require 'auto-complete-config nil t)
   (add-to-list 'ac-dictionary-directories "~/.emacs.d/repositories/auto-complete/dict")
+  (setq ac-comphist-file "~/.emacs.d/resource/ac-comphist.dat")
   (ac-config-default)
   (setq ac-delay 0.5)
   ;; (setq ac-auto-show-menu 0.8)
@@ -19,7 +20,6 @@
   ;; http://d.hatena.ne.jp/tkng/20090207/1234020003
   (add-to-list 'load-path (expand-file-name "~/.rvm/gems/jruby-1.6.5/gems/rcodetools-0.8.5.0"))
   (when (require 'auto-complete-ruby nil t)
-    (setq ac-comphist-file "~/.emacs.d/resource/auto-complete/ac-comphist.dat")
     (global-auto-complete-mode t)
     (setq ac-dwim nil)
     (set-face-background 'ac-selection-face "steelblue")
