@@ -184,3 +184,6 @@
 [submodule "repositories/cl-lib"]
 	path = repositories/cl-lib
 	url = git://github.com/magit/cl-lib.git
+[submodule "repositories/markdown-mode"]
+	path = repositories/markdown-mode
+	url = git://jblevins.org/git/markdown-mode.git
