@@ -22,9 +22,12 @@
   (global-set-key (kbd "C-c F") 'jump-char-backward)
   )
 
-;; mc-jump.el
-(when (require 'mc-jump nil t)
-  (global-set-key (kbd "C-c C-f") 'mc-jump-char)
+;; iy-go-to-char.el
+(when (require 'iy-go-to-char nil t)
+  (global-set-key (kbd "C-c C-f") 'iy-go-to-char)
+  (global-set-key (kbd "C-c C-F") 'iy-go-to-char-backward)
+  (global-set-key (kbd "C-c ;") 'iy-go-to-char-continue)
+  (global-set-key (kbd "C-c ,") 'iy-go-to-char-continue-backward)
   )
 
 ;; goto-chg.el

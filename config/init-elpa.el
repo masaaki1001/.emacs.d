@@ -86,7 +86,7 @@
    (cons 'elisp-slime-nav melpa)
    (cons 'paredit melpa)
    (cons 'spaces melpa)
-   (cons 'mc-jump melpa)
+   (cons 'iy-go-to-char melpa)
    (cons 'imenu-anywhere melpa)
    (cons 'less-css-mode melpa)
    (cons 'scss-mode melpa)
