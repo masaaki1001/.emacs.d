@@ -187,3 +187,6 @@
 [submodule "repositories/markdown-mode"]
 	path = repositories/markdown-mode
 	url = git://jblevins.org/git/markdown-mode.git
+[submodule "repositories/dash-at-point"]
+	path = repositories/dash-at-point
+	url = git://github.com/stanaka/dash-at-point.git

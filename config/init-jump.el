@@ -42,4 +42,8 @@
   (define-key global-map (kbd "<f7>") 'point-undo)
   (define-key global-map (kbd "S-<f7>") 'point-redo))
 
+(when (require 'dash-at-point nil t)
+  (global-set-key (kbd "C-c C-d") 'dash-at-point)
+  )
+
 (provide 'init-jump)
