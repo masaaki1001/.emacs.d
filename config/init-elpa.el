@@ -30,6 +30,7 @@
 (defun init-install-packages ()
   (packages-install
    (cons 'melpa melpa)
+   (cons 'cl-lib gnu)
    (cons 'auto-install melpa)
    (cons 'ruby-mode melpa)
    (cons 'robe melpa)
