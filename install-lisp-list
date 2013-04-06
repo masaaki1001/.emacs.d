@@ -14,3 +14,17 @@
 (auto-install-from-url "http://www.sodan.org/~knagano/emacs/minibuf-isearch/minibuf-isearch.el")
 # sorter
 (auto-install-from-url "http://www.bookshelf.jp/elc/sorter.el")
+# hatena-diary.el
+(auto-install-from-url "https://gist.github.com/tarao/4465244/raw/f80afaee5d51b5e38d12f20946b42d077e1908e1/hatena-diary.el")
+# hatena-diary-api.el
+(auto-install-from-url "https://gist.github.com/tarao/4465244/raw/137e139c023e1a45596047ae71b458e4a57604bb/hatena-diary-api.el")
+# hatena-markup-mode.el
+(auto-install-from-url "https://gist.github.com/tarao/4428666/raw/20c23586c6eee76bad7817f682e0faa2c9ba59c4/hatena-markup-mode.el")
+# hatena-multi-mode.el
+(auto-install-from-url "https://gist.github.com/tarao/4475652/raw/13d7dde5ad7401d39b72f0bc92484cf08fd09cfa/hatena-multi-mode.el")
+# multi-mode.el
+(auto-install-from-url "http://www.loveshack.ukfsn.org/emacs/multi-mode.el")
+# multi-mode-util.el
+(auto-install-from-url "https://raw.github.com/tarao/multi-mode-util/master/multi-mode-util.el")
+# sha1-el.el
+(auto-install-from-url "http://git.chise.org/gitweb/?p=elisp/flim.git;a=blob_plain;f=sha1-el.el")
