@@ -66,8 +66,6 @@
    (cons 'scala-mode melpa)
    (cons 'scala-mode2 melpa)
    (cons 'yaml-mode melpa)
-   ;; (cons 'markdown-mode melpa)
-   ;; (cons 'markdown-mode+ melpa)
    (cons 'helm melpa)
    (cons 'helm-c-moccur melpa)
    (cons 'helm-ls-git melpa)
@@ -111,7 +109,6 @@
 
 ;; el-get
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-;; もし el-get がなければインストールを行う
 (unless (require 'el-get nil t)
   (url-retrieve
    "https://github.com/dimitri/el-get/raw/master/el-get-install.el"
@@ -119,6 +116,5 @@
      (let (el-get-master-branch)
        (end-of-buffer)
        (eval-print-last-sexp)))))
-(require 'el-get)
 
 (provide 'init-elpa)
