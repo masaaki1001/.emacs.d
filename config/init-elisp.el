@@ -10,6 +10,8 @@
                          :underline t :foreground "green"
                          :weight 'bold)))
 
+(when (require 'eldoc-extension nil t))
+
 ;; elisp-slime-nav
 (when (require 'elisp-slime-nav nil t))
 (add-hook 'emacs-lisp-mode-hook (lambda () (elisp-slime-nav-mode t)))

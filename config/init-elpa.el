@@ -85,6 +85,7 @@
    (cons 'main-line melpa)
    ;; (cons 'minimap melpa)
    (cons 'elisp-slime-nav melpa)
+   (cons 'eldoc-extension melpa)
    (cons 'paredit melpa)
    (cons 'spaces melpa)
    (cons 'iy-go-to-char melpa)
