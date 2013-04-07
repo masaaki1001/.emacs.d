@@ -90,6 +90,7 @@
    (cons 'imenu-anywhere melpa)
    (cons 'less-css-mode melpa)
    (cons 'scss-mode melpa)
+   (cons 'js3-mode melpa)
    ))
 
 (condition-case nil
