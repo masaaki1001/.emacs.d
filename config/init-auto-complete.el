@@ -16,23 +16,6 @@
               (define-key ac-completing-map (kbd "C-s") 'ac-isearch)
               ))
 
-  ;; auto-complete-ruby.el
-  ;; http://d.hatena.ne.jp/tkng/20090207/1234020003
-  (add-to-list 'load-path (expand-file-name "~/.rvm/gems/jruby-1.6.5/gems/rcodetools-0.8.5.0"))
-  (when (require 'auto-complete-ruby nil t)
-    (global-auto-complete-mode t)
-    (setq ac-dwim nil)
-    (set-face-background 'ac-selection-face "steelblue")
-    (setq ac-auto-start t)
-    (global-set-key "\M-q" 'ac-start)
-    (setq ac-sources '(ac-source-abbrev ac-source-words-in-buffer))
-    (add-hook 'ruby-mode-hook
-              (lambda ()
-                (when (require 'rcodetools nil t))
-                (when (require 'auto-complete-ruby nil t))
-                (make-local-variable 'ac-omni-completion-sources)
-                (setq ac-omni-completion-sources '(("\\.\\=" . (ac-source-rcodetools))))))
-    )
   )
 
 (provide 'init-auto-complete)

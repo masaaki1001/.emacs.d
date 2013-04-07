@@ -9,7 +9,6 @@
           anything-c-source-files-in-current-dir
           anything-c-source-bm-global
           anything-c-source-emacs-commands
-          anything-c-source-yaetags-select
           ))
 
   (setq anything-samewindow nil)
@@ -55,7 +54,7 @@
    ;; :look-for '("Rakefile")
    ;; :include-regexp '("\\.rb$" "\\.html$" "\\.erb$" "\\.js$" "\\.yml$" "\\.css$" "\\Gemfile$")
    ;:exclude-regexp "/test_files" ; can be regexp or list of regexp
-   :name 'Ripple
+   :name 'project
    :look-for '(".gitignore")
    :include-regexp '("\\.scala$" "\\.html$" "\\.conf$" "\\.properties$" "\\.sbt$" "\\.sql$" "\\routes$")
    )
@@ -82,48 +81,7 @@
   (setq anything-exuberant-ctags-cache-tag-file-dir "~/Workspace/hoge/")
   )
 
-;; anything-yaetags.el
-(when (require 'anything-yaetags nil t)
-  ;;(add-to-list 'anything-sources 'anything-c-source-yaetags-select)
-  (global-set-key (kbd "M-.") 'anything-yaetags-find-tag)
-  )
-
 ;; anything-migemo.el
 (require 'anything-migemo nil t)
-
-;; anything-dired-tree.el
-;; https://gist.github.com/2271938
-
-;; anything-c-yasnippet.el
-;; http://d.hatena.ne.jp/shiba_yu36/20100615/1276612642
-;; http://d.hatena.ne.jp/sugyan/20120111/1326288445
-(when (require 'anything-c-yasnippet nil t)
-  (setq anything-c-yas-space-match-any-greedy t) ;スペース区切りで絞り込めるようにする デフォルトは nil
-  (global-set-key (kbd "C-c y") 'anything-c-yas-complete) ;C-c yで起動
-  )
-
-;; anything-c-source-junk-files
-;; http://qiita.com/items/eba6bc64f66d278f0032
-(require 'em-glob)
-(defvar junk-file-dir "~/.emacs.d/junk/")
-(defvar junk-file-list
-  (reverse (eshell-extended-glob (concat
-                                  (file-name-as-directory junk-file-dir)
-                                  "*"))))
-(defvar anything-c-source-junk-files
-  '((name . "Junk Files")
-    (candidates . junk-file-list)
-    (type . file)))
-(defun anything-open-junk-file ()
-  (interactive)
-  (anything-other-buffer 'anything-c-source-junk-files "*anything for junk file"))
-(global-set-key (kbd "C-x M-j") 'anything-open-junk-file)
-
-(defun anything-for-elscreen ()
-  "preconfigured `anything' for anything-for-elscreen"
-  (interactive)
-  (anything anything-c-source-elscreen
-	    nil nil nil nil "*anything for elscreen*"))
-(define-key global-map (kbd "C-c e") 'anything-for-elscreen)
 
 (provide 'init-anything)

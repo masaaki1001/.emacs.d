@@ -26,7 +26,6 @@
 (when (require 'all-ext nil t))
 
 ;; grep-a-lot.el
-;; Emacs tech book p162
 ;; https://github.com/ZungBang/emacs-grep-a-lot
 (when (require 'grep-a-lot nil t)
   (defvar my-grep-a-lot-search-word nil)

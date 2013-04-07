@@ -1,6 +1,5 @@
 ;;----------------------------------------------------------------------------
 ;; view-mode
-;; Emacs mail magazine
 ;;----------------------------------------------------------------------------
 ;; f11でview-modeに
 ;; key-chord.elでjk同時押しも設定してある。
@@ -84,7 +83,6 @@
 (define-key view-mode-map (kbd "SPC") 'ace-jump-mode)
 
 ;; bm.elの設定
-;; Emacs tech Book p218
 (define-key view-mode-map (kbd "m") 'bm-toggle)
 (define-key view-mode-map (kbd "[") 'bm-previous)
 (define-key view-mode-map (kbd "]") 'bm-next)

@@ -1,22 +1,7 @@
 ;;----------------------------------------------------------------------------
 ;; filecache
 ;;----------------------------------------------------------------------------
-(when (require 'filecache nil t)
-;;(file-cache-add-directory-list
-;;  (list "~" "~/.emacs.d/")) ;; ディレクトリを追加
-  )
-
-(file-cache-add-directory-using-find "~/Workspace/hoge")
-(define-key minibuffer-local-completion-map "\C-c\C-i"
-  'file-cache-minibuffer-complete)
-
-(eval-after-load
-    "filecache"
-  '(progn
-     (message "Loading file cache...")
-     (file-cache-add-directory-using-find "~/Workspace/hoge")
-     ;;(file-cache-add-directory-list load-path)
-     ))
+(when (require 'filecache nil t))
 
 (defun file-cache-save-cache-to-file (file)
   "Save contents of `file-cache-alist' to FILE.
@@ -34,10 +19,5 @@ The file cache can be saved to a file using
   (let ((buf (find-file-noselect file)))
     (setq file-cache-alist (read buf))
     (kill-buffer buf)))
-
-(defvar anything-source-file-cache
-  '((name . "File Cache")
-    (candidates . file-cache-files)
-    (type . file)))
 
 (provide 'init-filecache)

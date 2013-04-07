@@ -2,7 +2,6 @@
 ;; eshell
 ;;---------------------------------------------------------
 ;; マークしたファイルを引数にeshellを起動する
-;; Emacs mail magazine
 (defun dired-start-eshell (arg)
   "diredで選択されたファイル名がペーストされた状態で、eshellを起動する。"
   (interactive "P")
@@ -15,20 +14,15 @@
 
 ;; esh-myparser.el
 ;; コマンド解釈乗っ取り
-;; Emacs mail magazine
-;; emacswiki
 (when (require 'esh-myparser nil t)
   (defun eshell-parser/b (str) (eshell-parser/b str "bash"))
   )
 
 ;; esh-cmdline-stack.el
 ;; eshellでコマンドラインスタック機能を実現する
-;; Emacs mail magazine
-;; emacswiki
 (require 'esh-cmdline-stack nil t)
 
 ;; eshellでの実行をbashなどのシェルを利用するように変更
-;; Emacs mail magazines
 (progn
   (defmacro eval-after-load* (name &rest body)
     (declare (indent 1))
@@ -68,7 +62,6 @@
   (eshell-disable-unix-command-emulation))
 
 ;; shell-pop.el and eshell-pop.el
-;; Emacs mail magazine
 (when (require 'shell-pop nil t)
   (when (require 'eshell-pop nil t)
     (global-set-key (kbd "C-x C-z") 'shell-pop)

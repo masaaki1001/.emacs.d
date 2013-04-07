@@ -154,7 +154,6 @@
       (set-process-query-on-exit-flag p nil))))
 
 ;; ダイアログボックスを使わないようにする
-;; Emacs tech book p59
 (setq use-dialog-box nil)
 (defalias 'message-box 'message)
 
