@@ -66,10 +66,6 @@
            (remove-if 'file-directory-p files))))
   )
 
-;; anything-css.el
-;; http://emacs.g.hatena.ne.jp/k1LoW/20120110/1326198461
-(require 'anything-css nil t)
-
 ;; anything-imenu起動
 ;;(define-key global-map (kbd "<f12>") 'anything-imenu)
 (define-key global-map (kbd "C-c i") 'anything-imenu)

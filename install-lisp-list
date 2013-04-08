@@ -1,5 +1,3 @@
-# anything
-(auto-install-batch "anything")
 # sequential-command
 (auto-install-batch "sequential-command")
 # cycle-buffer.el
