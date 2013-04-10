@@ -124,9 +124,6 @@
 [submodule "repositories/moccur-edit"]
 	path = repositories/moccur-edit
 	url = git://github.com/emacsmirror/moccur-edit.git
-[submodule "repositories/anything-replace-string"]
-	path = repositories/anything-replace-string
-	url = git://github.com/k1LoW/anything-replace-string.git
 [submodule "repositories/change-inner"]
 	path = repositories/change-inner
 	url = git://github.com/magnars/change-inner.el.git
