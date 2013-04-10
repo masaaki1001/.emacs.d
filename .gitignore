@@ -7,8 +7,7 @@ auto-install/*
 ddskk-14.4
 ddskk-14.4/*
 el-get
-el-get/*
-junk/*
+junk
 undohist
 ensime_2.9.2-0.9.8.1
 resource/*
