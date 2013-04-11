@@ -90,16 +90,6 @@
 (when (require 'sticky nil t)
   (use-sticky-key ";" sticky-alist:ja))
 
-;; smartchr.el =文字列まとめ
-;; http://tech.kayac.com/archive/emacs-tips-smartchr.html
-(when (require 'smartchr nil t)
-  (global-set-key (kbd "=") (smartchr '("=" " = " " == " " === ")))
-  (global-set-key (kbd ">") (smartchr '(">" " -> " " => " " -> '`!!''" " => '`!!''" " -> \"`!!'\"" " => \"`!!'\"")))
-  (global-set-key (kbd "<") (smartchr '("<" " << ")))
-  (global-set-key (kbd "&") (smartchr '("&" " && ")))
-  (global-set-key (kbd "|") (smartchr '("|" " || ")))
-  )
-
 ;; key-chord.el
 ;; http://d.hatena.ne.jp/rubikitch/20081104/1225745862
 ;; anything or helm + popwin と競合する
