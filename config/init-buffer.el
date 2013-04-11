@@ -2,16 +2,17 @@
 ;; Buffer関連
 ;;----------------------------------------------------------------------------
 ;; バッファ一覧を詳細に
-(global-set-key "\C-x\C-b" 'bs-show)
-;; ミニバッファの履歴を【C-r】でインクリメンタルサーチできるように
+(global-set-key (kbd "C-x C-b") 'bs-show)
+
+;; ミニバッファの履歴をC-rでインクリメンタルサーチできるように
 ;; http://www.sodan.org/~knagano/emacs/minibuf-isearch/minibuf-isearch.el
-(require 'minibuf-isearch)
+(require 'minibuf-isearch nil t)
 
 ;; i-searchでのBS有効
-(define-key isearch-mode-map "\C-h" 'isearch-delete-char)
+(define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
 ;; isearch の終了時のカーソル位置を常に検索語の後ろにする
 ;; http://www.bookshelf.jp/soft/meadow_49.html#SEC716
-(define-key isearch-mode-map "\M-m" 'isearch-exit)
+(define-key isearch-mode-map (kbd "M-m") 'isearch-exit)
 (add-hook 'isearch-mode-end-hook
           (lambda ()
             (cond
@@ -47,7 +48,7 @@
   (if (one-window-p t)
       (switch-to-last-buffer)
     (other-window 1)))
-(global-set-key (kbd "\C-t") 'switch-to-last-buffer-or-other-window)
+(global-set-key (kbd "C-t") 'switch-to-last-buffer-or-other-window)
 
 ;; cycle-buffer.el
 ;; http://www.bookshelf.jp/cgi-bin/goto.cgi?file=meadow&node=cyclebuf

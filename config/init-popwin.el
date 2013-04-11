@@ -14,7 +14,6 @@
   (push '("*Remember*" :height 20) popwin:special-display-config)
   (push '("*undo-tree*" :height 20) popwin:special-display-config)
   (push '("*All*" :height 20) popwin:special-display-config)
-  ;; (push '("*eshell*" :height 20) popwin:special-display-config)
   )
 
 (provide 'init-popwin)

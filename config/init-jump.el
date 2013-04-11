@@ -31,19 +31,23 @@
   )
 
 ;; goto-chg.el
-;; Emacs tech book p117
 (when (require 'goto-chg nil t)
   (define-key global-map (kbd "<f8>") 'goto-last-change)
   (define-key global-map (kbd "S-<f8>") 'goto-last-change-reverse))
 
 ;; point-undo.el
-;; こんな対応が必要らしい http://randd.kwappa.net/2011/03/10/258
 (when (require 'point-undo nil t)
   (define-key global-map (kbd "<f7>") 'point-undo)
   (define-key global-map (kbd "S-<f7>") 'point-redo))
 
-(when (require 'dash-at-point nil t)
-  (global-set-key (kbd "C-c C-d") 'dash-at-point)
+(when (mac-os-p)
+  (when (require 'dash-at-point nil t)
+    (add-to-list 'dash-at-point-mode-alist '(css-mode . "css"))
+    (add-to-list 'dash-at-point-mode-alist '(ruby-mode . "ruby"))
+    (add-to-list 'dash-at-point-mode-alist '(web-mode . "html"))
+    (add-to-list 'dash-at-point-mode-alist '(emacs-lisp-mode . "elisp"))
+    (global-set-key (kbd "C-c C-d") 'dash-at-point)
+    )
   )
 
 (provide 'init-jump)

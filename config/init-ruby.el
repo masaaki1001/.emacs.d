@@ -8,13 +8,13 @@
       (append '(("\\.rb$" . ruby-mode)) auto-mode-alist))
 (setq interpreter-mode-alist (append '(("ruby" . ruby-mode))
                                      interpreter-mode-alist))
-(autoload 'run-ruby "inf-ruby"
-  "Run an inferior Ruby process")
-(autoload 'inf-ruby-keys "inf-ruby"
-  "Set local key defs for inf-ruby in ruby-mode")
- (add-hook 'ruby-mode-hook
-          '(lambda ()
-             (inf-ruby-keys)))
+;; (autoload 'run-ruby "inf-ruby"
+;;   "Run an inferior Ruby process")
+;; (autoload 'inf-ruby-keys "inf-ruby"
+;;   "Set local key defs for inf-ruby in ruby-mode")
+;;  (add-hook 'ruby-mode-hook
+;;           '(lambda ()
+;;              (inf-ruby-keys)))
 
 ;; http://willnet.in/13
 ;; (setq ruby-deep-indent-paren-style nil)
@@ -111,10 +111,10 @@ print (which_library (%%[%%s]))'" name name)))
 
 ;; ruby-interpolation.el
 ;; https://github.com/leoc/ruby-interpolation.el
-(when (require 'ruby-interpolation nil t))
+(require 'ruby-interpolation nil t)
 
 ;; https://github.com/tobiassvn/bundler.el
-(when (require 'bundler nil t))
+(require 'bundler nil t)
 
 ;; robe
 ;; https://github.com/dgutov/robe
@@ -129,6 +129,11 @@ print (which_library (%%[%%s]))'" name name)))
 ;; https://github.com/senny/rbenv.el
 (when (require 'rbenv nil t)
   (global-rbenv-mode))
+
+(when (require 'rdefsx nil t)
+  (define-key ruby-mode-map (kbd "C-c C-i") 'helm-rdefsx)
+  (rdefsx-auto-update-mode 1)
+  )
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.

@@ -1,5 +1,5 @@
 ;; https://github.com/TeMPOraL/nyan-mode
-(when (require 'nyan-mode nil t))
+(require 'nyan-mode nil t)
 
 ;; diminish.el
 (when (require 'diminish nil t)

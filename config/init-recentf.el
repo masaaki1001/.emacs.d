@@ -17,7 +17,7 @@
 
 ;; recentf-ext.el
 ;; http://d.hatena.ne.jp/rubikitch/20091224/recentf
-(when (require 'recentf-ext nil t))
+(require 'recentf-ext nil t)
 
 ;; こんな設定もできる。
 ;; http://masutaka.net/chalow/2011-10-30-2.html

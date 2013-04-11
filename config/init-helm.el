@@ -55,15 +55,15 @@
                helm-source-recentf
                helm-source-files-in-current-dir
                helm-source-emacs-commands
-               helm-source-bookmarks-local
+               helm-source-pp-bookmarks
                helm-source-buffer-not-found
                )
              ))))
 (global-set-key (kbd "C-;") 'my-helm)
 
 (when (require 'helm-c-moccur nil t)
-  (global-set-key (kbd "C-o") 'helm-c-moccur-occur-by-moccur)
-  (global-set-key (kbd "C-M-o") 'helm-c-moccur-dmoccur)
+  (global-set-key (kbd "C-c C-o") 'helm-c-moccur-occur-by-moccur)
+  (global-set-key (kbd "C-c C-M-o") 'helm-c-moccur-dmoccur)
   (add-hook 'dired-mode-hook
             '(lambda ()
                (local-set-key (kbd "O") 'helm-c-moccur-dired-do-moccur-by-moccur)))
@@ -82,26 +82,26 @@
   )
 
 ;; helm-project.el
-(when (require 'helm-project nil t)
-  (global-set-key (kbd "C-:") 'helm-project)
-  (hp:add-project
-   ;; setting templete
-   ;; :name 'hoge
-   ;; :look-for '("Rakefile")
-   ;; :include-regexp '("\\.rb$" "\\.html$" "\\.erb$" "\\.js$" "\\.yml$" "\\.css$" "\\Gemfile$")
-   ;:exclude-regexp "/test_files" ; can be regexp or list of regexp
-   :name 'Ripple
-   :look-for '(".git")
-   :include-regexp '("\\.scala$" "\\.html$" "\\.conf$" "\\.properties$" "\\.sbt$" "\\.sql$" "\\routes$" "\\.js$")
-   :exclude-regexp "/target*"
-   )
-  ;; 候補にディレクトリが含まれないようにする
-  ;; http://d.hatena.ne.jp/IMAKADO/20090823/1250963119
-  (setq hp:project-files-filters
-        (list
-         (lambda (files)
-           (remove-if 'file-directory-p files))))
-  )
+;; (when (require 'helm-project nil t)
+;;   (global-set-key (kbd "C-:") 'helm-project)
+;;   (hp:add-project
+;;    ;; setting templete
+;;    ;; :name 'hoge
+;;    ;; :look-for '("Rakefile")
+;;    ;; :include-regexp '("\\.rb$" "\\.html$" "\\.erb$" "\\.js$" "\\.yml$" "\\.css$" "\\Gemfile$")
+;;    ;:exclude-regexp "/test_files" ; can be regexp or list of regexp
+;;    :name 'project
+;;    :look-for '(".git")
+;;    :include-regexp '("\\.scala$" "\\.html$" "\\.conf$" "\\.properties$" "\\.sbt$" "\\.sql$" "\\routes$" "\\.js$")
+;;    :exclude-regexp "/target*"
+;;    )
+;;   ;; 候補にディレクトリが含まれないようにする
+;;   ;; http://d.hatena.ne.jp/IMAKADO/20090823/1250963119
+;;   (setq hp:project-files-filters
+;;         (list
+;;          (lambda (files)
+;;            (remove-if 'file-directory-p files))))
+;;   )
 
 ;; helm-c-yasnippet.el
 (when (require 'helm-c-yasnippet nil t)
@@ -109,9 +109,9 @@
   (global-set-key (kbd "C-c y") 'helm-c-yas-complete) ;C-c yで起動
   )
 
-(when (require 'helm-replace-string nil t))
+(require 'helm-replace-string nil t)
 
-(when (require 'imenu-anywhere nil t))
+(require 'imenu-anywhere nil t)
 
 ;; (global-set-key (kbd "C-c h") 'helm-mini)
 (global-set-key (kbd "C-x f") 'helm-find-files)

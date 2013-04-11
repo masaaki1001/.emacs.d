@@ -92,12 +92,7 @@ If the link is in hidden text, expose it."
         (error "No further link found"))))
   (define-key org-mode-map "\M-n" 'org-next-visible-link)
   (define-key org-mode-map "\M-p" 'org-previous-visible-link)
-  
-  
-  ;; M-x anything-org-agenda
-  ;; http://d.hatena.ne.jp/r_takaishi/20101218/1292641216
-  (when (require 'anything-org-mode nil t))
-  
+
   ;; Emacs tech Book p282
   (setq org-use-fast-todo-selection t)
   (setq org-todo-keywords

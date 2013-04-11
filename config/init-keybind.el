@@ -1,19 +1,19 @@
 ;;----------------------------------------------------------------------------
 ;; keybind
 ;;----------------------------------------------------------------------------
-;; (global-set-key "\C-h" 'delete-backward-char) ; 削除
-(global-set-key "\M-h" 'backward-kill-word)
+(global-set-key (kbd "M-h") 'backward-kill-word)
 (if (= emacs-major-version 23)
   (progn
     (pc-selection-mode) ;; Shift + 矢印キーで範囲選択
     )
   (progn))
 
-(setq kill-whole-line t) ;; C-k で改行を含め切り取り
+;; C-k で改行を含め切り取り
+(setq kill-whole-line t)
 ;; 改行時にインデント
-(global-set-key "\C-m" 'newline-and-indent)
+(global-set-key (kbd "C-m") 'newline-and-indent)
 ;; 指定行へ移動
-(global-set-key "\M-g" 'goto-line)
+(global-set-key (kbd "M-g") 'goto-line)
 
 ;; 単語削除で切り取りではなく削除になるようにする
 ;; http://d.hatena.ne.jp/syohex/20110329/
@@ -26,6 +26,7 @@
 (global-set-key (kbd "M-d") 'delete-word)
 (global-set-key [C-backspace] 'backward-delete-word)
 
+;; C-hでbackspace
 ;; http://openlab.dino.co.jp/2007/09/25/23251372.html
 (load "term/bobcat")
 (when (fboundp 'terminal-init-bobcat)
@@ -56,17 +57,14 @@
 (when (require 'sequential-command nil t)
   (define-sequential-command seq-home
     back-to-indentation  beginning-of-line beginning-of-buffer seq-return)
-  (global-set-key "\C-a" 'seq-home)
+  (global-set-key (kbd "C-a") 'seq-home)
   (define-sequential-command seq-end
     end-of-line end-of-buffer seq-return)
-  (global-set-key "\C-e" 'seq-end)
-  ;; (require 'sequential-command-config)
-  ;; (sequential-command-setup-keys)
+  (global-set-key (kbd "C-e") 'seq-end)
   )
 
 ;; duplicate-thing.el
 ;; https://github.com/ongaeshi/duplicate-thing
-;; http://d.hatena.ne.jp/syohex/20120325/1332641491
 (when (require 'duplicate-thing nil t)
   (global-set-key (kbd "C-M-y") 'duplicate-thing))
 
@@ -77,7 +75,7 @@
 
 ;; Use C-x C-m to do M-x per Steve Yegge's advice
 ;; https://sites.google.com/site/steveyegge2/effective-emacs
-(global-set-key "\C-x\C-m" 'execute-extended-command)
+(global-set-key (kbd "C-x C-m") 'execute-extended-command)
 
 ;; switch-window.el
 ;; http://d.hatena.ne.jp/tomoya/20100807/1281150227

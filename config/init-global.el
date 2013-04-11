@@ -40,7 +40,7 @@
 ;; http://d.hatena.ne.jp/mooz/20100318/p1
 (setq initial-scratch-message "")
 ;; tabは4文字分、改行後に自動インデント
-(setq-default tab-width 4 indent-tabs-mode nil)
+(setq-default tab-width 2 indent-tabs-mode nil)
 ;; 行末の空白を表示
 (setq-default show-trailing-whitespace t)
 
@@ -171,6 +171,8 @@
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-verbose nil)
 
-(server-start t)
+(require 'server)
+(if (not (server-running-p))
+    (server-start))
 
 (provide 'init-global)

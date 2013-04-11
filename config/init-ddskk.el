@@ -4,6 +4,7 @@
 ;; http://quruli.ivory.ne.jp/document/ddskk_14.2/skk_toc.html#SEC_Contents
 ;; http://www.bookshelf.jp/texi/skk/skk_4.html#SEC15
 ;;---------------------------------------------------------
+(when (require 'skk-autoloads nil t)
 ;; http://sheephead.homelinux.org/2010/06/18/1894/
 (setq skk-user-directory "~/.emacs.d/ddskk/") ; ディレクトリ指定
 (setq skk-large-jisyo "~/.emacs.d/ddskk/SKK-JISYO.L")
@@ -11,12 +12,11 @@
 ;; skk用にshift-stickyを";"に設定する
 (setq skk-sticky-key ";")
 
-(require 'skk-autoloads nil t)
 ;; C-x C-j で skk モードを起動
 (global-set-key (kbd "C-x j") 'skk-mode)
 ;; .skk を自動的にバイトコンパイル
 (setq skk-byte-compile-init-file t)
-(require 'info)
+(require 'info nil t)
 (add-to-list 'Info-additional-directory-list "~/.emacs.d/ddskk/info")
 ;;(global-set-key [?\S- ] 'skk-mode)
 ;;チュートリアルの場所設定
@@ -51,7 +51,7 @@
 ;; 辞書登録のとき、余計な送り仮名を送らないようにする
 (setq skk-check-okurigana-on-touroku 'auto)
 ;; 変換の学習
-(require 'skk-study)
+(require 'skk-study nil t)
 ;;単漢字検索のキーを!にする
 (setq skk-tankan-search-key ?!)
 ;; モード表示の色を設定する
@@ -68,6 +68,6 @@
            (or (eolp)
                (looking-at "[ \t]+$")))))
 ;; 動的補完で候補を複数表示する
-(setq skk-dcomp-multiple-activate t)
+(setq skk-dcomp-multiple-activate t))
 
 (provide 'init-ddskk)

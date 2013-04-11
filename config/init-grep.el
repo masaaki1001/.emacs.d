@@ -20,10 +20,10 @@
 
 ;; moccur-edit.el
 ;; http://www.bookshelf.jp/elc/moccur-edit.el
-(when (require 'moccur-edit nil t))
+(require 'moccur-edit nil t)
 
 ;; all-ext.el
-(when (require 'all-ext nil t))
+(require 'all-ext nil t)
 
 ;; grep-a-lot.el
 ;; https://github.com/ZungBang/emacs-grep-a-lot
@@ -56,7 +56,7 @@
 
 ;; wgrep.el
 ;; https://github.com/mhayashi1120/Emacs-wgrep
-(when (require 'wgrep nil t))
+(require 'wgrep nil t)
 
 ;; color-grep.el
 ;; http://www.bookshelf.jp/soft/meadow_51.html#SEC778

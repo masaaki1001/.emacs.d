@@ -26,6 +26,6 @@
 ;; fic-mode.el
 ;; https://github.com/lewang/fic-mode
 ;; highlight word is TODO or FIXME
-(when (require 'fic-mode nil t))
+(require 'fic-mode nil t)
 
 (provide 'init-highlight)

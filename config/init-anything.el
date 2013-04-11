@@ -2,7 +2,7 @@
 ;; anything.el
 ;;----------------------------------------------------------------------------
 (when (require 'anything-startup nil t)
-  (when (require 'anything-config nil t))
+  (require 'anything-config nil t)
   (setq anything-sources
         '(anything-c-source-buffers+
           anything-c-source-recentf
@@ -13,6 +13,7 @@
 
   (setq anything-samewindow nil)
   (setq anything-candidate-number-limit 300) ; 表示する最大候補数。デフォルトで 50
+  (anything-read-string-mode 1)
 
   ;; anything 起動
   ;; http://d.hatena.ne.jp/tomoya/20090423/1240456834
@@ -44,10 +45,6 @@
          (lambda (files)
            (remove-if 'file-directory-p files))))
   )
-
-;; anything-imenu起動
-;;(define-key global-map (kbd "<f12>") 'anything-imenu)
-(define-key global-map (kbd "C-c i") 'anything-imenu)
 
 ;; anything-exuberant-ctags.el
 ;; http://emacs.g.hatena.ne.jp/k1LoW/20110809/1312896254

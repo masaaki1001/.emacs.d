@@ -20,7 +20,7 @@
 
   (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 
-  (when (require 'magit-blame nil t))
+  (require 'magit-blame nil t)
 
   ;; diffの表示方法を変更
   (defun diff-mode-setup-faces ()
@@ -54,7 +54,9 @@
 )
 
 ;; yagist.el
-(when (require 'yagist nil t))
+(require 'yagist nil t)
+
+(require 'github-browse-file nil t)
 
 (add-to-list 'auto-mode-alist '(".gitmodules"   . gitconfig-mode))
 

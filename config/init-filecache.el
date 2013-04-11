@@ -1,7 +1,7 @@
 ;;----------------------------------------------------------------------------
 ;; filecache
 ;;----------------------------------------------------------------------------
-(when (require 'filecache nil t))
+(require 'filecache nil t)
 
 (defun file-cache-save-cache-to-file (file)
   "Save contents of `file-cache-alist' to FILE.

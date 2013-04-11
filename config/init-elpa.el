@@ -57,6 +57,7 @@
    (cons 'flycheck melpa)
    (cons 'slime-js marmalade)
    (cons 'point-undo melpa)
+   (cons 'all gnu)
    (cons 'all-ext melpa)
    (cons 'replace-from-region melpa)
    (cons 'multi-term melpa)
