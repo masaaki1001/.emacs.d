@@ -1,9 +1,6 @@
 [submodule "repositories/expand-region"]
 	path = repositories/expand-region
 	url = git://github.com/magnars/expand-region.el.git
-[submodule "repositories/rvm"]
-	path = repositories/rvm
-	url = git://github.com/senny/rvm.el.git
 [submodule "repositories/js2-mode"]
 	path = repositories/js2-mode
 	url = git://github.com/mooz/js2-mode.git

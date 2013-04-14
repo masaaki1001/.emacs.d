@@ -56,22 +56,6 @@
 (when (require 'rinari nil t)
   (setq rinari-rgrep-file-endings "*.rb *.erb *.yml *.js"))
 
-;; rvm.el
-;; https://github.com/senny/rvm.el
-(when (require 'rvm nil t)
-  (rvm-use-default) ;; use rvm's default ruby for the current Emacs session
-  (defcustom rspec-use-rvm nil
-    "t when RVM in is in use. (Requires rvm.el)"
-    :type 'boolean
-    :group 'rspec-mode)
-  (defun rspec-compile ()
-    ;; some code.....
-    (if rspec-use-rvm
-        (rvm-activate-corresponding-ruby))
-    ;; more code ..
-    )
-  )
-
 ;; rspec-mode
 (when (require 'rspec-mode nil t)
   (custom-set-variables '(rspec-use-rake-flag nil))
