@@ -7,9 +7,6 @@
 [submodule "repositories/direx-el"]
 	path = repositories/direx-el
 	url = git://github.com/m2ym/direx-el.git
-[submodule "repositories/nyan-mode"]
-	path = repositories/nyan-mode
-	url = git://github.com/TeMPOraL/nyan-mode.git
 [submodule "repositories/popwin-el"]
 	path = repositories/popwin-el
 	url = git://github.com/m2ym/popwin-el.git
@@ -19,18 +16,9 @@
 [submodule "repositories/quickrun"]
 	path = repositories/quickrun
 	url = git://github.com/syohex/emacs-quickrun.git
-[submodule "repositories/wgrep"]
-	path = repositories/wgrep
-	url = git://github.com/mhayashi1120/Emacs-wgrep.git
 [submodule "repositories/grep-a-lot"]
 	path = repositories/grep-a-lot
 	url = git://github.com/ZungBang/emacs-grep-a-lot.git
-[submodule "repositories/key-combo"]
-	path = repositories/key-combo
-	url = git://github.com/uk-ar/key-combo.git
-[submodule "repositories/smartrep"]
-	path = repositories/smartrep
-	url = git://github.com/myuhe/smartrep.el.git
 [submodule "repositories/bm"]
 	path = repositories/bm
 	url = git://github.com/joodland/bm.git
@@ -49,9 +37,6 @@
 [submodule "repositories/drag-stuff"]
 	path = repositories/drag-stuff
 	url = git://github.com/rejeep/drag-stuff.git
-[submodule "repositories/fic-mode"]
-	path = repositories/fic-mode
-	url = git://github.com/lewang/fic-mode.git
 [submodule "repositories/jump-char"]
 	path = repositories/jump-char
 	url = git://github.com/lewang/jump-char.git
@@ -76,9 +61,6 @@
 [submodule "repositories/org-tree-slide"]
 	path = repositories/org-tree-slide
 	url = git://github.com/takaxp/org-tree-slide.git
-[submodule "repositories/zlc"]
-	path = repositories/zlc
-	url = git://github.com/mooz/emacs-zlc.git
 [submodule "repositories/anything-project"]
 	path = repositories/anything-project
 	url = git://github.com/imakado/anything-project.git
@@ -151,12 +133,6 @@
 [submodule "repositories/helm-replace-string"]
 	path = repositories/helm-replace-string
 	url = git://github.com/jixiuf/helm-replace-string.git
-[submodule "repositories/auto-highlight-symbol-mode"]
-	path = repositories/auto-highlight-symbol-mode
-	url = git://github.com/mhayashi1120/auto-highlight-symbol-mode.git
-[submodule "repositories/markdown-mode"]
-	path = repositories/markdown-mode
-	url = git://jblevins.org/git/markdown-mode.git
 [submodule "repositories/dash-at-point"]
 	path = repositories/dash-at-point
 	url = git://github.com/stanaka/dash-at-point.git

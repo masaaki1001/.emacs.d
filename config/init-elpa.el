@@ -75,6 +75,7 @@
    (cons 'helm-c-yasnippet melpa)
    (cons 'htmlize melpa)
    (cons 'zencoding-mode melpa)
+   (cons 'markdown-mode melpa)
    (cons 'ack-and-a-half melpa)
    (cons 'color-moccur melpa)
    (cons 'session melpa)
@@ -84,7 +85,6 @@
    (cons 'recentf-ext melpa)
    (cons 'viewer melpa)
    (cons 'main-line melpa)
-   ;; (cons 'minimap melpa)
    (cons 'elisp-slime-nav melpa)
    (cons 'eldoc-extension melpa)
    (cons 'paredit melpa)
@@ -94,6 +94,9 @@
    (cons 'less-css-mode melpa)
    (cons 'scss-mode melpa)
    (cons 'js3-mode melpa)
+   (cons 'wgrep melpa)
+   (cons 'smartrep melpa)
+   (cons 'zlc melpa)
    ))
 
 (condition-case nil
@@ -111,14 +114,14 @@
  (auto-install-compatibility-setup)             ; 互換性確保
  )
 
-;; el-get
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-(unless (require 'el-get nil t)
-  (url-retrieve
-   "https://github.com/dimitri/el-get/raw/master/el-get-install.el"
-   (lambda (s)
-     (let (el-get-master-branch)
-       (end-of-buffer)
-       (eval-print-last-sexp)))))
+;; ;; el-get
+;; (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+;; (unless (require 'el-get nil t)
+;;   (url-retrieve
+;;    "https://github.com/dimitri/el-get/raw/master/el-get-install.el"
+;;    (lambda (s)
+;;      (let (el-get-master-branch)
+;;        (end-of-buffer)
+;;        (eval-print-last-sexp)))))
 
 (provide 'init-elpa)
