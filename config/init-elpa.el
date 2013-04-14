@@ -42,6 +42,7 @@
    (cons 'rspec-mode melpa)
    (cons 'rinari melpa)
    (cons 'bundler melpa)
+   (cons 'rhtml-mode melpa)
    (cons 'dired+ melpa)
    (cons 'dsvn melpa)
    (cons 'rainbow-mode gnu)

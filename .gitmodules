@@ -91,9 +91,6 @@
 [submodule "repositories/magit"]
 	path = repositories/magit
 	url = git://github.com/magit/magit.git
-[submodule "repositories/rhtml"]
-	path = repositories/rhtml
-	url = git://github.com/eschulte/rhtml.git
 [submodule "repositories/switch-window"]
 	path = repositories/switch-window
 	url = git://github.com/dimitri/switch-window.git
