@@ -40,10 +40,7 @@
 
 (when (mac-os-p)
   (when (require 'dash-at-point nil t)
-    (add-to-list 'dash-at-point-mode-alist '(css-mode . "css"))
-    (add-to-list 'dash-at-point-mode-alist '(ruby-mode . "ruby"))
     (add-to-list 'dash-at-point-mode-alist '(web-mode . "html"))
-    (add-to-list 'dash-at-point-mode-alist '(emacs-lisp-mode . "elisp"))
     (global-set-key (kbd "C-c C-d") 'dash-at-point)
     )
   )
