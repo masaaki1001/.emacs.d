@@ -88,11 +88,6 @@ print (which_library (%%[%%s]))'" name name)))
   (interactive "sRuby library name: ")
   (find-file (ffap-ruby-mode name)))
 
-;; ffap
-;; (when (require 'ffap nil t)
-;;   (add-to-list 'ffap-alist '(ruby-mode . ffap-ruby-mode))
-;;   )
-
 ;; ruby-interpolation.el
 ;; https://github.com/leoc/ruby-interpolation.el
 (require 'ruby-interpolation nil t)

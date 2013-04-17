@@ -53,7 +53,4 @@
   (setq anything-exuberant-ctags-cache-tag-file-dir "~/Workspace/hoge/")
   )
 
-;; anything-migemo.el
-(require 'anything-migemo nil t)
-
 (provide 'init-anything)

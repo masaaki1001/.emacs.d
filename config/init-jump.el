@@ -26,8 +26,6 @@
 (when (require 'iy-go-to-char nil t)
   (global-set-key (kbd "C-c C-f") 'iy-go-to-char)
   (global-set-key (kbd "C-c C-F") 'iy-go-to-char-backward)
-  (global-set-key (kbd "C-c ;") 'iy-go-to-char-continue)
-  (global-set-key (kbd "C-c ,") 'iy-go-to-char-continue-backward)
   )
 
 ;; goto-chg.el

@@ -93,7 +93,6 @@ If the link is in hidden text, expose it."
   (define-key org-mode-map "\M-n" 'org-next-visible-link)
   (define-key org-mode-map "\M-p" 'org-previous-visible-link)
 
-  ;; Emacs tech Book p282
   (setq org-use-fast-todo-selection t)
   (setq org-todo-keywords
         '((sequence "TODO(t)" "STARTED(s)" "WAITING(w)" "|" "DONE" "CANCEL(c)")
@@ -104,7 +103,6 @@ If the link is in hidden text, expose it."
 ;; org-tree-slide.el
 ;; http://pastelwill.jp/wiki/doku.php?id=emacs:org-tree-slide
 ;; https://github.com/takaxp/org-tree-slide
-;; https://raw.github.com/takaxp/org-tree-slide/master/org-tree-slide.el
 (when (require 'org-tree-slide nil t)
   (global-set-key (kbd "<f6>") 'org-tree-slide-mode)
   (global-set-key (kbd "S-<f6>") 'org-tree-slide-skip-done-toggle)

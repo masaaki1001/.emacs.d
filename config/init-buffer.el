@@ -8,7 +8,7 @@
 ;; http://www.sodan.org/~knagano/emacs/minibuf-isearch/minibuf-isearch.el
 (require 'minibuf-isearch nil t)
 
-;; i-searchでのBS有効
+;; i-searchでのbackspace有効
 (define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
 ;; isearch の終了時のカーソル位置を常に検索語の後ろにする
 ;; http://www.bookshelf.jp/soft/meadow_49.html#SEC716
@@ -70,8 +70,6 @@
 ;; http://d.hatena.ne.jp/mooz/20101003/p1
 ;; https://github.com/mooz/emacs-zlc/
 (when (require 'zlc nil t)
-  (zlc-mode t)
-  ;;(setq zlc-select-completion-immediately t)
-  )
+  (zlc-mode t))
 
 (provide 'init-buffer)

@@ -1,6 +1,3 @@
-;; https://github.com/TeMPOraL/nyan-mode
-(require 'nyan-mode nil t)
-
 ;; diminish.el
 (when (require 'diminish nil t)
   (diminish 'undo-tree-mode)

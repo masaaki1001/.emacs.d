@@ -15,7 +15,6 @@
               (define-key ac-completing-map (kbd "C-p") 'ac-previous)
               (define-key ac-completing-map (kbd "C-s") 'ac-isearch)
               ))
-
   )
 
 (provide 'init-auto-complete)

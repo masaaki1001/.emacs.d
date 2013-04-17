@@ -1,8 +1,6 @@
 ;;----------------------------------------------------------------------------
 ;; view-mode
 ;;----------------------------------------------------------------------------
-;; f11でview-modeに
-;; key-chord.elでjk同時押しも設定してある。
 (progn
   (setq pager-keybind
         `( ;; vi-like
@@ -28,7 +26,6 @@
   (defun view-mode-hook--pager ()
     (define-many-keys view-mode-map pager-keybind))
   (add-hook 'view-mode-hook 'view-mode-hook--pager)
-  ;; (global-set-key [f11] 'view-mode)
   (global-set-key (kbd "C-c C-v") 'view-mode)
   )
 ;; 書き込み不能ファイルのバッファに対しては真赤
