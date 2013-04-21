@@ -96,7 +96,6 @@
    (cons 'js3-mode melpa)
    (cons 'wgrep melpa)
    (cons 'smartrep melpa)
-   (cons 'zlc melpa)
    ))
 
 (condition-case nil
