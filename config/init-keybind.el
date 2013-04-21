@@ -2,11 +2,6 @@
 ;; keybind
 ;;----------------------------------------------------------------------------
 (global-set-key (kbd "M-h") 'backward-kill-word)
-(if (= emacs-major-version 23)
-  (progn
-    (pc-selection-mode) ;; Shift + 矢印キーで範囲選択
-    )
-  (progn))
 
 ;; C-k で改行を含め切り取り
 (setq kill-whole-line t)

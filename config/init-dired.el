@@ -27,7 +27,7 @@
 ;; diredの表示をファイルタイプ毎に色分けしてカラフルにする
 (require 'dired-filetype-face nil t)
 
-;;;;ファイル作成
+;; ファイル作成
 (defun dired-create-file (file-name)
   (interactive "F Create file: ")
   (write-region "" nil file-name nil nil nil))

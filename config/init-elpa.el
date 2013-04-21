@@ -76,7 +76,6 @@
    (cons 'htmlize melpa)
    (cons 'zencoding-mode melpa)
    (cons 'markdown-mode melpa)
-   (cons 'ack-and-a-half melpa)
    (cons 'color-moccur melpa)
    (cons 'session melpa)
    (cons 'savekill melpa)
@@ -104,23 +103,11 @@
    (package-refresh-contents)
    (init-install-packages)))
 
-;;----------------------------------------------------------------------------
 ;; auto-install.el
-;;----------------------------------------------------------------------------
 (when (require 'auto-install nil t)
  (setq auto-install-directory "~/.emacs.d/auto-install/")
  ;; (auto-install-update-emacswiki-package-name t)
  (auto-install-compatibility-setup)             ; 互換性確保
  )
-
-;; ;; el-get
-;; (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-;; (unless (require 'el-get nil t)
-;;   (url-retrieve
-;;    "https://github.com/dimitri/el-get/raw/master/el-get-install.el"
-;;    (lambda (s)
-;;      (let (el-get-master-branch)
-;;        (end-of-buffer)
-;;        (eval-print-last-sexp)))))
 
 (provide 'init-elpa)
