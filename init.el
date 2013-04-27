@@ -23,6 +23,9 @@
 ;; e.g. (add-to-load-path "elisp" "xxx" "xxx")
 (add-to-load-path "repositories")
 
+(setq repositories-dir
+      (expand-file-name "repositories" user-emacs-directory))
+
 ;;----------------------------------------------------------------------------
 ;; env
 ;;----------------------------------------------------------------------------
