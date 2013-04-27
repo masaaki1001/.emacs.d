@@ -9,5 +9,14 @@
 (autoload 'js3-mode "js3" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js3-mode))
 (add-to-list 'auto-mode-alist '("\\.js.erb$" . js3-mode)) ;; for rails
+;; coffee-mode
+(defun coffee-custom ()
+  "coffee-mode-hook"
+  (and (set (make-local-variable 'tab-width) 2)
+       (set (make-local-variable 'coffee-tab-width) 2))
+  )
+
+(add-hook 'coffee-mode-hook
+  '(lambda() (coffee-custom)))
 
 (provide 'init-javascript)

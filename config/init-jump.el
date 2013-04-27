@@ -25,7 +25,7 @@
 ;; iy-go-to-char.el
 (when (require 'iy-go-to-char nil t)
   (global-set-key (kbd "C-c C-f") 'iy-go-to-char)
-  (global-set-key (kbd "C-c C-F") 'iy-go-to-char-backward)
+  (global-set-key (kbd "C-c C-c C-f") 'iy-go-to-char-backward)
   )
 
 ;; goto-chg.el
@@ -41,6 +41,7 @@
 (when (mac-os-p)
   (when (require 'dash-at-point nil t)
     (add-to-list 'dash-at-point-mode-alist '(web-mode . "html"))
+    (add-to-list 'dash-at-point-mode-alist '(less-css-mode . "less"))
     (global-set-key (kbd "C-c C-d") 'dash-at-point)
     )
   )

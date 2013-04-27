@@ -4,6 +4,7 @@
 ;;----------------------------------------------------------------------------
 (require 'package)
 
+
 (defvar gnu '("gnu" . "http://elpa.gnu.org/packages/"))
 (defvar marmalade '("marmalade" . "http://marmalade-repo.org/packages/"))
 (defvar melpa '("melpa" . "http://melpa.milkbox.net/packages/"))
@@ -54,6 +55,7 @@
    (cons 'git-commit-mode melpa)
    (cons 'gitconfig-mode melpa)
    (cons 'gitignore-mode melpa)
+   (cons 'gh melpa)
    (cons 'elscreen melpa)
    (cons 'flycheck melpa)
    (cons 'slime-js marmalade)
@@ -92,6 +94,7 @@
    (cons 'less-css-mode melpa)
    (cons 'scss-mode melpa)
    (cons 'js3-mode melpa)
+   (cons 'coffee-mode melpa)
    (cons 'wgrep melpa)
    (cons 'smartrep melpa)
    ))

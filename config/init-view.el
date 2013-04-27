@@ -77,7 +77,7 @@
     (newline)))
 (define-key view-mode-map (kbd "O") 'my/view-insert-prev-line)
 
-(define-key view-mode-map (kbd "SPC") 'ace-jump-mode)
+(define-key view-mode-map (kbd "f") 'ace-jump-mode)
 
 ;; bm.elの設定
 (define-key view-mode-map (kbd "m") 'bm-toggle)
