@@ -7,7 +7,6 @@
   (setq ac-comphist-file "~/.emacs.d/resource/ac-comphist.dat")
   (ac-config-default)
   (setq ac-delay 0.5)
-  ;; (setq ac-auto-show-menu 0.8)
   (setq ac-use-menu-map t)
   (add-hook 'auto-complete-mode-hook
             (lambda ()
