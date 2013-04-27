@@ -34,17 +34,6 @@
      (append '(helm-source-spaces)
              )))
 
-;; (defun helm-mini ()
-;;   (interactive)
-;;   (helm-other-buffer '(helm-source-buffers-list
-;;                        helm-source-recentf
-;;                        helm-source-files-in-current-dir
-;;                        helm-source-emacs-commands
-;;                        helm-source-bookmarks-local
-;;                        helm-source-buffer-not-found
-;;                        )
-;;                      "*helm mini*"))
-
 (defun my-helm ()
   (interactive)
   (let ((default (thing-at-point 'symbol)))
@@ -82,26 +71,26 @@
   )
 
 ;; helm-project.el
-;; (when (require 'helm-project nil t)
-;;   (global-set-key (kbd "C-:") 'helm-project)
-;;   (hp:add-project
-;;    ;; setting templete
-;;    ;; :name 'hoge
-;;    ;; :look-for '("Rakefile")
-;;    ;; :include-regexp '("\\.rb$" "\\.html$" "\\.erb$" "\\.js$" "\\.yml$" "\\.css$" "\\Gemfile$")
-;;    ;:exclude-regexp "/test_files" ; can be regexp or list of regexp
-;;    :name 'project
-;;    :look-for '(".git")
-;;    :include-regexp '("\\.scala$" "\\.html$" "\\.conf$" "\\.properties$" "\\.sbt$" "\\.sql$" "\\routes$" "\\.js$")
-;;    :exclude-regexp "/target*"
-;;    )
-;;   ;; 候補にディレクトリが含まれないようにする
-;;   ;; http://d.hatena.ne.jp/IMAKADO/20090823/1250963119
-;;   (setq hp:project-files-filters
-;;         (list
-;;          (lambda (files)
-;;            (remove-if 'file-directory-p files))))
-;;   )
+(when (require 'helm-project nil t)
+  (global-set-key (kbd "C-:") 'helm-project)
+  (hp:add-project
+   ;; setting templete
+   ;; :name 'hoge
+   ;; :look-for '("Rakefile")
+   ;; :include-regexp '("\\.rb$" "\\.html$" "\\.erb$" "\\.js$" "\\.yml$" "\\.css$" "\\Gemfile$")
+   ;:exclude-regexp "/test_files" ; can be regexp or list of regexp
+   :name 'project
+   :look-for '(".git")
+   :include-regexp '("\\.scala$" "\\.html$" "\\.conf$" "\\.properties$" "\\.sbt$" "\\.sql$" "\\routes$" "\\.js$")
+   :exclude-regexp "/target*"
+   )
+  ;; 候補にディレクトリが含まれないようにする
+  ;; http://d.hatena.ne.jp/IMAKADO/20090823/1250963119
+  (setq hp:project-files-filters
+        (list
+         (lambda (files)
+           (remove-if 'file-directory-p files))))
+  )
 
 ;; helm-c-yasnippet.el
 (when (require 'helm-c-yasnippet nil t)
@@ -113,7 +102,6 @@
 
 (require 'imenu-anywhere nil t)
 
-;; (global-set-key (kbd "C-c h") 'helm-mini)
 (global-set-key (kbd "C-x f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "M-x") 'helm-M-x)
