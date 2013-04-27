@@ -65,7 +65,6 @@
    (cons 'redo+ melpa)
    (cons 'bash-completion melpa)
    (cons 'yagist melpa)
-   (cons 'scala-mode melpa)
    (cons 'scala-mode2 melpa)
    (cons 'yaml-mode melpa)
    (cons 'anything melpa)
