@@ -58,4 +58,4 @@
 
 (add-to-list 'auto-mode-alist '(".gitmodules"   . gitconfig-mode))
 
-(provide 'init-magit)
+(provide 'init-git)
