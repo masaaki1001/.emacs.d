@@ -136,12 +136,6 @@
 [submodule "repositories/dash-at-point"]
 	path = repositories/dash-at-point
 	url = git://github.com/stanaka/dash-at-point.git
-[submodule "repositories/emacs-zlc"]
-	path = repositories/emacs-zlc
-	url = git://github.com/mooz/emacs-zlc.git
-[submodule "repositories/emacs-open-github"]
-	path = repositories/emacs-open-github
-	url = git://github.com/syohex/emacs-open-github.git
 [submodule "repositories/helm-open-junk-file"]
 	path = repositories/helm-open-junk-file
 	url = git://github.com/masaaki1001/helm-open-junk-file.git

@@ -74,6 +74,7 @@
    (cons 'helm-c-moccur melpa)
    (cons 'helm-ls-git melpa)
    (cons 'helm-c-yasnippet melpa)
+   (cons 'helm-open-github melpa)
    (cons 'htmlize melpa)
    (cons 'zencoding-mode melpa)
    (cons 'markdown-mode melpa)
@@ -97,6 +98,7 @@
    (cons 'coffee-mode melpa)
    (cons 'wgrep melpa)
    (cons 'smartrep melpa)
+   (cons 'zlc melpa)
    ))
 
 (condition-case nil
