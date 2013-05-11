@@ -33,6 +33,8 @@
    (cons 'melpa melpa)
    (cons 'cl-lib gnu)
    (cons 'auto-install melpa)
+   (cons 'auto-complete melpa)
+   (cons 'fuzzy melpa)
    (cons 'ruby-mode melpa)
    (cons 'robe melpa)
    (cons 'ruby-electric melpa)

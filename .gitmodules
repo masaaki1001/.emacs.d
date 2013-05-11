@@ -103,9 +103,6 @@
 [submodule "repositories/ace-jump-mode"]
 	path = repositories/ace-jump-mode
 	url = git://github.com/winterTTr/ace-jump-mode.git
-[submodule "repositories/auto-complete"]
-	path = repositories/auto-complete
-	url = git://github.com/auto-complete/auto-complete.git
 [submodule "repositories/multiple-cursors"]
 	path = repositories/multiple-cursors
 	url = git://github.com/magnars/multiple-cursors.el.git

@@ -7,12 +7,16 @@
   (setq ac-comphist-file "~/.emacs.d/resource/ac-comphist.dat")
   (ac-config-default)
   (setq ac-delay 0.5)
+  (setq ac-use-quick-help t)
+  (setq ac-quick-help-delay 1.0)
   (setq ac-use-menu-map t)
+  (setq ac-auto-start t)
   (add-hook 'auto-complete-mode-hook
             (lambda ()
               (define-key ac-completing-map (kbd "C-n") 'ac-next)
               (define-key ac-completing-map (kbd "C-p") 'ac-previous)
               (define-key ac-completing-map (kbd "C-s") 'ac-isearch)
+              (define-key ac-mode-map (kbd "M-RET") 'auto-complete)
               ))
   )
 
