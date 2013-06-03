@@ -50,7 +50,6 @@
    (cons 'dsvn melpa)
    (cons 'rainbow-mode gnu)
    (cons 'goto-chg melpa)
-   (cons 'key-chord melpa)
    (cons 'maxframe melpa)
    (cons 'color-moccur melpa)
    (cons 'diminish melpa)
@@ -112,7 +111,6 @@
 ;; auto-install.el
 (when (require 'auto-install nil t)
  (setq auto-install-directory "~/.emacs.d/auto-install/")
- ;; (auto-install-update-emacswiki-package-name t)
  (auto-install-compatibility-setup)             ; 互換性確保
  )
 

@@ -54,8 +54,6 @@
 
 (require 'github-browse-file nil t)
 
-(require 'open-github nil t)
-
 (add-to-list 'auto-mode-alist '(".gitmodules"   . gitconfig-mode))
 
 (provide 'init-git)

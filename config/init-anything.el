@@ -22,27 +22,4 @@
   (define-key anything-map (kbd "C-;") 'abort-recursive-edit)
   )
 
-;; anything-project.el
-;; http://d.hatena.ne.jp/yuheiomori0718/20111226/1324902529
-;; (when (require 'anything-project nil t)
-;; ;(global-set-key (kbd "C-c C-f") 'anything-project)
-;;   (global-set-key (kbd "C-:") 'anything-project)
-;;   (ap:add-project
-;;    ;; templete
-;;    ;; :name 'hoge
-;;    ;; :look-for '("Rakefile")
-;;    ;; :include-regexp '("\\.rb$" "\\.html$" "\\.erb$" "\\.js$" "\\.yml$" "\\.css$" "\\Gemfile$")
-;;    ;:exclude-regexp "/test_files" ; can be regexp or list of regexp
-;;    :name 'project
-;;    :look-for '(".gitignore")
-;;    :include-regexp '("\\.scala$" "\\.html$" "\\.conf$" "\\.properties$" "\\.sbt$" "\\.sql$" "\\routes$")
-;;    )
-;;   ;; 候補にディレクトリが含まれないようにする
-;;   ;; http://d.hatena.ne.jp/IMAKADO/20090823/1250963119
-;;   (setq ap:project-files-filters
-;;         (list
-;;          (lambda (files)
-;;            (remove-if 'file-directory-p files))))
-;;   )
-
 (provide 'init-anything)

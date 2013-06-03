@@ -1,8 +1,6 @@
 ;; dsvn.el
-;; Subversion用の設定 (psvn.elとdsvn.elを併用)
 ;; http://d.hatena.ne.jp/hamaco/20090218/1234962837
 ;; http://www23.atwiki.jp/selflearn/pages/41.html
-;; (require 'psvn)
 (autoload 'svn-status "dsvn" "Run `svn status'." t)
 (autoload 'svn-update "dsvn" "Run `svn update'." t)
 (setq process-coding-system-alist '(("svn" . utf-8)))

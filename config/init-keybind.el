@@ -80,18 +80,8 @@
 
 ;; sticky.el
 ;; 大文字入力を楽にする
-(when (require 'sticky nil t)
-  (use-sticky-key ";" sticky-alist:ja))
-
-;; key-chord.el
-;; http://d.hatena.ne.jp/rubikitch/20081104/1225745862
-;; anything or helm + popwin と競合する
-;; (when (require 'key-chord nil t)
-;;   (setq key-chord-two-keys-delay 0.04) ;; 同時押しとみなす間隔
-;;   (key-chord-mode 1)
-;;   (key-chord-define-global "jk" 'view-mode)
-;;   (key-chord-define-global "kl" 'jaunte)
-;;   )
+;; (when (require 'sticky nil t)
+;;   (use-sticky-key ";" sticky-alist:ja))
 
 ;; 範囲指定していないとき、C-wで前の単語を削除
 ;; http://dev.ariel-networks.com/wp/documents/aritcles/emacs/part16
@@ -99,26 +89,5 @@
   (if (and (interactive-p) transient-mark-mode (not mark-active))
       (backward-kill-word 1)
     ad-do-it))
-
-;; move line down and up
-(defun move-line-down ()
-  (interactive)
-  (let ((col (current-column)))
-    (save-excursion
-      (forward-line)
-      (transpose-lines 1))
-    (forward-line)
-    (move-to-column col)))
-
-(defun move-line-up ()
-  (interactive)
-  (let ((col (current-column)))
-    (save-excursion
-      (forward-line)
-      (transpose-lines -1))
-    (move-to-column col)))
-
-(global-set-key (kbd "<M-down>") 'move-line-down)
-(global-set-key (kbd "<M-up>") 'move-line-up)
 
 (provide 'init-keybind)

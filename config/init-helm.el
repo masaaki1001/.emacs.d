@@ -50,6 +50,7 @@
              ))))
 (global-set-key (kbd "C-;") 'my-helm)
 
+;; http://d.hatena.ne.jp/IMAKADO/20080724/1216882563
 (when (require 'helm-c-moccur nil t)
   (global-set-key (kbd "C-c C-o") 'helm-c-moccur-occur-by-moccur)
   (global-set-key (kbd "C-c C-M-o") 'helm-c-moccur-dmoccur)
@@ -59,6 +60,7 @@
   (global-set-key (kbd "C-M-s") 'helm-c-moccur-isearch-forward)
   (global-set-key (kbd "C-M-r") 'helm-c-moccur-isearch-backward)
 
+  (setq helm-c-moccur-higligt-info-line-flag t)
   (setq helm-c-moccur-enable-auto-look-flag t)
   )
 
@@ -71,6 +73,7 @@
   )
 
 ;; helm-project.el
+;; http://d.hatena.ne.jp/yuheiomori0718/20111226/1324902529
 (when (require 'helm-project nil t)
   (global-set-key (kbd "C-:") 'helm-project)
   (hp:add-project
@@ -101,6 +104,13 @@
 (require 'helm-replace-string nil t)
 
 (require 'imenu-anywhere nil t)
+
+;; helm-google-suggest
+(setq helm-google-suggest-use-curl-p (executable-find "curl"))
+(setq helm-google-suggest-search-url
+      "http://www.google.co.jp/search?hl=ja&num=100&as_qdr=y5&lr=lang_ja&ie=utf-8&oe=utf-8&q=")
+(setq helm-google-suggest-url
+      "http://google.co.jp/complete/search?ie=utf-8&oe=utf-8&hl=ja&output=toolbar&q=")
 
 (global-set-key (kbd "C-x f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)

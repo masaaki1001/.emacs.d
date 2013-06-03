@@ -4,11 +4,10 @@
 (setq cssm-indent-function #'cssm-c-style-indenter)
 
 ;; scss-mode
-(autoload 'scss-mode "scss-mode" nil t)
-(setq scss-compile-at-save nil) ;; 自動コンパイルをオフにする
-(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
-(add-hook 'scss-mode-hook 'ac-css-mode-setup)
-(add-to-list 'ac-modes 'scss-mode)
+(when (require 'scss-mode nil t)
+  (setq scss-compile-at-save nil) ;; 自動コンパイルをオフにする
+  (add-hook 'scss-mode-hook 'ac-css-mode-setup)
+  (add-to-list 'ac-modes 'scss-mode))
 
 ;; less-css-mode
 (when (require 'less-css-mode nil t)
@@ -16,7 +15,7 @@
   (add-hook 'less-css-mode-hook 'ac-css-mode-setup))
 
 (when (require 'web-mode nil t)
-  (setq web-mode-markup-indent-offset 4)
+  (setq web-mode-markup-indent-offset 2)
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
