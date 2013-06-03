@@ -76,6 +76,7 @@
    (cons 'helm-ls-git melpa)
    (cons 'helm-c-yasnippet melpa)
    (cons 'helm-open-github melpa)
+   (cons 'helm-spaces melpa)
    (cons 'htmlize melpa)
    (cons 'zencoding-mode melpa)
    (cons 'markdown-mode melpa)

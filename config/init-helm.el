@@ -21,18 +21,18 @@
     (type . command)
     (requires-pattern . 2)))
 
-(defvar helm-source-spaces
-  '((name . "Spaces")
-    (candidates . sp-space-names)
-    (action ("Switch" . sp-apply-space-config))))
+;; (defvar helm-source-spaces
+;;   '((name . "Spaces")
+;;     (candidates . sp-space-names)
+;;     (action ("Switch" . sp-apply-space-config))))
 
-(defun helm-spaces ()
-  (interactive)
-  (helm
-     :prompt "pattern: "
-     :sources
-     (append '(helm-source-spaces)
-             )))
+;; (defun helm-spaces ()
+;;   (interactive)
+;;   (helm
+;;      :prompt "pattern: "
+;;      :sources
+;;      (append '(helm-source-spaces)
+;;              )))
 
 (defun my-helm ()
   (interactive)
