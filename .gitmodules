@@ -1,87 +1,21 @@
-[submodule "repositories/expand-region"]
-	path = repositories/expand-region
-	url = git://github.com/magnars/expand-region.el.git
-[submodule "repositories/js2-mode"]
-	path = repositories/js2-mode
-	url = git://github.com/mooz/js2-mode.git
 [submodule "repositories/direx-el"]
 	path = repositories/direx-el
 	url = git://github.com/m2ym/direx-el.git
-[submodule "repositories/popwin-el"]
-	path = repositories/popwin-el
-	url = git://github.com/m2ym/popwin-el.git
-[submodule "repositories/mark-multiple"]
-	path = repositories/mark-multiple
-	url = git://github.com/magnars/mark-multiple.el.git
-[submodule "repositories/quickrun"]
-	path = repositories/quickrun
-	url = git://github.com/syohex/emacs-quickrun.git
-[submodule "repositories/grep-a-lot"]
-	path = repositories/grep-a-lot
-	url = git://github.com/ZungBang/emacs-grep-a-lot.git
-[submodule "repositories/bm"]
-	path = repositories/bm
-	url = git://github.com/joodland/bm.git
-[submodule "repositories/emacs-window-manager"]
-	path = repositories/emacs-window-manager
-	url = git://github.com/kiwanami/emacs-window-manager.git
-[submodule "repositories/duplicate-thing"]
-	path = repositories/duplicate-thing
-	url = git://github.com/ongaeshi/duplicate-thing.git
 [submodule "repositories/twittering-mode"]
 	path = repositories/twittering-mode
 	url = git://github.com/hayamiz/twittering-mode.git
-[submodule "repositories/scratch-ext-el"]
-	path = repositories/scratch-ext-el
-	url = git://github.com/kyanagi/scratch-ext-el.git
-[submodule "repositories/drag-stuff"]
-	path = repositories/drag-stuff
-	url = git://github.com/rejeep/drag-stuff.git
-[submodule "repositories/jump-char"]
-	path = repositories/jump-char
-	url = git://github.com/lewang/jump-char.git
 [submodule "repositories/maximize"]
 	path = repositories/maximize
 	url = git://github.com/izawa/maximize.git
-[submodule "repositories/yaml-mode"]
-	path = repositories/yaml-mode
-	url = git://github.com/yoshiki/yaml-mode.git
-[submodule "repositories/volatile-highlights"]
-	path = repositories/volatile-highlights
-	url = git://github.com/k-talo/volatile-highlights.el.git
-[submodule "repositories/jaunte"]
-	path = repositories/jaunte
-	url = git://github.com/kawaguchi/jaunte.el.git
-[submodule "repositories/scratch-log"]
-	path = repositories/scratch-log
-	url = git://github.com/mori-dev/scratch-log.git
 [submodule "repositories/joseph-single-dired"]
 	path = repositories/joseph-single-dired
 	url = git://github.com/jixiuf/joseph-single-dired.git
 [submodule "repositories/org-tree-slide"]
 	path = repositories/org-tree-slide
 	url = git://github.com/takaxp/org-tree-slide.git
-[submodule "repositories/anything-project"]
-	path = repositories/anything-project
-	url = git://github.com/imakado/anything-project.git
-[submodule "repositories/undo-tree"]
-	path = repositories/undo-tree
-	url = http://www.dr-qubit.org/git/undo-tree.git
-[submodule "repositories/magit"]
-	path = repositories/magit
-	url = git://github.com/magit/magit.git
-[submodule "repositories/switch-window"]
-	path = repositories/switch-window
-	url = git://github.com/dimitri/switch-window.git
 [submodule "repositories/dired-filetype-face"]
 	path = repositories/dired-filetype-face
 	url = git://github.com/jixiuf/dired-filetype-face.git
-[submodule "repositories/emacs-window-layout"]
-	path = repositories/emacs-window-layout
-	url = git://github.com/kiwanami/emacs-window-layout.git
-[submodule "repositories/undohist"]
-	path = repositories/undohist
-	url = git://github.com/m2ym/undohist-el.git
 [submodule "repositories/yasnippets-rails"]
 	path = repositories/yasnippets-rails
 	url = git://github.com/eschulte/yasnippets-rails.git
@@ -91,48 +25,15 @@
 [submodule "repositories/windows"]
 	path = repositories/windows
 	url = git://github.com/emacsmirror/windows.git
-[submodule "repositories/revive"]
-	path = repositories/revive
-	url = git://github.com/emacsmirror/revive.git
 [submodule "repositories/moccur-edit"]
 	path = repositories/moccur-edit
 	url = git://github.com/emacsmirror/moccur-edit.git
-[submodule "repositories/change-inner"]
-	path = repositories/change-inner
-	url = git://github.com/magnars/change-inner.el.git
-[submodule "repositories/ace-jump-mode"]
-	path = repositories/ace-jump-mode
-	url = git://github.com/winterTTr/ace-jump-mode.git
-[submodule "repositories/multiple-cursors"]
-	path = repositories/multiple-cursors
-	url = git://github.com/magnars/multiple-cursors.el.git
-[submodule "repositories/yasnippet"]
-	path = repositories/yasnippet
-	url = git://github.com/capitaomorte/yasnippet.git
-[submodule "repositories/shell-pop-el"]
-	path = repositories/shell-pop-el
-	url = git://github.com/kyagi/shell-pop-el.git
-[submodule "repositories/pomodoro"]
-	path = repositories/pomodoro
-	url = git://github.com/baudtack/pomodoro.el.git
-[submodule "repositories/web-mode"]
-	path = repositories/web-mode
-	url = git://github.com/fxbois/web-mode.git
 [submodule "repositories/emacs_chrome"]
 	path = repositories/emacs_chrome
 	url = git://github.com/stsquad/emacs_chrome.git
-[submodule "repositories/js2-refactor"]
-	path = repositories/js2-refactor
-	url = git://github.com/magnars/js2-refactor.el.git
 [submodule "repositories/helm-project"]
 	path = repositories/helm-project
 	url = git://github.com/shishi/helm-project.git
 [submodule "repositories/helm-replace-string"]
 	path = repositories/helm-replace-string
 	url = git://github.com/jixiuf/helm-replace-string.git
-[submodule "repositories/dash-at-point"]
-	path = repositories/dash-at-point
-	url = git://github.com/stanaka/dash-at-point.git
-[submodule "repositories/helm-open-junk-file"]
-	path = repositories/helm-open-junk-file
-	url = git://github.com/masaaki1001/helm-open-junk-file.git
