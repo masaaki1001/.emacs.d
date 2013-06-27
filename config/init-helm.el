@@ -21,19 +21,6 @@
     (type . command)
     (requires-pattern . 2)))
 
-;; (defvar helm-source-spaces
-;;   '((name . "Spaces")
-;;     (candidates . sp-space-names)
-;;     (action ("Switch" . sp-apply-space-config))))
-
-;; (defun helm-spaces ()
-;;   (interactive)
-;;   (helm
-;;      :prompt "pattern: "
-;;      :sources
-;;      (append '(helm-source-spaces)
-;;              )))
-
 (defun my-helm ()
   (interactive)
   (let ((default (thing-at-point 'symbol)))
@@ -66,10 +53,6 @@
 
 (when (require 'helm-ls-git nil t)
   (global-set-key (kbd "C-c :") 'helm-ls-git-ls)
-  )
-
-(when (require 'helm-open-junk-file nil t)
-  (global-set-key (kbd "C-x M-j") 'helm-open-junk-file)
   )
 
 ;; helm-project.el

@@ -54,6 +54,9 @@
 
 (require 'github-browse-file nil t)
 
+(when (require 'git-messenger)
+  (global-set-key (kbd "C-c m") 'git-messenger:popup-message))
+
 (add-to-list 'auto-mode-alist '(".gitmodules"   . gitconfig-mode))
 
 (provide 'init-git)

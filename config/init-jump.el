@@ -15,13 +15,6 @@
   (global-set-key (kbd "C-.") 'ace-jump-mode)
   )
 
-;; jump-char.el
-;; https://github.com/lewang/jump-char
-(when (require 'jump-char nil t)
-  (global-set-key (kbd "C-c f") 'jump-char-forward)
-  (global-set-key (kbd "C-c F") 'jump-char-backward)
-  )
-
 ;; iy-go-to-char.el
 (when (require 'iy-go-to-char nil t)
   (global-set-key (kbd "C-c C-f") 'iy-go-to-char)

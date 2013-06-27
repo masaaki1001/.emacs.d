@@ -63,11 +63,6 @@
 (when (require 'duplicate-thing nil t)
   (global-set-key (kbd "C-M-y") 'duplicate-thing))
 
-;; drag-stuff.el
-;; https://github.com/rejeep/drag-stuff
-(when (require 'drag-stuff nil t)
-  (drag-stuff-mode t))
-
 ;; Use C-x C-m to do M-x per Steve Yegge's advice
 ;; https://sites.google.com/site/steveyegge2/effective-emacs
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)

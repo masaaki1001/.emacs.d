@@ -6,7 +6,4 @@
   (diminish 'elisp-slime-nav-mode)
   )
 
-;; (when (require 'main-line nil t)
-;;    (setq main-line-separator-style 'roundstub))
-
 (provide 'init-modeline)
