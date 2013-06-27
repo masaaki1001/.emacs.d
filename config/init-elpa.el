@@ -123,7 +123,6 @@
    (cons 'pomodoro melpa)
    (cons 'zlc melpa)
    (cons 'revive melpa)
-   (cons 'shell-pop melpa)
    (cons 'exec-path-from-shell melpa)
    (cons 'volatile-highlights melpa)
    (cons 'undo-tree melpa)

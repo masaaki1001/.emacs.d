@@ -61,13 +61,6 @@
                            eshell/rspec))))
   (eshell-disable-unix-command-emulation))
 
-;; shell-pop.el and eshell-pop.el
-(when (require 'shell-pop nil t)
-  (when (require 'eshell-pop nil t)
-    (global-set-key (kbd "C-x C-z") 'shell-pop)
-    (setq shell-pop-window-height 50) ;; eshell popup window size
-    ))
-
 ;; キーバインドをshellらしくする
 (progn
 (defun eshell-in-command-line-p ()
