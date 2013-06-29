@@ -37,3 +37,6 @@
 [submodule "repositories/helm-replace-string"]
 	path = repositories/helm-replace-string
 	url = git://github.com/jixiuf/helm-replace-string.git
+[submodule "repositories/tern"]
+	path = repositories/tern
+	url = https://github.com/marijnh/tern.git
