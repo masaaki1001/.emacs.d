@@ -6,7 +6,7 @@ package.elを利用しているのでemacsのversionは24以上であること�
 
 ## setup
 
-  git clone --recursive https://github.com/masaaki1001/.emacs.d.git
+    git clone --recursive https://github.com/masaaki1001/.emacs.d.git ~/.emacs.d
 
 ## 依存ライブラリのインストール
 
