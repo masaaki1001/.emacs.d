@@ -14,7 +14,8 @@ package.elを利用しているのでemacsのversionは24以上であること�
 
 ## elispのインストール
 
-package.elからインストールする事が出来ないものは[auto-install](http://www.emacswiki.org/emacs/auto-install.el)で手動でインストールする．
+package.elからインストールする事が出来ないものは[auto-install](http://www.emacswiki.org/emacs/auto-install.el)で手動でインストールする.
+
 インストールする対象は`install-lisp-list`に記載されているもの．
 
 ## ternのインストール
