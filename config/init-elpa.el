@@ -63,6 +63,7 @@
    (cons 'gh melpa)
    (cons 'elscreen melpa)
    (cons 'flycheck melpa)
+   (cons 'undohist melpa)
    (cons 'point-undo melpa)
    (cons 'quickrun melpa)
    (cons 'all gnu)
