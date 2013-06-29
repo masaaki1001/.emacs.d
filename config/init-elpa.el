@@ -128,6 +128,7 @@
    (cons 'volatile-highlights melpa)
    (cons 'undo-tree melpa)
    (cons 'yasnippet melpa)
+   (cons 'dropdown-list melpa)
    (cons 'web-mode melpa)
    ))
 
