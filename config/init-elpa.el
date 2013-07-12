@@ -131,6 +131,7 @@
    (cons 'yasnippet melpa)
    (cons 'dropdown-list melpa)
    (cons 'web-mode melpa)
+   (cons 'w3m melpa)
    ))
 
 (condition-case nil
