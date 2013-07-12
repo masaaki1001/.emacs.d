@@ -49,6 +49,7 @@
    (cons 'bundler melpa)
    (cons 'rhtml-mode melpa)
    (cons 'dired+ melpa)
+   (cons 'direx melpa)
    (cons 'dsvn melpa)
    (cons 'rainbow-mode gnu)
    (cons 'goto-chg melpa)

@@ -8,14 +8,24 @@
 ;; ディレクトリを先に表示する
 (setq ls-lisp-dirs-first t)
 ;; ディレクトリ内のファイル名を編集できるようにする
-(require 'wdired)
-(define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
-;; 削除したらごみ箱行き
-(setq delete-by-moving-to-trash t)
+(when(require 'wdired nil t)
+  (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
+  )
 
 ;; direx.el
 ;; http://cx4a.blogspot.com/2011/12/popwineldirexel.html
-(require 'direx nil t)
+(when (require 'direx nil t)
+  (require 'direx-project nil t)
+  ;; http://shibayu36.hatenablog.com/category/emacs?page=1361962452
+  ;; (defun direx:jump-to-project-directory ()
+  (defun my-direx ()
+    (interactive)
+    (let ((result (ignore-errors
+                    (direx-project:jump-to-project-root-other-window)
+                    t)))
+      (unless result
+        (direx:jump-to-directory-other-window))))
+  )
 
 ;; joseph-single-dired.el
 ;; diredのバッファが増えないようにする
