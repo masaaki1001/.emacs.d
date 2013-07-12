@@ -4,7 +4,9 @@
 (autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.js.erb$" . js2-mode)) ;; for rails
-(js2-imenu-extras-setup)
+(eval-after-load 'js2-mode
+  '(progn
+     (js2-imenu-extras-setup)))
 
 ;; js3-mode
 ;; (add-hook 'js3-mode-hook '(lambda () (setq mode-name "js3")))
@@ -21,7 +23,6 @@
      '(progn
         (require 'tern-auto-complete)
         (tern-ac-setup))))
-
 
 ;; coffee-mode
 (defun coffee-custom ()

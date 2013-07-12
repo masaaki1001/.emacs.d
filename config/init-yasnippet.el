@@ -1,5 +1,5 @@
 ;; yasnippet
-(when (require 'yasnippet nil t) ;; not yasnippet-bundle
+(when (require 'yasnippet nil t)
   (setq yas-snippet-dirs
         '("~/.emacs.d/snippets" ;; 作成するスニペットはここに入る
           "~/.emacs.d/repositories/yasnippets-rails/rails-snippets"

@@ -60,11 +60,6 @@
 (when (require 'helm-project nil t)
   (global-set-key (kbd "C-:") 'helm-project)
   (hp:add-project
-   ;; setting templete
-   ;; :name 'hoge
-   ;; :look-for '("Rakefile")
-   ;; :include-regexp '("\\.rb$" "\\.html$" "\\.erb$" "\\.js$" "\\.yml$" "\\.css$" "\\Gemfile$")
-   ;:exclude-regexp "/test_files" ; can be regexp or list of regexp
    :name 'project
    :look-for '(".git")
    :include-regexp '("\\.scala$" "\\.html$" "\\.conf$" "\\.properties$" "\\.sbt$" "\\.sql$" "\\routes$" "\\.js$")

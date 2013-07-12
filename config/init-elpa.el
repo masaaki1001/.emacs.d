@@ -119,6 +119,7 @@
    (cons 'js2-mode melpa)
    (cons 'js2-refactor melpa)
    ;; (cons 'js3-mode melpa)
+   (cons 'nodejs-repl melpa)
    (cons 'coffee-mode melpa)
    (cons 'wgrep melpa)
    (cons 'grep-a-lot melpa)
@@ -128,11 +129,13 @@
    (cons 'revive melpa)
    (cons 'exec-path-from-shell melpa)
    (cons 'volatile-highlights melpa)
+   (cons 'highlight-symbol melpa)
    (cons 'undo-tree melpa)
    (cons 'yasnippet melpa)
    (cons 'dropdown-list melpa)
    (cons 'web-mode melpa)
    (cons 'w3m melpa)
+   (cons 'migemo melpa)
    ))
 
 (condition-case nil
