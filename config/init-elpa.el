@@ -90,6 +90,7 @@
    (cons 'helm-git-grep melpa)
    (cons 'helm-dired-recent-dirs melpa)
    (cons 'htmlize melpa)
+   (cons 'emmet-mode melpa)
    (cons 'zencoding-mode melpa)
    (cons 'markdown-mode melpa)
    (cons 'color-moccur melpa)

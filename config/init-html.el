@@ -36,6 +36,11 @@
   (add-hook 'html-mode-hook 'zencoding-mode)
   (add-hook 'web-mode-hook 'zencoding-mode))
 
+;; emmet-mode
+(when (require 'emmet-mode nil t)
+  (add-hook 'html-mode-hook 'emmet-mode)
+  (add-hook 'web-mode-hook 'emmet-mode))
+
 (defun brace-ret-brace ()
   (interactive)
   (insert "{") (newline-and-indent)
