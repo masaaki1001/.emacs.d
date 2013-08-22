@@ -1,5 +1,3 @@
-# sequential-command
-(auto-install-batch "sequential-command")
 # cycle-buffer.el
 (auto-install-from-emacswiki "cycle-buffer.el")
 # moccur-edit.el

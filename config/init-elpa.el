@@ -98,6 +98,7 @@
    (cons 'session melpa)
    (cons 'savekill melpa)
    (cons 'sticky melpa)
+   (cons 'sequential-command melpa)
    (cons 'duplicate-thing melpa)
    (cons 'open-junk-file melpa)
    (cons 'recentf-ext melpa)
