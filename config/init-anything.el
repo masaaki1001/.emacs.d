@@ -20,6 +20,8 @@
   ;; anything 2重起動エラー対応
   ;; http://d.hatena.ne.jp/yuheiomori0718/20120119/1326976493
   (define-key anything-map (kbd "C-;") 'abort-recursive-edit)
+
+  (require 'anything-git-files nil t)
   )
 
 (provide 'init-anything)
