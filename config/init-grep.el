@@ -1,6 +1,5 @@
 ;; color-moccur.el
 ;; http://d.hatena.ne.jp/IMAKADO/20080724/1216882563
-;; anythingとの連携あり
 ;; http://www.bookshelf.jp/soft/meadow_50.html#SEC746
 ;; http://www.bookshelf.jp/elc/color-moccur.el
 (when (require 'color-moccur nil t)
@@ -58,11 +57,22 @@
 ;; https://github.com/mhayashi1120/Emacs-wgrep
 (require 'wgrep nil t)
 
+;; wgrep-ag.el
+(require 'wgrep-ag nil t)
+
 ;; color-grep.el
 ;; http://www.bookshelf.jp/soft/meadow_51.html#SEC778
 ;; http://www.bookshelf.jp/elc/color-grep.el
 (when (require 'color-grep nil t)
   ;; grep バッファを kill 時に，開いたバッファを消す
   (setq color-grep-sync-kill-buffer t))
+
+;; ez-query-replace.el
+(when (require 'ez-query-replace nil t)
+  (define-key global-map (kbd "M-%") 'ez-query-replace)
+  (define-key global-map (kbd "C-c M-%") 'ez-query-replace-repeat)
+  )
+
+
 
 (provide 'init-grep)

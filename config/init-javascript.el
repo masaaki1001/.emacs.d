@@ -9,8 +9,8 @@
      (js2-imenu-extras-setup)))
 
 ;; js3-mode
-;; (add-hook 'js3-mode-hook '(lambda () (setq mode-name "js3")))
-;; (autoload 'js3-mode "js3" nil t)
+(add-hook 'js3-mode-hook '(lambda () (setq mode-name "js3")))
+(autoload 'js3-mode "js3" nil t)
 ;; (add-to-list 'auto-mode-alist '("\\.js$" . js3-mode))
 ;; (add-to-list 'auto-mode-alist '("\\.js.erb$" . js3-mode)) ;; for rails
 

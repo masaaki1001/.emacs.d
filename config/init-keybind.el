@@ -85,4 +85,9 @@
       (backward-kill-word 1)
     ad-do-it))
 
+;; god-mode
+(when (require 'god-mode nil t)
+  (global-set-key (kbd "<escape>") 'god-local-mode)
+  )
+
 (provide 'init-keybind)

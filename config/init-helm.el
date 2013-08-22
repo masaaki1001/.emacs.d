@@ -75,11 +75,13 @@
 
 ;; helm-c-yasnippet.el
 (when (require 'helm-c-yasnippet nil t)
-  (setq helm-c-yas-space-match-any-greedy t) ;スペース区切りで絞り込めるようにする デフォルトは nil
-  (global-set-key (kbd "C-c y") 'helm-c-yas-complete) ;C-c yで起動
+  (setq helm-c-yas-space-match-any-greedy t)
+  (global-set-key (kbd "C-c y") 'helm-c-yas-complete)
   )
 
 (require 'helm-replace-string nil t)
+
+(require 'helm-ag nil t)
 
 (require 'imenu-anywhere nil t)
 
