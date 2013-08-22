@@ -8,16 +8,14 @@
       (append '(("\\.rb$" . ruby-mode)) auto-mode-alist))
 (setq interpreter-mode-alist (append '(("ruby" . ruby-mode))
                                      interpreter-mode-alist))
-;; (autoload 'run-ruby "inf-ruby"
-;;   "Run an inferior Ruby process")
-;; (autoload 'inf-ruby-keys "inf-ruby"
-;;   "Set local key defs for inf-ruby in ruby-mode")
-;;  (add-hook 'ruby-mode-hook
-;;           '(lambda ()
-;;              (inf-ruby-keys)))
 
-;; http://willnet.in/13
-;; (setq ruby-deep-indent-paren-style nil)
+(autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
+(autoload 'inf-ruby-setup-keybindings "inf-ruby" "" t)
+(eval-after-load 'ruby-mode
+  '(add-hook 'ruby-mode-hook 'inf-ruby-setup-keybindings))
+
+;; HTTP://WILLNET.IN/13
+;; (SETQ RUBY-DEEP-INDEnt-paren-style nil)
 ;; (defadvice ruby-indent-line (after unindent-closing-paren activate)
 ;;   (let ((column (current-column))
 ;;         indent offset)

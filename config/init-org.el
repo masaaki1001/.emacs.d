@@ -6,9 +6,6 @@
 ;; http://e-arrows.sakura.ne.jp/2010/02/vim-to-emacs.html
 (when (require 'org-install nil t)
   (define-key global-map (kbd "C-c l") 'org-store-link)
-  ;; (define-key global-map (kbd "C-c a") 'org-agenda)
-  ;; (define-key global-map (kbd "C-c r") 'org-remember)
-  ;; (define-key global-map (kbd "C-c c") 'org-remember-code-reading)
   (define-key global-map (kbd "C-c p") 'org-capture)
   (setq org-startup-truncated nil)
   (setq org-return-follows-link t)

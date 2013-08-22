@@ -18,7 +18,6 @@
   (setq skk-byte-compile-init-file t)
   (require 'info nil t)
   (add-to-list 'Info-additional-directory-list "~/.emacs.d/ddskk/info")
-  ;;(global-set-key [?\S- ] 'skk-mode)
   ;;チュートリアルの場所設定
   (setq skk-tut-file "~/.emacs.d/ddskk/SKK.tut")
   ;; メッセージを日本語で通知する

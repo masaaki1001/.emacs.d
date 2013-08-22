@@ -41,6 +41,6 @@
 (defun dired-create-file (file-name)
   (interactive "F Create file: ")
   (write-region "" nil file-name nil nil nil))
-(define-key dired-mode-map "i" 'dired-create-file)
+(define-key dired-mode-map (kbd "i") 'dired-create-file)
 
 (provide 'init-dired)

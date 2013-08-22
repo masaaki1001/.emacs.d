@@ -1,6 +1,5 @@
 ;; jaunte.el
 ;; http://kawaguchi.posterous.com/emacshit-a-hint
-;; https://github.com/kawaguchi/jaunte.el
 (when (require 'jaunte nil t)
   (global-set-key (kbd "C-c C-j") 'jaunte)
   (setq jaunte-hint-unit 'word) ;default
@@ -9,7 +8,6 @@
 
 ;; ace-jump-mode.el
 ;; http://d.hatena.ne.jp/syohex/20120304/1330822993
-;; https://github.com/winterTTr/ace-jump-mode
 (when (require 'ace-jump-mode nil t)
   (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
   (global-set-key (kbd "C-.") 'ace-jump-mode)

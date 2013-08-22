@@ -27,10 +27,7 @@
   ;; maximize.el
   ;; https://github.com/izawa/maximize
   (when (require 'maximize nil t)
-    ;; (global-set-key [(f12)] 'maximize-toggle-frame-vmax)
-    ;; (global-set-key [(shift f12)] 'maximize-toggle-frame-hmax)
-    (global-set-key [(f12)] 'maximize-frame)
-    )
+    (global-set-key [(f12)] 'maximize-frame))
 
   (when (require 'maxframe nil t)
     (add-hook 'window-setup-hook 'maximize-frame t))
@@ -47,6 +44,7 @@
 ;; 現在行を目立たせる
 ;; http://d.hatena.ne.jp/khyiker/20070409/emacs_hl_line
 (global-hl-line-mode) ;デフォルトはこの行だけでOK
+(set-face-background hl-line-face "#222222")
 
 ;; カーソルの点滅を止める
 (blink-cursor-mode 0)
@@ -105,8 +103,8 @@
       (format "%%f - Emacs" (system-name)))
 
 ;; 一行が 80 字以上になった時には自動改行する
-(setq fill-column 80)
-(setq-default auto-fill-mode t)
+;; (setq fill-column 80)
+;; (setq-default auto-fill-mode t)
 ;; 画面端で折り返さない
 ;; http://valvallow.blogspot.jp/2010/04/emacs.html
 ;; (setq truncate-lines t)
@@ -171,8 +169,15 @@
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-verbose nil)
 
+(require 'tramp)
+
 (require 'server)
 (if (not (server-running-p))
     (server-start))
+
+(when (require 'edit-server nil t)
+  (setq edit-server-new-frame nil)
+  (edit-server-start)
+  )
 
 (provide 'init-global)

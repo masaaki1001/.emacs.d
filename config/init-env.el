@@ -13,10 +13,4 @@
     (exec-path-from-shell-initialize))
   )
 
-;; load environment value
-;; http://d.hatena.ne.jp/syohex/20111117/1321503477
-;; (load-file (expand-file-name "~/.emacs.d/shellenv.el"))
-;; (dolist (path (split-string (getenv "PATH") ":"))
-;;   (add-to-list 'exec-path path))
-
 (provide 'init-env)
