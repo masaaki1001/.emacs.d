@@ -124,7 +124,6 @@
    (cons 'scss-mode melpa)
    (cons 'js2-mode melpa)
    (cons 'js2-refactor melpa)
-   (cons 'js3-mode melpa)
    (cons 'nodejs-repl melpa)
    (cons 'coffee-mode melpa)
    (cons 'wgrep melpa)
