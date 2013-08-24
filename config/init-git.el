@@ -1,6 +1,8 @@
 (when (require 'magit nil t)
-
   (global-set-key (kbd "C-c g") 'magit-status)
+
+  (require 'magit-blame nil t)
+  (require 'magit-svn nil t)
 
   ;; full screen magit-status
   (defadvice magit-status (around magit-fullscreen activate)
@@ -15,8 +17,6 @@
     (jump-to-register :magit-fullscreen))
 
   (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
-
-  (require 'magit-blame nil t)
 
   ;; diffの表示方法を変更
   (defun diff-mode-setup-faces ()
