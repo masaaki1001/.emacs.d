@@ -9,6 +9,8 @@
   '(progn
      (js2-imenu-extras-setup)))
 
+(require 'json)
+
 ;; tern.js
 (add-to-list 'load-path (expand-file-name "tern/emacs" repositories-dir))
 (autoload 'tern-mode "tern.el" nil t)
