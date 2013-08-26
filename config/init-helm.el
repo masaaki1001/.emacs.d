@@ -2,12 +2,17 @@
 (require 'helm-command)
 (require 'helm-elisp)
 (require 'helm-misc)
+(require 'helm-descbinds)
 
-(setq helm-idle-delay 0.1)
-(setq helm-input-idle-delay 0)
-(setq helm-candidate-number-limit 300)
-(setq helm-samewindow nil)
-(setq helm-quick-update t)
+(setq helm-idle-delay 0.1
+      helm-input-idle-delay 0
+      helm-candidate-number-limit 300
+      helm-samewindow nil
+      helm-quick-update t)
+
+(helm-descbinds-mode)
+
+(helm-match-plugin-mode t)
 
 (defvar helm-source-emacs-commands
   '((name . "Emacs Commands")
@@ -47,6 +52,7 @@
   (global-set-key (kbd "C-M-s") 'helm-c-moccur-isearch-forward)
   (global-set-key (kbd "C-M-r") 'helm-c-moccur-isearch-backward)
 
+  (setq helm-c-moccur-helm-idle-delay 0.1)
   (setq helm-c-moccur-higligt-info-line-flag t)
   (setq helm-c-moccur-enable-auto-look-flag t)
   )
@@ -73,6 +79,10 @@
            (remove-if 'file-directory-p files))))
   )
 
+(when (require 'helm-projectile)
+  (global-set-key (kbd "C-c C-p") 'helm-projectile)
+  )
+
 ;; helm-c-yasnippet.el
 (when (require 'helm-c-yasnippet nil t)
   (setq helm-c-yas-space-match-any-greedy t)
@@ -82,6 +92,8 @@
 (require 'helm-replace-string nil t)
 
 (require 'helm-ag nil t)
+
+(require 'helm-rails nil t)
 
 (require 'imenu-anywhere nil t)
 
