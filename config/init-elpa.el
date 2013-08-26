@@ -6,11 +6,11 @@
 
 
 (defvar gnu '("gnu" . "http://elpa.gnu.org/packages/"))
-;; (defvar marmalade '("marmalade" . "http://marmalade-repo.org/packages/"))
+(defvar marmalade '("marmalade" . "http://marmalade-repo.org/packages/"))
 (defvar melpa '("melpa" . "http://melpa.milkbox.net/packages/"))
 
 (add-to-list 'package-archives gnu t)
-;; (add-to-list 'package-archives marmalade t)
+(add-to-list 'package-archives marmalade t)
 (add-to-list 'package-archives melpa t)
 
 (package-initialize)
@@ -55,7 +55,9 @@
    (cons 'maxframe melpa)
    (cons 'color-moccur melpa)
    (cons 'diminish melpa)
-   (cons 'magit melpa)
+   (cons 'magit marmalade)
+   ;; (cons 'magit melpa)
+   ;; (cons 'magit-svn melpa)
    (cons 'magit-find-file melpa)
    (cons 'git-commit-mode melpa)
    (cons 'gitconfig-mode melpa)

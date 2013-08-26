@@ -18,6 +18,7 @@
 
   (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 
+  ;; http://www.clear-code.com/blog/2012/4/3.html
   ;; diffの表示方法を変更
   (defun diff-mode-setup-faces ()
     ;; 追加された行は緑で表示
@@ -45,9 +46,43 @@
     ;; diff用のfaceを設定する
     (diff-mode-setup-faces)
     ;; diffの表示設定が上書きされてしまうのでハイライトを無効にする
-    (set-face-attribute 'magit-item-highlight nil :inherit nil))
+    (set-face-attribute 'magit-item-highlight nil :inherit nil)
+    (set-face-background 'magit-item-highlight nil)
+    )
   (add-hook 'magit-mode-hook 'magit-setup-diff)
-)
+
+  (defun magit-save-and-exit-commit-mode ()
+    (interactive)
+    (save-buffer)
+    (server-edit)
+    (delete-window))
+
+  (defun magit-exit-commit-mode ()
+    (interactive)
+    (kill-buffer)
+    (delete-window))
+
+  (eval-after-load "git-commit-mode"
+    '(define-key git-commit-mode-map (kbd "C-c C-k") 'magit-exit-commit-mode))
+
+  ;; Add an extra newline to separate commit message from git commentary
+  (defun magit-commit-mode-init ()
+    (when (looking-at "\n")
+      (open-line 1)))
+  (add-hook 'git-commit-mode-hook 'magit-commit-mode-init)
+  ;; close popup when commiting
+  (defadvice git-commit-commit (after delete-window activate)
+    (delete-window))
+
+  (defun magit-just-amend ()
+    (interactive)
+    (save-window-excursion
+      (magit-with-refresh
+        (shell-command "git --no-pager commit --amend --reuse-message=HEAD"))))
+  (eval-after-load "magit"
+    '(define-key magit-status-mode-map (kbd "C-c C-a") 'magit-just-amend))
+
+  )
 
 ;; yagist.el
 (require 'yagist nil t)
