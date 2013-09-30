@@ -22,6 +22,13 @@
   (loop for buffer being the buffers
      do (kill-buffer buffer)))
 
+(defun kill-other-buffers ()
+  "Kill all buffers except the current and unsplit the window."
+  (interactive)
+  (mapc 'kill-buffer (delq (current-buffer) (buffer-list)))
+  (delete-other-windows)
+  (delete-other-frames))
+
 ;; http://d.hatena.ne.jp/kitokitoki/20091129/p1
 (defun sqlf (start end)
   "リージョンのSQLを整形する"
