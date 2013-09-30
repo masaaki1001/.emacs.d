@@ -5,11 +5,14 @@
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.js.erb$" . js2-mode)) ;; for rails
 (setq js2-auto-indent-p t)
+(setq-default js2-global-externs '("require" "assert" "__dirname" "console" "JSON"))
 (eval-after-load 'js2-mode
   '(progn
      (js2-imenu-extras-setup)))
 
 (require 'json)
+
+(add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
 
 ;; tern.js
 (add-to-list 'load-path (expand-file-name "tern/emacs" repositories-dir))
