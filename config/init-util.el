@@ -28,7 +28,6 @@
 ;; Experimental multiple-cursors
 (when (require 'multiple-cursors nil t)
   (setq mc/list-file "~/.emacs.d/resource/.mc-lists.el")
-
   (global-set-key (kbd "C->") 'mc/mark-next-like-this)
   (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
   (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)

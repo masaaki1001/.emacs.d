@@ -67,12 +67,4 @@
   ;; grep バッファを kill 時に，開いたバッファを消す
   (setq color-grep-sync-kill-buffer t))
 
-;; ez-query-replace.el
-(when (require 'ez-query-replace nil t)
-  (define-key global-map (kbd "M-%") 'ez-query-replace)
-  (define-key global-map (kbd "C-c M-%") 'ez-query-replace-repeat)
-  )
-
-
-
 (provide 'init-grep)

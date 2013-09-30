@@ -102,20 +102,6 @@
       ;(format "%%f - Emacs@%s" (system-name)))
       (format "%%f - Emacs" (system-name)))
 
-;; 一行が 80 字以上になった時には自動改行する
-;; (setq fill-column 80)
-;; (setq-default auto-fill-mode t)
-;; 画面端で折り返さない
-;; http://valvallow.blogspot.jp/2010/04/emacs.html
-;; (setq truncate-lines t)
-;; (setq truncate-partial-width-windows t)
-;; (defun togle-truncate-line ()
-;;   (interactive)
-;;   (let ((p (null truncate-lines)))
-;;     (setq truncate-lines p)
-;;     (setq truncate-partial-width-windows p)
-;;     p))
-
 ;; 行間を開く
 (setq-default line-spacing 0.1) ;my setting
 
