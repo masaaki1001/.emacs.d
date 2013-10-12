@@ -48,7 +48,6 @@
    (cons 'rinari melpa)
    (cons 'bundler melpa)
    (cons 'rhtml-mode melpa)
-   (cons 'dired+ melpa)
    (cons 'direx melpa)
    (cons 'dsvn melpa)
    (cons 'rainbow-mode gnu)
@@ -72,7 +71,6 @@
    (cons 'all gnu)
    (cons 'all-ext melpa)
    (cons 'replace-from-region melpa)
-   (cons 'multi-term melpa)
    (cons 'expand-region melpa)
    (cons 'change-inner melpa)
    (cons 'multiple-cursors melpa)
@@ -148,7 +146,7 @@
    (cons 'web-mode melpa)
    (cons 'w3m melpa)
    (cons 'migemo melpa)
-   (cons 'ez-query-replace melpa)
+   (cons 'anzu melpa)
    ))
 
 (condition-case nil
