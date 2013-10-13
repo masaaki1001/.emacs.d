@@ -93,20 +93,16 @@
 
 (require 'helm-ag nil t)
 
+(require 'helm-ag-r nil t)
+
 (require 'helm-rails nil t)
 
 (require 'imenu-anywhere nil t)
 
-;; helm-google-suggest
-(setq helm-google-suggest-use-curl-p (executable-find "curl"))
-(setq helm-google-suggest-search-url
-      "http://www.google.co.jp/search?hl=ja&num=100&as_qdr=y5&lr=lang_ja&ie=utf-8&oe=utf-8&q=")
-(setq helm-google-suggest-url
-      "http://google.co.jp/complete/search?ie=utf-8&oe=utf-8&hl=ja&output=toolbar&q=")
-
 (global-set-key (kbd "C-x f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x C-m") 'helm-M-x)
 (global-set-key (kbd "M-z") 'helm-do-grep)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-c i") 'helm-imenu)
