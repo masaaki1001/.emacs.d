@@ -3,7 +3,7 @@
 ;; http://cx4a.org/software/auto-complete/manual.ja.html
 ;;----------------------------------------------------------------------------
 (when (require 'auto-complete-config nil t)
-  (add-to-list 'ac-dictionary-directories "~/.emacs.d/repositories/auto-complete/dict")
+  (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20130724.1750/dict")
   (setq ac-comphist-file "~/.emacs.d/resource/ac-comphist.dat")
   (ac-config-default)
   (setq ac-delay 0.5)
@@ -18,6 +18,9 @@
               (define-key ac-completing-map (kbd "C-s") 'ac-isearch)
               (define-key ac-mode-map (kbd "M-RET") 'auto-complete)
               ))
+
+  (eval-after-load "yasnippet"
+    '(setq-default ac-sources (append '(ac-source-yasnippet) ac-sources)))
   )
 
 (provide 'init-auto-complete)
