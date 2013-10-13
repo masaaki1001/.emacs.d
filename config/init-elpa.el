@@ -117,6 +117,7 @@
    (cons 'elisp-slime-nav melpa)
    (cons 'eldoc-extension melpa)
    (cons 'paredit melpa)
+   (cons 'smartparens melpa)
    (cons 'spaces melpa)
    (cons 'e2wm melpa)
    (cons 'window-layout melpa)
@@ -127,6 +128,7 @@
    (cons 'imenu-anywhere melpa)
    (cons 'less-css-mode melpa)
    (cons 'scss-mode melpa)
+   (cons 'css-eldoc melpa)
    (cons 'js2-mode melpa)
    (cons 'tss melpa)
    (cons 'nodejs-repl melpa)
@@ -149,6 +151,9 @@
    (cons 'w3m melpa)
    (cons 'migemo melpa)
    (cons 'anzu melpa)
+   (cons 'move-text melpa)
+   (cons 'highlight-escape-sequences melpa)
+   (cons 'idle-highlight-mode melpa)
    ))
 
 (condition-case nil

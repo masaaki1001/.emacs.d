@@ -14,4 +14,9 @@
   (diminish 'anzu-mode)
   )
 
+(when (require 'anzu nil t)
+(global-anzu-mode t)
+(set-face-attribute 'anzu-mode-line nil
+                    :foreground "black" :weight 'bold))
+
 (provide 'init-modeline)

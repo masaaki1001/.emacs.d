@@ -14,6 +14,11 @@
   (add-to-list 'ac-modes 'less-css-mode)
   (add-hook 'less-css-mode-hook 'ac-css-mode-setup))
 
+(when (require 'css-eldoc nil t)
+  (autoload 'turn-on-css-eldoc "css-eldoc")
+  (add-hook 'css-mode-hook 'turn-on-css-eldoc)
+  )
+
 (when (require 'web-mode nil t)
   (setq web-mode-markup-indent-offset 2)
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))

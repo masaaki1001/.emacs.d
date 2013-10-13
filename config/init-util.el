@@ -51,4 +51,16 @@
 (when (require 'highlight-escape-sequences nil t)
   (hes-mode))
 
+;; smartparens.el
+(require 'smartparens-config)
+
+;; move-text.el
+(when (require 'move-text nil t)
+  (move-text-default-bindings)
+  )
+
+;; highlight-escape-sequences.el
+(when (require 'highlight-escape-sequences nil t)
+  (hes-mode))
+
 (provide 'init-util)
