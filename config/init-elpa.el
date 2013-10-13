@@ -128,6 +128,7 @@
    (cons 'less-css-mode melpa)
    (cons 'scss-mode melpa)
    (cons 'js2-mode melpa)
+   (cons 'tss melpa)
    (cons 'nodejs-repl melpa)
    (cons 'coffee-mode melpa)
    (cons 'wgrep melpa)
