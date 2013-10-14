@@ -116,9 +116,6 @@
 (setq display-time-day-and-date t)
 (display-time)
 
-;; モードラインに行番号、桁番号を表示
-(line-number-mode t)
-(column-number-mode t)
 ;; beepを消す
 (setq ring-bell-function 'ignore)
 
