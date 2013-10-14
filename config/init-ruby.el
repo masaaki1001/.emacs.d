@@ -102,6 +102,11 @@ print (which_library (%%[%%s]))'" name name)))
               (add-to-list 'ac-sources 'ac-source-robe)
               (setq completion-at-point-functions '(auto-complete)))))
 
+;; yaml-mode.el
+;; https://github.com/yoshiki/yaml-mode
+(when (require 'yaml-mode nil t)
+  (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode)))
+
 ;; rbenv
 ;; https://github.com/senny/rbenv.el
 (when (require 'rbenv nil t)

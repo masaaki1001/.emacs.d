@@ -39,9 +39,16 @@
   (pomodoro-add-to-mode-line)
   )
 
-;; yaml-mode.el
-;; https://github.com/yoshiki/yaml-mode
-(when (require 'yaml-mode nil t)
-  (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode)))
+;; smartparens.el
+(require 'smartparens-config)
+
+;; move-text.el
+(when (require 'move-text nil t)
+  (move-text-default-bindings)
+  )
+
+;; highlight-escape-sequences.el
+(when (require 'highlight-escape-sequences nil t)
+  (hes-mode))
 
 (provide 'init-util)
