@@ -1,4 +1,4 @@
-;; diminish.el
+;;;; diminish.el
 (when (require 'diminish nil t)
   (diminish 'auto-complete-mode)
   (diminish 'yas-minor-mode)

@@ -1,9 +1,7 @@
-;;---------------------------------------------------------
-;; ddskk
+;;;; ddskk
 ;; http://openlab.ring.gr.jp/skk/index-j.html
 ;; http://quruli.ivory.ne.jp/document/ddskk_14.2/skk_toc.html#SEC_Contents
 ;; http://www.bookshelf.jp/texi/skk/skk_4.html#SEC15
-;;---------------------------------------------------------
 (when (require 'skk-autoloads nil t)
   ;; http://sheephead.homelinux.org/2010/06/18/1894/
   (setq skk-user-directory "~/.emacs.d/ddskk/") ; ディレクトリ指定

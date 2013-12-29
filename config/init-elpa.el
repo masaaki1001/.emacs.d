@@ -1,7 +1,5 @@
-;;----------------------------------------------------------------------------
-;; package.el
+;;;; package.el
 ;; http://repo.or.cz/w/emacs.git/blob_plain/HEAD:/lisp/emacs-lisp/package.el
-;;----------------------------------------------------------------------------
 (require 'package)
 
 (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)

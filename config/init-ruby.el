@@ -1,6 +1,4 @@
-;;----------------------------------------------------------------------------
-;; ruby
-;;----------------------------------------------------------------------------
+;;;; ruby
 ;; ruby-mode.el
 (autoload 'ruby-mode "ruby-mode"
   "Mode for editing ruby source files" t)
@@ -8,28 +6,6 @@
       (append '(("\\.rb$" . ruby-mode)) auto-mode-alist))
 (setq interpreter-mode-alist (append '(("ruby" . ruby-mode))
                                      interpreter-mode-alist))
-
-(autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
-(autoload 'inf-ruby-setup-keybindings "inf-ruby" "" t)
-(eval-after-load 'ruby-mode
-  '(add-hook 'ruby-mode-hook 'inf-ruby-setup-keybindings))
-
-;; HTTP://WILLNET.IN/13
-;; (SETQ RUBY-DEEP-INDEnt-paren-style nil)
-;; (defadvice ruby-indent-line (after unindent-closing-paren activate)
-;;   (let ((column (current-column))
-;;         indent offset)
-;;     (save-excursion
-;;       (back-to-indentation)
-;;       (let ((state (syntax-ppss)))
-;;         (setq offset (- column (current-column)))
-;;         (when (and (eq (char-after) ?\))
-;;                    (not (zerop (car state))))
-;;           (goto-char (cadr state))
-;;           (setq indent (current-indentation)))))
-;;     (when indent
-;;       (indent-line-to indent)
-;;       (when (> offset 0) (forward-char offset)))))
 
 ;; ruby-electric.el
 (when (require 'ruby-electric nil t)
@@ -61,40 +37,22 @@
 
 ;; rhtml-mode.el
 ;; http://d.hatena.ne.jp/willnet/20090110/1231595231
-;; https://github.com/eschulte/rhtml
 (when (require 'rhtml-mode nil t)
   (add-hook 'rhtml-mode-hook
             (lambda () (rinari-launch)))
   )
-
-;; anything-rdefs.el
-;; http://openlab.dino.co.jp/2011/05/23/184501727.html
-(when (require 'anything-rdefs nil t)
-  (setq ar:command "~/.emacs.d/script/rdefs.rb")
-  (add-hook 'ruby-mode-hook
-            (lambda ()
-              (define-key ruby-mode-map (kbd "C-@") 'anything-rdefs)))
-  )
-
-;; http://d.hatena.ne.jp/kitokitoki/20120310/p1
-(defun ffap-ruby-mode (name)
-  (shell-command-to-string
-   (format "ruby -e 'require %%[rubygems];require %%[devel/which];require %%[%s];
-print (which_library (%%[%%s]))'" name name)))
 
 (defun find-ruby-lib (name)
   (interactive "sRuby library name: ")
   (find-file (ffap-ruby-mode name)))
 
 ;; ruby-interpolation.el
-;; https://github.com/leoc/ruby-interpolation.el
 (require 'ruby-interpolation nil t)
 
 ;; https://github.com/tobiassvn/bundler.el
 (require 'bundler nil t)
 
 ;; robe
-;; https://github.com/dgutov/robe
 (when (require 'robe nil t)
   (add-hook 'ruby-mode-hook 'robe-mode)
   (add-hook 'robe-mode-hook
@@ -103,12 +61,10 @@ print (which_library (%%[%%s]))'" name name)))
               (setq completion-at-point-functions '(auto-complete)))))
 
 ;; yaml-mode.el
-;; https://github.com/yoshiki/yaml-mode
 (when (require 'yaml-mode nil t)
   (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode)))
 
 ;; rbenv
-;; https://github.com/senny/rbenv.el
 (when (require 'rbenv nil t)
   (global-rbenv-mode))
 

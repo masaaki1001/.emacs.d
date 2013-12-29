@@ -1,4 +1,4 @@
-;; yasnippet
+;;;; yasnippet
 (when (require 'yasnippet nil t)
   (setq yas-snippet-dirs
         '("~/.emacs.d/snippets"

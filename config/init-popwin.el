@@ -1,4 +1,4 @@
-;; popwin.el
+;;;; popwin.el
 ;; http://d.hatena.ne.jp/m2ym/20110120
 (when (require 'popwin nil t)
   (setq display-buffer-function 'popwin:display-buffer)

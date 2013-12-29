@@ -1,3 +1,4 @@
+;;;; util
 ;; quickrun.el
 ;; https://github.com/syohex/emacs-quickrun
 (when (require 'quickrun nil t)

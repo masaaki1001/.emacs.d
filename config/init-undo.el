@@ -1,5 +1,5 @@
+;;;; undo
 ;; undo-tree.el
-;; http://d.hatena.ne.jp/khiker/20100123/undo_tree
 ;; http://www.dr-qubit.org/undo-tree/undo-tree.el
 (when (require 'undo-tree nil t)
   (global-undo-tree-mode))

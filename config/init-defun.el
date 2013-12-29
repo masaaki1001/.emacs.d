@@ -1,3 +1,4 @@
+;;;; defuns
 ;; 縦分割と横分割を切り替える M-x window-toggle-divisionでできるようにする
 ;; http://d.hatena.ne.jp/himadatanode/20061011/p2
 (defun window-toggle-division ()
@@ -16,8 +17,8 @@
     (switch-to-buffer-other-window other-buf)
     (other-window -1)))
 
-;; 全てのバッファを閉じる
 (defun close-all-buffers ()
+  "全てのバッファを閉じる"
   (interactive)
   (loop for buffer being the buffers
      do (kill-buffer buffer)))
@@ -105,5 +106,10 @@
         (message "File '%s' successfully removed" filename)))))
 (global-set-key (kbd "C-x C-k") 'delete-current-buffer-file)
 
+;; create file
+(defun dired-create-file (file-name)
+  (interactive "F Create file: ")
+  (write-region "" nil file-name nil nil nil))
+(define-key dired-mode-map (kbd "i") 'dired-create-file)
 
 (provide 'init-defun)

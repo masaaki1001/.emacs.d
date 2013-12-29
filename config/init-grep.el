@@ -1,3 +1,4 @@
+;;;; grep
 ;; color-moccur.el
 ;; http://d.hatena.ne.jp/IMAKADO/20080724/1216882563
 ;; http://www.bookshelf.jp/soft/meadow_50.html#SEC746

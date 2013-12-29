@@ -1,7 +1,5 @@
-;;----------------------------------------------------------------------------
-;; auto-complete
+;;;; auto-complete
 ;; http://cx4a.org/software/auto-complete/manual.ja.html
-;;----------------------------------------------------------------------------
 (require 'popup nil t)
 (require 'fuzzy nil t)
 

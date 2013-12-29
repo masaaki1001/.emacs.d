@@ -1,3 +1,4 @@
+;;;; javascript
 ;; js2-mode
 ;; https://github.com/mooz/js2-mode
 (add-hook 'js2-mode-hook '(lambda () (setq mode-name "js2")))

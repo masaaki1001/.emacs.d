@@ -1,6 +1,4 @@
-;;----------------------------------------------------------------------------
-;; dired
-;;----------------------------------------------------------------------------
+;;;; dired
 (add-hook 'dired-mode-hook 'turn-on-gnus-dired-mode)
 
 ;; s を何回か入力すると，拡張子やサイズによる並び換えもできる
@@ -41,11 +39,5 @@
 ;; dired-filetype-face.el
 ;; diredの表示をファイルタイプ毎に色分けしてカラフルにする
 (require 'dired-filetype-face nil t)
-
-;; ファイル作成
-(defun dired-create-file (file-name)
-  (interactive "F Create file: ")
-  (write-region "" nil file-name nil nil nil))
-(define-key dired-mode-map (kbd "i") 'dired-create-file)
 
 (provide 'init-dired)

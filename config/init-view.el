@@ -1,6 +1,4 @@
-;;----------------------------------------------------------------------------
-;; view-mode
-;;----------------------------------------------------------------------------
+;;;; view-mode
 (progn
   (setq pager-keybind
         `( ;; vi-like
@@ -37,7 +35,6 @@
         viewer-modeline-color-view "orange")
   (viewer-change-modeline-color-setup))
 
-;; insert-mode
 (defun my/view-insert ()
   (interactive)
   (toggle-read-only))

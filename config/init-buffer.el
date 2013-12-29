@@ -1,6 +1,4 @@
-;;----------------------------------------------------------------------------
-;; Buffer関連
-;;----------------------------------------------------------------------------
+;;;; Buffer
 ;; バッファ一覧を詳細に
 (global-set-key (kbd "C-x C-b") 'bs-show)
 
@@ -46,7 +44,6 @@
 
 ;; zlc.el
 ;; http://d.hatena.ne.jp/mooz/20101003/p1
-;; https://github.com/mooz/emacs-zlc/
 (when (require 'zlc nil t)
   (zlc-mode t))
 

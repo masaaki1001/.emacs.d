@@ -1,6 +1,4 @@
-;;----------------------------------------------------------------------------
-;; recentf
-;;----------------------------------------------------------------------------
+;;;; recentf
 ;; 最近使ったファイル M-x recentf-open-files　を有効化
 ;; .recentfを自動保存する
 ;; http://d.hatena.ne.jp/tomoya/20110217/1297928222
@@ -18,7 +16,6 @@
 ;; http://d.hatena.ne.jp/rubikitch/20091224/recentf
 (require 'recentf-ext nil t)
 
-;; こんな設定もできる。
 ;; http://masutaka.net/chalow/2011-10-30-2.html
 (require 'cl)
 (defvar my-recentf-list-prev nil)

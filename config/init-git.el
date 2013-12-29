@@ -1,3 +1,4 @@
+;;;; Git
 (when (require 'magit nil t)
   (global-set-key (kbd "C-c g") 'magit-status)
 

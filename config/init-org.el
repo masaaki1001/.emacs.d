@@ -1,7 +1,4 @@
-;;----------------------------------------------------------------------------
-;; org-mode
-;;----------------------------------------------------------------------------
-;; Emacsでメモ・TODO管理
+;;;; org-mode
 ;; http://d.hatena.ne.jp/rubikitch/20090121/1232468026
 ;; http://e-arrows.sakura.ne.jp/2010/02/vim-to-emacs.html
 (when (require 'org-install nil t)

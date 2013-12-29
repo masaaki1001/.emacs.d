@@ -1,6 +1,6 @@
+;;;; window
 ;; e2wm.el
 ;; http://d.hatena.ne.jp/kiwanami/20100528/1275038929
-;; https://github.com/kiwanami/emacs-window-manager
 ;; 最小の e2wm 設定例
 (when (require 'e2wm nil t)
   (global-set-key (kbd "M-+") 'e2wm:start-management)

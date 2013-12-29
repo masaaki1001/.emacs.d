@@ -1,10 +1,9 @@
+;;;; edit utils
 ;; expand-region.el
-;; https://github.com/magnars/expand-region.el
 ;; http://d.hatena.ne.jp/syohex/20120117/1326814127
 (when (require 'expand-region nil t)
   (global-set-key (kbd "C-,") 'er/expand-region)
-  ;; http://d.hatena.ne.jp/yuheiomori0718/20120118/1326893579
-  (global-set-key (kbd "C-M-,") 'er/contract-region);広がりすぎたら戻る処理
+  (global-set-key (kbd "C-M-,") 'er/contract-region)
   ;; transient-mark-modeが nilでは動作ないので注意
   (transient-mark-mode t)
   (when (require 'js2-refactor nil t)

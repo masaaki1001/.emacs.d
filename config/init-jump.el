@@ -1,3 +1,4 @@
+;;;; jump
 ;; jaunte.el
 ;; http://kawaguchi.posterous.com/emacshit-a-hint
 (when (require 'jaunte nil t)

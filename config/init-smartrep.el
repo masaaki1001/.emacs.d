@@ -1,9 +1,5 @@
-;;----------------------------------------------------------------------------
-;; smartrep.el
+;;;; smartrep.el
 ;; http://sheephead.homelinux.org/2011/12/19/6930/
-;; https://github.com/myuhe/smartrep.el
-;; https://raw.github.com/tkf/smartrep.el/master/smartrep.el
-;;----------------------------------------------------------------------------
 (when (require 'smartrep nil t)
   (setq orig-binding (key-binding "\C-l")) ; default key bind backup
   (progn

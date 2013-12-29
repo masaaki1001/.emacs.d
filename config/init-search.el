@@ -1,3 +1,4 @@
+;;;; search
 (when (require 'anzu nil t)
   (global-anzu-mode t)
   (set-face-attribute 'anzu-mode-line nil

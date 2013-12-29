@@ -1,3 +1,4 @@
+;;;; log
 ;; session.el
 ;; http://maruta.be/intfloat_staff/101
 (when (require 'session nil t)

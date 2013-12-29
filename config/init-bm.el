@@ -1,9 +1,6 @@
-;;----------------------------------------------------------------------------
-;; bm.el
+;;;; bm.el
 ;; http://d.hatena.ne.jp/kenkov/20110507/1304754238
 ;; http://d.hatena.ne.jp/peccu/20100402
-;; https://github.com/joodland/bm/blob/master/bm.el
-;;----------------------------------------------------------------------------
 (when (require 'bm nil t)
   ;; マークのセーブ
   (setq-default bm-buffer-persistence t)

@@ -1,4 +1,4 @@
-;; dsvn.el
+;;;; svn
 ;; http://d.hatena.ne.jp/hamaco/20090218/1234962837
 ;; http://www23.atwiki.jp/selflearn/pages/41.html
 (autoload 'svn-status "dsvn" "Run `svn status'." t)

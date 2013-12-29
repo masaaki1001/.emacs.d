@@ -1,3 +1,4 @@
+;;;; hatena diary
 ;; http://d.hatena.ne.jp/tarao/20130110/1357821338
 ;; (require 'hatena-diary)
 (when (require 'hatena-markup-mode nil t)

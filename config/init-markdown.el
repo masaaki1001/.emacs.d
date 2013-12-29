@@ -1,3 +1,4 @@
+;;;; markdown
 (when (require 'markdown-mode nil t)
   (add-to-list 'auto-mode-alist '("\\.\\(md\\|mdt\\|mdwn\\)$" . markdown-mode))
   (defvar markdown-imenu-generic-expression
