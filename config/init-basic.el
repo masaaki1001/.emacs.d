@@ -165,4 +165,4 @@
   (edit-server-start)
   )
 
-(provide 'init-global)
+(provide 'init-basic)

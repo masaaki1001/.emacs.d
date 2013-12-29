@@ -30,8 +30,8 @@
 (require 'init-mac nil t)
 ;; env
 (require 'init-env nil t)
-;; global
-(require 'init-global nil t)
+;; basic
+(require 'init-basic nil t)
 ;; keybind
 (require 'init-keybind nil t)
 ;; filecache
