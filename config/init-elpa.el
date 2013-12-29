@@ -82,7 +82,6 @@
     htmlize
     emmet-mode
     markdown-mode
-    markdown-mode+
     color-moccur
     scratch-log
     session
@@ -98,8 +97,6 @@
     paredit
     smartparens
     spaces
-    e2wm
-    window-layout
     switch-window
     jaunte
     ace-jump-mode

@@ -84,7 +84,6 @@
   (global-set-key (kbd "C-c y") 'helm-c-yas-complete)
   )
 
-(require 'helm-replace-string nil t)
 (require 'helm-ag nil t)
 (require 'helm-ag-r nil t)
 (require 'helm-rails nil t)

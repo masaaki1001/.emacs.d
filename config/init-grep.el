@@ -1,8 +1,6 @@
 ;;;; grep
 ;; color-moccur.el
-;; http://d.hatena.ne.jp/IMAKADO/20080724/1216882563
 ;; http://www.bookshelf.jp/soft/meadow_50.html#SEC746
-;; http://www.bookshelf.jp/elc/color-moccur.el
 (when (require 'color-moccur nil t)
   (setq moccur-split-word t)
   ;; http://fkmn.exblog.jp/7311776/
@@ -74,7 +72,6 @@
 
 ;; color-grep.el
 ;; http://www.bookshelf.jp/soft/meadow_51.html#SEC778
-;; http://www.bookshelf.jp/elc/color-grep.el
 (when (require 'color-grep nil t)
   ;; grep バッファを kill 時に，開いたバッファを消す
   (setq color-grep-sync-kill-buffer t))
