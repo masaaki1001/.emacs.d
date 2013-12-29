@@ -1,3 +1,4 @@
+;;;; basic setting
 ;; 日本語に設定
 (set-language-environment 'Japanese)
 ;; UTF-8に設定
