@@ -28,6 +28,8 @@
   (add-hook 'kill-emacs-hook '(lambda nil
                                 (bm-buffer-save-all)
                                 (bm-repository-save)))
+  (setq bm-marker 'bm-marker-right)
+  (setq bm-cycle-all-buffers t)
   )
 
 (provide 'init-bm)

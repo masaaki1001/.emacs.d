@@ -3,7 +3,15 @@
   (volatile-highlights-mode t)
   )
 
+;; highlight-symbol.el
 (when (require 'highlight-symbol nil t)
+
+  (dolist (hook '(prog-mode-hook html-mode-hook))
+    (add-hook hook 'highlight-symbol-mode)
+    (add-hook hook 'highlight-symbol-nav-mode))
+  (eval-after-load 'highlight-symbol
+    '(diminish 'highlight-symbol-mode))
+
   (defun highlight-symbol-all (&optional nlines)
     "Call `all' with the symbol at point.
  Each line is displayed with NLINES lines before and after, or -NLINES

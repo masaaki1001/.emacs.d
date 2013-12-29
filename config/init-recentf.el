@@ -14,7 +14,6 @@
   (recentf-mode 1)
   )
 
-
 ;; recentf-ext.el
 ;; http://d.hatena.ne.jp/rubikitch/20091224/recentf
 (require 'recentf-ext nil t)

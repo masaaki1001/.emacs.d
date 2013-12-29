@@ -8,9 +8,7 @@
 ;; markdown
 (setq markdown-command "/usr/local/bin/markdown")
 
-(when (mac-os-p)
-  (when (require 'exec-path-from-shell nil t)
+(when (require 'exec-path-from-shell nil t)
     (exec-path-from-shell-initialize))
-  )
 
 (provide 'init-env)

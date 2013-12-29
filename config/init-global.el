@@ -139,7 +139,6 @@
 (defalias 'message-box 'message)
 
 ;; find file (or url) at point
-;; C-x C-f
 (ffap-bindings)
 
 (put 'upcase-region 'disabled nil)
@@ -151,6 +150,8 @@
 ;; Also auto refresh dired, but be quiet about it
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-verbose nil)
+
+(electric-indent-mode -1)
 
 (require 'tramp)
 

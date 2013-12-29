@@ -80,21 +80,11 @@
   (define-key global-map (kbd "C-t") 'other-window) ; C-t に other-window
   )
 
-;; sticky.el
-;; 大文字入力を楽にする
-;; (when (require 'sticky nil t)
-;;   (use-sticky-key ";" sticky-alist:ja))
-
 ;; 範囲指定していないとき、C-wで前の単語を削除
 ;; http://dev.ariel-networks.com/wp/documents/aritcles/emacs/part16
 (defadvice kill-region (around kill-word-or-kill-region activate)
   (if (and (interactive-p) transient-mark-mode (not mark-active))
       (backward-kill-word 1)
     ad-do-it))
-
-;; god-mode
-(when (require 'god-mode nil t)
-  (global-set-key (kbd "<escape>") 'god-local-mode)
-  )
 
 (provide 'init-keybind)

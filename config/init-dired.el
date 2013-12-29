@@ -11,7 +11,12 @@
 (when(require 'wdired nil t)
   (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
   )
-
+;; C-sでファイル名のみ検索対象にする
+(setq dired-isearch-filenames t)
+;; diredを2つのウィンドウで開いている時に、デフォルトの移動orコピー先をもう一方のdiredで開いているディレクトリにする
+(setq dired-dwim-target t)
+;; ディレクトリを再帰的にコピーする
+(setq dired-recursive-copies 'always)
 ;; direx.el
 ;; http://cx4a.blogspot.com/2011/12/popwineldirexel.html
 (when (require 'direx nil t)

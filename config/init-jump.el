@@ -13,12 +13,6 @@
   (global-set-key (kbd "C-.") 'ace-jump-mode)
   )
 
-;; iy-go-to-char.el
-(when (require 'iy-go-to-char nil t)
-  (global-set-key (kbd "C-c C-f") 'iy-go-to-char)
-  (global-set-key (kbd "C-c C-c C-f") 'iy-go-to-char-backward)
-  )
-
 ;; goto-chg.el
 (when (require 'goto-chg nil t)
   (define-key global-map (kbd "<f8>") 'goto-last-change)
@@ -36,5 +30,7 @@
     (global-set-key (kbd "C-c C-d") 'dash-at-point)
     )
   )
+
+(when (require 'zeal-at-point nil t))
 
 (provide 'init-jump)

@@ -3,16 +3,18 @@
 (add-hook 'js2-mode-hook '(lambda () (setq mode-name "js2")))
 (autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.js.erb$" . js2-mode)) ;; for rails
+(add-to-list 'auto-mode-alist '("\\.js.erb$" . js2-mode))
 (setq js2-auto-indent-p t)
 (setq-default js2-global-externs '("require" "assert" "__dirname" "console" "JSON"))
 (eval-after-load 'js2-mode
   '(progn
      (js2-imenu-extras-setup)))
 
-(require 'json)
+(when (require 'jquery-doc nil t)
+  (add-hook 'js2-mode-hook 'jquery-doc)
+  )
 
-(add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
+(require 'json)
 
 ;; tern.js
 (add-to-list 'load-path (expand-file-name "tern/emacs" repositories-dir))
@@ -32,6 +34,6 @@
   )
 
 (add-hook 'coffee-mode-hook
-  '(lambda() (coffee-custom)))
+          '(lambda() (coffee-custom)))
 
 (provide 'init-javascript)

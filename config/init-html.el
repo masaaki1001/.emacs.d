@@ -36,11 +36,6 @@
   (add-hook 'scss-mode-hook 'rainbow-mode)
   )
 
-;; zencoding-mode
-(when (require 'zencoding-mode nil t)
-  (add-hook 'html-mode-hook 'zencoding-mode)
-  (add-hook 'web-mode-hook 'zencoding-mode))
-
 ;; emmet-mode
 (when (require 'emmet-mode nil t)
   (add-hook 'html-mode-hook 'emmet-mode)

@@ -8,7 +8,9 @@
       helm-input-idle-delay 0
       helm-candidate-number-limit 300
       helm-samewindow nil
-      helm-quick-update t)
+      helm-quick-update t
+      ;; helm-ff-transformer-show-only-basename nil
+      )
 
 (helm-descbinds-mode)
 
@@ -42,24 +44,16 @@
              ))))
 (global-set-key (kbd "C-;") 'my-helm)
 
-;; http://d.hatena.ne.jp/IMAKADO/20080724/1216882563
-(when (require 'helm-c-moccur nil t)
-  (global-set-key (kbd "C-c C-o") 'helm-c-moccur-occur-by-moccur)
-  (global-set-key (kbd "C-c C-M-o") 'helm-c-moccur-dmoccur)
-  (add-hook 'dired-mode-hook
-            '(lambda ()
-               (local-set-key (kbd "O") 'helm-c-moccur-dired-do-moccur-by-moccur)))
-  (global-set-key (kbd "C-M-s") 'helm-c-moccur-isearch-forward)
-  (global-set-key (kbd "C-M-r") 'helm-c-moccur-isearch-backward)
-
-  (setq helm-c-moccur-helm-idle-delay 0.1)
-  (setq helm-c-moccur-higligt-info-line-flag t)
-  (setq helm-c-moccur-enable-auto-look-flag t)
+(when (require 'helm-swoop nil t)
+  (global-set-key (kbd "C-c C-o") 'helm-swoop)
   )
 
 (when (require 'helm-ls-git nil t)
+  (setq helm-ls-git-show-abs-or-relative 'relative)
   (global-set-key (kbd "C-c :") 'helm-ls-git-ls)
   )
+
+(require 'helm-git-files nil t)
 
 ;; helm-project.el
 ;; http://d.hatena.ne.jp/yuheiomori0718/20111226/1324902529
@@ -90,13 +84,9 @@
   )
 
 (require 'helm-replace-string nil t)
-
 (require 'helm-ag nil t)
-
 (require 'helm-ag-r nil t)
-
 (require 'helm-rails nil t)
-
 (require 'imenu-anywhere nil t)
 
 (global-set-key (kbd "C-x f") 'helm-find-files)
@@ -105,6 +95,7 @@
 (global-set-key (kbd "C-x C-m") 'helm-M-x)
 (global-set-key (kbd "M-z") 'helm-do-grep)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
+(global-set-key (kbd "C-c b") 'helm-bm)
 (global-set-key (kbd "C-c i") 'helm-imenu)
 (global-set-key (kbd "C-c I") 'helm-imenu-anywhere)
 (global-set-key (kbd "C-c e") 'helm-elscreen)
