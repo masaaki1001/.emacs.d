@@ -25,11 +25,6 @@
   (tool-bar-mode -1) ;; ツールバーを消す
   (toggle-scroll-bar nil) ;; スクロールバーを消す
 
-  ;; maximize.el
-  ;; https://github.com/izawa/maximize
-  (when (require 'maximize nil t)
-    (global-set-key [(f12)] 'maximize-frame))
-
   (when (require 'maxframe nil t)
     (add-hook 'window-setup-hook 'maximize-frame t))
   ))
@@ -37,11 +32,10 @@
 ;; *scratch*の初期表示メッセージを消す
 ;; http://d.hatena.ne.jp/mooz/20100318/p1
 (setq initial-scratch-message "")
-;; tabは4文字分、改行後に自動インデント
+;; tabは2文字分、改行後に自動インデント
 (setq-default tab-width 2 indent-tabs-mode nil)
 ;; 行末の空白を表示
 (setq-default show-trailing-whitespace t)
-
 ;; 現在行を目立たせる
 ;; http://d.hatena.ne.jp/khyiker/20070409/emacs_hl_line
 (global-hl-line-mode) ;デフォルトはこの行だけでOK
@@ -73,7 +67,7 @@
 ;; 削除したらゴミ箱に
 (setq delete-by-moving-to-trash t)
 ;; 終了時にオートセーブファイルを消す
-(setq delete-auto-save-files t)
+;; (setq delete-auto-save-files t)
 ;; find-fileのファイル名補完時に大文字小文字を区別しない
 (setq read-file-name-completion-ignore-case t)
 (setq completion-ignore-case t)
@@ -81,7 +75,6 @@
 ;; http://e-arrows.sakura.ne.jp/2010/02/vim-to-emacs.html
 (cua-mode t)
 (setq cua-enable-cua-keys nil) ;; 変なキーバインド禁止
-
 ;; 現在の関数名を表示
 (which-function-mode 1)
 ;; 選択範囲を色付け
@@ -90,9 +83,6 @@
 (setq inhibit-startup-message t)
 ;;"yes or no"を"y or n"にする
 (fset 'yes-or-no-p 'y-or-n-p)
-;; M-x を補完
-(when (require 'mcomplete nil t)
-  (turn-on-mcomplete-mode))
 ;; *Completions*バッファを，使用後に消してくれる
 ;; http://dev.ariel-networks.com/wp/documents/aritcles/emacs/part11
 (when (require 'lcomp nil t)
