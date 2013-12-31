@@ -1,5 +1,8 @@
 ;;;; Git
 (when (require 'magit nil t)
+  (setq-default
+   magit-save-some-buffers nil)
+
   (global-set-key (kbd "C-c g") 'magit-status)
 
   (require 'magit-blame nil t)
@@ -83,7 +86,10 @@
   (eval-after-load "magit"
     '(define-key magit-status-mode-map (kbd "C-c C-a") 'magit-just-amend))
 
-  )
+  (when (mac-os-p)
+    (setq magit-emacsclient-executable "/usr/local/Cellar/emacs/24.3/bin/emacsclient"))
+
+)
 
 ;; yagist.el
 (require 'yagist nil t)
