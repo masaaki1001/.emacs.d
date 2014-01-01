@@ -92,6 +92,7 @@
     recentf-ext
     viewer
     dash-at-point
+    zeal-at-point
     elisp-slime-nav
     eldoc-extension
     paredit

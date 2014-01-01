@@ -31,6 +31,10 @@
     )
   )
 
-(when (require 'zeal-at-point nil t))
+(when is-linux
+  (when (require 'zeal-at-point nil t)
+    (global-set-key (kbd "C-c C-d") 'zeal-at-point)
+    )
+  )
 
 (provide 'init-jump)
