@@ -24,6 +24,10 @@
 (setq repositories-dir
       (expand-file-name "repositories" user-emacs-directory))
 
+;; OS
+(setq is-mac (eq system-type 'darwin))
+(setq is-linux (eq window-system 'x))
+
 ;; elpa, marmalade, melpa, auto-install etc...
 (require 'init-elpa nil t)
 ;; Mac用設定

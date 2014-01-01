@@ -23,7 +23,7 @@
   (define-key global-map (kbd "<f7>") 'point-undo)
   (define-key global-map (kbd "S-<f7>") 'point-redo))
 
-(when (mac-os-p)
+(when is-mac
   (when (require 'dash-at-point nil t)
     (add-to-list 'dash-at-point-mode-alist '(web-mode . "html"))
     (add-to-list 'dash-at-point-mode-alist '(less-css-mode . "less"))
