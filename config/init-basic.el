@@ -17,7 +17,7 @@
 (setq scroll-step 1)
 ;; Widow設定
 ;; http://d.hatena.ne.jp/mizchi/20100828/1282940866
-(if window-system (progn
+(when window-system
   (set-background-color "Black")
   (set-foreground-color "White")
   (set-cursor-color "Gray")
@@ -27,7 +27,7 @@
 
   (when (require 'maxframe nil t)
     (add-hook 'window-setup-hook 'maximize-frame t))
-  ))
+  )
 
 ;; *scratch*の初期表示メッセージを消す
 ;; http://d.hatena.ne.jp/mooz/20100318/p1
@@ -42,7 +42,7 @@
 (set-face-background hl-line-face "#222222")
 
 ;; カーソルの点滅を止める
-(blink-cursor-mode 0)
+(blink-cursor-mode nil)
 ;; カーソルの位置が何文字目かを表示する
 (column-number-mode t)
 ;; カーソルの位置が何行目かを表示する
@@ -147,8 +147,8 @@
 (require 'tramp)
 
 (require 'server)
-(if (not (server-running-p))
-    (server-start))
+(unless (server-running-p)
+  (server-start))
 
 (when (require 'edit-server nil t)
   (setq edit-server-new-frame nil)
