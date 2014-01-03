@@ -33,6 +33,8 @@
 
 (when is-linux
   (when (require 'zeal-at-point nil t)
+    (add-to-list 'zeal-at-point-mode-alist '(web-mode . "html"))
+    (add-to-list 'zeal-at-point-mode-alist '(less-css-mode . "less"))
     (global-set-key (kbd "C-c C-d") 'zeal-at-point)
     )
   )
