@@ -2,28 +2,17 @@
 ;; http://sheephead.homelinux.org/2011/12/19/6930/
 (when (require 'smartrep nil t)
   (setq orig-binding (key-binding "\C-l")) ; default key bind backup
-  (progn
-    (global-set-key "\C-l" nil)
-    (smartrep-define-key
-        global-map "C-l"
-      '(("SPC" . 'scroll-up)
-        ("b" . 'scroll-down)
-        ("l" . 'forward-char)
-        ("h" . 'backward-char)
-        ("j" . 'next-line)
-        ("k" . 'previous-line)
-        ("i" . 'keyboard-quit)))
-    )
-  (global-set-key "\C-l\C-l" 'recenter-top-bottom)
-  ;;(global-set-key "\C-l" orig-binding) ; default key bind revert
-
+  (global-set-key (kbd "C-l") nil)
+  (global-set-key (kbd "C-l C-l") 'recenter-top-bottom)
+  ;; (global-set-key "\C-l" orig-binding) ; default key bind revert
 
   ;; multiple-cursors
   (progn
     (smartrep-define-key
         global-map "C-l"
       '(("n" . 'mc/mark-next-like-this)
-        ("p" . 'mc/mark-previous-like-this))))
+        ("p" . 'mc/mark-previous-like-this)
+        ("a" . 'mc/mark-all-like-this))))
 
   ;; org-mode
   (eval-after-load "org"
@@ -33,8 +22,10 @@
          '(("n" . 'outline-next-visible-heading)
            ("p" . 'outline-previous-visible-heading)))))
 
+  ;; all-mode
   (progn
-    (smartrep-define-key all-mode-map "M-g"
+    (smartrep-define-key
+        all-mode-map "M-g"
        '(("n"   . 'next-error)
          ("p"   . 'previous-error)
          ("C-n" . 'next-error)
