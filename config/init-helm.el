@@ -1,8 +1,6 @@
 ;;;; helm
 (require 'helm-config)
 (require 'helm-command)
-(require 'helm-elisp)
-(require 'helm-misc)
 (require 'helm-descbinds)
 
 (setq helm-idle-delay 0.1

@@ -11,13 +11,6 @@
   (define-key yas-minor-mode-map (kbd "C-x i n") 'yas-new-snippet)
   (define-key yas-minor-mode-map (kbd "C-x i v") 'yas-visit-snippet-file)
 
-  ;; yasnippetのインデント
-  ;; http://d.hatena.ne.jp/rubikitch/20080420/1208697562
-  (defun yas/indent-snippet ()
-    (indent-region yas/snippet-beg yas/snippet-end)
-    (indent-according-to-mode))
-  (add-hook 'yas/after-exit-snippet-hook 'yas/indent-snippet)
-
   (when (require 'dropdown-list nil t)
     (setq yas/prompt-functions '(yas/dropdown-prompt
                                    yas/ido-prompt
