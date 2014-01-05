@@ -42,7 +42,9 @@
 (set-face-background hl-line-face "#222222")
 
 ;; カーソルの点滅を止める
-(blink-cursor-mode nil)
+(custom-set-variables
+ '(blink-cursor-mode nil)
+ )
 ;; カーソルの位置が何文字目かを表示する
 (column-number-mode t)
 ;; カーソルの位置が何行目かを表示する
@@ -67,7 +69,7 @@
 ;; 削除したらゴミ箱に
 (setq delete-by-moving-to-trash t)
 ;; 終了時にオートセーブファイルを消す
-;; (setq delete-auto-save-files t)
+(setq delete-auto-save-files t)
 ;; find-fileのファイル名補完時に大文字小文字を区別しない
 (setq read-file-name-completion-ignore-case t)
 (setq completion-ignore-case t)
@@ -154,5 +156,10 @@
   (setq edit-server-new-frame nil)
   (edit-server-start)
   )
+
+;; disable vc-mode
+(setq vc-handled-backends '())
+(eval-after-load "vc"
+  '(remove-hook 'find-file-hooks 'vc-find-file-hook))
 
 (provide 'init-basic)
