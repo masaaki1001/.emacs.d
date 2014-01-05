@@ -33,4 +33,10 @@
   (move-text-default-bindings)
   )
 
+;; https://github.com/stsquad/emacs_chrome
+(when (require 'edit-server nil t)
+  (setq edit-server-new-frame nil)
+  (edit-server-start)
+  )
+
 (provide 'init-edit-util)

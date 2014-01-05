@@ -152,10 +152,6 @@
 (unless (server-running-p)
   (server-start))
 
-(when (require 'edit-server nil t)
-  (setq edit-server-new-frame nil)
-  (edit-server-start)
-  )
 
 ;; disable vc-mode
 (setq vc-handled-backends '())

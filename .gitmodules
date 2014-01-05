@@ -19,9 +19,6 @@
 [submodule "repositories/moccur-edit"]
 	path = repositories/moccur-edit
 	url = git://github.com/emacsmirror/moccur-edit.git
-[submodule "repositories/emacs_chrome"]
-	path = repositories/emacs_chrome
-	url = git://github.com/stsquad/emacs_chrome.git
 [submodule "repositories/helm-project"]
 	path = repositories/helm-project
 	url = git://github.com/shishi/helm-project.git

@@ -131,6 +131,7 @@
     anzu
     move-text
     highlight-escape-sequences
+    edit-server
     ))
 
 (dolist (package init-install-packages)
