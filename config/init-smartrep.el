@@ -6,6 +6,11 @@
   (global-set-key (kbd "C-l C-l") 'recenter-top-bottom)
   ;; (global-set-key "\C-l" orig-binding) ; default key bind revert
 
+  (defadvice smartrep-map-internal (around smartrep-silence-echo-keystrokes activate)
+    (let ((echo-keystrokes 0))
+      ad-do-it
+      ))
+
   ;; multiple-cursors
   (progn
     (smartrep-define-key
