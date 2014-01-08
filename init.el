@@ -65,11 +65,11 @@
 (require 'init-html nil t)
 ;; bm.el
 (require 'init-bm nil t)
-;; twittering-mode.el
+;; twittering-mode
 (require 'init-twitter nil t)
-;; migemo.el
+;; migemo
 (require 'init-migemo nil t)
-;; smartrep.el
+;; smartrep
 (require 'init-smartrep nil t)
 ;; view-mode
 (require 'init-view nil t)
@@ -103,8 +103,9 @@
 (require 'init-util nil t)
 ;; edit-util
 (require 'init-edit-util nil t)
-;; anything.el or helm.el
+;; anything
 (require 'init-anything nil t)
+;; helm
 (require 'init-helm nil t)
 ;; shell
 (require 'init-shell nil t)

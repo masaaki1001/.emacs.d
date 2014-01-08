@@ -81,14 +81,12 @@
   (when is-mac
     (setq magit-emacsclient-executable "/usr/local/Cellar/emacs/24.3/bin/emacsclient"))
 
-)
+  )
 
 ;; yagist.el
 (require 'yagist nil t)
 
 (when (require 'git-messenger)
   (global-set-key (kbd "C-x v p") 'git-messenger:popup-message))
-
-(add-to-list 'auto-mode-alist '(".gitmodules"   . gitconfig-mode))
 
 (provide 'init-git)
