@@ -3,8 +3,8 @@
 ;; .recentfを自動保存する
 ;; http://d.hatena.ne.jp/tomoya/20110217/1297928222
 (when (require 'recentf nil t)
-  (setq recentf-exclude '("~/.emacs.d/resource/.recentf"))
-  (setq recentf-save-file (expand-file-name "~/.emacs.d/resource/.recentf" user-emacs-directory))
+  (setq recentf-exclude '(".recentf"))
+  (setq recentf-save-file (expand-file-name ".recentf" resource-dir))
   (setq recentf-max-saved-items 2000)
   (setq recentf-auto-cleanup 10)
   (setq recentf-auto-save-timer

@@ -21,8 +21,11 @@
 ;; e.g. (add-to-load-path "elisp" "xxx" "xxx")
 (add-to-load-path "repositories")
 
+;; directory
 (setq repositories-dir
       (expand-file-name "repositories" user-emacs-directory))
+(setq resource-dir
+      (expand-file-name "resource" user-emacs-directory))
 
 ;; OS
 (setq is-mac (eq system-type 'darwin))
@@ -132,7 +135,7 @@
 (autoload 'save-current-configuration "revive" "Save status" t)
 (autoload 'resume "revive" "Resume Emacs" t)
 (autoload 'wipe "revive" "Wipe emacs" t)
-(setq revive:configuration-file "~/.emacs.d/resource/.revive.el")
+(setq revive:configuration-file (expand-file-name ".revive.el" resource-dir))
 (define-key ctl-x-map "F" 'resume)                        ; C-x F で復元
 (define-key ctl-x-map "K" 'wipe)                          ; C-x K で Kill
 (add-hook 'kill-emacs-hook 'save-current-configuration)   ; 終了時に保存

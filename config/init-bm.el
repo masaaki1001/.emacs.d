@@ -4,7 +4,7 @@
 (when (require 'bm nil t)
   ;; マークのセーブ
   (setq-default bm-buffer-persistence t)
-  (setq bm-repository-file "~/.emacs.d/resource/.bm-repository")
+  (setq bm-repository-file (expand-file-name ".bm-repository" resource-dir))
   ;; 起動時に設定のロード
   (setq bm-restore-repository-on-load t)
   (add-hook 'after-init-hook 'bm-repository-load)

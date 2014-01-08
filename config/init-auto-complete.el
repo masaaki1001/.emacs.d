@@ -5,7 +5,7 @@
 
 (when (require 'auto-complete-config nil t)
   (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20131001.1051/dict")
-  (setq ac-comphist-file "~/.emacs.d/resource/ac-comphist.dat")
+  (setq ac-comphist-file (expand-file-name "ac-comphist.dat" resource-dir))
   (ac-config-default)
   (setq ac-delay 0.5)
   (setq ac-use-quick-help t)

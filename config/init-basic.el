@@ -51,7 +51,7 @@
 (line-number-mode t)
 ;; カーソルの場所を保存する
 (when (require 'saveplace nil t)
-  (setq save-place-file "~/.emacs.d/resource/.emacs-places")
+  (setq save-place-file (expand-file-name ".emacs-places" resource-dir))
   (setq-default save-place t))
 ;; スクロール時のカーソル位置維持
 (setq scroll-preserve-screen-position t)
@@ -147,6 +147,7 @@
 (electric-indent-mode -1)
 
 (require 'tramp)
+(setq tramp-persistency-file-name (expand-file-name "tramp" resource-dir))
 
 (require 'server)
 (unless (server-running-p)

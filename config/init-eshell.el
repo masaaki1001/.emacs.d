@@ -97,6 +97,6 @@
 ;; 確認なしでヒストリ保存
 (setq eshell-ask-to-save-history (quote always))
 
-(setq eshell-directory-name "~/.emacs.d/resource/.eshell/")
+(setq eshell-directory-name (expand-file-name ".eshell" resource-dir))
 
 (provide 'init-eshell)
