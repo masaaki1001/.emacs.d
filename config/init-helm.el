@@ -8,12 +8,17 @@
       helm-candidate-number-limit 300
       helm-samewindow nil
       helm-quick-update t
+      helm-delete-minibuffer-contents-from-point t
       ;; helm-ff-transformer-show-only-basename nil
       )
 
 (helm-descbinds-mode)
+(helm-match-plugin-mode)
 
-(helm-match-plugin-mode t)
+;; http://d.hatena.ne.jp/a_bicky/20140104/1388822688
+(defadvice helm-delete-minibuffer-contents (before helm-emulate-kill-line activate)
+  "Emulate `kill-line' in helm minibuffer"
+  (kill-new (buffer-substring (point) (field-end))))
 
 (defvar helm-source-emacs-commands
   '((name . "Emacs Commands")
