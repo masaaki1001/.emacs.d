@@ -4,7 +4,8 @@
 ;; http://www.bookshelf.jp/texi/skk/skk_4.html#SEC15
 (when (require 'skk-autoloads nil t)
   ;; http://sheephead.homelinux.org/2010/06/18/1894/
-  (setq skk-user-directory "~/.emacs.d/ddskk/") ; ディレクトリ指定
+  (setq skk-user-directory (expand-file-name "ddskk" user-emacs-directory))
+  ;; (setq skk-jisyo (expand-file-name "jisyo" resource-dir))
   (setq skk-large-jisyo "~/.emacs.d/ddskk/SKK-JISYO.L")
 
   ;; skk用にshift-stickyを";"に設定する
