@@ -11,11 +11,8 @@
   '(progn
      (js2-imenu-extras-setup)))
 
-(when (require 'jquery-doc nil t)
-  (add-hook 'js2-mode-hook 'jquery-doc)
-  )
-
-(require 'json)
+(require 'jquery-doc nil t)
+(require 'json nil t)
 
 ;; tern.js
 (add-to-list 'load-path (expand-file-name "tern/emacs" repositories-dir))
