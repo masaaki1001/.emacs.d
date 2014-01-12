@@ -8,6 +8,10 @@ package.elを利用しているのでemacsのversionは24以上であること�
 
     git clone --recursive https://github.com/masaaki1001/.emacs.d.git ~/.emacs.d
 
+or
+
+    git clone --recursive https://masaaki1001@bitbucket.org/masaaki1001/.emacs.d.git
+
 ## 依存ライブラリのインストール
 
 初回起動時にpackage.elで[MELPA](http://melpa.milkbox.net/)から自動的にインストールされる．
@@ -24,3 +28,10 @@ package.elからインストールする事が出来ないものは[auto-install
 
 * repositories/ternに移動する
 * `npm install`を実行
+
+## DDSKKのインストール
+
+[DDSKK](http://openlab.ring.gr.jp/skk/ddskk-ja.html)を利用する場合は以下の手順を実行する．
+
+* .emacs.dに移動
+* `./setup.sh`を実行

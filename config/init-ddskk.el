@@ -6,19 +6,19 @@
   ;; http://sheephead.homelinux.org/2010/06/18/1894/
   (setq skk-user-directory (expand-file-name "ddskk" user-emacs-directory))
   ;; (setq skk-jisyo (expand-file-name "jisyo" resource-dir))
-  (setq skk-large-jisyo "~/.emacs.d/ddskk/SKK-JISYO.L")
+  (setq skk-large-jisyo (expand-file-name "SKK-JISYO.L" skk-user-directory))
 
   ;; skk用にshift-stickyを";"に設定する
   (setq skk-sticky-key ";")
 
-  ;; C-x C-j で skk モードを起動
+  ;; C-x j で skk モードを起動
   (global-set-key (kbd "C-x j") 'skk-mode)
   ;; .skk を自動的にバイトコンパイル
   (setq skk-byte-compile-init-file t)
   (require 'info nil t)
-  (add-to-list 'Info-additional-directory-list "~/.emacs.d/ddskk/info")
+  (add-to-list 'Info-additional-directory-list (expand-file-name "info" skk-user-directory))
   ;;チュートリアルの場所設定
-  (setq skk-tut-file "~/.emacs.d/ddskk/SKK.tut")
+  (setq skk-tut-file (expand-file-name "SKK.tut" skk-user-directory))
   ;; メッセージを日本語で通知する
   (setq skk-japanese-message-and-error t)
   ;; メニューを日本語で表示する

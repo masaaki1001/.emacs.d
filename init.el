@@ -4,7 +4,7 @@
                           "~/.emacs.d/elisp"
                           "~/.emacs.d/config"
                           "~/.emacs.d/auto-install"
-                          "~/.emacs.d/ddskk/elisp"
+                          "~/.emacs.d/ddskk/site-lisp"
                           )
                         load-path))
 
