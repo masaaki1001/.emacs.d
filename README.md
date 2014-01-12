@@ -10,7 +10,7 @@ package.elを利用しているのでemacsのversionは24以上であること�
 
 ## 依存ライブラリのインストール
 
-初回起動時にpackage.elで[melpa](http://melpa.milkbox.net/)から自動的にインストールされる．
+初回起動時にpackage.elで[MELPA](http://melpa.milkbox.net/)から自動的にインストールされる．
 
 ## elispのインストール
 
