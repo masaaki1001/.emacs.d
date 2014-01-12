@@ -1,7 +1,9 @@
 ;;;; Git
 (when (require 'magit nil t)
   (setq-default
-   magit-save-some-buffers nil)
+   magit-save-some-buffers nil
+   magit-unstage-all-confirm nil
+   )
 
   (global-set-key (kbd "C-c g") 'magit-status)
 
