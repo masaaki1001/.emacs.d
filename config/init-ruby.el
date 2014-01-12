@@ -7,23 +7,15 @@
 (setq interpreter-mode-alist (append '(("ruby" . ruby-mode))
                                      interpreter-mode-alist))
 
-;; ruby-electric.el
-(when (require 'ruby-electric nil t)
-  (add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
-  ;; ruby-electric.el --- electric editing commands for ruby files
-  ;; http://d.hatena.ne.jp/authorNari/20081203/1228285596
-  (setq ruby-electric-expand-delimiters-list nil)
-  )
+;; ruby-indent
+(setq ruby-indent-level 2)
+(setq ruby-indent-tabs-mode nil)
 
 ;; ruby-block.el
 (when (require 'ruby-block nil t)
   (ruby-block-mode t)
   (setq ruby-block-highlight-toggle t)
   )
-
-;; ruby-indent
-(setq ruby-indent-level 2)
-(setq ruby-indent-tabs-mode nil)
 
 ;; Rinari
 ;; https://github.com/eschulte/rinari

@@ -20,7 +20,6 @@
     ac-ispell
     bm
     robe
-    ruby-electric
     ruby-block
     inf-ruby
     ruby-interpolation
