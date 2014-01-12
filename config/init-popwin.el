@@ -6,6 +6,7 @@
   ;; (push '("^\*helm .+\*$" :regexp t :height 20) popwin:special-display-config)
   (push '("*helm*" :height 20) popwin:special-display-config)
   (push '("*helm M-x*" :height 20) popwin:special-display-config)
+  (push '("*Helm Swoop*" :height 20) popwin:special-display-config)
   (push '("*Warnings*" :height 20) popwin:special-display-config)
   (push '("*Procces List*" :height 20) popwin:special-display-config)
   (push '("*Messages*" :height 20) popwin:special-display-config)

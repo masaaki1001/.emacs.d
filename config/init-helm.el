@@ -9,6 +9,7 @@
       helm-samewindow nil
       helm-quick-update t
       helm-delete-minibuffer-contents-from-point t
+      ;; helm-move-to-line-cycle-in-source t
       ;; helm-ff-transformer-show-only-basename nil
       )
 
@@ -49,6 +50,10 @@
 (global-set-key (kbd "C-;") 'my-helm)
 
 (when (require 'helm-swoop nil t)
+  (custom-set-faces
+   '(helm-swoop-target-line-block-face ((t (:background "dark olive green"))))
+   '(helm-swoop-target-line-face ((t (:background "dark olive green"))))
+   '(helm-swoop-target-word-face ((t nil))))
   (global-set-key (kbd "C-c C-o") 'helm-swoop)
   )
 
@@ -99,7 +104,6 @@
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x C-m") 'helm-M-x)
-(global-set-key (kbd "M-z") 'helm-do-grep)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-c b") 'helm-bm)
 (global-set-key (kbd "C-c i") 'helm-imenu)
