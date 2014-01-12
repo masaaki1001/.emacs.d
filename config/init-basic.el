@@ -28,7 +28,7 @@
   (when (require 'maxframe nil t)
     (add-hook 'window-setup-hook 'maximize-frame t))
   )
-
+(winner-mode t)
 ;; *scratch*の初期表示メッセージを消す
 ;; http://d.hatena.ne.jp/mooz/20100318/p1
 (setq initial-scratch-message "")
@@ -63,13 +63,13 @@
 (setq show-paren-style 'mixed)
 ;; バックアップファイルを作らない
 (setq backup-inhibited t)
+;; 終了時にオートセーブファイルを消す
+(setq delete-auto-save-files t)
 ;; オートセーブファイルを作らない
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 ;; 削除したらゴミ箱に
 (setq delete-by-moving-to-trash t)
-;; 終了時にオートセーブファイルを消す
-(setq delete-auto-save-files t)
 ;; find-fileのファイル名補完時に大文字小文字を区別しない
 (setq read-file-name-completion-ignore-case t)
 (setq completion-ignore-case t)
@@ -153,10 +153,13 @@
 (unless (server-running-p)
   (server-start))
 
-
 ;; disable vc-mode
 (setq vc-handled-backends '())
 (eval-after-load "vc"
   '(remove-hook 'find-file-hooks 'vc-find-file-hook))
+
+(defadvice elscreen-jump (around elscreen-last-command-char-event activate)
+  (let ((last-command-char last-command-event))
+    ad-do-it))
 
 (provide 'init-basic)
