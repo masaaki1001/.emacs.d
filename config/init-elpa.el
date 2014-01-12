@@ -77,7 +77,6 @@
     helm-rails
     helm-rb
     helm-bm
-    helm-dash
     htmlize
     emmet-mode
     markdown-mode
