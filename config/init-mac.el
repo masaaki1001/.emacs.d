@@ -5,6 +5,7 @@
   (setq ns-command-modifier 'meta)
   (setq ns-alternate-modifier 'super)
   (setq mac-pass-command-to-system nil)
+  (setq trash-directory "~/.Trash/")
   )
 
 (provide 'init-mac)
