@@ -7,6 +7,8 @@
 (setq interpreter-mode-alist (append '(("ruby" . ruby-mode))
                                      interpreter-mode-alist))
 
+(setq ruby-deep-indent-paren nil)
+
 ;; ruby-indent
 (setq ruby-indent-level 2)
 (setq ruby-indent-tabs-mode nil)

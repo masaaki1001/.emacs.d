@@ -23,6 +23,7 @@
     ruby-block
     inf-ruby
     ruby-interpolation
+    ruby-tools
     rbenv
     rspec-mode
     rinari
