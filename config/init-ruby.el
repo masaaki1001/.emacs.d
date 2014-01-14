@@ -49,10 +49,12 @@
 ;; robe
 (when (require 'robe nil t)
   (add-hook 'ruby-mode-hook 'robe-mode)
-  (add-hook 'robe-mode-hook
-            (lambda ()
-              (add-to-list 'ac-sources 'ac-source-robe)
-              (setq completion-at-point-functions '(auto-complete)))))
+  (add-hook 'robe-mode-hook 'robe-ac-setup)
+  ;; (add-hook 'robe-mode-hook
+  ;;           (lambda ()
+  ;;             (add-to-list 'ac-sources 'ac-source-robe)
+  ;;             (setq completion-at-point-functions '(auto-complete))))
+  )
 
 ;; yaml-mode.el
 (when (require 'yaml-mode nil t)
