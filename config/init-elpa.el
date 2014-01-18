@@ -89,8 +89,6 @@
     open-junk-file
     recentf-ext
     viewer
-    dash-at-point
-    zeal-at-point
     elisp-slime-nav
     eldoc-extension
     paredit
@@ -131,6 +129,9 @@
     highlight-escape-sequences
     edit-server
     ))
+
+(if is-mac (add-to-list 'init-install-packages 'dash-at-point))
+(if is-linux (add-to-list 'init-install-packages 'zeal-at-point))
 
 (dolist (package init-install-packages)
   (when (not (package-installed-p package))
