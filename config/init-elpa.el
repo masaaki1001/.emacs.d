@@ -73,7 +73,6 @@
     helm-git-grep
     helm-dired-recent-dirs
     helm-ag
-    helm-ag-r
     helm-descbinds
     helm-rails
     helm-rb

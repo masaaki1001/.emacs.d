@@ -96,7 +96,6 @@
   )
 
 (require 'helm-ag nil t)
-(require 'helm-ag-r nil t)
 (require 'helm-rails nil t)
 (require 'imenu-anywhere nil t)
 
