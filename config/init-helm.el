@@ -42,7 +42,7 @@
      (append '(helm-source-buffers-list
                helm-source-recentf
                helm-source-files-in-current-dir
-               helm-source-emacs-commands
+               ;; helm-source-emacs-commands
                helm-source-pp-bookmarks
                helm-source-buffer-not-found
                )
