@@ -71,7 +71,6 @@
     helm-open-github
     helm-spaces
     helm-git-grep
-    helm-dired-recent-dirs
     helm-ag
     helm-descbinds
     helm-rails
