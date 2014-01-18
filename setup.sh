@@ -6,7 +6,7 @@ setup_ddskk() {
 
     echo "Setup DDSKK."
 
-    curl  -O http://openlab.ring.gr.jp/skk/maintrunk/$tar_file
+    curl -O http://openlab.ring.gr.jp/skk/maintrunk/$tar_file
     tar -xf $tar_file
 
     # download dictionary
