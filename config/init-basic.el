@@ -153,9 +153,4 @@
 (unless (server-running-p)
   (server-start))
 
-;; disable vc-mode
-(setq vc-handled-backends '())
-(eval-after-load "vc"
-  '(remove-hook 'find-file-hooks 'vc-find-file-hook))
-
 (provide 'init-basic)
