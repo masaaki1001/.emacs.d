@@ -9,15 +9,15 @@
 (set-clipboard-coding-system    'utf-8)
 (setq file-name-coding-system   'utf-8)
 (setq locale-coding-system      'utf-8)
-;; 半透明にする
-;; パラメータは、順に通常のフレーム、アクティブでないフレーム、移動中のフレームの透明度を表す
-(modify-all-frames-parameters
- (list (cons 'alpha  '(nil 80 50 30))))
 ;; Scrollを１行毎に
 (setq scroll-step 1)
 ;; Widow設定
 ;; http://d.hatena.ne.jp/mizchi/20100828/1282940866
 (when window-system
+  ;; 半透明にする
+  ;; パラメータは、順に通常のフレーム、アクティブでないフレーム、移動中のフレームの透明度を表す
+  (modify-all-frames-parameters
+   (list (cons 'alpha  '(nil 80 50 30))))
   (set-background-color "Black")
   (set-foreground-color "White")
   (set-cursor-color "Gray")
