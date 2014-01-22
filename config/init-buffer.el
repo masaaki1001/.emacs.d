@@ -2,17 +2,6 @@
 ;; バッファ一覧を詳細に
 (global-set-key (kbd "C-x C-b") 'bs-show)
 
-;; i-searchでのbackspace有効
-(define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
-;; isearch の終了時のカーソル位置を常に検索語の後ろにする
-(add-hook 'isearch-mode-end-hook
-          (lambda ()
-            (cond
-             ((eq last-input-char ?\C-m)
-              (goto-char (match-end 0)))
-             ((eq last-input-char ?\M-m)
-              (goto-char (match-beginning 0))))))
-
 ;; バッファ移動を一瞬で行う
 ;; http://d.hatena.ne.jp/rubikitch/20111211/smalldisplay
 ;;; last-buffer

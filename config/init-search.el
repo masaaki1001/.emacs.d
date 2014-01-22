@@ -1,4 +1,7 @@
 ;;;; search
+;; i-searchでのbackspace有効
+(define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
+
 (when (require 'anzu nil t)
   (global-anzu-mode t)
   (set-face-attribute 'anzu-mode-line nil
