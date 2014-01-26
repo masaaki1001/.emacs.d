@@ -12,12 +12,13 @@
       ))
 
   ;; multiple-cursors
-  (progn
-    (smartrep-define-key
-        global-map "C-l"
-      '(("n" . 'mc/mark-next-like-this)
-        ("p" . 'mc/mark-previous-like-this)
-        ("a" . 'mc/mark-all-like-this))))
+  (eval-after-load "multiple-cursors"
+    '(progn
+       (smartrep-define-key
+           global-map "C-l"
+         '(("n" . 'mc/mark-next-like-this)
+           ("p" . 'mc/mark-previous-like-this)
+           ("a" . 'mc/mark-all-like-this)))))
 
   ;; org-mode
   (eval-after-load "org"
@@ -28,13 +29,14 @@
            ("p" . 'outline-previous-visible-heading)))))
 
   ;; all-mode
-  (progn
+  (eval-after-load "all"
+    '(progn
     (smartrep-define-key
         all-mode-map "M-g"
        '(("n"   . 'next-error)
          ("p"   . 'previous-error)
          ("C-n" . 'next-error)
-         ("C-p" . 'previous-error))))
+         ("C-p" . 'previous-error)))))
 
   (defun highlight-symbol-at-point-smartrep ()
     (interactive)
