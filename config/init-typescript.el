@@ -9,4 +9,6 @@
 (tss-config-default)
 (setq typescript-auto-indent-flag nil)
 
+(define-key typescript-mode-map (kbd "C-c C-j") nil)
+
 (provide 'init-typescript)
