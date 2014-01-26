@@ -10,7 +10,7 @@
 
 ;; multiple-cursors.el
 (when (require 'multiple-cursors nil t)
-  (setq mc/list-file (expand-file-name ".mc-lists.el" resource-dir))
+  (setq mc/list-file (expand-file-name ".mc-lists.el" user-emacs-directory))
   (global-set-key (kbd "C->") 'mc/mark-next-like-this)
   (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
   (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
