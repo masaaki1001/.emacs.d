@@ -102,6 +102,7 @@
     css-eldoc
     json-mode
     js2-mode
+    js2-refactor
     tss
     jquery-doc
     nodejs-repl

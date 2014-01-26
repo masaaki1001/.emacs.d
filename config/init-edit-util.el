@@ -4,12 +4,8 @@
 (when (require 'expand-region nil t)
   (global-set-key (kbd "C-,") 'er/expand-region)
   (global-set-key (kbd "C-M-,") 'er/contract-region)
-  ;; transient-mark-modeが nilでは動作ないので注意
-  (transient-mark-mode t)
   (when (require 'js2-refactor nil t)
     (define-key js2-mode-map (kbd "C-c C-r") 'js2-rename-var))
-  (when (require 'inline-string-rectangle nil t)
-    (global-set-key (kbd "C-x r t") 'inline-string-rectangle))
   )
 
 ;; multiple-cursors.el
