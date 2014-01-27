@@ -4,7 +4,8 @@
 (require 'fuzzy nil t)
 
 (when (require 'auto-complete-config nil t)
-  (add-to-list 'ac-dictionary-directories (expand-file-name "auto-complete-20131128.233/dict"  package-user-dir))
+  (add-to-list 'ac-dictionary-directories
+               (expand-file-name  "ac-dict" user-emacs-directory))
   (setq ac-comphist-file (expand-file-name "ac-comphist.dat" resource-dir))
   (ac-config-default)
   (setq ac-delay 0.5)
