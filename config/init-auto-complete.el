@@ -32,6 +32,7 @@
                   org-mode
                   text-mode
                   sass-mode
+                  html-mode
                   web-mode
                   ))
     (add-to-list 'ac-modes mode))
