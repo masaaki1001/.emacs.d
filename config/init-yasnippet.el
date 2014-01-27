@@ -1,10 +1,5 @@
 ;;;; yasnippet
 (when (require 'yasnippet nil t)
-  ;; (setq yas-snippet-dirs
-  ;;       '("~/.emacs.d/snippets"
-  ;;         "~/.emacs.d/repositories/yasnippets-rails/rails-snippets"
-  ;;         ))
-  (add-to-list 'yas-snippet-dirs (expand-file-name "yasnippets-rails"  repositories-dir))
   (yas-global-mode 1)
   ;; (custom-set-variables '(yas-trigger-key "TAB"))
 

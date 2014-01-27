@@ -13,9 +13,6 @@
 [submodule "repositories/dired-filetype-face"]
 	path = repositories/dired-filetype-face
 	url = git://github.com/jixiuf/dired-filetype-face.git
-[submodule "repositories/yasnippets-rails"]
-	path = repositories/yasnippets-rails
-	url = git://github.com/eschulte/yasnippets-rails.git
 [submodule "repositories/moccur-edit"]
 	path = repositories/moccur-edit
 	url = git://github.com/emacsmirror/moccur-edit.git
