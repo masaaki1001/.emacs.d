@@ -24,6 +24,10 @@
   (menu-bar-mode -1) ;; メニューバーを消す
   (tool-bar-mode -1) ;; ツールバーを消す
   (toggle-scroll-bar nil) ;; スクロールバーを消す
+  ;; 現在行を目立たせる
+  ;; http://d.hatena.ne.jp/khyiker/20070409/emacs_hl_line
+  (global-hl-line-mode) ;デフォルトはこの行だけでOK
+  (set-face-background hl-line-face "#222222")
 
   (when (require 'maxframe nil t)
     (add-hook 'window-setup-hook 'maximize-frame t))
@@ -36,10 +40,6 @@
 (setq-default tab-width 2 indent-tabs-mode nil)
 ;; 行末の空白を表示
 (setq-default show-trailing-whitespace t)
-;; 現在行を目立たせる
-;; http://d.hatena.ne.jp/khyiker/20070409/emacs_hl_line
-(global-hl-line-mode) ;デフォルトはこの行だけでOK
-(set-face-background hl-line-face "#222222")
 
 ;; カーソルの点滅を止める
 (custom-set-variables
@@ -77,8 +77,6 @@
 ;; http://e-arrows.sakura.ne.jp/2010/02/vim-to-emacs.html
 (cua-mode t)
 (setq cua-enable-cua-keys nil) ;; 変なキーバインド禁止
-;; 現在の関数名を表示
-(which-function-mode 1)
 ;; 選択範囲を色付け
 (transient-mark-mode 1)
 ;; 起動時のメッセージを消す
