@@ -9,6 +9,7 @@
       helm-samewindow nil
       helm-quick-update t
       helm-delete-minibuffer-contents-from-point t
+      helm-buffer-max-length 50
       ;; helm-move-to-line-cycle-in-source t
       ;; helm-ff-transformer-show-only-basename nil
       )
