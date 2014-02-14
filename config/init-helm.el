@@ -35,7 +35,8 @@
 
 (defun my-helm ()
   (interactive)
-  (let ((default (thing-at-point 'symbol)))
+  (let ((default (thing-at-point 'symbol))
+        (helm-ff-transformer-show-only-basename nil))
     (helm
      :prompt "pattern: "
      :sources
