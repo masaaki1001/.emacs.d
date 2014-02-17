@@ -5,8 +5,6 @@
 
   (define-key anything-map (kbd "C-p")   'anything-previous-line)
   (define-key anything-map (kbd "C-n")   'anything-next-line)
-
-  (require 'anything-git-files nil t)
   )
 
 (provide 'init-anything)

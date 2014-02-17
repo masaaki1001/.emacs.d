@@ -12,7 +12,6 @@
 
 (defvar init-install-packages
   '(
-    cl-lib
     auto-install
     auto-complete
     fuzzy
@@ -61,8 +60,7 @@
     scala-mode2
     ensime
     yaml-mode
-    anything
-    anything-git-files
+    projectile
     helm
     helm-swoop
     helm-projectile
@@ -71,6 +69,7 @@
     helm-open-github
     helm-spaces
     helm-git-grep
+    helm-git-files
     helm-ag
     helm-descbinds
     helm-rails
