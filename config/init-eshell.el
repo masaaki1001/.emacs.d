@@ -80,11 +80,11 @@
     (funcall func 1)
     (goto-char eshell-last-output-end)))
 ;; 前のコマンドの履歴取得
-(defun-eshell-cmdline "C-p"
+(defun-eshell-cmdline "M-p"
   (let ((last-command 'eshell-previous-matching-input-from-input))
     (eshell-history-and-bol 'eshell-previous-matching-input-from-input)))
 ;; 次のコマンドの履歴取得
-(defun-eshell-cmdline "C-n"
+(defun-eshell-cmdline "M-n"
   (let ((last-command 'eshell-previous-matching-input-from-input))
     (eshell-history-and-bol 'eshell-next-input)))
 ;; 直前の履歴を取得
@@ -98,5 +98,7 @@
 (setq eshell-ask-to-save-history (quote always))
 
 (setq eshell-directory-name (expand-file-name ".eshell" resource-dir))
+
+(add-to-list 'eshell-command-aliases-list (list "ll" "ls -alF"))
 
 (provide 'init-eshell)
