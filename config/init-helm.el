@@ -39,12 +39,10 @@
   (let ((default (thing-at-point 'symbol))
         (helm-ff-transformer-show-only-basename nil))
     (helm
-     :prompt "pattern: "
      :sources
      (append '(helm-source-buffers-list
                helm-source-recentf
                helm-source-files-in-current-dir
-               ;; helm-source-emacs-commands
                helm-source-pp-bookmarks
                helm-source-buffer-not-found
                )
