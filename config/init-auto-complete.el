@@ -8,12 +8,12 @@
                (expand-file-name  "ac-dict" user-emacs-directory))
   (setq ac-comphist-file (expand-file-name "ac-comphist.dat" resource-dir))
   (ac-config-default)
-  (setq ac-delay 0.5)
-  (setq ac-use-quick-help t)
-  (setq ac-quick-help-delay 1.0)
-  (setq ac-use-menu-map t)
-  (setq ac-auto-start t)
-  (setq ac-ignore-case nil)
+  (setq ac-delay 0.5
+        ac-use-quick-help t
+        ac-quick-help-delay 1.0
+        ac-use-menu-map t
+        ac-auto-start t
+        ac-ignore-case nil)
   (add-hook 'auto-complete-mode-hook
             (lambda ()
               (define-key ac-completing-map (kbd "C-n") 'ac-next)

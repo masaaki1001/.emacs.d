@@ -47,7 +47,6 @@
 ;;                   (interactive)
 ;;                   (join-line -1)))
 
-
 ;; http://d.hatena.ne.jp/kbkbkbkb1/20111205/1322988550
 ;; enable to pop `mark-ring' repeatedly like C-u C-SPC C-SPC ...
 (setq set-mark-command-repeat-pop t)
