@@ -22,10 +22,8 @@
       (propertize mode-line-str
                   'face '((:foreground "black" :weight normal)))))
 
-  (setq-default
-   magit-save-some-buffers nil
-   magit-unstage-all-confirm nil
-   )
+  (setq magit-save-some-buffers nil
+        magit-unstage-all-confirm nil)
 
   (global-set-key (kbd "C-c g") 'magit-status)
 
@@ -56,9 +54,10 @@
     (set-face-attribute 'diff-removed nil
                         :foreground "white" :background "dark red")
     ;; 文字単位での変更箇所は色を反転して強調
-    (set-face-attribute 'diff-refine-change nil
-                        :foreground nil :background nil
-                        :weight 'bold :inverse-video t))
+    ;; (set-face-attribute 'diff-refine-change nil
+    ;;                     :foreground nil :background nil
+    ;;                     :weight 'bold :inverse-video t)
+    )
   (add-hook 'magit-diff-mode-hook 'diff-mode-setup-faces)
 
   ;; diffを表示したらすぐに文字単位での強調表示も行う
