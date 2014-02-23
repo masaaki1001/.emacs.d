@@ -101,8 +101,9 @@
 
 (global-set-key (kbd "C-x f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-x C-m") 'helm-M-x)
+;; (global-set-key (kbd "M-x") 'helm-M-x)
+;; (global-set-key (kbd "C-x C-m") 'helm-M-x)
+(global-set-key [remap execute-extended-command] 'helm-M-x)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-c b") 'helm-bm)
 (global-set-key (kbd "C-c i") 'helm-imenu)
