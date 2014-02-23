@@ -1,11 +1,7 @@
-# cycle-buffer.el
-(auto-install-from-emacswiki "cycle-buffer.el")
 # moccur-edit.el
 (auto-install-from-url "http://www.bookshelf.jp/elc/moccur-edit.el")
 # lcomp.el
 (auto-install-from-emacswiki "lcomp.el")
-# mcomplete.el
-(auto-install-from-url "http://homepage1.nifty.com/bmonkey/emacs/elisp/mcomplete.el")
 # hatena-diary.el
 (auto-install-from-url "https://gist.github.com/tarao/4465244/raw/f80afaee5d51b5e38d12f20946b42d077e1908e1/hatena-diary.el")
 # hatena-diary-api.el
