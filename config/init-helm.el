@@ -57,7 +57,7 @@
   (global-set-key (kbd "C-c C-o") 'helm-swoop)
   )
 
-(define-key isearch-mode-map (kbd "M-o") 'helm-occur-from-isearch)
+(define-key isearch-mode-map (kbd "C-o") 'helm-occur-from-isearch)
 (define-key helm-map (kbd "C-c C-a") 'all-from-helm-occur)
 
 (when (require 'helm-ls-git nil t)
