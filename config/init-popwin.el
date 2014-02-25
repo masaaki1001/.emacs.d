@@ -2,9 +2,8 @@
 ;; http://d.hatena.ne.jp/m2ym/20110120
 (when (require 'popwin nil t)
   (setq display-buffer-function 'popwin:display-buffer)
-  ;; (push '("helm" :height 20 :regexp t) popwin:special-display-config)
-  ;; (push '("*helm \\(.*\\)*" :height 20 :regexp t) popwin:special-display-config)
-  ;; (push '("Helm" :height 20 :regexp t) popwin:special-display-config)
+  ;; (push '("^\*helm.*\*$" :height 20 :regexp t) popwin:special-display-config)
+  ;; (push '("^\*Helm.*\*$" :height 20 :regexp t) popwin:special-display-config)
   (push '("*Warnings*" :height 20) popwin:special-display-config)
   (push '("*Procces List*" :height 20) popwin:special-display-config)
   (push '("*Messages*" :height 20) popwin:special-display-config)
