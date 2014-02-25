@@ -22,18 +22,6 @@
   "Emulate `kill-line' in helm minibuffer"
   (kill-new (buffer-substring (point) (field-end))))
 
-(defvar helm-source-emacs-commands
-  '((name . "Emacs Commands")
-    (candidates . (lambda ()
-                    (let (commands)
-                      (mapatoms (lambda (a)
-                                  (if (commandp a)
-                                      (push (symbol-name a)
-                                            commands))))
-                      (sort commands 'string-lessp))))
-    (type . command)
-    (requires-pattern . 2)))
-
 (defun my-helm ()
   (interactive)
   (let ((default (thing-at-point 'symbol))
