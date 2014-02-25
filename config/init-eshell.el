@@ -92,9 +92,11 @@
 (setq eshell-hist-ignoredups t)
 ;; 確認なしでヒストリ保存
 (setq eshell-ask-to-save-history (quote always))
+;; alias
+(eval-after-load "em-alias"
+  '(progn (eshell/alias "ll" "ls -la $*")
+          ))
 
 (setq eshell-directory-name (expand-file-name ".eshell" resource-dir))
-
-(add-to-list 'eshell-command-aliases-list (list "ll" "ls -alF"))
 
 (provide 'init-eshell)
