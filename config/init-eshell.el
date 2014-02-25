@@ -16,10 +16,6 @@
   (defun eshell-parser/b (str) (eshell-parser/b str "bash"))
   )
 
-;; esh-cmdline-stack.el
-;; eshellでコマンドラインスタック機能を実現する
-(require 'esh-cmdline-stack nil t)
-
 ;; eshellでの実行をbashなどのシェルを利用するように変更
 (progn
   (defmacro eval-after-load* (name &rest body)
