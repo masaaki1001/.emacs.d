@@ -49,6 +49,7 @@
     quickrun
     all
     all-ext
+    ag
     replace-from-region
     expand-region
     multiple-cursors
@@ -71,7 +72,6 @@
     helm-ag
     helm-descbinds
     helm-rails
-    helm-rb
     helm-bm
     htmlize
     emmet-mode
@@ -107,7 +107,6 @@
     wgrep
     wgrep-ag
     grep-a-lot
-    ag
     smartrep
     pomodoro
     zlc
