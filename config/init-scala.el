@@ -1,5 +1,5 @@
 ;;;; scala
-(when (require 'scala-mode2)
+(when (require 'scala-mode2 nil t)
   (add-to-list 'auto-mode-alist '("\\.scala$" . scala-mode))
   )
 
