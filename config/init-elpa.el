@@ -36,18 +36,15 @@
     magit
     magit-svn
     magit-find-file
-    git-commit-mode
     gitconfig-mode
     gitignore-mode
     git-messenger
-    git-rebase-mode
     gh
     elscreen
     flycheck
     undohist
     point-undo
     quickrun
-    all
     all-ext
     ag
     replace-from-region
@@ -59,7 +56,6 @@
     scala-mode2
     ensime
     yaml-mode
-    projectile
     helm
     helm-swoop
     helm-projectile
