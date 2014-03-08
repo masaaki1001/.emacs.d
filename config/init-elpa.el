@@ -112,7 +112,6 @@
     highlight-symbol
     undo-tree
     yasnippet
-    dropdown-list
     web-mode
     w3m
     migemo
