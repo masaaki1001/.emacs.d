@@ -125,6 +125,8 @@
 (require 'init-hatena nil t)
 ;; w3m
 (require 'init-w3m nil t)
+;; apache
+(require 'init-apache nil t)
 ;; mode-line
 (require 'init-modeline nil t)
 
