@@ -84,4 +84,8 @@
       (backward-kill-word 1)
     ad-do-it))
 
+;; ctrl-q
+(defvar ctrl-q-map (make-keymap))
+(define-key global-map (kbd "C-q") ctrl-q-map)
+
 (provide 'init-keybind)

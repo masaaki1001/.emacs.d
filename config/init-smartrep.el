@@ -31,12 +31,24 @@
   ;; all-mode
   (eval-after-load "all"
     '(progn
-    (smartrep-define-key
-        all-mode-map "M-g"
-       '(("n"   . 'next-error)
-         ("p"   . 'previous-error)
-         ("C-n" . 'next-error)
-         ("C-p" . 'previous-error)))))
+       (smartrep-define-key
+           all-mode-map "M-g"
+         '(("n"   . 'next-error)
+           ("p"   . 'previous-error)
+           ("C-n" . 'next-error)
+           ("C-p" . 'previous-error)))))
+
+  ;; goto-chg
+  (smartrep-define-key
+      global-map "C-q"
+    '(("C-n" . 'goto-last-change)
+      ("C-p" . 'goto-last-change-reverse)))
+
+  ;; point-undo
+  (smartrep-define-key
+      global-map "C-q"
+    '(("u" . 'point-undo)
+      ("r" . 'point-redo)))
 
   (defun highlight-symbol-at-point-smartrep ()
     (interactive)
