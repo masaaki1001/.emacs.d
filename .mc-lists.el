@@ -7,6 +7,7 @@
         cua--shift-control-c-prefix
         seq-end
         seq-home
+        sp--self-insert-command
         ))
 
 (setq mc/cmds-to-run-once
