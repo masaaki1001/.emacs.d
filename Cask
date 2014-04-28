@@ -64,7 +64,6 @@
 (depends-on "htmlize")
 (depends-on "emmet-mode")
 (depends-on "markdown-mode")
-(depends-on "color-moccur")
 (depends-on "scratch-log")
 (depends-on "session")
 (depends-on "savekill")
