@@ -113,6 +113,7 @@
 (depends-on "apache-mode")
 (depends-on "dash-at-point")
 (depends-on "zeal-at-point")
+(depends-on "dired-k")
 (depends-on "joseph-single-dired" :git "https://github.com/jixiuf/joseph-single-dired.git")
 (depends-on "org-tree-slide" :git "https://github.com/takaxp/org-tree-slide.git")
 (depends-on "lcomp" :git "https://github.com/emacsmirror/lcomp.git")

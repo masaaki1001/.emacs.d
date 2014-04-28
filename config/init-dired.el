@@ -40,4 +40,9 @@
 ;; diredの表示をファイルタイプ毎に色分けしてカラフルにする
 (require 'dired-filetype-face nil t)
 
+;; dired-k.el
+(when (require 'dired-k nil t)
+  (setq dired-k-style 'git)
+  (define-key dired-mode-map (kbd "K") 'dired-k))
+
 (provide 'init-dired)
