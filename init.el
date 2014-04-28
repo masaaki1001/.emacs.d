@@ -106,7 +106,7 @@
 ;; edit-util
 (require 'init-edit-util nil t)
 ;; anything
-(require 'init-anything nil t)
+;; (require 'init-anything nil t)
 ;; helm
 (require 'init-helm nil t)
 ;; shell
