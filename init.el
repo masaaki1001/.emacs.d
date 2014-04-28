@@ -32,7 +32,9 @@
 (setq is-linux (eq window-system 'x))
 
 ;; elpa, marmalade, melpa, auto-install etc...
-(require 'init-elpa nil t)
+;; (require 'init-elpa nil t)
+;; Cask
+(require 'init-cask nil t)
 ;; Mac用設定
 (require 'init-mac nil t)
 ;; env

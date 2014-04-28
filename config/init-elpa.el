@@ -119,6 +119,7 @@
     move-text
     highlight-escape-sequences
     edit-server
+    apache-mode
     ))
 
 (if is-mac (add-to-list 'init-install-packages 'dash-at-point))
