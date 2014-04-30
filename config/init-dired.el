@@ -6,7 +6,7 @@
 ;; ディレクトリを先に表示する
 (setq ls-lisp-dirs-first t)
 ;; ディレクトリ内のファイル名を編集できるようにする
-(when(require 'wdired nil t)
+(when (require 'wdired nil t)
   (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
   )
 ;; C-sでファイル名のみ検索対象にする
@@ -15,6 +15,9 @@
 (setq dired-dwim-target t)
 ;; ディレクトリを再帰的にコピーする
 (setq dired-recursive-copies 'always)
+;; ディレクトリを再帰的に削除する
+(setq dired-recursive-deletes 'always)
+
 ;; direx.el
 ;; http://cx4a.blogspot.com/2011/12/popwineldirexel.html
 (when (require 'direx nil t)
