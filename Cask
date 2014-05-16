@@ -118,3 +118,4 @@
 (depends-on "lcomp" :git "https://github.com/emacsmirror/lcomp.git")
 (depends-on "httprepl")
 (depends-on "groovy-mode")
+(depends-on "emamux")
