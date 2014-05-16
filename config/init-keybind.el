@@ -84,6 +84,22 @@
       (backward-kill-word 1)
     ad-do-it))
 
+;; 削除したときにkillringに追加しない
+;; http://qiita.com/kizashi1122/items/7028aa19f51823b69277
+(defun delete-word (arg)
+  "Delete characters forward until encountering the end of a word.
+With argument, do this that many times."
+  (interactive "p")
+  (delete-region (point) (progn (forward-word arg) (point))))
+
+(defun backward-delete-word (arg)
+  "Delete characters backward until encountering the end of a word.
+With argument, do this that many times."
+  (interactive "p")
+  (delete-word (- arg)))
+
+(global-set-key (read-kbd-macro "<M-DEL>") 'backward-delete-word)
+
 ;; ctrl-q
 (defvar ctrl-q-map (make-keymap))
 (define-key global-map (kbd "C-q") ctrl-q-map)
