@@ -1,7 +1,7 @@
 ;;;; org-mode
 ;; http://d.hatena.ne.jp/rubikitch/20090121/1232468026
 ;; http://e-arrows.sakura.ne.jp/2010/02/vim-to-emacs.html
-(when (require 'org-install nil t)
+(when (require 'org nil t)
   (setq org-startup-truncated nil)
   (setq org-return-follows-link t)
   (setq org-use-fast-todo-selection t)
@@ -10,6 +10,8 @@
   (global-set-key (kbd "C-c l") 'org-store-link)
   (global-set-key (kbd "C-c c") 'org-capture)
   (global-set-key (kbd "C-c a") 'org-agenda)
+  ;; org-modeでexpand-regionを有効にするためorg-cycle-agenda-filesキーバインドを無効化
+  (define-key org-mode-map (kbd "C-,") nil)
 
   (setq org-agenda-files '("~/.emacs.d/org-mode/todo.org"))
   (setq org-log-done 'time)
