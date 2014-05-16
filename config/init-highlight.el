@@ -7,7 +7,7 @@
 ;; highlight-symbol.el
 (when (require 'highlight-symbol nil t)
 
-  (dolist (hook '(prog-mode-hook html-mode-hook))
+  (dolist (hook '(prog-mode-hook html-mode-hook typescript-mode-hook))
     (add-hook hook 'highlight-symbol-mode)
     (add-hook hook 'highlight-symbol-nav-mode))
   (eval-after-load 'highlight-symbol
