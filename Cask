@@ -119,3 +119,5 @@
 (depends-on "httprepl")
 (depends-on "groovy-mode")
 (depends-on "emamux")
+(depends-on "swoop")
+(depends-on "isearch-ace-jump" :git "https://gist.github.com/11280493.git")

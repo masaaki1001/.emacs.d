@@ -39,4 +39,13 @@
     )
   )
 
+(when (require 'isearch-ace-jump nil t)
+  (global-isearch-ace-jump-mode t)
+  (setq isearch-ace-jump-input-for-swoop 6)
+  (setq isearch-ace-jump-input-idle-delay 1)
+
+  (define-key swoop-map (kbd "C-s") 'swoop-action-goto-line-next)
+  (define-key swoop-map (kbd "C-r") 'swoop-action-goto-line-prev)
+  )
+
 (provide 'init-jump)
