@@ -18,7 +18,9 @@
   (flx-ido-mode t))
 
 (when (require 'smex nil t)
-  (global-set-key [remap execute-extended-command] 'smex))
+  (global-set-key [remap execute-extended-command] 'smex)
+  (setq smex-save-file (expand-file-name ".smex-items" user-emacs-directory))
+  )
 
 
 (provide 'init-ido)
