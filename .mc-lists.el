@@ -5,8 +5,10 @@
       '(
         cua--prefix-repeat-handler
         cua--shift-control-c-prefix
+        cua-cut-region
         seq-end
         seq-home
+        sp--cua-replace-region
         sp--self-insert-command
         ))
 
