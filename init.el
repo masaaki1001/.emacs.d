@@ -109,6 +109,8 @@
 ;; (require 'init-anything nil t)
 ;; helm
 (require 'init-helm nil t)
+;; ido
+;; (require 'init-ido nil t)
 ;; shell
 (require 'init-shell nil t)
 ;; eshell

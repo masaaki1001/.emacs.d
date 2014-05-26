@@ -121,3 +121,8 @@
 (depends-on "emamux")
 (depends-on "swoop")
 (depends-on "isearch-ace-jump" :git "https://gist.github.com/11280493.git")
+;; ido-mode
+;; (depends-on "ido-ubiquitous")
+;; (depends-on "ido-vertical-mode")
+;; (depends-on "flx-ido")
+;; (depends-on "smex")
