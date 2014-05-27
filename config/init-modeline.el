@@ -6,8 +6,10 @@
   (eval-after-load "volatile-highlights" '(diminish 'volatile-highlights-mode))
   (eval-after-load "view" '(diminish 'view-mode))
   (eval-after-load "elisp-slime-nav" '(diminish 'elisp-slime-nav-mode))
+  (eval-after-load "eldoc" '(diminish 'eldoc-mode))
   (eval-after-load "anzu"'(diminish 'anzu-mode))
   (eval-after-load "smartparens" '(diminish 'smartparens-mode))
+  (eval-after-load "magit" '(diminish 'magit-auto-revert-mode))
   )
 
 (provide 'init-modeline)
