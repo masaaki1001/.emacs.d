@@ -6,9 +6,8 @@
 ;; ディレクトリを先に表示する
 (setq ls-lisp-dirs-first t)
 ;; ディレクトリ内のファイル名を編集できるようにする
-(when (require 'wdired nil t)
-  (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
-  )
+(require 'wdired nil t)
+(define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
 ;; C-sでファイル名のみ検索対象にする
 (setq dired-isearch-filenames t)
 ;; diredを2つのウィンドウで開いている時に、デフォルトの移動orコピー先をもう一方のdiredで開いているディレクトリにする

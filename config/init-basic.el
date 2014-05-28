@@ -50,9 +50,9 @@
 ;; カーソルの位置が何行目かを表示する
 (line-number-mode t)
 ;; カーソルの場所を保存する
-(when (require 'saveplace nil t)
-  (setq save-place-file (expand-file-name ".emacs-places" resource-dir))
-  (setq-default save-place t))
+(require 'saveplace)
+(setq save-place-file (expand-file-name ".emacs-places" resource-dir))
+(setq-default save-place t)
 ;; スクロール時のカーソル位置維持
 (setq scroll-preserve-screen-position t)
 ;; 対応する括弧を光らせる。
@@ -105,8 +105,7 @@
 
 ;; beepを消す
 (setq ring-bell-function 'ignore)
-
-;; uniquify.el (デフォルトで入っている)
+;; uniquify.el
 ;; http://d.hatena.ne.jp/yuheiomori0718/20111214/1323864339
 (require 'uniquify)
 ;; filename<dir>形式のバッファ名にする
