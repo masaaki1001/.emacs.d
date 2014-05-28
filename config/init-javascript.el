@@ -11,7 +11,6 @@
   '(progn
      (js2-imenu-extras-setup)))
 
-(require 'jquery-doc nil t)
 (require 'json nil t)
 
 ;; tern.js

@@ -83,15 +83,13 @@
 (setq inhibit-startup-message t)
 ;;"yes or no"を"y or n"にする
 (fset 'yes-or-no-p 'y-or-n-p)
-
 ;; メニューバーにファイルパスを表示する
 (setq frame-title-format
       ;(format "%%f - Emacs@%s" (system-name)))
       (format "%%f - Emacs" (system-name)))
 
 ;; 行間を開く
-(setq-default line-spacing 0.1) ;my setting
-
+(setq-default line-spacing 0.1)
 ;; モードラインに時間を表示する
 (setq display-time-24hr-format t)
 ;; 以下の書式に従ってモードラインに日付 時刻を表示する
