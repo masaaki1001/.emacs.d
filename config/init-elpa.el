@@ -3,6 +3,7 @@
 (require 'package)
 
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/"))
 
 (package-initialize)
 
@@ -120,6 +121,9 @@
     highlight-escape-sequences
     edit-server
     apache-mode
+    dired-k
+    httprepl
+    groovy-mode
     ))
 
 (if is-mac (add-to-list 'init-install-packages 'dash-at-point))
