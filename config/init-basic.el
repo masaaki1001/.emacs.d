@@ -83,10 +83,6 @@
 (setq inhibit-startup-message t)
 ;;"yes or no"を"y or n"にする
 (fset 'yes-or-no-p 'y-or-n-p)
-;; *Completions*バッファを，使用後に消してくれる
-;; http://dev.ariel-networks.com/wp/documents/aritcles/emacs/part11
-(when (require 'lcomp nil t)
-  (lcomp-install))
 
 ;; メニューバーにファイルパスを表示する
 (setq frame-title-format
