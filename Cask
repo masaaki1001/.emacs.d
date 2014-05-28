@@ -1,5 +1,6 @@
 (source gnu)
 (source melpa)
+(source melpa-stable)
 
 (depends-on "auto-install")
 (depends-on "auto-complete")
@@ -118,8 +119,7 @@
 (depends-on "httprepl")
 (depends-on "groovy-mode")
 (depends-on "emamux")
-(depends-on "swoop")
-(depends-on "isearch-ace-jump" :git "https://gist.github.com/11280493.git")
+(depends-on "isearch-ace-jump" :git "https://gist.github.com/0e2e3fc921a459a79584.git")
 ;; ido-mode
 ;; (depends-on "ido-ubiquitous")
 ;; (depends-on "ido-vertical-mode")
