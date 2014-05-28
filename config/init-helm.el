@@ -20,7 +20,7 @@
   "Emulate `kill-line' in helm minibuffer"
   (kill-new (buffer-substring (point) (field-end))))
 
-(defun my-helm ()
+(defun my/helm ()
   (interactive)
   (let ((default (thing-at-point 'symbol))
         (helm-ff-transformer-show-only-basename nil))
@@ -34,7 +34,7 @@
                helm-source-buffer-not-found
                )
              ))))
-(global-set-key (kbd "C-;") 'my-helm)
+(global-set-key (kbd "C-;") 'my/helm)
 
 (when (require 'helm-swoop nil t)
   (custom-set-faces
