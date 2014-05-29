@@ -1,6 +1,6 @@
 (source gnu)
 (source melpa)
-(source melpa-stable)
+;; (source melpa-stable)
 
 (depends-on "auto-install")
 (depends-on "auto-complete")
