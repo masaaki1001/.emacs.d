@@ -3,7 +3,7 @@
 ;; .recentfを自動保存する
 ;; http://d.hatena.ne.jp/tomoya/20110217/1297928222
 (when (require 'recentf nil t)
-  (setq recentf-exclude '(".recentf" "/elpa/" ".revive" "COMMIT_EDITMSG"))
+  (setq recentf-exclude '(".recentf" ".revive" "/elpa/" "/snippets/" "COMMIT_EDITMSG"))
   (setq recentf-save-file (expand-file-name ".recentf" resource-dir))
   (setq recentf-max-saved-items 2000)
   (setq recentf-auto-cleanup 10)
