@@ -11,6 +11,8 @@
   (when (require 'tss nil t)
     (setq tss-popup-help-key "C-c C-c t")
     (setq tss-jump-to-definition-key "C-c C-c C-t")
+    ;; auto-completeが重いので"SPC" "." ":"の入力で起動しないようにする．
+    (setq tss-ac-trigger-command-keys nil)
 
     (tss-config-default)
     (remove-hook 'after-save-hook 'tss-run-flymake)
