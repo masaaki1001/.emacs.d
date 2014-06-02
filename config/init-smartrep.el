@@ -41,8 +41,8 @@
   ;; goto-chg
   (smartrep-define-key
       global-map "C-q"
-    '(("C-n" . 'goto-last-change)
-      ("C-p" . 'goto-last-change-reverse)))
+    '(("n" . 'goto-last-change)
+      ("p" . 'goto-last-change-reverse)))
 
   ;; point-undo
   (smartrep-define-key
