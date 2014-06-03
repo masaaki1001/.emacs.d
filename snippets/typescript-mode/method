@@ -1,0 +1,6 @@
+# -*- mode: snippet-*-
+# name: method
+# key: method
+# --
+$1(): $2 {
+}

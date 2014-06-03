@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: private_variable
+# key: pvar
+# --
+private $1: $2;
