@@ -6,6 +6,7 @@
         cua--prefix-repeat-handler
         cua--shift-control-c-prefix
         cua-cut-region
+        cua-delete-region
         cua-paste
         seq-end
         seq-home
