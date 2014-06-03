@@ -15,13 +15,13 @@
 
 ;; goto-chg.el
 (when (require 'goto-chg nil t)
-  (define-key global-map (kbd "<f8>") 'goto-last-change)
-  (define-key global-map (kbd "S-<f8>") 'goto-last-change-reverse))
+  (define-key global-map (kbd "C-c /") 'goto-last-change)
+  (define-key global-map (kbd "C-c C-/") 'goto-last-change-reverse))
 
 ;; point-undo.el
 (when (require 'point-undo nil t)
-  (define-key global-map (kbd "<f7>") 'point-undo)
-  (define-key global-map (kbd "S-<f7>") 'point-redo))
+  (define-key global-map (kbd "C-x /") 'point-undo)
+  (define-key global-map (kbd "C-x C-/") 'point-redo))
 
 (when is-mac
   (when (require 'dash-at-point nil t)
