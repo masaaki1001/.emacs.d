@@ -120,6 +120,7 @@
 (depends-on "groovy-mode")
 (depends-on "emamux")
 (depends-on "isearch-ace-jump" :git "https://gist.github.com/0e2e3fc921a459a79584.git")
+(depends-on "flycheck-color-mode-line")
 ;; ido-mode
 ;; (depends-on "ido-ubiquitous")
 ;; (depends-on "ido-vertical-mode")
