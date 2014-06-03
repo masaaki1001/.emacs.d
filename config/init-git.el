@@ -3,13 +3,13 @@
   (require 'magit-blame nil t)
   (require 'magit-svn nil t)
 
+  ;; 72文字折り返しを無効化
+  (add-hook 'git-commit-mode-hook 'turn-off-auto-fill)
+
   ;; disable vc-mode
   (setq vc-handled-backends '())
   (eval-after-load "vc"
     '(remove-hook 'find-file-hooks 'vc-find-file-hook))
-
-    ;; 72文字折り返しを無効化
-  (add-hook 'git-commit-mode-hook 'turn-off-auto-fill)
 
   ;; http://d.hatena.ne.jp/syohex/20130201/1359731697
   (let ((cell (or (memq 'mode-line-position mode-line-format)
