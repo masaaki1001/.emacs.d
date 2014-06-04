@@ -31,7 +31,7 @@
                helm-source-recentf
                helm-source-ls-git
                helm-source-files-in-current-dir
-               ;; helm-source-pp-bookmarks
+               ;; helm-source-bookmarks
                helm-source-bm
                helm-source-buffer-not-found
                )
