@@ -58,24 +58,6 @@
 
 (require 'helm-git-files nil t)
 
-;; helm-project.el
-;; http://d.hatena.ne.jp/yuheiomori0718/20111226/1324902529
-(when (require 'helm-project nil t)
-  (global-set-key (kbd "C-:") 'helm-project)
-  (hp:add-project
-   :name 'project
-   :look-for '(".git")
-   :include-regexp '("\\.scala$" "\\.html$" "\\.conf$" "\\.properties$" "\\.sbt$" "\\.sql$" "\\routes$" "\\.js$")
-   :exclude-regexp "/target*"
-   )
-  ;; 候補にディレクトリが含まれないようにする
-  ;; http://d.hatena.ne.jp/IMAKADO/20090823/1250963119
-  (setq hp:project-files-filters
-        (list
-         (lambda (files)
-           (remove-if 'file-directory-p files))))
-  )
-
 (when (require 'helm-projectile nil t)
   (global-set-key (kbd "C-c C-p") 'helm-projectile)
   ;; (setq projectile-require-project-root nil)
