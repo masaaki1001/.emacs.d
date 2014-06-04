@@ -1,6 +1,7 @@
 ;;;; helm
 (require 'helm-config)
 (require 'helm-command)
+(require 'helm-bm)
 
 (setq helm-idle-delay 0.1
       helm-input-idle-delay 0
@@ -30,7 +31,8 @@
                helm-source-recentf
                helm-source-ls-git
                helm-source-files-in-current-dir
-               helm-source-pp-bookmarks
+               ;; helm-source-pp-bookmarks
+               helm-source-bm
                helm-source-buffer-not-found
                )
              ))))
