@@ -135,6 +135,7 @@
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-verbose nil)
 
+;; electric-indent-mode disable
 (electric-indent-mode -1)
 
 (require 'tramp)
