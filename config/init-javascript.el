@@ -7,9 +7,14 @@
 (add-to-list 'auto-mode-alist '("\\.js.erb$" . js2-mode))
 (setq js2-auto-indent-p t)
 (setq-default js2-global-externs '("require" "assert" "__dirname" "console" "JSON"))
+
 (eval-after-load 'js2-mode
   '(progn
-     (js2-imenu-extras-setup)))
+     (js2-imenu-extras-setup)
+     (when (require 'js2-refactor nil t)
+       (js2r-add-keybindings-with-prefix "C-c C-m"))
+     )
+  )
 
 (require 'json nil t)
 
