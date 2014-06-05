@@ -41,6 +41,15 @@
 ;; 行末の空白を表示
 (setq-default show-trailing-whitespace t)
 
+;; 行末の空白を表示しないmodeを設定する
+;; https://github.com/purcell/emacs.d/blob/master/lisp/init-editing-utils.el#L48
+(defun my/no-trailing-whitespace ()
+  (setq show-trailing-whitespace nil))
+(dolist (hook '(twittering-mode-hook
+                prodigy-mode-hook
+                ))
+  (add-hook hook #'my/no-trailing-whitespace))
+
 ;; カーソルの点滅を止める
 (custom-set-variables
  '(blink-cursor-mode nil)
