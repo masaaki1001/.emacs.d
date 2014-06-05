@@ -4,8 +4,6 @@
 (when (require 'expand-region nil t)
   (global-set-key (kbd "C-,") 'er/expand-region)
   (global-set-key (kbd "C-M-,") 'er/contract-region)
-  (when (require 'js2-refactor nil t)
-    (define-key js2-mode-map (kbd "C-c C-r") 'js2-rename-var))
   )
 
 ;; multiple-cursors.el
