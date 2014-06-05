@@ -10,8 +10,6 @@
   (dolist (hook '(prog-mode-hook html-mode-hook typescript-mode-hook))
     (add-hook hook 'highlight-symbol-mode)
     (add-hook hook 'highlight-symbol-nav-mode))
-  (eval-after-load 'highlight-symbol
-    '(diminish 'highlight-symbol-mode))
 
   (defun highlight-symbol-all (&optional nlines)
     "Call `all' with the symbol at point.

@@ -10,6 +10,7 @@
   (eval-after-load "anzu"'(diminish 'anzu-mode))
   (eval-after-load "smartparens" '(diminish 'smartparens-mode))
   (eval-after-load "magit" '(diminish 'magit-auto-revert-mode))
+  (eval-after-load "highlight-symbol" '(diminish 'highlight-symbol-mode))
   )
 
 (provide 'init-modeline)
