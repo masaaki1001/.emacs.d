@@ -16,6 +16,8 @@
 (setq dired-recursive-copies 'always)
 ;; ディレクトリを再帰的に削除する
 (setq dired-recursive-deletes 'always)
+;; dired-modeでもC-tで直前のバッファに移動できるようにする
+(define-key dired-mode-map (kbd "C-t") 'switch-to-last-buffer-or-other-window)
 
 ;; direx.el
 ;; http://cx4a.blogspot.com/2011/12/popwineldirexel.html
