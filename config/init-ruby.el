@@ -61,7 +61,8 @@
   (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode)))
 
 ;; rbenv
-(when (require 'rbenv nil t)
+(when (and (executable-find "rbenv")
+       (require 'rbenv nil t))
   (global-rbenv-mode))
 
 (when (require 'rdefsx nil t)
