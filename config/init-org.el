@@ -5,7 +5,7 @@
   (setq org-startup-truncated nil)
   (setq org-return-follows-link t)
   (setq org-use-fast-todo-selection t)
-  (setq org-directory "~/.emacs.d/org-mode/")
+  (setq org-directory (expand-file-name "org-mode" user-emacs-directory))
 
   (global-set-key (kbd "C-c l") 'org-store-link)
   (global-set-key (kbd "C-c c") 'org-capture)
@@ -13,7 +13,8 @@
   ;; org-modeでexpand-regionを有効にするためorg-cycle-agenda-filesキーバインドを無効化
   (define-key org-mode-map (kbd "C-,") nil)
 
-  (setq org-agenda-files '("~/.emacs.d/org-mode/todo.org"))
+  ;; (setq org-agenda-files '("~/.emacs.d/org-mode/todo.org"))
+  (setq org-agenda-files (expand-file-name "todo.org" org-directory))
   (setq org-log-done 'time)
 
   ;; org-tree-slide.el
