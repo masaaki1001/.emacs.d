@@ -8,6 +8,10 @@
 (setq js2-auto-indent-p t)
 (setq-default js2-global-externs '("require" "assert" "__dirname" "console" "JSON"))
 
+;; jasmineを除外
+(dolist (extern '("describe" "beforeEach" "it" "expect" "afterEach"))
+    (add-to-list 'js2-global-externs extern))
+
 (eval-after-load 'js2-mode
   '(progn
      (js2-imenu-extras-setup)
