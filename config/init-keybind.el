@@ -74,7 +74,8 @@
 ;; switch-window.el
 ;; http://d.hatena.ne.jp/tomoya/20100807/1281150227
 (when (require 'switch-window nil t) ; C-x o が dim:switch-window になる
-  (define-key global-map (kbd "C-t") 'other-window) ; C-t に other-window
+  (global-set-key (kbd "C-x o") 'switch-window)
+  ;; (define-key global-map (kbd "C-t") 'other-window) ; C-t に other-window
   )
 
 ;; 範囲指定していないとき、C-wで前の単語を削除
