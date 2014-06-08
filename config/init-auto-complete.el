@@ -23,6 +23,7 @@
               (define-key ac-completing-map (kbd "C-n") 'ac-next)
               (define-key ac-completing-map (kbd "C-p") 'ac-previous)
               (define-key ac-completing-map (kbd "C-s") 'ac-isearch)
+              (define-key ac-completing-map (kbd "<tab>") 'ac-complete)
               (define-key ac-mode-map (kbd "M-RET") 'auto-complete)
               ;; (define-key ac-mode-map (kbd "M-/") 'auto-complete)
               ))
