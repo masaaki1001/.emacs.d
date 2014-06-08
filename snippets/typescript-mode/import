@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: import
+# key: imp
+# binding: direct-keybinding
+# --
+import $1 = require("$2");
