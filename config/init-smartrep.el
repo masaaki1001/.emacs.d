@@ -39,16 +39,20 @@
            ("C-p" . 'previous-error)))))
 
   ;; goto-chg
-  (smartrep-define-key
-      global-map "C-q"
-    '(("n" . 'goto-last-change)
-      ("p" . 'goto-last-change-reverse)))
+  (eval-after-load "goto-chg"
+    '(progn
+       (smartrep-define-key
+           global-map "C-q"
+         '(("n" . 'goto-last-change)
+           ("p" . 'goto-last-change-reverse)))))
 
   ;; point-undo
-  (smartrep-define-key
-      global-map "C-q"
-    '(("u" . 'point-undo)
-      ("r" . 'point-redo)))
+  (eval-after-load "point-undo"
+    '(progn
+       (smartrep-define-key
+           global-map "C-q"
+         '(("u" . 'point-undo)
+           ("r" . 'point-redo)))))
 
   (defun highlight-symbol-at-point-smartrep ()
     (interactive)
