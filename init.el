@@ -105,8 +105,6 @@
 (require 'init-util nil t)
 ;; edit-util
 (require 'init-edit-util nil t)
-;; anything
-;; (require 'init-anything nil t)
 ;; helm
 (require 'init-helm nil t)
 ;; ido
