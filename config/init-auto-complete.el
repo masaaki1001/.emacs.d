@@ -15,7 +15,7 @@
         ac-use-quick-help t
         ac-quick-help-delay 1.0
         ac-use-menu-map t
-        ac-auto-start t
+        ac-auto-start nil
         ac-ignore-case nil)
 
   (add-hook 'auto-complete-mode-hook
