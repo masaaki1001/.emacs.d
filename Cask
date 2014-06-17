@@ -31,7 +31,6 @@
 (depends-on "magit-find-file")
 (depends-on "gitconfig-mode")
 (depends-on "gitignore-mode")
-(depends-on "git-messenger")
 (depends-on "gh")
 (depends-on "elscreen")
 (depends-on "flycheck")

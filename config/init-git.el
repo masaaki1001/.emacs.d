@@ -112,7 +112,4 @@
 ;; yagist.el
 (require 'yagist nil t)
 
-(when (require 'git-messenger nil t)
-  (global-set-key (kbd "C-x v p") 'git-messenger:popup-message))
-
 (provide 'init-git)
