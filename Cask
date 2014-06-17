@@ -123,7 +123,6 @@
 (depends-on "zoom-window" :git "https://github.com/syohex/emacs-zoom-window.git")
 (depends-on "helm-flycheck")
 (depends-on "git-gutter")
-(depends-on "god-mode")
 
 ;; ido-mode
 ;; (depends-on "ido-ubiquitous")
