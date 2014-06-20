@@ -105,10 +105,10 @@
 (require 'init-util nil t)
 ;; edit-util
 (require 'init-edit-util nil t)
-;; helm
-(require 'init-helm nil t)
 ;; ido
 ;; (require 'init-ido nil t)
+;; helm
+(require 'init-helm nil t)
 ;; shell
 (require 'init-shell nil t)
 ;; eshell
