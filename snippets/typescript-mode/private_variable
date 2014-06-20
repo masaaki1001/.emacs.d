@@ -2,4 +2,4 @@
 # name: private_variable
 # key: pvar
 # --
-private $1: $2;
+private _$1: $2;
