@@ -76,7 +76,7 @@
 (require 'helm-rails nil t)
 (require 'imenu-anywhere nil t)
 
-;; (global-set-key (kbd "C-x f") 'helm-find-files)
+(global-set-key (kbd "C-c C-f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 ;; (global-set-key (kbd "M-x") 'helm-M-x)
 ;; (global-set-key (kbd "C-x C-m") 'helm-M-x)
@@ -93,5 +93,16 @@
 (define-key helm-map (kbd "C-n")   'helm-next-line)
 (define-key helm-map (kbd "C-M-n") 'helm-next-source)
 (define-key helm-map (kbd "C-M-p") 'helm-previous-source)
+
+;; http://d.hatena.ne.jp/a_bicky/20140104/1388822688
+;; For find-file etc.
+(define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
+;; For helm-find-files etc.
+(define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
+
+(defadvice helm-ff-kill-or-find-buffer-fname (around execute-only-if-exist activate)
+  "Execute command only if CANDIDATE exists"
+  (when (file-exists-p candidate)
+    ad-do-it))
 
 (provide 'init-helm)
