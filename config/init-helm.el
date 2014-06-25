@@ -6,7 +6,6 @@
 (setq helm-idle-delay 0.1
       helm-input-idle-delay 0
       helm-candidate-number-limit 300
-      helm-samewindow nil
       helm-quick-update t
       helm-delete-minibuffer-contents-from-point t
       helm-buffer-max-length 50
