@@ -47,13 +47,16 @@
   (setq show-trailing-whitespace nil))
 (dolist (hook '(twittering-mode-hook
                 prodigy-mode-hook
+                calendar-mode-hook
                 ))
   (add-hook hook #'my/no-trailing-whitespace))
 
-;; カーソルの点滅を止める
+;; カーソルの設定
 (custom-set-variables
- '(blink-cursor-mode nil)
+ '(blink-cursor-mode nil);; カーソルの点滅を止める
+ '(cursor-type 'box) ;; カーソルの形状
  )
+
 ;; カーソルの位置が何文字目かを表示する
 (column-number-mode t)
 ;; カーソルの位置が何行目かを表示する
