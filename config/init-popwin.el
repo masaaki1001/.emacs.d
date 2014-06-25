@@ -13,7 +13,7 @@
   (push '("*Compile-Log*" :height 20 :noselect t) popwin:special-display-config)
   (push '("*Remember*" :height 20) popwin:special-display-config)
   (push '("*All*" :height 20) popwin:special-display-config)
-  (push '("^\*Flycheck errors.*\*$" :height 0.5 :regexp t :position bottom) popwin:special-display-config)
+  (push '(flycheck-error-list-mode :height 0.5 :regexp t :position bottom) popwin:special-display-config)
   ;; direx
   (push '(direx:direx-mode :position left :width 40 :dedicated t)
         popwin:special-display-config)
