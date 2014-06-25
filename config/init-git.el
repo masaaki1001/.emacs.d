@@ -101,7 +101,7 @@
       (open-line 1)))
   (add-hook 'git-commit-mode-hook 'magit-commit-mode-init)
   ;; close popup when commiting
-  (defadvice git-commit-commit (after delete-window activate)
+  (defadvice git-commit-commit (after move-to-magit-buffer activate)
     (delete-window))
 
   (when is-mac
