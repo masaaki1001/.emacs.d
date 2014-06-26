@@ -82,20 +82,6 @@
     )
   (add-hook 'magit-mode-hook 'magit-setup-diff)
 
-  (defun magit-save-and-exit-commit-mode ()
-    (interactive)
-    (save-buffer)
-    (server-edit)
-    (delete-window))
-
-  (defun magit-exit-commit-mode ()
-    (interactive)
-    (kill-buffer)
-    (delete-window))
-
-  (eval-after-load "git-commit-mode"
-    '(define-key git-commit-mode-map (kbd "C-c C-k") 'magit-exit-commit-mode))
-
   ;; Add an extra newline to separate commit message from git commentary
   (defun magit-commit-mode-init ()
     (when (looking-at "\n")
