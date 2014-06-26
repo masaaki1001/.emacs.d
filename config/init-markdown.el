@@ -12,9 +12,9 @@
       ("h6"   "^######\\s-+\\(.+?\\)$" 1)
       ("fn"   "^\\[\\^\\(.+?\\)\\]" 1) ))
 
-  (defun my/markdown-mode-hook ()
-    (setq imenu-generic-expression markdown-imenu-generic-expression)
-    (add-to-list 'ac-sources 'ac-source-look))
+  (add-hook 'markdown-mode-hook
+            (lambda ()
+              (setq imenu-generic-expression markdown-imenu-generic-expression)))
   )
 
 (provide 'init-markdown)
