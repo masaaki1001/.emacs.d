@@ -13,3 +13,9 @@
 [submodule "repositories/tern"]
 	path = repositories/tern
 	url = https://github.com/marijnh/tern.git
+[submodule "repositories/github-css"]
+	path = repositories/github-css
+	url = https://gist.github.com/andyferra/2554919
+[submodule "repositories/markdown-css-themes"]
+	path = repositories/markdown-css-themes
+	url = https://github.com/jasonm23/markdown-css-themes.git
