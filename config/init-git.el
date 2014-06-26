@@ -46,6 +46,7 @@
     (jump-to-register :magit-fullscreen))
 
   (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
+  (define-key magit-status-mode-map (kbd "C-c r") 'magit-interactive-rebase)
 
   ;; http://www.clear-code.com/blog/2012/4/3.html
   ;; diffの表示方法を変更
