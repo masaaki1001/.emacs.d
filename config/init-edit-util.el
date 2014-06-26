@@ -8,6 +8,7 @@
 
 ;; multiple-cursors.el
 (when (require 'multiple-cursors nil t)
+  (require 'mc-interactive-insert-numbers)
   (setq mc/list-file (expand-file-name ".mc-lists.el" user-emacs-directory))
   (global-set-key (kbd "C->") 'mc/mark-next-like-this)
   (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)

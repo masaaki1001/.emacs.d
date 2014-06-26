@@ -18,7 +18,9 @@
            global-map "C-l"
          '(("n" . 'mc/mark-next-like-this)
            ("p" . 'mc/mark-previous-like-this)
-           ("a" . 'mc/mark-all-like-this)))))
+           ("a" . 'mc/mark-all-like-this)
+           ("i" . 'mc/interactive-insert-numbers)
+           ("I" . 'mc/insert-numbers)))))
 
   ;; org-mode
   (eval-after-load "org"
