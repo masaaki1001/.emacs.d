@@ -17,8 +17,8 @@
     (tss-config-default)
     (remove-hook 'after-save-hook 'tss-run-flymake)
     (setq ac-sources (append '(ac-source-words-in-buffer
-                                     ac-source-words-in-all-buffer
-                                     ac-source-imenu) ac-sources))
+                               ac-source-words-in-all-buffer
+                               ac-source-imenu) ac-sources))
     )
 
   (eval-after-load "flycheck"
