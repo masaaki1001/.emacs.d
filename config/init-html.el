@@ -61,9 +61,4 @@
                 (define-key css-mode-map "M-{" 'brace-ret-brace)
                 ))
 
-(eval-after-load 'auto-complete
-  '(progn
-     (dolist (hook '(css-mode-hook sass-mode-hook scss-mode-hook))
-       (add-hook hook 'ac-css-mode-setup))))
-
 (provide 'init-html)
