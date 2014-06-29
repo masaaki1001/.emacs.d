@@ -62,7 +62,7 @@
 
 ;; rbenv
 (when (and (executable-find "rbenv")
-       (require 'rbenv nil t))
+           (require 'rbenv nil t))
   (global-rbenv-mode))
 
 (when (require 'rdefsx nil t)
