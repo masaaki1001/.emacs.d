@@ -123,9 +123,3 @@
 (depends-on "flycheck-color-mode-line")
 (depends-on "zoom-window" :git "https://github.com/syohex/emacs-zoom-window.git")
 (depends-on "git-gutter")
-
-;; ido-mode
-;; (depends-on "ido-ubiquitous")
-;; (depends-on "ido-vertical-mode")
-;; (depends-on "flx-ido")
-;; (depends-on "smex")
