@@ -119,7 +119,6 @@
 (depends-on "httprepl")
 (depends-on "groovy-mode")
 (depends-on "emamux")
-(depends-on "isearch-ace-jump" :git "https://gist.github.com/0e2e3fc921a459a79584.git")
 (depends-on "flycheck-color-mode-line")
 (depends-on "zoom-window" :git "https://github.com/syohex/emacs-zoom-window.git")
 (depends-on "git-gutter")
