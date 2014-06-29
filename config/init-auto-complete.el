@@ -15,8 +15,11 @@
         ac-use-quick-help t
         ac-quick-help-delay 1.0
         ac-use-menu-map t
+        ac-use-fuzzy t
         ac-auto-start nil
         ac-ignore-case nil)
+
+  (ac-set-trigger-key "TAB")
 
   (add-hook 'auto-complete-mode-hook
             (lambda ()
