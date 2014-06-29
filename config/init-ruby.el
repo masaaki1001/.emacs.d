@@ -49,11 +49,7 @@
 ;; robe
 (when (require 'robe nil t)
   (add-hook 'ruby-mode-hook 'robe-mode)
-  (add-hook 'robe-mode-hook 'robe-ac-setup)
-  ;; (add-hook 'robe-mode-hook
-  ;;           (lambda ()
-  ;;             (add-to-list 'ac-sources 'ac-source-robe)
-  ;;             (setq completion-at-point-functions '(auto-complete))))
+  (add-hook 'robe-mode-hook 'ac-robe-setup)
   )
 
 ;; yaml-mode.el
@@ -64,11 +60,6 @@
 (when (and (executable-find "rbenv")
            (require 'rbenv nil t))
   (global-rbenv-mode))
-
-(when (require 'rdefsx nil t)
-  (define-key ruby-mode-map (kbd "C-c C-i") 'helm-rdefsx)
-  (rdefsx-auto-update-mode 1)
-  )
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
