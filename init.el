@@ -91,8 +91,6 @@
 (require 'init-html nil t)
 ;; markdown
 (require 'init-markdown nil t)
-;; flymake
-;; (require 'init-flymake nil t)
 ;; flycheck
 (require 'init-flycheck nil t)
 ;; highlight
