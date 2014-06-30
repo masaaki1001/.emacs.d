@@ -11,9 +11,9 @@
   (setq bm-marker 'bm-marker-right)
   (setq bm-cycle-all-buffers t)
   (add-hook 'after-init-hook '(lambda nil
-                               (bm-load-and-restore)
-                               (message "Load and Restore bookmarks...done")
-                               ))
+                                (bm-load-and-restore)
+                                (message "Load and Restore bookmarks...done")))
+
   (add-hook 'find-file-hooks 'bm-buffer-restore)
   (add-hook 'after-revert-hook 'bm-buffer-restore)
   ;; 設定ファイルのセーブ
@@ -29,9 +29,8 @@
   ;; kill-buffer-hook is not called when emacs is killed, so we
   ;; must save all bookmarks first.
   (add-hook 'kill-emacs-hook '(lambda nil
-                               (bm-save)
-                               (message "Save bookmarks...done")
-                               ))
+                                (bm-save)
+                                (message "Save bookmarks...done")))
   )
 
 (provide 'init-bm)
