@@ -6,11 +6,11 @@
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.js.erb$" . js2-mode))
 (setq js2-auto-indent-p t)
-(setq-default js2-global-externs '("require" "assert" "__dirname" "console" "JSON" "define"))
+(setq-default js2-global-externs '("require" "assert" "__dirname" "console" "JSON" "define" "$" "_"))
 
 ;; jasmineを除外
-(dolist (extern '("describe" "context" "beforeEach" "it" "expect" "afterEach"))
-    (add-to-list 'js2-global-externs extern))
+(dolist (jasmine '("jasmine" "describe" "context" "beforeEach" "it" "expect" "afterEach" "spyOn"))
+    (add-to-list 'js2-global-externs jasmine))
 
 (eval-after-load 'js2-mode
   '(progn
