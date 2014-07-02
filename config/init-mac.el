@@ -1,5 +1,5 @@
 ;;;; MacOS
- (when is-mac
+(when is-mac
   (require 'ucs-normalize) ;; Mac用
   ;; Command-Key and Option-Key
   (setq ns-command-modifier 'meta)
@@ -20,6 +20,10 @@
     (set-fontset-font nil 'japanese-jisx0213.2004-1 jp-fontspec)
     (set-fontset-font nil 'japanese-jisx0213-2 jp-fontspec)
     )
+
+  ;; Don't minimize
+  (global-set-key (kbd "C-z") nil)
+
   )
 
 (provide 'init-mac)
