@@ -7,7 +7,7 @@
 (setq ls-lisp-dirs-first t)
 ;; ディレクトリ内のファイル名を編集できるようにする
 (require 'wdired nil t)
-(define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
+(define-key dired-mode-map (kbd "r") 'wdired-change-to-wdired-mode)
 ;; C-sでファイル名のみ検索対象にする
 (setq dired-isearch-filenames t)
 ;; diredを2つのウィンドウで開いている時に、デフォルトの移動orコピー先をもう一方のdiredで開いているディレクトリにする
@@ -18,6 +18,7 @@
 (setq dired-recursive-deletes 'always)
 ;; dired-modeでもC-tで直前のバッファに移動できるようにする
 (define-key dired-mode-map (kbd "C-t") 'switch-to-last-buffer-or-other-window)
+(define-key dired-mode-map (kbd "k") 'dired-do-delete)
 
 ;; direx.el
 ;; http://cx4a.blogspot.com/2011/12/popwineldirexel.html
@@ -25,7 +26,7 @@
   (require 'direx-project nil t)
   ;; http://shibayu36.hatenablog.com/category/emacs?page=1361962452
   ;; (defun direx:jump-to-project-directory ()
-  (defun my-direx ()
+  (defun my/direx ()
     (interactive)
     (let ((result (ignore-errors
                     (direx-project:jump-to-project-root-other-window)
