@@ -31,8 +31,6 @@
               ;; (define-key ac-mode-map (kbd "M-/") 'auto-complete)
               ))
 
-  (eval-after-load "yasnippet"
-    '(setq-default ac-sources (append '(ac-source-yasnippet) ac-sources)))
 
   (dolist (mode '(git-commit-mode
                   coffee-mode
@@ -53,6 +51,9 @@
 
   (add-hook 'git-commit-mode-hook 'ac-ispell-ac-setup)
   (add-hook 'text-mode-hook 'ac-ispell-ac-setup)
+  (eval-after-load "yasnippet"
+    '(progn
+       (setq-default ac-sources (append '(ac-source-yasnippet) ac-sources))))
 
   )
 
