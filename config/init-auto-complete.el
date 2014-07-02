@@ -31,26 +31,19 @@
               ;; (define-key ac-mode-map (kbd "M-/") 'auto-complete)
               ))
 
-
-  (dolist (mode '(git-commit-mode
+  (dolist (mode '(text-mode
                   coffee-mode
-                  markdown-mode
                   fundamental-mode
                   org-mode
-                  text-mode
-                  sass-mode
-                  html-mode
                   web-mode
                   typescript-mode
                   ))
     (add-to-list 'ac-modes mode))
 
-  (eval-after-load "auto-complete"
-    '(progn
-       (ac-ispell-setup)))
+  (ac-ispell-setup)
+  (dolist (hook '(text-mode-hook))
+    (add-hook hook 'ac-ispell-ac-setup))
 
-  (add-hook 'git-commit-mode-hook 'ac-ispell-ac-setup)
-  (add-hook 'text-mode-hook 'ac-ispell-ac-setup)
   (eval-after-load "yasnippet"
     '(progn
        (setq-default ac-sources (append '(ac-source-yasnippet) ac-sources))))
