@@ -17,7 +17,7 @@
   ;; 半透明にする
   ;; パラメータは、順に通常のフレーム、アクティブでないフレーム、移動中のフレームの透明度を表す
   (modify-all-frames-parameters
-   (list (cons 'alpha  '(nil 80 50 30))))
+   (list (cons 'alpha  '(80 80 80 80))))
   (set-background-color "Black")
   (set-foreground-color "White")
   (set-cursor-color "Gray")
