@@ -85,7 +85,7 @@
     (eshell-history-and-bol 'eshell-next-input)))
 ;; 直前の履歴を取得
 (defadvice eshell-send-input (after history-position activate)
-  (setq eshell-history-index -1))
+  (setq-default eshell-history-index -1))
 ;; 補完時に大文字小文字を区別しない
 (setq eshell-cmpl-ignore-case t)
 ;; 履歴で重複を無視する

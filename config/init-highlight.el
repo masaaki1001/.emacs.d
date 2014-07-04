@@ -16,9 +16,9 @@
  Each line is displayed with NLINES lines before and after, or -NLINES
  before if NLINES is negative."
     (interactive "P")
-    (interactive "P")  (if (thing-at-point 'symbol)
-                           (all (highlighht-symbol-get-symbol) nlines)
-                         (error "No symbol at point")))
+    (if (thing-at-point 'symbol)
+        (all (highlighht-symbol-get-symbol) nlines)
+      (error "No symbol at point")))
   )
 
 (provide 'init-highlight)
