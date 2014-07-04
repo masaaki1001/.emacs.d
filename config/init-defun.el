@@ -70,4 +70,21 @@
   (write-region "" nil file-name nil nil nil))
 (define-key dired-mode-map (kbd "i") 'dired-create-file)
 
+
+;; TODO Toggleで出来るように実装したい
+(defun change-alpha-frame ()
+  "半透明にする.
+   パラメータは、順に通常のフレーム、アクティブでないフレーム、移動中のフレームの透明度を表す"
+  (interactive)
+  (modify-all-frames-parameters
+   (list (cons 'alpha  '(80 80 80 80))))
+  )
+
+(defun change-black-frame ()
+  "黒背景にする"
+  (interactive)
+  (modify-all-frames-parameters
+   (list (cons 'alpha  '(100 100 100 100))))
+  )
+
 (provide 'init-defun)
