@@ -15,9 +15,9 @@
 ;; http://d.hatena.ne.jp/mizchi/20100828/1282940866
 (when window-system
   ;; 半透明にする
-  ;; パラメータは、順に通常のフレーム、アクティブでないフレーム、移動中のフレームの透明度を表す
+  ;; パラメータは、順に通常のフレーム、アクティブでないフレームのフレームの透明度を表す
   (modify-all-frames-parameters
-   (list (cons 'alpha  '(80 80 80 80))))
+   (list (cons 'alpha  '(80 50))))
   (set-background-color "Black")
   (set-foreground-color "White")
   (set-cursor-color "Gray")
