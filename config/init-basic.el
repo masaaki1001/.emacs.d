@@ -16,8 +16,9 @@
 (when window-system
   ;; 半透明にする
   ;; パラメータは、順に通常のフレーム、アクティブでないフレームのフレームの透明度を表す
-  (modify-all-frames-parameters
-   (list (cons 'alpha  '(80 50))))
+  ;; (modify-all-frames-parameters
+  ;;  (list (cons 'alpha  '(80 50))))
+  (set-frame-parameter nil 'alpha 80)
   (set-background-color "Black")
   (set-foreground-color "White")
   (set-cursor-color "Gray")

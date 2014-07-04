@@ -70,17 +70,13 @@
   (write-region "" nil file-name nil nil nil))
 (define-key dired-mode-map (kbd "i") 'dired-create-file)
 
-(defun set-frame-alpha (param)
-  (modify-all-frames-parameters
-         (list (cons 'alpha param))))
-
 (defun toggle-frame-alpha ()
   "半透明 <-> 黒背景.
    パラメータは、順に通常のフレーム，アクティブでないフレームの透明度を表す"
   (interactive)
   (let ((alpha-parameter (frame-parameter nil 'alpha)))
-    (if (equal alpha-parameter '(80 80))
-        (set-frame-alpha '(100 100))
-      (set-frame-alpha '(80 80)))))
+    (if (equal alpha-parameter 80)
+        (set-frame-parameter nil 'alpha 100)
+      (set-frame-parameter nil 'alpha 80))))
 
 (provide 'init-defun)
