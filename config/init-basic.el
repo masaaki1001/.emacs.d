@@ -130,6 +130,9 @@
     (dolist (p (process-list))
       (set-process-query-on-exit-flag p nil))))
 
+;; Emacsを終了時に確認する(誤操作防止)
+(setq confirm-kill-emacs 'y-or-n-p)
+
 ;; ダイアログボックスを使わないようにする
 (setq use-dialog-box nil)
 (defalias 'message-box 'message)
