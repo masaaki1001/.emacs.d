@@ -41,7 +41,7 @@
     (add-to-list 'ac-modes mode))
 
   (ac-ispell-setup)
-  (dolist (hook '(text-mode-hook))
+  (dolist (hook '(text-mode-hook git-commit-mode-hook))
     (add-hook hook 'ac-ispell-ac-setup))
 
   (eval-after-load "yasnippet"
