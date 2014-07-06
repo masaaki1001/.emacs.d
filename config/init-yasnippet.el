@@ -5,6 +5,7 @@
 
   ;; 自分の定義したsnippetのみにする．
   (setq-default yas-snippet-dirs (expand-file-name  "snippets" user-emacs-directory))
+  (yas-reload-all)
   ;; (setq yas-snippet-dirs (expand-file-name  "snippets" user-emacs-directory))
 
   (define-key yas-minor-mode-map (kbd "C-x i i") 'yas-insert-snippet)
