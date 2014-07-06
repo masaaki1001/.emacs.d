@@ -1,7 +1,11 @@
 ;;;; helm
 (require 'helm-config)
 (require 'helm-command)
-(require 'helm-bm)
+(require 'helm-bm nil t)
+(require 'helm-ag nil t)
+(require 'helm-rails nil t)
+(require 'imenu-anywhere nil t)
+(require 'helm-git-files nil t)
 
 (setq helm-idle-delay 0.1
       helm-input-idle-delay 0
@@ -56,8 +60,6 @@
   (global-set-key (kbd "C-c :") 'helm-ls-git-ls)
   )
 
-(require 'helm-git-files nil t)
-
 (when (require 'helm-projectile nil t)
   (global-set-key (kbd "C-c C-p") 'helm-projectile)
   ;; (setq projectile-require-project-root nil)
@@ -71,10 +73,6 @@
 
 (when (require 'helm-descbinds nil t)
   (helm-descbinds-mode))
-
-(require 'helm-ag nil t)
-(require 'helm-rails nil t)
-(require 'imenu-anywhere nil t)
 
 (global-set-key (kbd "C-c C-f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
