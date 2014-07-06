@@ -32,7 +32,7 @@
 (depends-on "gitconfig-mode")
 (depends-on "gitignore-mode")
 (depends-on "gh")
-(depends-on "elscreen")
+(depends-on "elscreen" :git "https://github.com/emacs-jp/elscreen.git" :branch "fixed")
 (depends-on "flycheck")
 (depends-on "undohist")
 (depends-on "point-undo")
