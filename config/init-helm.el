@@ -86,6 +86,7 @@
 (global-set-key (kbd "C-c e") 'helm-elscreen)
 (global-set-key (kbd "C-c C-s") 'helm-spaces)
 (global-set-key (kbd "C-M-z") 'helm-resume)
+(global-set-key (kbd "C-c M-/") 'helm-dabbrev)
 
 (define-key helm-map (kbd "C-p")   'helm-previous-line)
 (define-key helm-map (kbd "C-n")   'helm-next-line)
