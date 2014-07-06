@@ -30,6 +30,11 @@
   (delete-other-windows)
   (delete-other-frames))
 
+;; https://github.com/magnars/.emacs.d/blob/master/defuns/buffer-defuns.el#L139
+(defun indent-buffer ()
+  (interactive)
+  (indent-region (point-min) (point-max)))
+
 ;; rename current buffer file name
 (defun rename-current-buffer-file ()
   "Renames current buffer and file it is visiting."
