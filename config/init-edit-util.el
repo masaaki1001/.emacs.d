@@ -16,8 +16,6 @@
   )
 
 ;; smartparens.el
-(unless (fboundp 'cl-flet)
-  (defalias 'cl-flet 'flet))
 (when (require 'smartparens-config nil t)
   (smartparens-global-mode t)
   (setq sp-autoescape-string-quote nil)

@@ -25,11 +25,6 @@
 (when (fboundp 'terminal-init-bobcat)
   (terminal-init-bobcat))
 
-;; 対応する括弧に移動(C-M-f/p相当)
-;; http://www23.atwiki.jp/selflearn/pages/41.html
-(global-set-key [?\C-{] 'backward-list)
-(global-set-key [?\C-}] 'forward-list)
-
 ;; emacsのc-u-c-uを8回繰り返しにする
 ;; http://d.akinori.org/2010/03/05/emacsのc-u-c-uを8回繰り返しにする/
 (defadvice universal-argument-more

@@ -12,7 +12,7 @@
 (dolist (jasmine '("jasmine" "describe" "context" "beforeEach" "it" "expect" "afterEach" "spyOn"))
     (add-to-list 'js2-global-externs jasmine))
 
-(eval-after-load 'js2-mode
+(eval-after-load "js2-mode"
   '(progn
      (js2-imenu-extras-setup)
      (when (require 'js2-refactor nil t)
@@ -34,13 +34,12 @@
         (tern-ac-setup))))
 
 ;; coffee-mode
-(defun coffee-custom ()
+(defun my/coffee-mode-hook ()
   "coffee-mode-hook"
   (and (set (make-local-variable 'tab-width) 2)
        (set (make-local-variable 'coffee-tab-width) 2))
   )
 
-(add-hook 'coffee-mode-hook
-          '(lambda() (coffee-custom)))
+(add-hook 'coffee-mode-hook 'my/coffee-mode-hook)
 
 (provide 'init-javascript)

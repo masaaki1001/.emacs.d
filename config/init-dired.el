@@ -25,7 +25,6 @@
 (when (require 'direx nil t)
   (require 'direx-project nil t)
   ;; http://shibayu36.hatenablog.com/category/emacs?page=1361962452
-  ;; (defun direx:jump-to-project-directory ()
   (defun my/direx ()
     (interactive)
     (let ((result (ignore-errors

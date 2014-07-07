@@ -28,7 +28,6 @@
               (define-key ac-completing-map (kbd "C-s") 'ac-isearch)
               (define-key ac-completing-map (kbd "<tab>") 'ac-complete)
               (define-key ac-mode-map (kbd "M-RET") 'auto-complete)
-              ;; (define-key ac-mode-map (kbd "M-/") 'auto-complete)
               ))
 
   (dolist (mode '(text-mode

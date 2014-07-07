@@ -94,8 +94,7 @@
 (setq eshell-ask-to-save-history (quote always))
 ;; alias
 (eval-after-load "em-alias"
-  '(progn (eshell/alias "ll" "ls -la $*")
-          ))
+  '(progn (eshell/alias "ll" "ls -la $*")))
 
 (setq eshell-directory-name (expand-file-name ".eshell" resource-dir))
 
