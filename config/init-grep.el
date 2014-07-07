@@ -57,7 +57,8 @@
 (require 'wgrep nil t)
 
 ;; wgrep-ag.el
-(when (require 'ag nil t)
+(when (and (executable-find "ag")
+           (require 'ag nil t))
   (require 'wgrep-ag nil t)
   (custom-set-variables
    '(ag-highlight-search t)   ; 検索結果の中の検索語をハイライトする
