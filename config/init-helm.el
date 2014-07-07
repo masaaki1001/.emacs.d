@@ -35,7 +35,6 @@
                helm-source-recentf
                helm-source-ls-git
                helm-source-files-in-current-dir
-               ;; helm-source-bookmarks
                helm-source-bm
                helm-source-buffer-not-found
                )
@@ -48,10 +47,8 @@
    '(helm-swoop-target-line-face ((t (:background "dark olive green"))))
    '(helm-swoop-target-word-face ((t nil))))
   (global-set-key (kbd "C-c C-o") 'helm-swoop)
+  (define-key isearch-mode-map (kbd "C-o") 'helm-swoop-from-isearch)
   )
-
-(define-key isearch-mode-map (kbd "C-o") 'helm-swoop-from-isearch)
-(define-key helm-map (kbd "C-c C-a") 'all-from-helm-occur)
 
 (when (require 'helm-ls-git nil t)
   (when (locate-library "magit")
