@@ -6,8 +6,6 @@
 
 ## setup
 
-submoduleを含めてcloneしてくる．
-
     git clone --recursive https://github.com/masaaki1001/.emacs.d.git ~/.emacs.d
 
 ## 初期インストール
@@ -19,17 +17,15 @@ submoduleを含めてcloneしてくる．
 * `cd ~/.emacs.d`
 * `./setup.sh`
 
+
+以下の手順は`setup.sh`にて実行されている．
+---
+
 ## 依存ライブラリのインストール
 
 インストールされるライブラリは`Cask`ファイル参照．
 
     cask install
-
-## elispのインストール
-
-`Cask`からインストールする事が出来ないものは[auto-install](http://www.emacswiki.org/emacs/auto-install.el)で手動でインストールする.
-
-インストールする対象は`install-lisp-list`に記載されているもの．
 
 ## ternのインストール
 
@@ -37,3 +33,13 @@ submoduleを含めてcloneしてくる．
 
 * repositories/ternに移動する
 * `npm install`を実行
+
+
+以下の手順は手動で実行する．
+---
+
+## elispのインストール
+
+`Cask`からインストールする事が出来ないものは[auto-install](http://www.emacswiki.org/emacs/auto-install.el)で手動でインストールする.
+
+インストールする対象は`install-lisp-list`に記載されているもの．

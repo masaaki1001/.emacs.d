@@ -31,5 +31,14 @@ setup_cask() {
     curl -fsSkL https://raw.github.com/cask/cask/master/go | python
 }
 
+# submodules
+git submodule update --init
+# install tern
+cd repositories/tern
+npm install
+cd ../../
+
 setup_ddskk
 setup_cask
+
+cask install
