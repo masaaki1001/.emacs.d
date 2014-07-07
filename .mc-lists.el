@@ -12,6 +12,8 @@
         seq-home
         sp--cua-replace-region
         sp--self-insert-command
+        typescript-insert-and-indent
+        yas-expand
         ))
 
 (setq mc/cmds-to-run-once
