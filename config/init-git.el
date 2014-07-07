@@ -28,8 +28,15 @@
     (kill-buffer)
     (jump-to-register :magit-fullscreen))
 
+  (defun magit-commit-amend-no-edit ()
+    (interactive)
+    (when (yes-or-no-p "execute 'git commit --amend --no-edit' ?") ;; 確認省略するかも
+      (magit-commit-maybe-expand)
+      (magit-commit-internal "commit" '("--amend"  "--no-edit"))))
+
   (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
-  (define-key magit-status-mode-map (kbd "C-c r") 'magit-interactive-rebase)
+  (define-key magit-status-mode-map (kbd "C-c a") 'magit-commit-amend-no-edit)
+  (define-key magit-status-mode-map (kbd "C-c r") 'magit-interactive-rebase) ;; default keybind 'E'
 
   ;; http://www.clear-code.com/blog/2012/4/3.html
   ;; diffの表示方法を変更
