@@ -19,11 +19,7 @@
       )
 
 (helm-match-plugin-mode)
-
-;; http://d.hatena.ne.jp/a_bicky/20140104/1388822688
-(defadvice helm-delete-minibuffer-contents (before helm-emulate-kill-line activate)
-  "Emulate `kill-line' in helm minibuffer"
-  (kill-new (buffer-substring (point) (field-end))))
+(helm-descbinds-mode)
 
 (defun my/helm ()
   (interactive)
@@ -68,9 +64,6 @@
   (global-set-key (kbd "C-c y") 'helm-c-yas-complete)
   )
 
-(when (require 'helm-descbinds nil t)
-  (helm-descbinds-mode))
-
 (global-set-key (kbd "C-c C-f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 ;; (global-set-key (kbd "M-x") 'helm-M-x)
@@ -100,5 +93,10 @@
   "Execute command only if CANDIDATE exists"
   (when (file-exists-p candidate)
     ad-do-it))
+
+;; http://d.hatena.ne.jp/a_bicky/20140104/1388822688
+(defadvice helm-delete-minibuffer-contents (before helm-emulate-kill-line activate)
+  "Emulate `kill-line' in helm minibuffer"
+  (kill-new (buffer-substring (point) (field-end))))
 
 (provide 'init-helm)
