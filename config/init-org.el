@@ -14,7 +14,7 @@
   (define-key org-mode-map (kbd "C-,") nil)
 
   ;; (setq org-agenda-files '("~/.emacs.d/org-mode/todo.org"))
-  (setq org-agenda-files (expand-file-name "todo.org" org-directory))
+  (setq org-agenda-files (list (expand-file-name "todo.org" org-directory)))
   (setq org-log-done 'time)
 
   ;; org-tree-slide.el
