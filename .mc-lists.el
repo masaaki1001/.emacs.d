@@ -8,6 +8,7 @@
         cua-cut-region
         cua-delete-region
         cua-paste
+        org-yank
         seq-end
         seq-home
         sp--cua-replace-region
