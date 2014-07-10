@@ -5,8 +5,7 @@
   (define-key typescript-mode-map (kbd "C-c C-j") nil)
 
   (eval-after-load "typescript"
-    (setq require-final-newline t)
-    )
+    (setq require-final-newline t))
 
   (when (require 'tss nil t)
     (setq tss-popup-help-key "C-c C-c t")
@@ -48,9 +47,7 @@
                    "-t" "prose")
          :error-patterns ((warning (file-name) "[" line ", " column "]: " (message)))
          :modes typescript-mode)
-       (add-to-list 'flycheck-checkers 'typescript-tslint)
-       )
-    )
+       (add-to-list 'flycheck-checkers 'typescript-tslint)))
   )
 
 (provide 'init-typescript)

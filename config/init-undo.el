@@ -10,8 +10,7 @@
 ;; undohist.el
 (when (require 'undohist nil t)
   (undohist-initialize)
-  (setq undohist-ignored-files '("COMMIT_EDITMSG"))
-  )
+  (setq undohist-ignored-files '("COMMIT_EDITMSG")))
 
 ;; redo+
 (when (require 'redo+ nil t)

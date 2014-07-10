@@ -13,8 +13,7 @@
 ;; esh-myparser.el
 ;; コマンド解釈乗っ取り
 (when (require 'esh-myparser nil t)
-  (defun eshell-parser/b (str) (eshell-parser/b str "bash"))
-  )
+  (defun eshell-parser/b (str) (eshell-parser/b str "bash")))
 
 ;; eshellでの実行をbashなどのシェルを利用するように変更
 (progn

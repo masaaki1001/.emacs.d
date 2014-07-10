@@ -7,7 +7,6 @@
 ;; pomodoro.el
 ;; https://github.com/baudtack/pomodoro.el
 (when (require 'pomodoro nil t)
-  (pomodoro-add-to-mode-line)
-  )
+  (pomodoro-add-to-mode-line))
 
 (provide 'init-util)

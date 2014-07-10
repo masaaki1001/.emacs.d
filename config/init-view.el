@@ -18,8 +18,7 @@
           ("w" . forward-word)
           ("e" . backward-word)
           ("J" . ,(lambda () (interactive) (scroll-up 1)))
-          ("K" . ,(lambda () (interactive) (scroll-down 1)))
-          ))
+          ("K" . ,(lambda () (interactive) (scroll-down 1)))))
 
   (defun define-many-keys (keymap key-table &optional includes)
     (let (key cmd)

@@ -32,9 +32,7 @@
                helm-source-ls-git
                helm-source-files-in-current-dir
                helm-source-bm
-               helm-source-buffer-not-found
-               )
-             ))))
+               helm-source-buffer-not-found)))))
 (global-set-key (kbd "C-;") 'my/helm)
 
 (when (require 'helm-swoop nil t)
@@ -43,26 +41,22 @@
    '(helm-swoop-target-line-face ((t (:background "dark olive green"))))
    '(helm-swoop-target-word-face ((t nil))))
   (global-set-key (kbd "C-c C-o") 'helm-swoop)
-  (define-key isearch-mode-map (kbd "C-o") 'helm-swoop-from-isearch)
-  )
+  (define-key isearch-mode-map (kbd "C-o") 'helm-swoop-from-isearch))
 
 (when (require 'helm-ls-git nil t)
   (when (locate-library "magit")
     (setq helm-ls-git-status-command 'magit-status))
   (setq helm-ls-git-show-abs-or-relative 'relative)
-  (global-set-key (kbd "C-c :") 'helm-ls-git-ls)
-  )
+  (global-set-key (kbd "C-c :") 'helm-ls-git-ls))
 
 (when (require 'helm-projectile nil t)
-  (global-set-key (kbd "C-c C-p") 'helm-projectile)
   ;; (setq projectile-require-project-root nil)
-  )
+    (global-set-key (kbd "C-c C-p") 'helm-projectile))
 
 ;; helm-c-yasnippet.el
 (when (require 'helm-c-yasnippet nil t)
   (setq helm-c-yas-space-match-any-greedy t)
-  (global-set-key (kbd "C-c y") 'helm-c-yas-complete)
-  )
+  (global-set-key (kbd "C-c y") 'helm-c-yas-complete))
 
 (global-set-key (kbd "C-c C-f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)

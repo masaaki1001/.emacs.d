@@ -17,8 +17,7 @@
 
 (when (require 'css-eldoc nil t)
   (autoload 'turn-on-css-eldoc "css-eldoc")
-  (add-hook 'css-mode-hook 'turn-on-css-eldoc)
-  )
+  (add-hook 'css-mode-hook 'turn-on-css-eldoc))
 
 (when (require 'web-mode nil t)
   (setq web-mode-markup-indent-offset 2)
@@ -31,14 +30,12 @@
   (define-key web-mode-map (kbd "C-;") nil)
   ;; web-modeでのjshint実行キーバインドを変更
   (define-key web-mode-map (kbd "C-c C-j") nil)
-  (define-key web-mode-map (kbd "C-c h") 'web-mode-jshint)
-  )
+  (define-key web-mode-map (kbd "C-c h") 'web-mode-jshint))
 
 ;; rainbow-mode
 (when (require 'rainbow-mode nil t)
   (add-hook 'css-mode-hook 'rainbow-mode)
-  (add-hook 'scss-mode-hook 'rainbow-mode)
-  )
+  (add-hook 'scss-mode-hook 'rainbow-mode))
 
 ;; emmet-mode
 (when (require 'emmet-mode nil t)
@@ -52,13 +49,11 @@
   (insert "}") (indent-for-tab-command)
   (newline-and-indent) (newline-and-indent)
   (previous-line) (previous-line) (previous-line)
-  (indent-for-tab-command)
-  )
+  (indent-for-tab-command))
 
 (add-hook 'css-mode-hook
               (lambda ()
                 (setq css-indent-offset 2)
-                (define-key css-mode-map "M-{" 'brace-ret-brace)
-                ))
+                (define-key css-mode-map "M-{" 'brace-ret-brace)))
 
 (provide 'init-html)

@@ -68,8 +68,7 @@
     (diff-mode-setup-faces)
     ;; diffの表示設定が上書きされてしまうのでハイライトを無効にする
     (set-face-attribute 'magit-item-highlight nil :inherit nil)
-    (set-face-background 'magit-item-highlight nil)
-    )
+    (set-face-background 'magit-item-highlight nil))
   (add-hook 'magit-mode-hook 'magit-setup-diff)
 
   ;; Add an extra newline to separate commit message from git commentary
@@ -83,7 +82,6 @@
 
   (when is-mac
     (setq magit-emacsclient-executable "/usr/local/Cellar/emacs/24.3/bin/emacsclient"))
-
   )
 
 ;; yagist.el

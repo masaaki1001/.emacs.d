@@ -24,8 +24,7 @@
     (global-set-key (kbd "<f6>") 'org-tree-slide-mode)
     (global-set-key (kbd "S-<f6>") 'org-tree-slide-skip-done-toggle)
     ;; エフェクト無効化
-    (org-tree-slide-simple-profile)
-    )
+    (org-tree-slide-simple-profile))
   )
 
 (provide 'init-org)

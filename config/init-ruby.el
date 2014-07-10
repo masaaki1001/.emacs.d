@@ -16,8 +16,7 @@
 ;; ruby-block.el
 (when (require 'ruby-block nil t)
   (ruby-block-mode t)
-  (setq ruby-block-highlight-toggle t)
-  )
+  (setq ruby-block-highlight-toggle t))
 
 ;; Rinari
 ;; https://github.com/eschulte/rinari
@@ -26,15 +25,13 @@
 
 ;; rspec-mode
 (when (require 'rspec-mode nil t)
-  (custom-set-variables '(rspec-use-rake-flag nil))
-  )
+  (custom-set-variables '(rspec-use-rake-flag nil)))
 
 ;; rhtml-mode.el
 ;; http://d.hatena.ne.jp/willnet/20090110/1231595231
 (when (require 'rhtml-mode nil t)
   (add-hook 'rhtml-mode-hook
-            (lambda () (rinari-launch)))
-  )
+            (lambda () (rinari-launch))))
 
 (defun find-ruby-lib (name)
   (interactive "sRuby library name: ")
@@ -49,8 +46,7 @@
 ;; robe
 (when (require 'robe nil t)
   (add-hook 'ruby-mode-hook 'robe-mode)
-  (add-hook 'robe-mode-hook 'ac-robe-setup)
-  )
+  (add-hook 'robe-mode-hook 'ac-robe-setup))
 
 ;; yaml-mode.el
 (when (require 'yaml-mode nil t)

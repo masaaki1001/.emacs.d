@@ -4,7 +4,6 @@
 (when (require 'twittering-mode nil t)
   (setq twittering-use-master-password t)
   (setq twittering-private-info-file (expand-file-name "twittering-mode.gpg" resource-dir))
-  (setq twittering-icon-mode t)
-  )
+  (setq twittering-icon-mode t))
 
 (provide 'init-twitter)

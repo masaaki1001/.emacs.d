@@ -54,8 +54,7 @@
   (global-set-key (kbd "C-a") 'seq-home)
   (define-sequential-command seq-end
     end-of-line end-of-buffer seq-return)
-  (global-set-key (kbd "C-e") 'seq-end)
-  )
+  (global-set-key (kbd "C-e") 'seq-end))
 
 ;; duplicate-thing.el
 ;; https://github.com/ongaeshi/duplicate-thing

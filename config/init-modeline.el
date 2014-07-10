@@ -10,8 +10,7 @@
   (eval-after-load "anzu"'(diminish 'anzu-mode))
   (eval-after-load "smartparens" '(diminish 'smartparens-mode))
   (eval-after-load "magit" '(diminish 'magit-auto-revert-mode))
-  (eval-after-load "highlight-symbol" '(diminish 'highlight-symbol-mode))
-  )
+  (eval-after-load "highlight-symbol" '(diminish 'highlight-symbol-mode)))
 
 ;; http://d.hatena.ne.jp/syohex/20130201/1359731697
 (let ((cell (or (memq 'mode-line-position mode-line-format)

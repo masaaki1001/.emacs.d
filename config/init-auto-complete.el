@@ -27,16 +27,14 @@
               (define-key ac-completing-map (kbd "C-p") 'ac-previous)
               (define-key ac-completing-map (kbd "C-s") 'ac-isearch)
               (define-key ac-completing-map (kbd "<tab>") 'ac-complete)
-              (define-key ac-mode-map (kbd "M-RET") 'auto-complete)
-              ))
+              (define-key ac-mode-map (kbd "M-RET") 'auto-complete)))
 
   (dolist (mode '(text-mode
                   coffee-mode
                   fundamental-mode
                   org-mode
                   web-mode
-                  typescript-mode
-                  ))
+                  typescript-mode))
     (add-to-list 'ac-modes mode))
 
   (ac-ispell-setup)
@@ -46,7 +44,6 @@
   (eval-after-load "yasnippet"
     '(progn
        (setq-default ac-sources (append '(ac-source-yasnippet) ac-sources))))
-
   )
 
 (provide 'init-auto-complete)

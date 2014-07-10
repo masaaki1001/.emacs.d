@@ -31,8 +31,7 @@
                     (direx-project:jump-to-project-root-other-window)
                     t)))
       (unless result
-        (direx:jump-to-directory-other-window))))
-  )
+        (direx:jump-to-directory-other-window)))))
 
 ;; joseph-single-dired.el
 ;; diredのバッファが増えないようにする

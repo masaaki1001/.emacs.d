@@ -4,8 +4,7 @@
 (when (require 'session nil t)
   (add-hook 'after-init-hook 'session-initialize)
   (setq session-save-file (expand-file-name ".session" resource-dir))
-  (setq session-save-print-spec '(t nil nil))
-  )
+  (setq session-save-print-spec '(t nil nil)))
 
 ;; savekill.el
 ;; http://d.hatena.ne.jp/rubikitch/20110226/
@@ -18,14 +17,12 @@
 (when (require 'scratch-log nil t)
   (setq sl-scratch-log-file (expand-file-name ".scratch-log" resource-dir))
   (setq sl-prev-scratch-string-file (expand-file-name ".scratch-log-prev" resource-dir))
-  (setq sl-restore-scratch-p t)
-  )
+  (setq sl-restore-scratch-p t))
 
 ;; open-junk-file.el
 (when (require 'open-junk-file nil t)
   (setq open-junk-file-format
         (expand-file-name "%Y-%m-%d-%H%M%S."
-                          (concat user-emacs-directory "junk")))
-  )
+                          (concat user-emacs-directory "junk"))))
 
 (provide 'init-log)

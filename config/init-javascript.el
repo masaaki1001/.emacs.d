@@ -17,9 +17,7 @@
      (js2-imenu-extras-setup)
      (when (require 'js2-refactor nil t)
        (js2r-add-keybindings-with-prefix "C-c C-m")
-       (define-key js2-mode-map (kbd "C-c C-r") 'js2r-rename-var))
-     )
-  )
+       (define-key js2-mode-map (kbd "C-c C-r") 'js2r-rename-var))))
 
 (require 'json nil t)
 
@@ -37,8 +35,7 @@
 (defun my/coffee-mode-hook ()
   "coffee-mode-hook"
   (and (set (make-local-variable 'tab-width) 2)
-       (set (make-local-variable 'coffee-tab-width) 2))
-  )
+       (set (make-local-variable 'coffee-tab-width) 2)))
 
 (add-hook 'coffee-mode-hook 'my/coffee-mode-hook)
 

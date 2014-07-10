@@ -1,8 +1,7 @@
 ;;;; highlight
 ;; volatile-highlights.el
 (when (require 'volatile-highlights nil t)
-  (volatile-highlights-mode t)
-  )
+  (volatile-highlights-mode t))
 
 ;; highlight-symbol.el
 (when (require 'highlight-symbol nil t)
@@ -18,7 +17,6 @@
     (interactive "P")
     (if (thing-at-point 'symbol)
         (all (highlighht-symbol-get-symbol) nlines)
-      (error "No symbol at point")))
-  )
+      (error "No symbol at point"))))
 
 (provide 'init-highlight)

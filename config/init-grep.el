@@ -13,8 +13,7 @@
   (setq dmoccur-exclusion-mask
         (append '("\\~$" "\\.tsv\\/\*") dmoccur-exclusion-mask))
   (setq dmoccur-exclusion-mask
-        (append '("\\~$" "\\.log\\/\*") dmoccur-exclusion-mask))
-  )
+        (append '("\\~$" "\\.log\\/\*") dmoccur-exclusion-mask)))
 
 ;; moccur-edit.el
 ;; http://www.bookshelf.jp/elc/moccur-edit.el
@@ -49,8 +48,7 @@
     (setq my-grep-a-lot-search-word regexp))
 
   (defadvice lgrep (before my-lgrep (regexp &optional files dir) activate)
-    (setq my-grep-a-lot-search-word regexp))
-  )
+    (setq my-grep-a-lot-search-word regexp)))
 
 ;; wgrep.el
 ;; https://github.com/mhayashi1120/Emacs-wgrep
@@ -68,8 +66,7 @@
   (add-hook 'ag-mode-hook 'wgrep-ag-setup)
   ;; agの検索結果バッファで"r"で編集モードに。
   ;; C-x C-sで保存して終了、C-x C-kで保存せずに終了
-  (define-key ag-mode-map (kbd "r") 'wgrep-change-to-wgrep-mode)
-  )
+  (define-key ag-mode-map (kbd "r") 'wgrep-change-to-wgrep-mode))
 
 ;; color-grep.el
 ;; http://www.bookshelf.jp/soft/meadow_51.html#SEC778

@@ -10,8 +10,7 @@
    '(eclim-eclipse-dirs '("~/ide/eclipse")))
 
   (require 'ac-emacs-eclim-source)
-  (add-hook 'java-mode-hook 'ac-emacs-eclim-java-setup)
-  )
+  (add-hook 'java-mode-hook 'ac-emacs-eclim-java-setup))
 
 ;; Groovy
 (autoload 'groovy-mode "groovy-mode")
