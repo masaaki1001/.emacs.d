@@ -19,7 +19,7 @@
        (js2r-add-keybindings-with-prefix "C-c C-m")
        (define-key js2-mode-map (kbd "C-c C-r") 'js2r-rename-var))))
 
-(require 'json nil t)
+(require 'json)
 
 ;; tern.js
 (add-to-list 'load-path (expand-file-name "tern/emacs" repositories-dir))
