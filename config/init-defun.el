@@ -17,8 +17,8 @@
     (switch-to-buffer-other-window other-buf)
     (other-window -1)))
 
-(defun close-all-buffers ()
-  "全てのバッファを閉じる"
+(defun kill-all-buffers ()
+  "Kill all buffers."
   (interactive)
   (loop for buffer being the buffers
      do (kill-buffer buffer)))
