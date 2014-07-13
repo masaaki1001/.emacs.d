@@ -61,6 +61,7 @@
 (depends-on "helm-rails")
 (depends-on "helm-bm")
 (depends-on "helm-flycheck")
+(depends-on "helm-open-junk-files" :git "https://github.com/masaaki1001/helm-open-junk-files.git")
 (depends-on "htmlize")
 (depends-on "emmet-mode")
 (depends-on "markdown-mode")

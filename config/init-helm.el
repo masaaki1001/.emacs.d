@@ -58,6 +58,10 @@
   (setq helm-c-yas-space-match-any-greedy t)
   (global-set-key (kbd "C-c y") 'helm-c-yas-complete))
 
+(when (require 'helm-open-junk-files nil t)
+  (setq-default helm-open-junk-files-exclude '(".git"))
+  (global-set-key (kbd "C-c M-j") 'helm-open-junk-files))
+
 (global-set-key (kbd "C-c C-f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 ;; (global-set-key (kbd "M-x") 'helm-M-x)
