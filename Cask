@@ -28,7 +28,6 @@
 (depends-on "diminish")
 (depends-on "magit")
 (depends-on "magit-svn")
-(depends-on "magit-find-file")
 (depends-on "gitconfig-mode")
 (depends-on "gitignore-mode")
 (depends-on "gh")
