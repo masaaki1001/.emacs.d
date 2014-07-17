@@ -15,6 +15,7 @@
         magit-unstage-all-confirm nil)
 
   (global-set-key (kbd "C-c g") 'magit-status)
+  (global-set-key (kbd "C-c C-c g") 'magit-blame-mode)
 
   ;; full screen magit-status
   (defadvice magit-status (around magit-fullscreen activate)
@@ -84,7 +85,9 @@
     (setq magit-emacsclient-executable "/usr/local/Cellar/emacs/24.3/bin/emacsclient"))
   )
 
-;; yagist.el
+(when (require 'git-timemachine nil t)
+  (global-set-key (kbd "C-c C-c C-g") 'git-timemachine))
+
 (require 'yagist nil t)
 
 (provide 'init-git)
