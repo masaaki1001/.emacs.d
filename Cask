@@ -7,6 +7,7 @@
 (depends-on "fuzzy")
 (depends-on "popwin")
 (depends-on "ac-ispell")
+(depends-on "ac-dabbrev")
 (depends-on "bm")
 (depends-on "robe")
 (depends-on "ruby-block")
