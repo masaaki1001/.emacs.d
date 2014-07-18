@@ -68,10 +68,4 @@
   ;; C-x C-sで保存して終了、C-x C-kで保存せずに終了
   (define-key ag-mode-map (kbd "r") 'wgrep-change-to-wgrep-mode))
 
-;; color-grep.el
-;; http://www.bookshelf.jp/soft/meadow_51.html#SEC778
-(when (require 'color-grep nil t)
-  ;; grep バッファを kill 時に，開いたバッファを消す
-  (setq color-grep-sync-kill-buffer t))
-
 (provide 'init-grep)
