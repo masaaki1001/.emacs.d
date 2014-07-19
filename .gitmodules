@@ -1,9 +1,6 @@
 [submodule "repositories/twittering-mode"]
 	path = repositories/twittering-mode
 	url = git://github.com/hayamiz/twittering-mode.git
-[submodule "repositories/maximize"]
-	path = repositories/maximize
-	url = git://github.com/izawa/maximize.git
 [submodule "repositories/dired-filetype-face"]
 	path = repositories/dired-filetype-face
 	url = git://github.com/jixiuf/dired-filetype-face.git
