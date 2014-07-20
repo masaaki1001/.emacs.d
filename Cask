@@ -39,7 +39,6 @@
 (depends-on "quickrun")
 (depends-on "all-ext")
 (depends-on "ag")
-(depends-on "replace-from-region")
 (depends-on "expand-region")
 (depends-on "multiple-cursors")
 (depends-on "redo+")
