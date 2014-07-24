@@ -29,14 +29,14 @@
     (kill-buffer)
     (jump-to-register :magit-fullscreen))
 
-  (defun magit-commit-amend-no-edit ()
+   ;; 確認を行なう
+  (defun my/magit-commit-extend ()
     (interactive)
-    (when (yes-or-no-p "execute 'git commit --amend --no-edit' ?") ;; 確認省略するかも
-      (magit-commit-maybe-expand)
-      (magit-commit-internal "commit" '("--amend"  "--no-edit"))))
+    (when (yes-or-no-p "execute 'git commit --amend --no-edit' ?")
+      (magit-commit-extend)))
 
   (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
-  (define-key magit-status-mode-map (kbd "C-c a") 'magit-commit-amend-no-edit)
+  (define-key magit-status-mode-map (kbd "C-c a") 'my/magit-commit-extend)
   (define-key magit-status-mode-map (kbd "C-c r") 'magit-interactive-rebase) ;; default keybind 'E'
 
   ;; http://www.clear-code.com/blog/2012/4/3.html
@@ -82,8 +82,7 @@
     (delete-window))
 
   (when is-mac
-    (setq magit-emacsclient-executable "/usr/local/Cellar/emacs/24.3/bin/emacsclient"))
-  )
+    (setq magit-emacsclient-executable "/usr/local/Cellar/emacs/24.3/bin/emacsclient")))
 
 (when (require 'git-timemachine nil t)
   (global-set-key (kbd "C-c C-c C-g") 'git-timemachine))
