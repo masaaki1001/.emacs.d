@@ -51,7 +51,7 @@
 
 (when (require 'helm-projectile nil t)
   ;; (setq projectile-require-project-root nil)
-    (global-set-key (kbd "C-c C-p") 'helm-projectile))
+  (global-set-key (kbd "C-c C-p") 'helm-projectile))
 
 ;; helm-c-yasnippet.el
 (when (require 'helm-c-yasnippet nil t)
