@@ -29,16 +29,6 @@
        (flycheck-def-config-file-var flycheck-tslintrc typescript-tslint flycheck-tslintrc-file-name
          :safe #'string)
 
-       ;; (flycheck-define-checker typescript-tslint
-       ;;   "Use tslint to flycheck TypeScript code."
-       ;;   :command ("tslint"
-       ;;             "-f" source-inplace
-       ;;             (config-file "-c" flycheck-tslintrc)
-       ;;             "-t" "prose")
-       ;;   :error-patterns ((warning (file-name) "[" line ", " column "]: " (message)))
-       ;;   :modes typescript-mode)
-       ;; (add-to-list 'flycheck-checkers 'typescript-tslint)
-
        (flycheck-define-checker typescript-tslint
          "Use tslint to flycheck TypeScript code."
          :command ("tslint"
