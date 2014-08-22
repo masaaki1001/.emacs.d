@@ -18,8 +18,11 @@
       ;; helm-ff-transformer-show-only-basename nil
       )
 
-(helm-match-plugin-mode)
+
 (helm-descbinds-mode)
+(helm-match-plugin-mode)
+(custom-set-faces
+  '(helm-match ((t (:inherit match)))))
 
 (defun my/helm ()
   (interactive)
