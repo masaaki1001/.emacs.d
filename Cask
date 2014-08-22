@@ -123,3 +123,4 @@
 (depends-on "zoom-window" :git "https://github.com/syohex/emacs-zoom-window.git")
 (depends-on "git-gutter")
 (depends-on "git-timemachine")
+(depends-on "eshell-prompt-extras")

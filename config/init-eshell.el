@@ -97,4 +97,9 @@
 
 (setq eshell-directory-name (expand-file-name ".eshell" resource-dir))
 
+(eval-after-load 'esh-opt
+  '(progn (require 'eshell-prompt-extras)
+          (setq eshell-highlight-prompt nil
+                eshell-prompt-function 'epe-theme-dakrone)))
+
 (provide 'init-eshell)
