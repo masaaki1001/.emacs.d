@@ -8,6 +8,7 @@
         cua-cut-region
         cua-delete-region
         cua-paste
+        dabbrev-expand
         org-yank
         seq-end
         seq-home
