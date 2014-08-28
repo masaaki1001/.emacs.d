@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: spyOn.jasmine
+# key: spyOn
+# group: jasmine
+# --
+spyOn($0);

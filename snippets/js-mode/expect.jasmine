@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: expect.jasmine
+# key: expect
+# group: jasmine
+# --
+expect($0);

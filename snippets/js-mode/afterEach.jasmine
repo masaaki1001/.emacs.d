@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: afterEach
+# key: afterEach
+# group: jasmine
+# --
+afterEach(function() {
+    $0
+});
