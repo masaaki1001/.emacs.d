@@ -49,6 +49,7 @@
 (dolist (hook '(twittering-mode-hook
                 prodigy-mode-hook
                 calendar-mode-hook
+                eshell-mode-hook
                 ))
   (add-hook hook #'my/no-trailing-whitespace))
 
