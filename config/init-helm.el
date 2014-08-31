@@ -4,7 +4,6 @@
 (require 'helm-bm nil t)
 (require 'helm-ag nil t)
 (require 'helm-rails nil t)
-(require 'imenu-anywhere nil t)
 (require 'helm-git-files nil t)
 
 (setq helm-idle-delay 0.1
@@ -74,7 +73,6 @@
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-c b") 'helm-bm)
 (global-set-key (kbd "C-c i") 'helm-imenu)
-(global-set-key (kbd "C-c I") 'helm-imenu-anywhere)
 (global-set-key (kbd "C-c e") 'helm-elscreen)
 (global-set-key (kbd "C-c C-s") 'helm-spaces)
 (global-set-key (kbd "C-M-z") 'helm-resume)
