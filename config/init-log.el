@@ -19,12 +19,4 @@
   (setq sl-prev-scratch-string-file (expand-file-name ".scratch-log-prev" resource-dir))
   (setq sl-restore-scratch-p t))
 
-;; open-junk-file.el
-(when (require 'open-junk-file nil t)
-  (global-set-key (kbd "C-x M-j") 'open-junk-file)
-  (setq open-junk-file-find-file-function 'find-file)
-  (setq open-junk-file-format
-        (expand-file-name "%Y-%m-%d-%H%M%S."
-                          (concat user-emacs-directory "junk"))))
-
 (provide 'init-log)
