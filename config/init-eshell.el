@@ -10,50 +10,6 @@
     (save-excursion (insert " " files))))
 (define-key dired-mode-map [remap dired-do-shell-command] 'dired-start-eshell)
 
-;; esh-myparser.el
-;; コマンド解釈乗っ取り
-(when (require 'esh-myparser nil t)
-  (defun eshell-parser/b (str) (eshell-parser/b str "bash")))
-
-;; eshellでの実行をbashなどのシェルを利用するように変更
-(progn
-  (defmacro eval-after-load* (name &rest body)
-    (declare (indent 1))
-    `(eval-after-load ,name '(progn ,@body)))
-  (defun eshell-disable-unix-command-emulation ()
-    (eval-after-load* "em-ls"
-      (fmakunbound 'eshell/ls))
-    (eval-after-load* "em-unix"
-      (mapc 'fmakunbound '(eshell/agrep
-                           eshell/basename
-                           eshell/cat
-                           eshell/cp
-                           eshell/date
-                           eshell/diff
-                           eshell/dirname
-                           eshell/du
-                           eshell/egrep
-                           eshell/fgrep
-                           eshell/glimpse
-                           eshell/grep
-                           eshell/info
-                           eshell/ln
-                           eshell/locate
-                           eshell/make
-                           eshell/man
-                           eshell/mkdir
-                           eshell/mv
-                           eshell/occur
-                           eshell/rm
-                           eshell/rmdir
-                           eshell/su
-                           eshell/sudo
-                           eshell/git
-                           eshell/time
-                           eshell/rake
-                           eshell/rspec))))
-  (eshell-disable-unix-command-emulation))
-
 ;; キーバインドをshellらしくする
 (progn
   (defun eshell-in-command-line-p ()
