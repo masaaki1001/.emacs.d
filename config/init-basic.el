@@ -165,4 +165,6 @@
 (unless (server-running-p)
   (server-start))
 
+(require 'filecache)
+
 (provide 'init-basic)
