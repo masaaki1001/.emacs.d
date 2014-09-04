@@ -10,14 +10,14 @@
                          :underline t :foreground "green"
                          :weight 'bold)))
 
-(when (require 'eldoc-extension nil t))
+(require 'eldoc-extension)
 
 ;; elisp-slime-nav
-(when (require 'elisp-slime-nav nil t)
-  (add-hook 'emacs-lisp-mode-hook (lambda () (elisp-slime-nav-mode t))))
+(require 'elisp-slime-nav)
+(add-hook 'emacs-lisp-mode-hook (lambda () (elisp-slime-nav-mode t)))
 
-(when (require 'paredit nil t)
-  (dolist (hook '(emacs-lisp-mode-hook
+(require 'paredit)
+(dolist (hook '(emacs-lisp-mode-hook
                 lisp-interaction-mode-hook
                 lisp-mode-hook
                 ielm-mode-hook
@@ -25,6 +25,6 @@
                 inferior-scheme-mode-hook
                 clojure-mode-hook
                 slime-repl-mode-hook))
-    (add-hook hook 'enable-paredit-mode)))
+  (add-hook hook 'enable-paredit-mode))
 
 (provide 'init-elisp)

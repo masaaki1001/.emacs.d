@@ -48,18 +48,18 @@
 
 ;; sequential-command.el C-a C-e の挙動変更
 ;; http://emacs.g.hatena.ne.jp/k1LoW/20101211/1292046538
-(when (require 'sequential-command nil t)
-  (define-sequential-command seq-home
-    back-to-indentation  beginning-of-line beginning-of-buffer seq-return)
-  (global-set-key (kbd "C-a") 'seq-home)
-  (define-sequential-command seq-end
-    end-of-line end-of-buffer seq-return)
-  (global-set-key (kbd "C-e") 'seq-end))
+(require 'sequential-command)
+(define-sequential-command seq-home
+  back-to-indentation  beginning-of-line beginning-of-buffer seq-return)
+(global-set-key (kbd "C-a") 'seq-home)
+(define-sequential-command seq-end
+  end-of-line end-of-buffer seq-return)
+(global-set-key (kbd "C-e") 'seq-end)
 
 ;; duplicate-thing.el
 ;; https://github.com/ongaeshi/duplicate-thing
-(when (require 'duplicate-thing nil t)
-  (global-set-key (kbd "C-M-y") 'duplicate-thing))
+(require 'duplicate-thing)
+(global-set-key (kbd "C-M-y") 'duplicate-thing)
 
 ;; Use C-x C-m to do M-x per Steve Yegge's advice
 ;; https://sites.google.com/site/steveyegge2/effective-emacs
@@ -67,10 +67,10 @@
 
 ;; switch-window.el
 ;; http://d.hatena.ne.jp/tomoya/20100807/1281150227
-(when (require 'switch-window nil t) ; C-x o が dim:switch-window になる
-  (global-set-key (kbd "C-x o") 'switch-window)
-  ;; (define-key global-map (kbd "C-t") 'other-window) ; C-t に other-window
-  )
+(require 'switch-window) ; C-x o が dim:switch-window になる
+(global-set-key (kbd "C-x o") 'switch-window)
+;; (define-key global-map (kbd "C-t") 'other-window) ; C-t に other-window
+
 
 ;; 範囲指定していないとき、C-wで前の単語を削除
 ;; http://dev.ariel-networks.com/wp/documents/aritcles/emacs/part16

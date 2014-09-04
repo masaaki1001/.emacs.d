@@ -4,16 +4,16 @@
 (setq undo-strong-limit 900000)
 ;; undo-tree.el
 ;; http://www.dr-qubit.org/undo-tree/undo-tree.el
-(when (require 'undo-tree nil t)
-  (global-undo-tree-mode))
+(require 'undo-tree)
+(global-undo-tree-mode)
 
 ;; undohist.el
-(when (require 'undohist nil t)
-  (undohist-initialize)
-  (setq undohist-ignored-files '("COMMIT_EDITMSG")))
+(require 'undohist)
+(undohist-initialize)
+(setq undohist-ignored-files '("COMMIT_EDITMSG"))
 
 ;; redo+
-(when (require 'redo+ nil t)
-  (global-set-key (kbd "C-M-/") 'redo))
+(require 'redo+)
+(global-set-key (kbd "C-M-/") 'redo)
 
 (provide 'init-undo)

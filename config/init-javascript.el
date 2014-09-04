@@ -9,15 +9,15 @@
 (setq-default js2-global-externs '("require" "assert" "__dirname" "console" "JSON" "define" "$" "_"))
 
 ;; jasmineを除外
-(dolist (jasmine '("jasmine" "describe" "context" "beforeEach" "it" "expect" "afterEach" "spyOn"))
+(dolist (jasmine '("jasmine" "describe" "context" "beforeEach" "it" "expect" "afterEach" "spyOn" "spySuperOn"))
     (add-to-list 'js2-global-externs jasmine))
 
 (eval-after-load "js2-mode"
   '(progn
      (js2-imenu-extras-setup)
-     (when (require 'js2-refactor nil t)
-       (js2r-add-keybindings-with-prefix "C-c C-m")
-       (define-key js2-mode-map (kbd "C-c C-r") 'js2r-rename-var))))
+     (require 'js2-refactor)
+     (js2r-add-keybindings-with-prefix "C-c C-m")
+     (define-key js2-mode-map (kbd "C-c C-r") 'js2r-rename-var)))
 
 (require 'json)
 
@@ -25,7 +25,7 @@
 (add-to-list 'load-path (expand-file-name "tern/emacs" repositories-dir))
 (autoload 'tern-mode "tern.el" nil t)
 ;;(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
-(eval-after-load 'auto-complete
+(eval-after-load "auto-complete"
   '(eval-after-load 'tern
      '(progn
         (require 'tern-auto-complete)

@@ -1,12 +1,12 @@
 ;;;; shell
 ;; emacs-bash-completion
-(when (require 'bash-completion nil t)
-  (bash-completion-setup))
+(require 'bash-completion)
+(bash-completion-setup)
 
 ;; emamux
-(when (require 'emamux nil t)
-  (global-set-key (kbd "C-c C-c t") 'emamux:send-command)
-  (custom-set-variables
-   '(emamux:completing-read-type 'helm)))
+(require 'emamux)
+(global-set-key (kbd "C-c C-c t") 'emamux:send-command)
+(custom-set-variables
+ '(emamux:completing-read-type 'helm))
 
 (provide 'init-shell)

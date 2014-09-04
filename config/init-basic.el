@@ -30,8 +30,8 @@
   (global-hl-line-mode) ;デフォルトはこの行だけでOK
   (set-face-background hl-line-face "#222222")
 
-  (when (require 'maxframe nil t)
-    (add-hook 'window-setup-hook 'maximize-frame t))
+  (require 'maxframe)
+  (add-hook 'window-setup-hook 'maximize-frame t)
   )
 (winner-mode t)
 ;; *scratch*の初期表示メッセージを消す

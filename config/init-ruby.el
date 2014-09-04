@@ -14,47 +14,46 @@
 (setq ruby-indent-tabs-mode nil)
 
 ;; ruby-block.el
-(when (require 'ruby-block nil t)
-  (ruby-block-mode t)
-  (setq ruby-block-highlight-toggle t))
+(require 'ruby-block)
+(ruby-block-mode t)
+(setq ruby-block-highlight-toggle t)
 
 ;; Rinari
 ;; https://github.com/eschulte/rinari
-(when (require 'rinari nil t)
-  (setq rinari-rgrep-file-endings "*.rb *.erb *.yml *.js"))
+(require 'rinari)
+(setq rinari-rgrep-file-endings "*.rb *.erb *.yml *.js")
 
 ;; rspec-mode
-(when (require 'rspec-mode nil t)
-  (custom-set-variables '(rspec-use-rake-flag nil)))
+(require 'rspec-mode)
+(custom-set-variables '(rspec-use-rake-flag nil))
 
 ;; rhtml-mode.el
 ;; http://d.hatena.ne.jp/willnet/20090110/1231595231
-(when (require 'rhtml-mode nil t)
-  (add-hook 'rhtml-mode-hook
-            (lambda () (rinari-launch))))
+(require 'rhtml-mode)
+(add-hook 'rhtml-mode-hook
+          (lambda () (rinari-launch)))
 
 (defun find-ruby-lib (name)
   (interactive "sRuby library name: ")
   (find-file (ffap-ruby-mode name)))
 
 ;; ruby-interpolation.el
-(require 'ruby-interpolation nil t)
+(require 'ruby-interpolation)
 
 ;; https://github.com/tobiassvn/bundler.el
-(require 'bundler nil t)
+(require 'bundler)
 
 ;; robe
-(when (require 'robe nil t)
+(when (require 'robe)
   (add-hook 'ruby-mode-hook 'robe-mode)
   (add-hook 'robe-mode-hook 'ac-robe-setup))
 
 ;; yaml-mode.el
-(when (require 'yaml-mode nil t)
-  (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode)))
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
 ;; rbenv
-(when (and (executable-find "rbenv")
-           (require 'rbenv nil t))
+(when (executable-find "rbenv")
   (global-rbenv-mode))
 
 (custom-set-variables

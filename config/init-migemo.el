@@ -2,7 +2,7 @@
 ;; http://gist.github.com/457761
 ;; http://d.hatena.ne.jp/samurai20000/20100907/1283791433
 (when (and (executable-find "cmigemo")
-           (require 'migemo nil t))
+           (locate-library "migemo"))
   ;; デフォルトではmigemoを無効にする
   ;; http://www.meadowy.org/meadow/netinstall/wiki/PkgMigemo#a.emacs
   (setq migemo-isearch-enable-p nil)
@@ -14,7 +14,6 @@
   (setq migemo-regex-dictionary nil)
   (setq migemo-coding-system 'utf-8-unix)
   (load-library "migemo")
-  (migemo-init)
-  )
+  (migemo-init))
 
 (provide 'init-migemo)

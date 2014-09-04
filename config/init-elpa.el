@@ -134,9 +134,8 @@
     (package-install package)))
 
 ;; auto-install.el
-(when (require 'auto-install nil t)
- (setq auto-install-directory "~/.emacs.d/auto-install/")
- (auto-install-compatibility-setup)             ; 互換性確保
- )
+(require 'auto-install)
+(setq auto-install-directory "~/.emacs.d/auto-install/")
+(auto-install-compatibility-setup)             ; 互換性確保
 
 (provide 'init-elpa)

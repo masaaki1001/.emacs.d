@@ -22,8 +22,6 @@
     )
 
   ;; Don't minimize
-  (global-set-key (kbd "C-z") nil)
-
-  )
+  (global-set-key (kbd "C-z") nil))
 
 (provide 'init-mac)

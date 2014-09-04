@@ -12,5 +12,3 @@
 (auto-install-from-url "https://raw.github.com/tarao/multi-mode-util/master/multi-mode-util.el")
 # sha1-el.el
 (auto-install-from-url "http://git.chise.org/gitweb/?p=elisp/flim.git;a=blob_plain;f=sha1-el.el")
-# esh-myparser.el
-(auto-install-from-emacswiki "esh-myparser.el")

@@ -1,10 +1,10 @@
 ;;;; helm
 (require 'helm-config)
 (require 'helm-command)
-(require 'helm-bm nil t)
-(require 'helm-ag nil t)
-(require 'helm-rails nil t)
-(require 'helm-git-files nil t)
+(require 'helm-bm)
+(require 'helm-ag)
+(require 'helm-rails)
+(require 'helm-git-files)
 
 (setq helm-idle-delay 0.1
       helm-input-idle-delay 0
@@ -37,33 +37,33 @@
                helm-source-buffer-not-found)))))
 (global-set-key (kbd "C-;") 'my/helm)
 
-(when (require 'helm-swoop nil t)
-  (custom-set-faces
-   '(helm-swoop-target-line-block-face ((t (:background "dark olive green"))))
-   '(helm-swoop-target-line-face ((t (:background "dark olive green"))))
-   '(helm-swoop-target-word-face ((t nil))))
-  (setq helm-swoop-pre-input-function 'ignore)
-  (global-set-key (kbd "C-c C-o") 'helm-swoop)
-  (define-key isearch-mode-map (kbd "C-o") 'helm-swoop-from-isearch))
+(require 'helm-swoop)
+(custom-set-faces
+ '(helm-swoop-target-line-block-face ((t (:background "dark olive green"))))
+ '(helm-swoop-target-line-face ((t (:background "dark olive green"))))
+ '(helm-swoop-target-word-face ((t nil))))
+(setq helm-swoop-pre-input-function 'ignore)
+(global-set-key (kbd "C-c C-o") 'helm-swoop)
+(define-key isearch-mode-map (kbd "C-o") 'helm-swoop-from-isearch)
 
-(when (require 'helm-ls-git nil t)
-  (when (locate-library "magit")
-    (setq helm-ls-git-status-command 'magit-status))
-  (setq helm-ls-git-show-abs-or-relative 'relative)
-  (global-set-key (kbd "C-c :") 'helm-ls-git-ls))
+(require 'helm-ls-git)
+(when (locate-library "magit")
+  (setq helm-ls-git-status-command 'magit-status))
+(setq helm-ls-git-show-abs-or-relative 'relative)
+(global-set-key (kbd "C-c :") 'helm-ls-git-ls)
 
-(when (require 'helm-projectile nil t)
-  ;; (setq projectile-require-project-root nil)
-  (global-set-key (kbd "C-c C-p") 'helm-projectile))
+(require 'helm-projectile)
+;; (setq projectile-require-project-root nil)
+(global-set-key (kbd "C-c C-p") 'helm-projectile)
 
 ;; helm-c-yasnippet.el
-(when (require 'helm-c-yasnippet nil t)
-  (setq helm-c-yas-space-match-any-greedy t)
-  (global-set-key (kbd "C-c y") 'helm-c-yas-complete))
+(require 'helm-c-yasnippet)
+(setq helm-c-yas-space-match-any-greedy t)
+(global-set-key (kbd "C-c y") 'helm-c-yas-complete)
 
-(when (require 'helm-open-junk-files nil t)
-  (setq-default helm-open-junk-files-exclude '(".git"))
-  (global-set-key (kbd "C-c M-j") 'helm-open-junk-files))
+(require 'helm-open-junk-files)
+(setq-default helm-open-junk-files-exclude '(".git"))
+(global-set-key (kbd "C-c M-j") 'helm-open-junk-files)
 
 (global-set-key (kbd "C-c C-f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)

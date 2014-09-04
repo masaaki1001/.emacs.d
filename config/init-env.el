@@ -13,7 +13,6 @@
 (setq ispell-program-name "aspell")
 
 (when is-mac
-  (when (require 'exec-path-from-shell nil t)
-    (exec-path-from-shell-initialize)))
+  (exec-path-from-shell-initialize))
 
 (provide 'init-env)
