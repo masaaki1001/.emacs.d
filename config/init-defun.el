@@ -35,7 +35,6 @@
   (interactive)
   (indent-region (point-min) (point-max)))
 
-;; rename current buffer file name
 (defun rename-current-buffer-file ()
   "Renames current buffer and file it is visiting."
   (interactive)
@@ -54,7 +53,6 @@
                    name (file-name-nondirectory new-name)))))))
 (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
 
-;; delete current buffer file
 (defun delete-current-buffer-file ()
   "Removes file connected to current buffer and kills buffer."
   (interactive)
@@ -69,7 +67,6 @@
         (message "File '%s' successfully removed" filename)))))
 (global-set-key (kbd "C-x C-k") 'delete-current-buffer-file)
 
-;; create file
 (defun dired-create-file (file-name)
   (interactive "F Create file: ")
   (write-region "" nil file-name nil nil nil))
