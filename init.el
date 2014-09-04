@@ -32,99 +32,99 @@
 (setq is-linux (eq window-system 'x))
 
 ;; elpa, marmalade, melpa, auto-install etc...
-;; (require 'init-elpa nil t)
+;; (require 'init-elpaa)
 ;; Cask
-(require 'init-cask nil t)
+(require 'init-cask)
 ;; Mac用設定
-(require 'init-mac nil t)
+(require 'init-mac)
 ;; env
-(require 'init-env nil t)
+(require 'init-env)
 ;; basic
-(require 'init-basic nil t)
+(require 'init-basic)
 ;; keybind
-(require 'init-keybind nil t)
+(require 'init-keybind)
 ;; filecache
-(require 'init-filecache nil t)
+(require 'init-filecache)
 ;; dired
-(require 'init-dired nil t)
+(require 'init-dired)
 ;; recentf
-(require 'init-recentf nil t)
+(require 'init-recentf)
 ;; auto-complete
-(require 'init-auto-complete nil t)
+(require 'init-auto-complete)
 ;; window
-(require 'init-window nil t)
+(require 'init-window)
 ;; popwin
-(require 'init-popwin nil t)
+(require 'init-popwin)
 ;; elisp
-(require 'init-elisp nil t)
+(require 'init-elisp)
 ;; undo
-(require 'init-undo nil t)
+(require 'init-undo)
 ;; grep
-(require 'init-grep nil t)
+(require 'init-grep)
 ;; search
-(require 'init-search nil t)
+(require 'init-search)
 ;; html
-(require 'init-html nil t)
+(require 'init-html)
 ;; bm.el
-(require 'init-bm nil t)
+(require 'init-bm)
 ;; twittering-mode
-(require 'init-twitter nil t)
+(require 'init-twitter)
 ;; migemo
-(require 'init-migemo nil t)
+(require 'init-migemo)
 ;; smartrep
-(require 'init-smartrep nil t)
+(require 'init-smartrep)
 ;; view-mode
-(require 'init-view nil t)
+(require 'init-view)
 ;; Buffer関連
-(require 'init-buffer nil t)
+(require 'init-buffer)
 ;; org-mode
-(require 'init-org nil t)
+(require 'init-org)
 ;; ruby
-(require 'init-ruby nil t)
+(require 'init-ruby)
 ;; scala
-(require 'init-scala nil t)
+(require 'init-scala)
 ;; javascript
-(require 'init-javascript nil t)
+(require 'init-javascript)
 ;; typescript
-(require 'init-typescript nil t)
+(require 'init-typescript)
 ;; htlm
-(require 'init-html nil t)
+(require 'init-html)
 ;; markdown
-(require 'init-markdown nil t)
+(require 'init-markdown)
 ;; flycheck
-(require 'init-flycheck nil t)
+(require 'init-flycheck)
 ;; highlight
-(require 'init-highlight nil t)
+(require 'init-highlight)
 ;; log
-(require 'init-log nil t)
+(require 'init-log)
 ;; jump
-(require 'init-jump nil t)
+(require 'init-jump)
 ;; util
-(require 'init-util nil t)
+(require 'init-util)
 ;; edit-util
-(require 'init-edit-util nil t)
+(require 'init-edit-util)
 ;; helm
-(require 'init-helm nil t)
+(require 'init-helm)
 ;; shell
-(require 'init-shell nil t)
+(require 'init-shell)
 ;; eshell
-(require 'init-eshell nil t)
+(require 'init-eshell)
 ;; svn
-;; (require 'init-svn nil t)
+;; (require 'init-svn)
 ;; git
-(require 'init-git nil t)
+(require 'init-git)
 ;; ddskk
-(require 'init-ddskk nil t)
+(require 'init-ddskk)
 ;; yasnippet
-(require 'init-yasnippet nil t)
+(require 'init-yasnippet)
 ;; defun
-(require 'init-defun nil t)
+(require 'init-defun)
 ;; hatena-mode
-(require 'init-hatena nil t)
+(require 'init-hatena)
 ;; w3m
-(require 'init-w3m nil t)
+(require 'init-w3m)
 ;; mode-line
-(require 'init-modeline nil t)
+(require 'init-modeline)
 
 ;; revive.el
 ;; 前回emacsを終了したときの状態を復元してくれる (resume)を実行すれば復元してくれるが、
