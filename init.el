@@ -119,8 +119,6 @@
 (require 'init-defun)
 ;; hatena-mode
 (require 'init-hatena)
-;; w3m
-(require 'init-w3m)
 ;; mode-line
 (require 'init-modeline)
 
