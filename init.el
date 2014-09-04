@@ -43,8 +43,6 @@
 (require 'init-basic)
 ;; keybind
 (require 'init-keybind)
-;; filecache
-(require 'init-filecache)
 ;; dired
 (require 'init-dired)
 ;; recentf
