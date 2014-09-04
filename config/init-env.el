@@ -9,6 +9,9 @@
 ;; markdown
 (setq markdown-command "/usr/local/bin/markdown")
 
+;; ispell/aspell
+(setq ispell-program-name "aspell")
+
 (when is-mac
   (when (require 'exec-path-from-shell nil t)
     (exec-path-from-shell-initialize)))
