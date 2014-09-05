@@ -18,7 +18,7 @@
   ;; パラメータは、順に通常のフレーム、アクティブでないフレームのフレームの透明度を表す
   ;; (modify-all-frames-parameters
   ;;  (list (cons 'alpha  '(80 50))))
-  (set-frame-parameter nil 'alpha 80)
+  ;; (set-frame-parameter nil 'alpha 80)
   (set-background-color "Black")
   (set-foreground-color "White")
   (set-cursor-color "Gray")
@@ -31,8 +31,8 @@
   (set-face-background hl-line-face "#222222")
 
   (require 'maxframe)
-  (add-hook 'window-setup-hook 'maximize-frame t)
-  )
+  (add-hook 'window-setup-hook 'maximize-frame t))
+
 (winner-mode t)
 ;; *scratch*の初期表示メッセージを消す
 ;; http://d.hatena.ne.jp/mooz/20100318/p1
@@ -55,9 +55,8 @@
 
 ;; カーソルの設定
 (custom-set-variables
- '(blink-cursor-mode nil);; カーソルの点滅を止める
- '(cursor-type 'box) ;; カーソルの形状
- )
+ '(blink-cursor-mode nil) ;; カーソルの点滅を止める
+ '(cursor-type 'box))     ;; カーソルの形状
 
 ;; カーソルの位置が何文字目かを表示する
 (column-number-mode t)

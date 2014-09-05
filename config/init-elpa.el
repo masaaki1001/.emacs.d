@@ -123,8 +123,7 @@
     apache-mode
     dired-k
     httprepl
-    groovy-mode
-    ))
+    groovy-mode))
 
 (if is-mac (add-to-list 'init-install-packages 'dash-at-point))
 (if is-linux (add-to-list 'init-install-packages 'zeal-at-point))
