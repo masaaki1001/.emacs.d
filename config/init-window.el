@@ -1,6 +1,4 @@
 ;;;; window
-(require 'spaces)
-
 (require 'elscreen)
 ;;; タブの先頭に[X]を表示しない
 (setq elscreen-tab-display-kill-screen nil)

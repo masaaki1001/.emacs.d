@@ -74,7 +74,6 @@
 (global-set-key (kbd "C-c b") 'helm-bm)
 (global-set-key (kbd "C-c i") 'helm-imenu)
 (global-set-key (kbd "C-c e") 'helm-elscreen)
-(global-set-key (kbd "C-c C-s") 'helm-spaces)
 (global-set-key (kbd "C-M-z") 'helm-resume)
 (global-set-key (kbd "C-c M-/") 'helm-dabbrev)
 
