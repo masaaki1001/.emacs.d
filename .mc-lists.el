@@ -12,6 +12,7 @@
         org-yank
         seq-end
         seq-home
+        skk-mode
         sp--cua-replace-region
         sp--self-insert-command
         typescript-insert-and-indent
