@@ -1,10 +1,10 @@
 ;;;; log
 ;; session.el
 ;; http://maruta.be/intfloat_staff/101
-;; (require 'session)
-;; (add-hook 'after-init-hook 'session-initialize)
-;; (setq session-save-file (expand-file-name ".session" resource-dir))
-;; (setq session-save-print-spec '(t nil nil))
+(require 'session)
+(add-hook 'after-init-hook 'session-initialize)
+(setq session-save-file (expand-file-name ".session" resource-dir))
+(setq session-save-print-spec '(t nil nil))
 
 ;; savekill.el
 ;; http://d.hatena.ne.jp/rubikitch/20110226/
