@@ -31,8 +31,6 @@
 (setq is-mac (eq system-type 'darwin))
 (setq is-linux (eq window-system 'x))
 
-;; elpa, marmalade, melpa, auto-install etc...
-;; (require 'init-elpaa)
 ;; Cask
 (require 'init-cask)
 ;; Mac用設定
