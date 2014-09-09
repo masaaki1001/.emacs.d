@@ -6,6 +6,8 @@
 
 ;;; Code:
 ;; insert specific serial number
+(require 'multiple-cursors)
+
 (defvar mc/insert-numbers-hist nil)
 (defvar mc/insert-numbers-inc 1)
 (defvar mc/insert-numbers-pad "%01d")
