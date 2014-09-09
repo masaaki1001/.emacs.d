@@ -12,7 +12,7 @@
   "List Hatena::Diary blog entries in a buffer." t)
 (autoload 'hatena:d:list-draft "hatena-diary"
   "List Hatena::Diary draft entries in a buffer." t)
-(eval-after-load 'hatena-diary
+(eval-after-load "hatena-diary"
   '(load (expand-file-name ".hatena-credentials.gpg" resource-dir)))
 
 (global-set-key (kbd "C-c d") 'hatena:d:new)

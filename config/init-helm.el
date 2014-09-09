@@ -2,9 +2,8 @@
 (require 'helm-config)
 (require 'helm-command)
 (require 'helm-bm)
-(require 'helm-ag)
 (require 'helm-rails)
-(require 'helm-git-files)
+(require 'helm-ls-git)
 
 (setq helm-idle-delay 0.1
       helm-input-idle-delay 0
@@ -12,11 +11,7 @@
       helm-candidate-number-limit 300
       helm-quick-update t
       helm-delete-minibuffer-contents-from-point t
-      helm-buffer-max-length 50
-      ;; helm-move-to-line-cycle-in-source t
-      ;; helm-ff-transformer-show-only-basename nil
-      )
-
+      helm-buffer-max-length 50)
 
 (helm-descbinds-mode)
 (helm-match-plugin-mode)
@@ -37,7 +32,7 @@
                helm-source-buffer-not-found)))))
 (global-set-key (kbd "C-;") 'my/helm)
 
-(require 'helm-swoop)
+;; helm-swoop
 (custom-set-faces
  '(helm-swoop-target-line-block-face ((t (:background "dark olive green"))))
  '(helm-swoop-target-line-face ((t (:background "dark olive green"))))
@@ -46,22 +41,16 @@
 (global-set-key (kbd "C-c C-o") 'helm-swoop)
 (define-key isearch-mode-map (kbd "C-o") 'helm-swoop-from-isearch)
 
-(require 'helm-ls-git)
+;; helm-ls-git
 (when (locate-library "magit")
   (setq helm-ls-git-status-command 'magit-status))
 (setq helm-ls-git-show-abs-or-relative 'relative)
 (global-set-key (kbd "C-c :") 'helm-ls-git-ls)
 
-(require 'helm-projectile)
-;; (setq projectile-require-project-root nil)
-(global-set-key (kbd "C-c C-p") 'helm-projectile)
-
 ;; helm-c-yasnippet.el
-(require 'helm-c-yasnippet)
 (setq helm-c-yas-space-match-any-greedy t)
 (global-set-key (kbd "C-c y") 'helm-c-yas-complete)
 
-(require 'helm-open-junk-files)
 (setq-default helm-open-junk-files-exclude '(".git"))
 (global-set-key (kbd "C-c M-j") 'helm-open-junk-files)
 
@@ -76,6 +65,7 @@
 (global-set-key (kbd "C-c e") 'helm-elscreen)
 (global-set-key (kbd "C-M-z") 'helm-resume)
 (global-set-key (kbd "C-c M-/") 'helm-dabbrev)
+(global-set-key (kbd "C-c C-p") 'helm-projectile)
 
 (define-key helm-map (kbd "C-p")   'helm-previous-line)
 (define-key helm-map (kbd "C-n")   'helm-next-line)

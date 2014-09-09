@@ -16,7 +16,6 @@
 (global-set-key (kbd "C-c C-c g") 'magit-blame-mode)
 (global-set-key (kbd "C-c C-c C-g") 'git-timemachine)
 
-
 ;; full screen magit-status
 (defadvice magit-status (around magit-fullscreen activate)
   (window-configuration-to-register :magit-fullscreen)

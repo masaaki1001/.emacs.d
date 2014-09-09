@@ -33,7 +33,6 @@
 
 ;; zlc.el
 ;; http://d.hatena.ne.jp/mooz/20101003/p1
-(require 'zlc)
 (zlc-mode t)
 
 (provide 'init-buffer)

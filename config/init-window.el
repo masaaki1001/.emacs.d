@@ -10,7 +10,7 @@
   (let ((last-command-char last-command-event))
     ad-do-it))
 
-(require 'zoom-window)
+
 ;; M-x elscreen-start 実行時に一度だけ実行させる．
 (defun my/elscreen-update-hook ()
   (setq zoom-window-use-elscreen t)

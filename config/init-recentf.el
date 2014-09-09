@@ -13,7 +13,7 @@
 
 ;; recentf-ext.el
 ;; http://d.hatena.ne.jp/rubikitch/20091224/recentf
-(require 'recentf-ext nil t)
+(require 'recentf-ext)
 
 ;; http://masutaka.net/chalow/2011-10-30-2.html
 (require 'cl)

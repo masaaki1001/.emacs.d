@@ -3,9 +3,6 @@
 (require 'volatile-highlights)
 (volatile-highlights-mode t)
 
-;; highlight-symbol.el
-(require 'highlight-symbol)
-
 (dolist (hook '(prog-mode-hook html-mode-hook typescript-mode-hook))
   (add-hook hook 'highlight-symbol-mode)
   (add-hook hook 'highlight-symbol-nav-mode))

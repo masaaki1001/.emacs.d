@@ -24,7 +24,6 @@
 
 ;; grep-a-lot.el
 ;; https://github.com/ZungBang/emacs-grep-a-lot
-(require 'grep-a-lot)
 (defvar my-grep-a-lot-search-word nil)
 ;;上書き
 (defun grep-a-lot-buffer-name (position)

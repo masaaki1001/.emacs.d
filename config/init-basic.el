@@ -30,7 +30,6 @@
   (global-hl-line-mode) ;デフォルトはこの行だけでOK
   (set-face-background hl-line-face "#222222")
 
-  (require 'maxframe)
   (add-hook 'window-setup-hook 'maximize-frame t))
 
 (winner-mode t)
@@ -51,7 +50,7 @@
                 calendar-mode-hook
                 eshell-mode-hook
                 ))
-  (add-hook hook #'my/no-trailing-whitespace))
+  (add-hook hook 'my/no-trailing-whitespace))
 
 ;; カーソルの設定
 (custom-set-variables

@@ -1,7 +1,6 @@
 ;;;; util
 ;; quickrun.el
 ;; https://github.com/syohex/emacs-quickrun
-(require 'quickrun)
 (global-set-key [(f5)] 'quickrun)
 
 ;; pomodoro.el

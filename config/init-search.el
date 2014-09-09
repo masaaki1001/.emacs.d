@@ -7,7 +7,6 @@
   (isearch-yank-internal (lambda () (forward-symbol 1) (point))))
 (define-key isearch-mode-map (kbd "C-M-w") 'isearch-yank-symbol)
 
-(require 'anzu)
 (global-anzu-mode t)
 (set-face-attribute 'anzu-mode-line nil
                     :foreground "black" :weight 'bold)

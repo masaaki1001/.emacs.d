@@ -20,7 +20,6 @@
 ;; org-tree-slide.el
 ;; http://pastelwill.jp/wiki/doku.php?id=emacs:org-tree-slide
 ;; https://github.com/takaxp/org-tree-slide
-(require 'org-tree-slide)
 (global-set-key (kbd "<f6>") 'org-tree-slide-mode)
 (global-set-key (kbd "S-<f6>") 'org-tree-slide-skip-done-toggle)
 ;; エフェクト無効化

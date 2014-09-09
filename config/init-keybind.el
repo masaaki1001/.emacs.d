@@ -58,7 +58,6 @@
 
 ;; duplicate-thing.el
 ;; https://github.com/ongaeshi/duplicate-thing
-(require 'duplicate-thing)
 (global-set-key (kbd "C-M-y") 'duplicate-thing)
 
 ;; Use C-x C-m to do M-x per Steve Yegge's advice
@@ -67,7 +66,6 @@
 
 ;; switch-window.el
 ;; http://d.hatena.ne.jp/tomoya/20100807/1281150227
-(require 'switch-window) ; C-x o が dim:switch-window になる
 (global-set-key (kbd "C-x o") 'switch-window)
 ;; (define-key global-map (kbd "C-t") 'other-window) ; C-t に other-window
 

@@ -5,15 +5,13 @@
 
 (eval-after-load "eldoc"
   '(progn
+     (require 'eldoc-extension)
      (setq eldoc-idle-delay 0.2)
      (set-face-attribute 'eldoc-highlight-function-argument nil
                          :underline t :foreground "green"
                          :weight 'bold)))
 
-(require 'eldoc-extension)
-
 ;; elisp-slime-nav
-(require 'elisp-slime-nav)
 (add-hook 'emacs-lisp-mode-hook (lambda () (elisp-slime-nav-mode t)))
 
 (require 'paredit)

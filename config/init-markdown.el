@@ -1,5 +1,4 @@
 ;;;; markdown
-(require 'markdown-mode)
 (add-to-list 'auto-mode-alist '("\\.\\(md\\|mdt\\|mdwn\\)$" . markdown-mode))
 (defvar markdown-imenu-generic-expression
   '(("title"  "^\\(.+?\\)[\n]=+$" 1)
