@@ -1,7 +1,5 @@
 ;;;; Git
 (require 'magit)
-(require 'magit-blame)
-(require 'magit-svn)
 
 ;; 72文字折り返しを無効化
 (add-hook 'git-commit-mode-hook 'turn-off-auto-fill)
@@ -16,6 +14,8 @@
 
 (global-set-key (kbd "C-c g") 'magit-status)
 (global-set-key (kbd "C-c C-c g") 'magit-blame-mode)
+(global-set-key (kbd "C-c C-c C-g") 'git-timemachine)
+
 
 ;; full screen magit-status
 (defadvice magit-status (around magit-fullscreen activate)
@@ -89,10 +89,5 @@
 
 (when is-mac
   (setq magit-emacsclient-executable "/usr/local/Cellar/emacs/24.3/bin/emacsclient"))
-
-(require 'git-timemachine)
-(global-set-key (kbd "C-c C-c C-g") 'git-timemachine)
-
-(require 'yagist)
 
 (provide 'init-git)
