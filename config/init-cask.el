@@ -4,4 +4,9 @@
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
 
+;; auto-install.el
+(require 'auto-install)
+(setq auto-install-directory "~/.emacs.d/auto-install/")
+(auto-install-compatibility-setup)             ; 互換性確保
+
 (provide 'init-cask)
