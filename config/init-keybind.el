@@ -64,12 +64,6 @@
 ;; https://sites.google.com/site/steveyegge2/effective-emacs
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
 
-;; switch-window.el
-;; http://d.hatena.ne.jp/tomoya/20100807/1281150227
-(global-set-key (kbd "C-x o") 'switch-window)
-;; (define-key global-map (kbd "C-t") 'other-window) ; C-t に other-window
-
-
 ;; 範囲指定していないとき、C-wで前の単語を削除
 ;; http://dev.ariel-networks.com/wp/documents/aritcles/emacs/part16
 (defadvice kill-region (around kill-word-or-kill-region activate)

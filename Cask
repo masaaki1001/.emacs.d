@@ -75,7 +75,6 @@
 (depends-on "eldoc-extension")
 (depends-on "paredit")
 (depends-on "smartparens")
-(depends-on "switch-window")
 (depends-on "jaunte")
 (depends-on "ace-jump-mode")
 (depends-on "less-css-mode")
