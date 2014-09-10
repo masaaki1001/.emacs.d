@@ -2,7 +2,6 @@
 ;; http://cx4a.org/software/auto-complete/manual.ja.html
 (require 'popup)
 (require 'fuzzy)
-
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories
              (expand-file-name  "ac-dict" user-emacs-directory))
@@ -21,13 +20,10 @@
 
 (ac-set-trigger-key "TAB")
 
-(add-hook 'auto-complete-mode-hook
-          (lambda ()
-            (define-key ac-completing-map (kbd "C-n") 'ac-next)
-            (define-key ac-completing-map (kbd "C-p") 'ac-previous)
-            (define-key ac-completing-map (kbd "C-s") 'ac-isearch)
-            (define-key ac-completing-map (kbd "<tab>") 'ac-complete)
-            (define-key ac-mode-map (kbd "M-RET") 'auto-complete)))
+(define-key ac-completing-map (kbd "C-n") 'ac-next)
+(define-key ac-completing-map (kbd "C-p") 'ac-previous)
+(define-key ac-completing-map (kbd "C-s") 'ac-isearch)
+(define-key ac-completing-map (kbd "<tab>") 'ac-complete)
 
 (dolist (mode '(text-mode
                 coffee-mode
