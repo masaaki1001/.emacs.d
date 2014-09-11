@@ -1,6 +1,5 @@
 ;;;; edit utils
 ;; expand-region.el
-;; http://d.hatena.ne.jp/syohex/20120117/1326814127
 (global-set-key (kbd "C-,") 'er/expand-region)
 (global-set-key (kbd "C-M-,") 'er/contract-region)
 
@@ -18,9 +17,5 @@
 
 ;; move-text.el
 (move-text-default-bindings)
-
-(require 'edit-server)
-(setq edit-server-new-frame nil)
-(edit-server-start)
 
 (provide 'init-edit-util)

@@ -104,7 +104,6 @@
 (depends-on "anzu")
 (depends-on "move-text")
 (depends-on "highlight-escape-sequences")
-(depends-on "edit-server")
 (depends-on "apache-mode")
 (depends-on "dash-at-point")
 (depends-on "zeal-at-point")
