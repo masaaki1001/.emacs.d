@@ -16,6 +16,7 @@
   (delete-word (- arg)))
 (global-set-key (kbd "M-d") 'delete-word)
 (global-set-key [C-backspace] 'backward-delete-word)
+(global-set-key (kbd "M-h") 'backward-delete-word)
 
 ;; C-hでbackspace
 ;; http://openlab.dino.co.jp/2007/09/25/23251372.html
