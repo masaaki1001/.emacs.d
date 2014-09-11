@@ -137,6 +137,9 @@
 (setq use-dialog-box nil)
 (defalias 'message-box 'message)
 
+;; C-k で改行を含め切り取り
+(setq kill-whole-line t)
+
 ;; find file (or url) at point
 (ffap-bindings)
 

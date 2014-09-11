@@ -1,8 +1,6 @@
 ;;;; keybind
 (global-set-key (kbd "M-h") 'backward-kill-word)
 
-;; C-k で改行を含め切り取り
-(setq kill-whole-line t)
 ;; 改行時にインデント
 (global-set-key (kbd "C-m") 'newline-and-indent)
 ;; 指定行へ移動
