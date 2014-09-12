@@ -42,8 +42,7 @@
 (define-key isearch-mode-map (kbd "C-o") 'helm-swoop-from-isearch)
 
 ;; helm-ls-git
-(when (locate-library "magit")
-  (setq helm-ls-git-status-command 'magit-status))
+(setq helm-ls-git-status-command 'magit-status)
 (setq helm-ls-git-show-abs-or-relative 'relative)
 (global-set-key (kbd "C-c :") 'helm-ls-git-ls)
 
