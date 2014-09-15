@@ -77,4 +77,6 @@
 (defvar ctrl-q-map (make-keymap))
 (define-key global-map (kbd "C-q") ctrl-q-map)
 
+(global-set-key (kbd "C-q i") 'indent-buffer)
+
 (provide 'init-keybind)
