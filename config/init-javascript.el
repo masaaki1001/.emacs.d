@@ -32,7 +32,6 @@
 
 ;; coffee-mode
 (defun my/coffee-mode-hook ()
-  "coffee-mode-hook"
   (and (set (make-local-variable 'tab-width) 2)
        (set (make-local-variable 'coffee-tab-width) 2)))
 
