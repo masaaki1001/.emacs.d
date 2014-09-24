@@ -14,7 +14,6 @@
 ;; elisp-slime-nav
 (add-hook 'emacs-lisp-mode-hook (lambda () (elisp-slime-nav-mode t)))
 
-(require 'paredit)
 (dolist (hook '(emacs-lisp-mode-hook
                 lisp-interaction-mode-hook
                 lisp-mode-hook

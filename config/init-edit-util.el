@@ -4,14 +4,12 @@
 (global-set-key (kbd "C-M-,") 'er/contract-region)
 
 ;; multiple-cursors.el
-(require 'multiple-cursors)
 (setq mc/list-file (expand-file-name ".mc-lists.el" user-emacs-directory))
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 ;; smartparens.el
-(require 'smartparens-config)
 (smartparens-global-mode t)
 (setq sp-autoescape-string-quote nil)
 

@@ -1,6 +1,4 @@
 ;;;; helm
-(require 'helm-config)
-(require 'helm-command)
 (require 'helm-bm)
 (require 'helm-rails)
 (require 'helm-ls-git)

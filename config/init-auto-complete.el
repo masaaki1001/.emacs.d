@@ -1,8 +1,7 @@
 ;;;; auto-complete
 ;; http://cx4a.org/software/auto-complete/manual.ja.html
-(require 'popup)
-(require 'fuzzy)
-(require 'auto-complete-config)
+(ac-config-default)
+
 (add-to-list 'ac-dictionary-directories
              (expand-file-name  "ac-dict" user-emacs-directory))
 (setq ac-comphist-file (expand-file-name "ac-comphist.dat" resource-dir))
