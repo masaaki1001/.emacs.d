@@ -4,7 +4,7 @@
 
 (add-to-list 'ac-dictionary-directories
              (expand-file-name  "ac-dict" user-emacs-directory))
-(setq ac-comphist-file (expand-file-name "ac-comphist.dat" resource-dir))
+
 (ac-config-default)
 (setq-default ac-sources (append '(ac-source-words-in-buffer
                                    ac-source-words-in-all-buffer
@@ -15,7 +15,8 @@
       ac-use-menu-map t
       ac-use-fuzzy t
       ac-auto-start nil
-      ac-ignore-case nil)
+      ac-ignore-case nil
+      ac-comphist-file (expand-file-name "ac-comphist.dat" resource-dir))
 
 (ac-set-trigger-key "TAB")
 
