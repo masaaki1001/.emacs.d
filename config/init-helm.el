@@ -1,6 +1,5 @@
 ;;;; helm
 (require 'helm-bm)
-(require 'helm-rails)
 (require 'helm-ls-git)
 
 (setq helm-idle-delay 0.1
