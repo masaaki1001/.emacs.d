@@ -11,7 +11,7 @@
       (run-with-idle-timer 30 t 'recentf-save-list))
 (recentf-mode 1)
 
-;; recentf-ext.el
+;; recentf-ext
 ;; http://d.hatena.ne.jp/rubikitch/20091224/recentf
 (require 'recentf-ext)
 

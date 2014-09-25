@@ -1,5 +1,5 @@
 ;;;; ruby
-;; ruby-mode.el
+;; ruby-mode
 (autoload 'ruby-mode "ruby-mode"
   "Mode for editing ruby source files" t)
 (setq auto-mode-alist
@@ -18,7 +18,7 @@
   (ruby-block-mode t)
   (setq ruby-block-highlight-toggle t))
 
-;; ruby-block.el
+;; ruby-block
 (add-hook 'ruby-mode-hook 'my/ruby-block-mode-hook)
 
 ;; Rinari
@@ -28,7 +28,7 @@
 ;; rspec-mode
 (custom-set-variables '(rspec-use-rake-flag nil))
 
-;; rhtml-mode.el
+;; rhtml-mode
 ;; http://d.hatena.ne.jp/willnet/20090110/1231595231
 (add-hook 'rhtml-mode-hook
           (lambda () (rinari-launch)))

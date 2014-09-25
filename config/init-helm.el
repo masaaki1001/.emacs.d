@@ -43,7 +43,7 @@
 (setq helm-ls-git-show-abs-or-relative 'relative)
 (global-set-key (kbd "C-c :") 'helm-ls-git-ls)
 
-;; helm-c-yasnippet.el
+;; helm-c-yasnippet
 (setq helm-c-yas-space-match-any-greedy t)
 (global-set-key (kbd "C-c y") 'helm-c-yas-complete)
 

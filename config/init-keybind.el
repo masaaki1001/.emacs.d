@@ -45,7 +45,7 @@
 ;; enable to pop `mark-ring' repeatedly like C-u C-SPC C-SPC ...
 (setq set-mark-command-repeat-pop t)
 
-;; sequential-command.el C-a C-e の挙動変更
+;; sequential-command C-a C-e の挙動変更
 ;; http://emacs.g.hatena.ne.jp/k1LoW/20101211/1292046538
 (require 'sequential-command)
 (define-sequential-command seq-home
@@ -55,7 +55,7 @@
   end-of-line end-of-buffer seq-return)
 (global-set-key (kbd "C-e") 'seq-end)
 
-;; duplicate-thing.el
+;; duplicate-thing
 ;; https://github.com/ongaeshi/duplicate-thing
 (global-set-key (kbd "C-M-y") 'duplicate-thing)
 

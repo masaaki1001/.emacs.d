@@ -1,20 +1,20 @@
 ;;;; jump
-;; jaunte.el
+;; jaunte
 ;; http://kawaguchi.posterous.com/emacshit-a-hint
 (require 'jaunte)
 (setq jaunte-hint-unit 'word) ;default
 (global-set-key (kbd "C-c C-j") 'jaunte)
 
-;; ace-jump-mode.el
+;; ace-jump-mode
 ;; http://d.hatena.ne.jp/syohex/20120304/1330822993
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
 (global-set-key (kbd "C-.") 'ace-jump-mode)
 
-;; goto-chg.el
+;; goto-chg
 (define-key global-map (kbd "C-c /") 'goto-last-change)
 (define-key global-map (kbd "C-c C-/") 'goto-last-change-reverse)
 
-;; point-undo.el
+;; point-undo
 (require 'point-undo)
 (define-key global-map (kbd "C-x /") 'point-undo)
 (define-key global-map (kbd "C-x C-/") 'point-redo)

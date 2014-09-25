@@ -8,12 +8,12 @@
      (setq ls-lisp-dirs-first t)
      ;; ディレクトリ内のファイル名を編集できるようにする
      (require 'wdired)
-     ;; joseph-single-dired.el
+     ;; joseph-single-dired
      ;; diredのバッファが増えないようにする
      ;; https://github.com/jixiuf/joseph-single-dired
      (require 'joseph-single-dired)
 
-     ;; dired-k.el
+     ;; dired-k
      (setq dired-k-style 'git)
      ;; C-sでファイル名のみ検索対象にする
      (setq dired-isearch-filenames t)
@@ -29,7 +29,7 @@
      (define-key dired-mode-map (kbd "K") 'dired-k)
      (define-key dired-mode-map (kbd "r") 'wdired-change-to-wdired-mode)
 
-     ;; direx.el
+     ;; direx
      ;; http://cx4a.blogspot.com/2011/12/popwineldirexel.html
      ;; http://shibayu36.hatenablog.com/category/emacs?page=1361962452
      (defun my/direx ()
@@ -40,7 +40,7 @@
          (unless result
            (direx:jump-to-directory-other-window))))
 
-     ;; dired-filetype-face.el
+     ;; dired-filetype-face
      ;; diredの表示をファイルタイプ毎に色分けしてカラフルにする
      (require 'dired-filetype-face)))
 

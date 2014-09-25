@@ -1,4 +1,4 @@
-;;;; migemo.el
+;;;; migemo
 ;; http://gist.github.com/457761
 ;; http://d.hatena.ne.jp/samurai20000/20100907/1283791433
 (when (and (executable-find "cmigemo")

@@ -114,7 +114,7 @@
 
 ;; beepを消す
 (setq ring-bell-function 'ignore)
-;; uniquify.el
+;; uniquify
 ;; http://d.hatena.ne.jp/yuheiomori0718/20111214/1323864339
 (require 'uniquify)
 ;; filename<dir>形式のバッファ名にする

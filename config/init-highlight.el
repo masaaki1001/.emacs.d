@@ -1,5 +1,5 @@
 ;;;; highlight
-;; volatile-highlights.el
+;; volatile-highlights
 (require 'volatile-highlights)
 (volatile-highlights-mode t)
 

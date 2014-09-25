@@ -1,4 +1,4 @@
-;;;; bm.el
+;;;; bm
 ;; http://d.hatena.ne.jp/kenkov/20110507/1304754238
 ;; http://d.hatena.ne.jp/peccu/20100402
 (require 'bm)

@@ -1,5 +1,5 @@
 ;;;; grep
-;; color-moccur.el
+;; color-moccur
 ;; http://www.bookshelf.jp/soft/meadow_50.html#SEC746
 (require 'color-moccur)
 (setq moccur-split-word t)
@@ -15,14 +15,14 @@
 (setq dmoccur-exclusion-mask
       (append '("\\~$" "\\.log\\/\*") dmoccur-exclusion-mask))
 
-;; moccur-edit.el
+;; moccur-edit
 ;; http://www.bookshelf.jp/elc/moccur-edit.el
 (require 'moccur-edit)
 
-;; all-ext.el
+;; all-ext
 (require 'all-ext)
 
-;; grep-a-lot.el
+;; grep-a-lot
 ;; https://github.com/ZungBang/emacs-grep-a-lot
 (defvar my-grep-a-lot-search-word nil)
 ;;上書き
@@ -49,11 +49,11 @@
 (defadvice lgrep (before my-lgrep (regexp &optional files dir) activate)
   (setq my-grep-a-lot-search-word regexp))
 
-;; wgrep.el
+;; wgrep
 ;; https://github.com/mhayashi1120/Emacs-wgrep
 (require 'wgrep)
 
-;; wgrep-ag.el
+;; wgrep-ag
 (eval-after-load "ag"
   '(progn
      (require 'wgrep-ag)

@@ -1,14 +1,14 @@
 ;;;; util
-;; quickrun.el
+;; quickrun
 ;; https://github.com/syohex/emacs-quickrun
 (global-set-key [(f5)] 'quickrun)
 
-;; pomodoro.el
+;; pomodoro
 ;; https://github.com/baudtack/pomodoro.el
 (require 'pomodoro)
 (pomodoro-add-to-mode-line)
 
-;; open-junk-file.el
+;; open-junk-file
 (require 'open-junk-file)
 (global-set-key (kbd "C-x M-j") 'open-junk-file)
 (setq open-junk-file-find-file-function 'find-file)
