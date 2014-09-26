@@ -22,16 +22,10 @@
 (add-hook 'ruby-mode-hook 'my/ruby-block-mode-hook)
 
 ;; Rinari
-;; https://github.com/eschulte/rinari
 (setq rinari-rgrep-file-endings "*.rb *.erb *.yml *.js")
 
 ;; rspec-mode
 (custom-set-variables '(rspec-use-rake-flag nil))
-
-;; rhtml-mode
-;; http://d.hatena.ne.jp/willnet/20090110/1231595231
-(add-hook 'rhtml-mode-hook
-          (lambda () (rinari-launch)))
 
 (defun find-ruby-lib (name)
   (interactive "sRuby library name: ")
