@@ -27,7 +27,6 @@
 
 (require 'init-cask)
 (require 'init-mac)
-(require 'init-env)
 (require 'init-basic)
 (require 'init-keybind)
 (require 'init-dired)
