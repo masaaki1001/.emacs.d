@@ -60,7 +60,6 @@
 (require 'init-util)
 (require 'init-edit-util)
 (require 'init-helm)
-(require 'init-shell)
 (require 'init-eshell)
 ;; (require 'init-svn)
 (require 'init-git)

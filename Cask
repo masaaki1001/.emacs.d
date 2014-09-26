@@ -109,7 +109,6 @@
 (depends-on "org-tree-slide" :git "https://github.com/takaxp/org-tree-slide.git")
 (depends-on "httprepl")
 (depends-on "groovy-mode")
-(depends-on "emamux")
 (depends-on "flycheck-color-mode-line")
 (depends-on "git-gutter")
 (depends-on "git-timemachine")
