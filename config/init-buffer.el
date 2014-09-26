@@ -1,7 +1,4 @@
 ;;;; Buffer
-;; バッファ一覧を詳細に
-(global-set-key (kbd "C-x C-b") 'bs-show)
-
 ;; バッファ移動を一瞬で行う
 ;; http://d.hatena.ne.jp/rubikitch/20111211/smalldisplay
 ;;; last-buffer
