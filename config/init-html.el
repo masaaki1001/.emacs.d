@@ -37,18 +37,9 @@
 (add-hook 'html-mode-hook 'emmet-mode)
 (add-hook 'web-mode-hook 'emmet-mode)
 
-(defun brace-ret-brace ()
-  (interactive)
-  (insert "{") (newline-and-indent)
-  (newline-and-indent)
-  (insert "}") (indent-for-tab-command)
-  (newline-and-indent) (newline-and-indent)
-  (previous-line) (previous-line) (previous-line)
-  (indent-for-tab-command))
-
-(add-hook 'css-mode-hook
-              (lambda ()
-                (setq css-indent-offset 2)
-                (define-key css-mode-map "M-{" 'brace-ret-brace)))
+;; css-mode
+(defun my/css-mode-hook ()
+  (setq css-indent-offset 2))
+(add-hook 'css-mode-hook 'my/css-mode-hook)
 
 (provide 'init-html)
