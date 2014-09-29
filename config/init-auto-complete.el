@@ -9,8 +9,7 @@
 (setq-default ac-sources (append '(ac-source-words-in-buffer
                                    ac-source-words-in-all-buffer
                                    ac-source-imenu) ac-sources))
-(setq ac-delay 0.5
-      ac-use-quick-help t
+(setq ac-use-quick-help t
       ac-quick-help-delay 1.0
       ac-use-menu-map t
       ac-use-fuzzy t
