@@ -11,25 +11,25 @@
   (interactive)
   (unless (eolp)
     (forward-char))
-  (toggle-read-only))
+  (View-quit))
 
 (defun my/view-insert-eol ()
   (interactive)
   (end-of-line)
-  (toggle-read-only))
+  (View-quit))
 
 (defun my/view-insert-next-line ()
   (interactive)
-  (toggle-read-only)
   (end-of-line)
-  (newline-and-indent))
+  (newline-and-indent)
+  (View-quit))
 
 (defun my/view-insert-prev-line ()
   (interactive)
   (beginning-of-line)
-  (toggle-read-only)
   (save-excursion
-    (newline)))
+    (newline))
+  (View-quit))
 
 (global-set-key (kbd "C-c C-v") 'view-mode)
 (define-key view-mode-map (kbd "h") 'backward-char)
