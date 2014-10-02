@@ -1,4 +1,4 @@
-;;;; diminish
+;; diminish
 (with-eval-after-load "auto-complete" (diminish 'auto-complete-mode))
 (with-eval-after-load "yasnippet" (diminish 'yas-minor-mode))
 (with-eval-after-load "undo-tree" (diminish 'undo-tree-mode))

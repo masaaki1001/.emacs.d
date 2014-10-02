@@ -1,4 +1,3 @@
-;;;; Buffer
 ;; バッファ移動を一瞬で行う
 ;; http://d.hatena.ne.jp/rubikitch/20111211/smalldisplay
 ;;; last-buffer

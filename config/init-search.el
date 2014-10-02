@@ -1,4 +1,3 @@
-;;;; search
 ;; i-searchでのbackspace有効
 (define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
 

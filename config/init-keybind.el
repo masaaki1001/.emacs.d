@@ -1,9 +1,5 @@
-;;;; keybind
 (global-set-key (kbd "M-h") 'backward-kill-word)
-
-;; 改行時にインデント
 (global-set-key (kbd "C-m") 'newline-and-indent)
-;; 指定行へ移動
 (global-set-key (kbd "M-g") 'goto-line)
 
 ;; 単語削除で切り取りではなく削除になるようにする
@@ -35,12 +31,6 @@
 ;; バックスラッシュ
 (define-key global-map (kbd "M-|") "\\")
 
-;; M-^で実現できる．
-;; (global-set-key (kbd "M-j")
-;;             (lambda ()
-;;                   (interactive)
-;;                   (join-line -1)))
-
 ;; http://d.hatena.ne.jp/kbkbkbkb1/20111205/1322988550
 ;; enable to pop `mark-ring' repeatedly like C-u C-SPC C-SPC ...
 (setq set-mark-command-repeat-pop t)
@@ -56,10 +46,8 @@
 (global-set-key (kbd "C-e") 'seq-end)
 
 ;; duplicate-thing
-;; https://github.com/ongaeshi/duplicate-thing
 (global-set-key (kbd "C-M-y") 'duplicate-thing)
 
-;; Use C-x C-m to do M-x per Steve Yegge's advice
 ;; https://sites.google.com/site/steveyegge2/effective-emacs
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
 

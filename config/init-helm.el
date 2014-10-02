@@ -1,4 +1,3 @@
-;;;; helm
 (require 'helm-bm)
 (require 'helm-ls-git)
 
@@ -69,9 +68,7 @@
 (define-key helm-map (kbd "C-M-p") 'helm-previous-source)
 
 ;; http://d.hatena.ne.jp/a_bicky/20140104/1388822688
-;; For find-file etc.
 (define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
-;; For helm-find-files etc.
 (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
 
 (defadvice helm-ff-kill-or-find-buffer-fname (around execute-only-if-exist activate)
@@ -79,7 +76,6 @@
   (when (file-exists-p candidate)
     ad-do-it))
 
-;; http://d.hatena.ne.jp/a_bicky/20140104/1388822688
 (defadvice helm-delete-minibuffer-contents (before helm-emulate-kill-line activate)
   "Emulate `kill-line' in helm minibuffer"
   (kill-new (buffer-substring (point) (field-end))))

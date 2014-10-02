@@ -1,4 +1,3 @@
-;;;; log
 ;; session
 ;; http://maruta.be/intfloat_staff/101
 (require 'session)
@@ -13,7 +12,6 @@
 
 ;; scratch-log
 ;; http://d.hatena.ne.jp/kitokitoki/20100612/p1
-;; https://github.com/wakaran/scratch-log
 (require 'scratch-log)
 (setq sl-scratch-log-file (expand-file-name ".scratch-log" resource-dir))
 (setq sl-prev-scratch-string-file (expand-file-name ".scratch-log-prev" resource-dir))

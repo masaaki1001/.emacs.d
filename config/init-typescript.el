@@ -1,4 +1,3 @@
-;;;; typescript
 (add-to-list 'auto-mode-alist '("\\.ts$" . typescript-mode))
 
 (with-eval-after-load "typescript"

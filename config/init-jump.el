@@ -1,4 +1,3 @@
-;;;; jump
 ;; jaunte
 ;; http://kawaguchi.posterous.com/emacshit-a-hint
 (require 'jaunte)

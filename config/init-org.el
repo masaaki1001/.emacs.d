@@ -1,4 +1,3 @@
-;;;; org-mode
 ;; http://d.hatena.ne.jp/rubikitch/20090121/1232468026
 ;; http://e-arrows.sakura.ne.jp/2010/02/vim-to-emacs.html
 (require 'org)
@@ -19,10 +18,17 @@
 
 ;; org-tree-slide.el
 ;; http://pastelwill.jp/wiki/doku.php?id=emacs:org-tree-slide
-;; https://github.com/takaxp/org-tree-slide
 (global-set-key (kbd "<f6>") 'org-tree-slide-mode)
 (global-set-key (kbd "S-<f6>") 'org-tree-slide-skip-done-toggle)
 ;; エフェクト無効化
 (org-tree-slide-simple-profile)
+
+(defun my/org-note ()
+  "Open a new note entry in my notes file."
+  (interactive)
+  (find-file (expand-file-name "note.org" org-directory))
+  (goto-char (point-min))
+  (org-insert-heading)
+  (insert (concat "<" (format-time-string "%Y-%m-%dT%H:%M:%S%z") "> ")))
 
 (provide 'init-org)

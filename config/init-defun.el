@@ -1,4 +1,3 @@
-;;;; defuns
 ;; 縦分割と横分割を切り替える M-x window-toggle-divisionでできるようにする
 ;; http://d.hatena.ne.jp/himadatanode/20061011/p2
 (defun window-toggle-division ()

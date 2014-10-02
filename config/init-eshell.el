@@ -1,15 +1,3 @@
-;;;; eshell
-;; マークしたファイルを引数にeshellを起動する
-(defun dired-start-eshell (arg)
-  "diredで選択されたファイル名がペーストされた状態で、eshellを起動する。"
-  (interactive "P")
-  (let ((files (mapconcat 'shell-quote-argument
-                          (dired-get-marked-files (not arg))
-                          " ")))
-    (if (fboundp 'shell-pop) (shell-pop) (eshell t))
-    (save-excursion (insert " " files))))
-(define-key dired-mode-map [remap dired-do-shell-command] 'dired-start-eshell)
-
 ;; キーバインドをshellらしくする
 (progn
   (defun eshell-in-command-line-p ()
@@ -30,6 +18,7 @@
     (delete-region eshell-last-output-end (point-max))
     (funcall func 1)
     (goto-char eshell-last-output-end)))
+
 ;; 前のコマンドの履歴取得
 (defun-eshell-cmdline "M-p"
   (let ((last-command 'eshell-previous-matching-input-from-input))
@@ -47,11 +36,10 @@
 (setq eshell-hist-ignoredups t)
 ;; 確認なしでヒストリ保存
 (setq eshell-ask-to-save-history (quote always))
+(setq eshell-directory-name (expand-file-name ".eshell" resource-dir))
 ;; alias
 (with-eval-after-load "em-alias"
   (eshell/alias "ll" "ls -la $*"))
-
-(setq eshell-directory-name (expand-file-name ".eshell" resource-dir))
 
 (with-eval-after-load "esh-opt"
   (require 'eshell-prompt-extras)

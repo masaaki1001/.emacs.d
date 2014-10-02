@@ -1,4 +1,3 @@
-;;;; recentf
 ;; 最近使ったファイル M-x recentf-open-files　を有効化
 ;; .recentfを自動保存する
 ;; http://d.hatena.ne.jp/tomoya/20110217/1297928222
@@ -7,8 +6,7 @@
 (setq recentf-save-file (expand-file-name ".recentf" resource-dir))
 (setq recentf-max-saved-items 2000)
 (setq recentf-auto-cleanup 10)
-(setq recentf-auto-save-timer
-      (run-with-idle-timer 30 t 'recentf-save-list))
+(run-with-idle-timer 30 t 'recentf-save-list)
 (recentf-mode 1)
 
 ;; recentf-ext

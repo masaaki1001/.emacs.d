@@ -1,10 +1,7 @@
-;;;; util
 ;; quickrun
-;; https://github.com/syohex/emacs-quickrun
 (global-set-key [(f5)] 'quickrun)
 
 ;; pomodoro
-;; https://github.com/baudtack/pomodoro.el
 (require 'pomodoro)
 (pomodoro-add-to-mode-line)
 

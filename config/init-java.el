@@ -1,4 +1,3 @@
-;;;; java
 ;; eclim
 (when (require 'eclim nil t)
   (setq eclim-executable "~/ide/eclipse/eclim")

@@ -1,4 +1,3 @@
-;;;; view-mode
 (require 'viewer)
 (viewer-stay-in-setup)
 ;; 書き込み不能ファイルのバッファに対しては真赤

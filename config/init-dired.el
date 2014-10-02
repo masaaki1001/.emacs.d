@@ -1,4 +1,3 @@
-;;;; dired
 (with-eval-after-load "dired"
   (add-hook 'dired-mode-hook 'turn-on-gnus-dired-mode)
   (load-library "ls-lisp")

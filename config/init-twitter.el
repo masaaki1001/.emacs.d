@@ -1,4 +1,3 @@
-;;;; twittering-mode
 ;; http://www.emacswiki.org/emacs/TwitteringMode-ja
 ;; http://www.kototone.jp/com/how_to_use_twittering-mode.html
 (setq twittering-use-master-password t)

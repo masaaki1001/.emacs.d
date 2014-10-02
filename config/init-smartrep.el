@@ -1,4 +1,3 @@
-;;;; smartrep
 ;; http://sheephead.homelinux.org/2011/12/19/6930/
 (require 'smartrep)
 (setq orig-binding (key-binding "\C-l")) ; default key bind backup

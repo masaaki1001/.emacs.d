@@ -1,4 +1,3 @@
-;;;; emacs lisp
 (with-eval-after-load "eldoc"
   (require 'eldoc-extension)
   (setq eldoc-idle-delay 0.2)

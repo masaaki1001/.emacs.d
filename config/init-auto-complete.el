@@ -1,5 +1,3 @@
-;;;; auto-complete
-;; http://cx4a.org/software/auto-complete/manual.ja.html
 (ac-config-default)
 
 (add-to-list 'ac-dictionary-directories
