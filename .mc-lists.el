@@ -5,10 +5,12 @@
       '(
         cua--prefix-repeat-handler
         cua--shift-control-c-prefix
+        cua-copy-region
         cua-cut-region
         cua-delete-region
         cua-paste
         dabbrev-expand
+        forward-sexp
         org-yank
         seq-end
         seq-home
