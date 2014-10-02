@@ -67,17 +67,3 @@
 (require 'init-defun)
 (require 'init-hatena)
 (require 'init-modeline)
-
-;; revive.el
-;; 前回emacsを終了したときの状態を復元してくれる (resume)を実行すれば復元してくれるが、
-;; そのためには各モードの設定を読み込んでいる必要があるので、一番最後に書いてある。
-;; http://d.hatena.ne.jp/gan2/20080203/1202032426
-;; http://tech.kayac.com/archive/emacs.html
-(autoload 'save-current-configuration "revive" "Save status" t)
-(autoload 'resume "revive" "Resume Emacs" t)
-(autoload 'wipe "revive" "Wipe emacs" t)
-(setq revive:configuration-file (expand-file-name ".revive.el" resource-dir))
-(define-key ctl-x-map "F" 'resume)                        ; C-x F で復元
-(define-key ctl-x-map "K" 'wipe)                          ; C-x K で Kill
-(add-hook 'kill-emacs-hook 'save-current-configuration)   ; 終了時に保存
-(resume) ; 起動時に復元
