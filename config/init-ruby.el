@@ -20,15 +20,11 @@
 ;; ruby-block
 (add-hook 'ruby-mode-hook 'my/ruby-block-mode-hook)
 
-;; Rinari
+;; rinari
 (setq rinari-rgrep-file-endings "*.rb *.erb *.yml *.js")
 
 ;; rspec-mode
 (custom-set-variables '(rspec-use-rake-flag nil))
-
-(defun find-ruby-lib (name)
-  (interactive "sRuby library name: ")
-  (find-file (ffap-ruby-mode name)))
 
 ;; robe
 (add-hook 'ruby-mode-hook 'robe-mode)
@@ -37,12 +33,5 @@
 ;; rbenv
 (when (executable-find "rbenv")
   (global-rbenv-mode))
-
-(custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(safe-local-variable-values (quote ((encoding . utf-8) (encoding . UTF-8) (ruby-compilation-executable . "ruby") (ruby-compilation-executable . "ruby1.8") (ruby-compilation-executable . "ruby1.9") (ruby-compilation-executable . "rbx") (ruby-compilation-executable . "jruby")))))
 
 (provide 'init-ruby)
