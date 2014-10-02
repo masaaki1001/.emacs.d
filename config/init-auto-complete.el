@@ -36,8 +36,7 @@
 (dolist (hook '(text-mode-hook git-commit-mode-hook))
   (add-hook hook 'ac-ispell-ac-setup))
 
-(eval-after-load "yasnippet"
-  '(progn
-     (setq-default ac-sources (append '(ac-source-yasnippet) ac-sources))))
+(with-eval-after-load "yasnippet"
+  (setq-default ac-sources (append '(ac-source-yasnippet) ac-sources)))
 
 (provide 'init-auto-complete)

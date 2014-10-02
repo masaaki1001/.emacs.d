@@ -48,15 +48,14 @@
 ;; 確認なしでヒストリ保存
 (setq eshell-ask-to-save-history (quote always))
 ;; alias
-(eval-after-load "em-alias"
-  '(progn (eshell/alias "ll" "ls -la $*")))
+(with-eval-after-load "em-alias"
+  (eshell/alias "ll" "ls -la $*"))
 
 (setq eshell-directory-name (expand-file-name ".eshell" resource-dir))
 
-(eval-after-load "esh-opt"
-  '(progn
-     (require 'eshell-prompt-extras)
-     (setq eshell-highlight-prompt nil
-           eshell-prompt-function 'epe-theme-dakrone)))
+(with-eval-after-load "esh-opt"
+  (require 'eshell-prompt-extras)
+  (setq eshell-highlight-prompt nil
+        eshell-prompt-function 'epe-theme-dakrone))
 
 (provide 'init-eshell)

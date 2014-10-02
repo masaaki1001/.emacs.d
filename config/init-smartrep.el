@@ -12,49 +12,44 @@
     ))
 
 ;; multiple-cursors
-(eval-after-load "multiple-cursors"
-  '(progn
-     (smartrep-define-key
-         global-map "C-l"
-       '(("n" . 'mc/mark-next-like-this)
-         ("p" . 'mc/mark-previous-like-this)
-         ("a" . 'mc/mark-all-like-this)
-         ("i" . 'mc/interactive-insert-numbers)
-         ("I" . 'mc/insert-numbers)))))
+(with-eval-after-load "multiple-cursors"
+  (smartrep-define-key
+      global-map "C-l"
+    '(("n" . 'mc/mark-next-like-this)
+      ("p" . 'mc/mark-previous-like-this)
+      ("a" . 'mc/mark-all-like-this)
+      ("i" . 'mc/interactive-insert-numbers)
+      ("I" . 'mc/insert-numbers))))
 
 ;; org-mode
-(eval-after-load "org"
-  '(progn
-     (smartrep-define-key
-         org-mode-map "C-c"
-       '(("n" . 'outline-next-visible-heading)
-         ("p" . 'outline-previous-visible-heading)))))
+(with-eval-after-load "org"
+  (smartrep-define-key
+      org-mode-map "C-c"
+    '(("n" . 'outline-next-visible-heading)
+      ("p" . 'outline-previous-visible-heading))))
 
 ;; all-mode
-(eval-after-load "all"
-  '(progn
-     (smartrep-define-key
-         all-mode-map "M-g"
-       '(("n"   . 'next-error)
-         ("p"   . 'previous-error)
-         ("C-n" . 'next-error)
-         ("C-p" . 'previous-error)))))
+(with-eval-after-load "all"
+  (smartrep-define-key
+      all-mode-map "M-g"
+    '(("n"   . 'next-error)
+      ("p"   . 'previous-error)
+      ("C-n" . 'next-error)
+      ("C-p" . 'previous-error))))
 
 ;; goto-chg
-(eval-after-load "goto-chg"
-  '(progn
-     (smartrep-define-key
-         global-map "C-q"
-       '(("n" . 'goto-last-change)
-         ("p" . 'goto-last-change-reverse)))))
+(with-eval-after-load "goto-chg"
+  (smartrep-define-key
+      global-map "C-q"
+    '(("n" . 'goto-last-change)
+      ("p" . 'goto-last-change-reverse))))
 
 ;; point-undo
-(eval-after-load "point-undo"
-  '(progn
-     (smartrep-define-key
-         global-map "C-q"
-       '(("u" . 'point-undo)
-         ("r" . 'point-redo)))))
+(with-eval-after-load "point-undo"
+  (smartrep-define-key
+      global-map "C-q"
+    '(("u" . 'point-undo)
+      ("r" . 'point-redo))))
 
 (defun highlight-symbol-at-point-smartrep ()
   (interactive)
