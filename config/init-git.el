@@ -40,8 +40,7 @@
 
 (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 (define-key magit-status-mode-map (kbd "C-c a") 'my/magit-commit-extend)
-(define-key magit-status-mode-map (kbd "C-c r") 'magit-interactive-rebase) ;; default keybind 'E'
-(define-key magit-status-mode-map (kbd "C-c C-r") 'my/magit-reset-soft-head)
+(define-key magit-status-mode-map (kbd "C-c r") 'my/magit-reset-soft-head)
 
 ;; http://www.clear-code.com/blog/2012/4/3.html
 ;; diffの表示方法を変更
