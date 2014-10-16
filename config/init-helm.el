@@ -44,7 +44,7 @@
 
 ;; helm-c-yasnippet
 (setq helm-c-yas-space-match-any-greedy t)
-(global-set-key (kbd "C-c y") 'helm-c-yas-complete)
+(global-set-key (kbd "C-c y") 'helm-yas-complete)
 
 (setq-default helm-open-junk-files-exclude '(".git"))
 (global-set-key (kbd "C-c M-j") 'helm-open-junk-files)
