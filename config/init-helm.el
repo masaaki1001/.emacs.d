@@ -12,7 +12,7 @@
 (helm-descbinds-mode)
 (helm-match-plugin-mode)
 (custom-set-faces
-  '(helm-match ((t (:inherit match)))))
+ '(helm-match ((t (:inherit match)))))
 
 (defun my/helm ()
   (interactive)
