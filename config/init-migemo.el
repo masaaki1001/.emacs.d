@@ -1,6 +1,5 @@
 ;; http://d.hatena.ne.jp/samurai20000/20100907/1283791433
-(when (and (executable-find "cmigemo")
-           (locate-library "migemo"))
+(when (executable-find "cmigemo")
   ;; デフォルトではmigemoを無効にする
   ;; http://www.meadowy.org/meadow/netinstall/wiki/PkgMigemo#a.emacs
   (setq migemo-isearch-enable-p nil)
