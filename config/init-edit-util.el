@@ -9,6 +9,7 @@
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 (with-eval-after-load "mutilple-cursors"
+  (require 'mc-interactive-insert-numbers)
   (define-key mc/mark-more-like-this-extended-keymap (kbd "C-s") 'phi-search)
   (define-key mc/mark-more-like-this-extended-keymap (kbd "C-r") 'phi-search-backward))
 

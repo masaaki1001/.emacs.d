@@ -114,3 +114,4 @@
 (depends-on "git-timemachine")
 (depends-on "eshell-prompt-extras")
 (depends-on "twittering-mode")
+(depends-on "phi-search")
