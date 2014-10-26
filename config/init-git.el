@@ -4,9 +4,9 @@
 (add-hook 'git-commit-mode-hook 'turn-off-auto-fill)
 
 ;; disable vc-mode
-(setq vc-handled-backends '())
-(with-eval-after-load "vc"
-  (remove-hook 'find-file-hooks 'vc-find-file-hook))
+(setq vc-handled-backends '(git))
+;; (with-eval-after-load "vc"
+;;   (remove-hook 'find-file-hooks 'vc-find-file-hook))
 
 (setq magit-save-some-buffers nil
       magit-unstage-all-confirm nil)
@@ -85,6 +85,6 @@
   (delete-window))
 
 (when is-mac
-  (setq magit-emacsclient-executable "/usr/local/Cellar/emacs/24.3/bin/emacsclient"))
+  (setq magit-emacsclient-executable "/usr/local/Cellar/emacs/24.4/bin/emacsclient"))
 
 (provide 'init-git)

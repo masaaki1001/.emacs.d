@@ -29,7 +29,8 @@
   (global-hl-line-mode) ;デフォルトはこの行だけでOK
   (set-face-background hl-line-face "#222222")
 
-  (add-hook 'window-setup-hook 'maximize-frame t))
+  ;; (add-hook 'window-setup-hook 'maximize-frame t)
+  (toggle-frame-maximized))
 
 (winner-mode t)
 ;; *scratch*の初期表示メッセージを消す
@@ -85,8 +86,9 @@
 (setq completion-ignore-case t)
 ;; cua-mode 矩形選択 C-RETで起動 M-x cua-modeでenabledにする
 ;; http://e-arrows.sakura.ne.jp/2010/02/vim-to-emacs.html
-(cua-mode t)
-(setq cua-enable-cua-keys nil) ;; 変なキーバインド禁止
+;; (cua-mode t)
+;; (setq cua-enable-cua-keys nil) ;; 変なキーバインド禁止
+
 ;; 選択範囲を色付け
 (transient-mark-mode 1)
 ;; 起動時のメッセージを消す
@@ -115,11 +117,11 @@
 (setq ring-bell-function 'ignore)
 ;; uniquify
 ;; http://d.hatena.ne.jp/yuheiomori0718/20111214/1323864339
-(require 'uniquify)
+;; (require 'uniquify)
 ;; filename<dir>形式のバッファ名にする
-(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+;; (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 ;; *で囲まれたバッファ名は対象外にする
-(setq uniquify-ignore-buffers-re "*[^*]+*")
+;; (setq uniquify-ignore-buffers-re "*[^*]+*")
 
 ;; 終了時にプロセスをkillしていいか聞いてこないようにする
 ;; http://d.hatena.ne.jp/kitokitoki/20101029/p3
@@ -156,6 +158,9 @@
 
 ;; *complations* バッファにてヘルプメッセージを表示しない．
 (setq completion-show-help nil)
+
+;; yankなどでregionで上書きするようにする
+(delete-selection-mode t)
 
 (require 'tramp)
 (setq tramp-persistency-file-name (expand-file-name "tramp" resource-dir))
