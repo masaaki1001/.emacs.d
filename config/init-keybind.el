@@ -61,6 +61,9 @@
 ;; shift + 矢印キー でwindowを移動
 (windmove-default-keybindings)
 
+;; cua-mode
+(global-set-key (kbd "C-x SPC") 'cua-rectangle-mark-mode)
+
 ;; ctrl-q
 (defvar ctrl-q-map (make-keymap))
 (define-key global-map (kbd "C-q") ctrl-q-map)

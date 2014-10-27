@@ -84,11 +84,6 @@
 ;; find-fileのファイル名補完時に大文字小文字を区別しない
 (setq read-file-name-completion-ignore-case t)
 (setq completion-ignore-case t)
-;; cua-mode 矩形選択 C-RETで起動 M-x cua-modeでenabledにする
-;; http://e-arrows.sakura.ne.jp/2010/02/vim-to-emacs.html
-;; (cua-mode t)
-;; (setq cua-enable-cua-keys nil) ;; 変なキーバインド禁止
-
 ;; 選択範囲を色付け
 (transient-mark-mode 1)
 ;; 起動時のメッセージを消す
