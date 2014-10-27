@@ -14,6 +14,7 @@
   (define-key mc/mark-more-like-this-extended-keymap (kbd "C-r") 'phi-search-backward))
 
 ;; smartparens
+(require 'smartparens-config)
 (smartparens-global-mode t)
 (setq sp-autoescape-string-quote nil)
 
