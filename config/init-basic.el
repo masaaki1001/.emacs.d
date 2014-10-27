@@ -110,13 +110,6 @@
 
 ;; beepを消す
 (setq ring-bell-function 'ignore)
-;; uniquify
-;; http://d.hatena.ne.jp/yuheiomori0718/20111214/1323864339
-;; (require 'uniquify)
-;; filename<dir>形式のバッファ名にする
-;; (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
-;; *で囲まれたバッファ名は対象外にする
-;; (setq uniquify-ignore-buffers-re "*[^*]+*")
 
 ;; 終了時にプロセスをkillしていいか聞いてこないようにする
 ;; http://d.hatena.ne.jp/kitokitoki/20101029/p3
