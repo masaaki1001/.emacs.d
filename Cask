@@ -22,7 +22,6 @@
 ;; (depends-on "dsvn")
 (depends-on "rainbow-mode")
 (depends-on "goto-chg")
-(depends-on "maxframe")
 (depends-on "color-moccur")
 (depends-on "moccur-edit" :git "https://github.com/emacsmirror/moccur-edit.git")
 (depends-on "diminish")
