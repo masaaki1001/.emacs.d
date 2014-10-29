@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: createSpy.jasmine
+# key: createSpy
+# group: jasmine
+# --
+jasmine.createSpy("$1", "$2");
