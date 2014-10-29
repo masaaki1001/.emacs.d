@@ -12,10 +12,10 @@
 
 ;; scratch-log
 ;; http://d.hatena.ne.jp/kitokitoki/20100612/p1
-;; (require 'scratch-log)
-;; (setq sl-scratch-log-file (expand-file-name ".scratch-log" resource-dir))
-;; (setq sl-prev-scratch-string-file (expand-file-name ".scratch-log-prev" resource-dir))
-;; (setq sl-restore-scratch-p t)
+(require 'scratch-log)
+(setq sl-scratch-log-file (expand-file-name ".scratch-log" resource-dir))
+(setq sl-prev-scratch-string-file (expand-file-name ".scratch-log-prev" resource-dir))
+(setq sl-restore-scratch-p t)
 
 ;; revive.el
 ;; http://d.hatena.ne.jp/gan2/20080203/1202032426
