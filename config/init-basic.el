@@ -30,7 +30,7 @@
   (set-face-background hl-line-face "#222222")
 
   ;; (add-hook 'window-setup-hook 'maximize-frame t)
-  (toggle-frame-maximized))
+  (add-hook 'window-setup-hook 'toggle-frame-maximized))
 
 (winner-mode t)
 ;; *scratch*の初期表示メッセージを消す
