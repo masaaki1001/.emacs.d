@@ -1,20 +1,18 @@
 (ac-config-default)
-
-(add-to-list 'ac-dictionary-directories
-             (expand-file-name  "ac-dict" user-emacs-directory))
-
-(ac-config-default)
-(setq-default ac-sources (append '(ac-source-words-in-buffer
-                                   ac-source-words-in-all-buffer
-                                   ac-source-imenu) ac-sources))
 (setq ac-use-quick-help t
       ac-quick-help-delay 1.0
       ac-use-menu-map t
       ac-use-fuzzy t
       ac-auto-start nil
-      ac-ignore-case nil
+      ;; ac-ignore-case nil
       ac-comphist-file (expand-file-name "ac-comphist.dat" resource-dir))
 
+(add-to-list 'ac-dictionary-directories
+             (expand-file-name  "ac-dict" user-emacs-directory))
+(setq-default ac-sources (append '(ac-source-dabbrev
+                                   ac-source-words-in-buffer
+                                   ac-source-words-in-all-buffer
+                                   ac-source-imenu) ac-sources))
 (ac-set-trigger-key "TAB")
 
 (define-key ac-completing-map (kbd "C-n") 'ac-next)
