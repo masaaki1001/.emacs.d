@@ -58,9 +58,6 @@
       (backward-kill-word 1)
     ad-do-it))
 
-;; shift + 矢印キー でwindowを移動
-(windmove-default-keybindings)
-
 ;; cua-mode
 (global-set-key (kbd "C-x SPC") 'cua-rectangle-mark-mode)
 
