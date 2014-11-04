@@ -29,7 +29,6 @@
   (global-hl-line-mode) ;デフォルトはこの行だけでOK
   (set-face-background hl-line-face "#222222")
 
-  ;; (add-hook 'window-setup-hook 'maximize-frame t)
   (add-hook 'window-setup-hook 'toggle-frame-maximized))
 
 (winner-mode t)
