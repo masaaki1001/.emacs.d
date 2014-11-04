@@ -24,7 +24,6 @@
                 coffee-mode
                 fundamental-mode
                 org-mode
-                web-mode
                 typescript-mode))
   (add-to-list 'ac-modes mode))
 
