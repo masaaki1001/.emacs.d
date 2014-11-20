@@ -20,12 +20,13 @@
         (helm-ff-transformer-show-only-basename nil))
     (helm
      :sources
-     (append '(helm-source-buffers-list
-               helm-source-ls-git
-               helm-source-recentf
-               helm-source-files-in-current-dir
-               helm-source-bm
-               helm-source-buffer-not-found)))))
+     `(helm-source-buffers-list
+       helm-source-recentf
+       ,(helm-make-source "Git files status" 'helm-ls-git-status-source)
+       ,(helm-make-source "Git files" 'helm-ls-git-source)
+       helm-source-files-in-current-dir
+       helm-source-bm
+       helm-source-buffer-not-found))))
 (global-set-key (kbd "C-;") 'my/helm)
 
 ;; helm-swoop
