@@ -60,7 +60,7 @@
 (depends-on "htmlize")
 (depends-on "emmet-mode")
 (depends-on "markdown-mode")
-(depends-on "scratch-log" :git "https://github.com/masutaka/scratch-log.git" :branch "fix-runnning-timer")
+(depends-on "scratch-log")
 (depends-on "session")
 (depends-on "savekill")
 (depends-on "sequential-command")
