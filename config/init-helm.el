@@ -50,6 +50,8 @@
 (setq-default helm-open-junk-files-exclude '(".git"))
 (global-set-key (kbd "C-c M-j") 'helm-open-junk-files)
 
+(setq helm-source-bm (delete '(multiline) helm-source-bm))
+
 (global-set-key (kbd "C-c C-f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "C-x C-m") 'helm-M-x)
