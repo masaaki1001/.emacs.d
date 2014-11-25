@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: toHaveBeenCalled
+# key: toHaveBeenCalled
+# group: jasmine
+# --
+expect($1).toHaveBeenCalled($2);
