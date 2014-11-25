@@ -1,7 +1,7 @@
 #! /bin/bash
 
 setup_ddskk() {
-    local tar_file="ddskk-15.1.tar.gz"
+    local tar_file="ddskk-15.2.tar.gz"
     local ddskk=${tar_file%%.tar.gz}
 
     echo "Setup DDSKK."
