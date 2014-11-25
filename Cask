@@ -35,7 +35,6 @@
 (depends-on "undohist")
 (depends-on "point-undo")
 (depends-on "quickrun")
-(depends-on "all-ext")
 (depends-on "ag")
 (depends-on "expand-region")
 (depends-on "multiple-cursors")

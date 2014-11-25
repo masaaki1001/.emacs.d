@@ -19,12 +19,6 @@
     ("i" . 'mc/interactive-insert-numbers)
     ("I" . 'mc/insert-numbers)))
 
-;; all-mode
-(smartrep-define-key
-    all-mode-map "M-g"
-  '(("n"   . 'next-error)
-    ("p"   . 'previous-error)))
-
 ;; goto-chg
 (smartrep-define-key
     global-map "C-q"

@@ -6,9 +6,6 @@
 ;; http://www.bookshelf.jp/elc/moccur-edit.el
 (require 'moccur-edit)
 
-;; all-ext
-(require 'all-ext)
-
 ;; wgrep-ag
 (with-eval-after-load "ag"
   (custom-set-variables
