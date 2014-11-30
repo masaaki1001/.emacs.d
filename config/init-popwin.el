@@ -1,4 +1,3 @@
-;; http://d.hatena.ne.jp/m2ym/20110120
 (require 'popwin)
 (setq display-buffer-function 'popwin:display-buffer)
 (setq popwin:close-popup-window-timer-interval 0.5)
