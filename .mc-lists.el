@@ -11,6 +11,7 @@
         cua-paste
         dabbrev-expand
         forward-sexp
+        kill-region
         org-yank
         seq-end
         seq-home
