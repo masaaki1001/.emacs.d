@@ -1,6 +1,8 @@
 ;; i-searchでのbackspace有効
 (define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
 
+(global-set-key (kbd "C-M-s") 'isearch-forward-symbol-at-point)
+
 (defun isearch-yank-symbol ()
   (interactive)
   (isearch-yank-internal (lambda () (forward-symbol 1) (point))))
