@@ -7,6 +7,7 @@
       helm-candidate-number-limit 300
       helm-quick-update t
       helm-delete-minibuffer-contents-from-point t
+      helm-samewindow nil
       helm-buffer-max-length 50)
 
 (helm-descbinds-mode)
