@@ -62,7 +62,7 @@
 (require 'init-eshell)
 ;; (require 'init-svn)
 (require 'init-git)
-(require 'init-ddskk)
+(require 'init-skk)
 (require 'init-yasnippet)
 (require 'init-hatena)
 (require 'init-modeline)
