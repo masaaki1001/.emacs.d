@@ -61,7 +61,6 @@
 (require 'init-edit-util)
 (require 'init-helm)
 (require 'init-eshell)
-;; (require 'init-svn)
 (require 'init-git)
 (require 'init-skk)
 (require 'init-yasnippet)

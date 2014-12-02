@@ -18,7 +18,6 @@
 (depends-on "rspec-mode")
 (depends-on "rinari")
 (depends-on "direx")
-;; (depends-on "dsvn")
 (depends-on "rainbow-mode")
 (depends-on "goto-chg")
 (depends-on "diminish")
