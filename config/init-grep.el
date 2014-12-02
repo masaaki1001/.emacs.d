@@ -1,11 +1,3 @@
-;; color-moccur
-;; http://www.bookshelf.jp/soft/meadow_50.html#SEC746
-(setq moccur-split-word t)
-
-;; moccur-edit
-;; http://www.bookshelf.jp/elc/moccur-edit.el
-(require 'moccur-edit)
-
 ;; wgrep-ag
 (with-eval-after-load "ag"
   (custom-set-variables
