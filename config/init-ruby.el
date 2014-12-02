@@ -7,8 +7,6 @@
                                      interpreter-mode-alist))
 
 (setq ruby-deep-indent-paren nil)
-
-;; ruby-indent
 (setq ruby-indent-level 2)
 (setq ruby-indent-tabs-mode nil)
 
@@ -19,13 +17,10 @@
 
 ;; ruby-block
 (add-hook 'ruby-mode-hook 'my/ruby-block-mode-hook)
-
 ;; rinari
 (setq rinari-rgrep-file-endings "*.rb *.erb *.yml *.js")
-
 ;; rspec-mode
 (custom-set-variables '(rspec-use-rake-flag nil))
-
 ;; robe
 (add-hook 'ruby-mode-hook 'robe-mode)
 (add-hook 'robe-mode-hook 'ac-robe-setup)
