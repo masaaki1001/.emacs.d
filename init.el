@@ -23,6 +23,7 @@
 
 (setq is-mac (eq system-type 'darwin))
 (setq is-linux (eq window-system 'x))
+(setq load-prefer-newer t)
 
 (require 'init-cask)
 (require 'init-mac)
