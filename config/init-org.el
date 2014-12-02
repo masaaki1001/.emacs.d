@@ -16,13 +16,6 @@
 (setq org-agenda-files (list (expand-file-name "todo.org" org-directory)))
 (setq org-log-done 'time)
 
-;; org-tree-slide.el
-;; http://pastelwill.jp/wiki/doku.php?id=emacs:org-tree-slide
-(global-set-key (kbd "<f6>") 'org-tree-slide-mode)
-(global-set-key (kbd "S-<f6>") 'org-tree-slide-skip-done-toggle)
-;; エフェクト無効化
-(org-tree-slide-simple-profile)
-
 (defun my/org-note ()
   "Open a new note entry in my notes file."
   (interactive)
