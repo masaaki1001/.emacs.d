@@ -17,7 +17,6 @@
 (depends-on "rbenv")
 (depends-on "rspec-mode")
 (depends-on "rinari")
-(depends-on "bundler")
 (depends-on "direx")
 ;; (depends-on "dsvn")
 (depends-on "rainbow-mode")
