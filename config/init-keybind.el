@@ -1,6 +1,7 @@
 (global-set-key (kbd "M-h") 'backward-kill-word)
 (global-set-key (kbd "C-m") 'newline-and-indent)
 (global-set-key (kbd "M-g") 'goto-line)
+(global-set-key (kbd "s-SPC") 'cycle-spacing)
 
 ;; 単語削除で切り取りではなく削除になるようにする
 ;; http://d.hatena.ne.jp/syohex/20110329/
