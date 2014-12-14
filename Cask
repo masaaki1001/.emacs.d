@@ -34,7 +34,6 @@
 (depends-on "ag")
 (depends-on "expand-region")
 (depends-on "multiple-cursors")
-(depends-on "bash-completion")
 (depends-on "yagist")
 (depends-on "scala-mode2")
 (depends-on "ensime")
