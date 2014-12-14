@@ -48,9 +48,7 @@
 (setq helm-c-yas-space-match-any-greedy t)
 (global-set-key (kbd "C-c y") 'helm-yas-complete)
 
-(setq-default helm-open-junk-files-exclude '(".git"))
-(global-set-key (kbd "C-c M-j") 'helm-open-junk-files)
-
+;; http://rubikitch.com/2014/11/22/helm-bm/
 (setq helm-source-bm (delete '(multiline) helm-source-bm))
 
 (global-set-key (kbd "C-c C-f") 'helm-find-files)
@@ -64,6 +62,7 @@
 (global-set-key (kbd "C-M-z") 'helm-resume)
 (global-set-key (kbd "C-c M-/") 'helm-dabbrev)
 (global-set-key (kbd "C-c C-p") 'helm-projectile)
+(global-set-key (kbd "C-c M-j") 'helm-open-junk-files)
 
 (define-key helm-map (kbd "C-p")   'helm-previous-line)
 (define-key helm-map (kbd "C-n")   'helm-next-line)
