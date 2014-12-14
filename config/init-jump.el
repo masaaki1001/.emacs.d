@@ -5,9 +5,11 @@
 (global-set-key (kbd "C-c C-j") 'jaunte)
 
 ;; ace-jump-mode
-;; http://d.hatena.ne.jp/syohex/20120304/1330822993
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
 (global-set-key (kbd "C-.") 'ace-jump-mode)
+
+;; ace-jump-zap
+(global-set-key (kbd "M-z") 'ace-jump-zap-to-char)
 
 ;; goto-chg
 (define-key global-map (kbd "C-c /") 'goto-last-change)
