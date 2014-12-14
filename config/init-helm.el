@@ -21,7 +21,7 @@
         (helm-ff-transformer-show-only-basename nil))
     (helm
      :sources
-     `(helm-source-buffers-list
+     `(,(helm-make-source "Buffers" 'helm-source-buffers)
        ,(helm-make-source "Git files status" 'helm-ls-git-status-source)
        ,(helm-make-source "Git files" 'helm-ls-git-source)
        helm-source-recentf
