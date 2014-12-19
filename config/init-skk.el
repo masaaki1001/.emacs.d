@@ -4,7 +4,7 @@
 ;; http://www.bookshelf.jp/texi/skk/skk_4.html#SEC15
 (require 'skk-autoloads)
 ;; http://sheephead.homelinux.org/2010/06/18/1894/
-(setq skk-user-directory (expand-file-name "ddskk" user-emacs-directory))
+(setq skk-user-directory (expand-file-name ".skk" user-emacs-directory))
 ;; (setq skk-jisyo (expand-file-name "jisyo" resource-dir))
 (setq skk-large-jisyo (expand-file-name "SKK-JISYO.L" skk-user-directory))
 

@@ -15,9 +15,9 @@ setup_ddskk() {
     cd ../
 
     # set config
-    echo "(setq SKK_DATADIR \"~/.emacs.d/ddskk\")" >> SKK-CFG
-    echo "(setq SKK_INFODIR \"~/.emacs.d/ddskk/info\")" >> SKK-CFG
-    echo "(setq SKK_LISPDIR \"~/.emacs.d/ddskk/site-lisp\")" >> SKK-CFG
+    echo "(setq SKK_DATADIR \"~/.emacs.d/.skk\")" >> SKK-CFG
+    echo "(setq SKK_INFODIR \"~/.emacs.d/.skk/info\")" >> SKK-CFG
+    echo "(setq SKK_LISPDIR \"~/.emacs.d/.skk/site-lisp\")" >> SKK-CFG
     echo "(setq SKK_SET_JISYO t)" >> SKK-CFG
     make install EMACS=/Applications/Emacs.app/Contents/MacOS/Emacs
 

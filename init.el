@@ -1,7 +1,7 @@
 (setq load-path (append '("~/.emacs.d/elisp"
                           "~/.emacs.d/config"
                           "~/.emacs.d/auto-install"
-                          "~/.emacs.d/ddskk/site-lisp"
+                          "~/.emacs.d/.skk/site-lisp"
                           )
                         load-path))
 
