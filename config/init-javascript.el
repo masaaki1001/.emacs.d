@@ -13,6 +13,7 @@
 (with-eval-after-load "js2-mode"
   (js2-imenu-extras-setup)
   (js2r-add-keybindings-with-prefix "C-c C-m")
+  (define-key js2-mode-map (kbd "C-c C-o") nil) ; enable helm-swoop
   (define-key js2-mode-map (kbd "C-c C-r") 'js2r-rename-var))
 
 (require 'json)

@@ -36,6 +36,8 @@
  '(helm-swoop-target-line-face ((t (:background "dark olive green"))))
  '(helm-swoop-target-word-face ((t nil))))
 (setq helm-swoop-pre-input-function 'ignore)
+(setq helm-swoop-speed-or-color t)
+(setq helm-swoop-use-line-number-face t)
 (global-set-key (kbd "C-c C-o") 'helm-swoop)
 (define-key isearch-mode-map (kbd "C-o") 'helm-swoop-from-isearch)
 
