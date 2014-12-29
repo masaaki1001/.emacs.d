@@ -2,27 +2,22 @@
 ;; http://openlab.ring.gr.jp/skk/index-j.html
 ;; http://quruli.ivory.ne.jp/document/ddskk_14.2/skk_toc.html#SEC_Contents
 ;; http://www.bookshelf.jp/texi/skk/skk_4.html#SEC15
+(require 'skk)
 (require 'skk-autoloads)
+(require 'skk-study)
 ;; http://sheephead.homelinux.org/2010/06/18/1894/
 (setq skk-user-directory (expand-file-name ".skk" user-emacs-directory))
 ;; (setq skk-jisyo (expand-file-name "jisyo" resource-dir))
 (setq skk-large-jisyo (expand-file-name "SKK-JISYO.L" skk-user-directory))
-
 ;; skk用にshift-stickyを";"に設定する
 (setq skk-sticky-key ";")
-
 ;; C-x j で skk モードを起動
 (global-set-key (kbd "C-x j") 'skk-mode)
 ;; .skk を自動的にバイトコンパイル
 (setq skk-byte-compile-init-file t)
-(require 'info)
 (add-to-list 'Info-additional-directory-list (expand-file-name "info" skk-user-directory))
 ;;チュートリアルの場所設定
 (setq skk-tut-file (expand-file-name "SKK.tut" skk-user-directory))
-;; メッセージを日本語で通知する
-(setq skk-japanese-message-and-error t)
-;; メニューを日本語で表示する
-(setq skk-show-japanese-menu t)
 ;; 変換時に注釈 (annotation) を表示する
 (setq skk-show-annotation t)
 ;; 変換候補一覧と注釈 (annotation) を GUI ぽく表示する
@@ -39,24 +34,29 @@
 (setq skk-henkan-strict-okuri-precedence t)
 ;; 辞書登録のとき、余計な送り仮名を送らないようにする
 (setq skk-check-okurigana-on-touroku 'auto)
-;; 変換の学習
-(require 'skk-study)
 ;;単漢字検索のキーを!にする
-(setq skk-tankan-search-key ?!)
+;; (setq skk-tankan-search-key ?!)
 ;; モード表示の色を設定する
 (setq skk-indicator-use-cursor-color nil)
 (setq skk-emacs-hiragana-face "LimeGreen")
 ;; 動的補完の可否を判定するより高度な設定例
-(setq skk-dcomp-activate
-      #'(lambda ()
-          (and
-           ;; -nw では動的補完をしない。
-           window-system
-           ;; 基本的に行末のときのみ補完する。ただし行末でなくても現在の
-           ;; ポイントから行末までの文字が空白のみだったら補完する。
-           (or (eolp)
-               (looking-at "[ \t]+$")))))
+;; (setq skk-dcomp-activate
+;;       #'(lambda ()
+;;           (and
+;;            ;; -nw では動的補完をしない。
+;;            window-system
+;;            ;; 基本的に行末のときのみ補完する。ただし行末でなくても現在の
+;;            ;; ポイントから行末までの文字が空白のみだったら補完する。
+;;            (or (eolp)
+;;                (looking-at "[ \t]+$")))))
 ;; 動的補完で候補を複数表示する
 (setq skk-dcomp-multiple-activate t)
+
+;; (setq skk-status-indicator 'left)
+(defun my/skk-hook ()
+  (skk-latin-mode t))
+(add-hook 'find-file-hooks 'my/skk-hook)
+
+;; (setq skk-isearch-start-mode 'latin)
 
 (provide 'init-skk)
