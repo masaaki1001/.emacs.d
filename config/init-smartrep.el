@@ -1,9 +1,5 @@
 ;; http://sheephead.homelinux.org/2011/12/19/6930/
 (require 'smartrep)
-;; (setq orig-binding (key-binding "\C-l")) ; default key bind backup
-;; (global-set-key (kbd "C-l") nil)
-;; (global-set-key (kbd "C-l C-l") 'recenter-top-bottom)
-;; (global-set-key "\C-l" orig-binding) ; default key bind revert
 
 (defadvice smartrep-map-internal (around smartrep-silence-echo-keystrokes activate)
   (let ((echo-keystrokes 0))
@@ -44,13 +40,10 @@
       (smartrep-read-event-loop
        '(("p" . highlight-symbol-prev)
          ("n" . highlight-symbol-next)
-         ("C-s" . highlight-symbol-next)
-         ("C-r" . highlight-symbol-prev)
          ("P" . highlight-symbol-prev-in-defun)
          ("N" . highlight-symbol-next-in-defun)
          ("X" . highlight-symbol-remove-all)
          ("L" . highlight-symbol-list-all)
-         ("a" . highlight-symbol-all)
          ("x" . highlight-symbol-at-point)))
     (quit (highlight-symbol-at-point))))
 (global-set-key (kbd "C-c s") 'highlight-symbol-at-point-smartrep)
