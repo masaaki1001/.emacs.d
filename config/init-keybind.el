@@ -40,10 +40,10 @@
 ;; http://emacs.g.hatena.ne.jp/k1LoW/20101211/1292046538
 (require 'sequential-command)
 (define-sequential-command seq-home
-  back-to-indentation  beginning-of-line beginning-of-buffer seq-return)
+  back-to-indentation  beginning-of-line seq-return)
 (global-set-key (kbd "C-a") 'seq-home)
 (define-sequential-command seq-end
-  end-of-line end-of-buffer seq-return)
+  end-of-line seq-return)
 (global-set-key (kbd "C-e") 'seq-end)
 
 ;; duplicate-thing
