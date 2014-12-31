@@ -44,7 +44,7 @@
 ;; helm-ls-git
 (setq helm-ls-git-status-command 'magit-status)
 (setq helm-ls-git-show-abs-or-relative 'relative)
-(global-set-key (kbd "C-c :") 'helm-ls-git-ls)
+(global-set-key (kbd "C-c ;") 'helm-ls-git-ls)
 
 ;; helm-c-yasnippet
 (setq helm-c-yas-space-match-any-greedy t)
