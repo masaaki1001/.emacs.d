@@ -19,7 +19,11 @@
 
 ;; tern.js
 (autoload 'tern-mode "tern.el" nil t)
-;;(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+;; (add-hook 'js2-mode-hook '(lambda () (tern-mode t)))
+(with-eval-after-load "tern"
+  (require 'tern-auto-complete)
+  (tern-ac-setup))
+
 (with-eval-after-load "tern"
   (tern-ac-setup))
 
