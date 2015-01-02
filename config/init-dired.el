@@ -1,7 +1,6 @@
 (with-eval-after-load "dired"
   (add-hook 'dired-mode-hook 'turn-on-gnus-dired-mode)
   (load-library "ls-lisp")
-  (load-library "sorter")
   (setq ls-lisp-dirs-first t)
   (require 'wdired)
   (require 'joseph-single-dired)
