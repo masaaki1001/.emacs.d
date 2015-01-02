@@ -28,7 +28,6 @@
 (global-set-key (kbd "C-t") 'switch-to-last-buffer-or-other-window)
 
 ;; zlc
-;; http://d.hatena.ne.jp/mooz/20101003/p1
 (zlc-mode t)
 
 (provide 'init-buffer)
