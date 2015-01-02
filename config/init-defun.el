@@ -80,11 +80,4 @@
         (set-frame-parameter nil 'alpha 100)
       (set-frame-parameter nil 'alpha 80))))
 
-;; New macro `with-eval-after-load' in Emacs 24.4
-;; http://www.lunaryorn.com/2013/06/25/introducing-with-eval-after-load.html
-(unless (fboundp 'with-eval-after-load)
-  (defmacro with-eval-after-load (file &rest body)
-    `(eval-after-load ,file
-       `(funcall (function ,(lambda () ,@body))))))
-
 (provide 'init-defun)
