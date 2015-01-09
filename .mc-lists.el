@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        backward-sexp
         cua--prefix-repeat-handler
         cua--shift-control-c-prefix
         cua-copy-region
@@ -10,6 +11,7 @@
         cua-delete-region
         cua-paste
         dabbrev-expand
+        delete-word
         forward-sexp
         kill-region
         org-yank
