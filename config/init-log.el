@@ -17,6 +17,11 @@
 (setq sl-prev-scratch-string-file (expand-file-name ".scratch-log-prev" resource-dir))
 (setq sl-restore-scratch-p t)
 
+;; saveplace
+(require 'saveplace)
+(setq save-place-file (expand-file-name ".emacs-places" resource-dir))
+(setq-default save-place t)
+
 ;; revive.el
 ;; http://d.hatena.ne.jp/gan2/20080203/1202032426
 ;; http://tech.kayac.com/archive/emacs.html
