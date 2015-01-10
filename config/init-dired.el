@@ -1,4 +1,4 @@
-(with-eval-after-load "dired"
+(with-eval-after-load 'dired
   (add-hook 'dired-mode-hook 'turn-on-gnus-dired-mode)
   (load-library "ls-lisp")
   (setq ls-lisp-dirs-first t)

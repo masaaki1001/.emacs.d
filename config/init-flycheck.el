@@ -5,7 +5,7 @@
 (setq flycheck-check-syntax-automatically '(save idle-change mode-enabled)
       flycheck-idle-change-delay 10)
 
-(with-eval-after-load "flycheck"
+(with-eval-after-load 'flycheck
   (require 'projectile)
   (defcustom flycheck-tslintrc-file-name "./config/tslint.json"
     "Customize config file name"

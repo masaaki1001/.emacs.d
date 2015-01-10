@@ -1,5 +1,5 @@
 ;; wgrep-ag
-(with-eval-after-load "ag"
+(with-eval-after-load 'ag
   (custom-set-variables
     '(ag-highlight-search t))
   (autoload 'wgrep-ag-setup "wgrep-ag")

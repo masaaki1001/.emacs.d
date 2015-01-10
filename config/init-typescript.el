@@ -1,6 +1,6 @@
 (add-to-list 'auto-mode-alist '("\\.ts$" . typescript-mode))
 
-(with-eval-after-load "typescript"
+(with-eval-after-load 'typescript
   (setq require-final-newline t)
   (setq typescript-auto-indent-flag nil)
   (define-key typescript-mode-map (kbd "C-c C-j") nil)

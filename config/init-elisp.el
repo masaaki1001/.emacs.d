@@ -1,4 +1,4 @@
-(with-eval-after-load "eldoc"
+(with-eval-after-load 'eldoc
   (require 'eldoc-extension)
   (setq eldoc-idle-delay 0.2)
   (set-face-attribute 'eldoc-highlight-function-argument nil

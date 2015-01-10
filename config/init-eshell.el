@@ -38,10 +38,10 @@
 (setq eshell-ask-to-save-history (quote always))
 (setq eshell-directory-name (expand-file-name ".eshell" resource-dir))
 ;; alias
-(with-eval-after-load "em-alias"
+(with-eval-after-load 'em-alias
   (eshell/alias "ll" "ls -la $*"))
 
-(with-eval-after-load "esh-opt"
+(with-eval-after-load 'esh-opt
   (require 'eshell-prompt-extras)
   (setq eshell-highlight-prompt nil
         eshell-prompt-function 'epe-theme-dakrone))
