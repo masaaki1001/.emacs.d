@@ -19,6 +19,7 @@
 (define-key ac-completing-map (kbd "C-p") 'ac-previous)
 (define-key ac-completing-map (kbd "C-s") 'ac-isearch)
 (define-key ac-completing-map (kbd "<tab>") 'ac-complete)
+(define-key ac-completing-map (kbd "C-m") 'ac-complete)
 
 (dolist (mode '(text-mode
                 coffee-mode
