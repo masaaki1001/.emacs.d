@@ -3,11 +3,6 @@
 ;; 72文字折り返しを無効化
 (add-hook 'git-commit-mode-hook 'turn-off-auto-fill)
 
-;; disable vc-mode
-(setq vc-handled-backends '(git))
-;; (with-eval-after-load "vc"
-;;   (remove-hook 'find-file-hooks 'vc-find-file-hook))
-
 (setq magit-save-some-buffers nil
       magit-unstage-all-confirm nil)
 

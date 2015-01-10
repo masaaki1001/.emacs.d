@@ -39,16 +39,6 @@
 ;; モード表示の色を設定する
 (setq skk-indicator-use-cursor-color nil)
 (setq skk-emacs-hiragana-face "LimeGreen")
-;; 動的補完の可否を判定するより高度な設定例
-;; (setq skk-dcomp-activate
-;;       #'(lambda ()
-;;           (and
-;;            ;; -nw では動的補完をしない。
-;;            window-system
-;;            ;; 基本的に行末のときのみ補完する。ただし行末でなくても現在の
-;;            ;; ポイントから行末までの文字が空白のみだったら補完する。
-;;            (or (eolp)
-;;                (looking-at "[ \t]+$")))))
 ;; 動的補完で候補を複数表示する
 (setq skk-dcomp-multiple-activate t)
 

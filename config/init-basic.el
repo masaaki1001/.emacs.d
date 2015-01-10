@@ -10,20 +10,13 @@
 (setq locale-coding-system      'utf-8)
 ;; Scrollを１行毎に
 (setq scroll-step 1)
-;; Widow設定
-;; http://d.hatena.ne.jp/mizchi/20100828/1282940866
 (when window-system
-  ;; 半透明にする
-  ;; パラメータは、順に通常のフレーム、アクティブでないフレームのフレームの透明度を表す
-  ;; (modify-all-frames-parameters
-  ;;  (list (cons 'alpha  '(80 50))))
-  ;; (set-frame-parameter nil 'alpha 80)
   (set-background-color "Black")
   (set-foreground-color "White")
   (set-cursor-color "Gray")
-  (menu-bar-mode -1) ;; メニューバーを消す
-  (tool-bar-mode -1) ;; ツールバーを消す
-  (toggle-scroll-bar nil) ;; スクロールバーを消す
+  (menu-bar-mode -1)
+  (tool-bar-mode -1)
+  (toggle-scroll-bar nil)
   ;; 現在行を目立たせる
   ;; http://d.hatena.ne.jp/khyiker/20070409/emacs_hl_line
   (global-hl-line-mode) ;デフォルトはこの行だけでOK
@@ -92,7 +85,6 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 ;; メニューバーにファイルパスを表示する
 (setq frame-title-format
-      ;(format "%%f - Emacs@%s" (system-name)))
       (format "%%f - Emacs" (system-name)))
 
 ;; 行間を開く
@@ -156,7 +148,5 @@
 (require 'server)
 (unless (server-running-p)
   (server-start))
-
-(require 'filecache)
 
 (provide 'init-basic)

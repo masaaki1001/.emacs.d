@@ -37,7 +37,6 @@
 ;; helm-swoop
 (setq helm-swoop-pre-input-function 'ignore
       helm-swoop-speed-or-color t
-
       helm-swoop-use-line-number-face t)
 (global-set-key (kbd "C-c C-o") 'helm-swoop)
 (define-key isearch-mode-map (kbd "C-o") 'helm-swoop-from-isearch)

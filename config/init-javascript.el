@@ -24,9 +24,6 @@
   (require 'tern-auto-complete)
   (tern-ac-setup))
 
-(with-eval-after-load "tern"
-  (tern-ac-setup))
-
 ;; coffee-mode
 (defun my/coffee-mode-hook ()
   (and (set (make-local-variable 'tab-width) 2)
