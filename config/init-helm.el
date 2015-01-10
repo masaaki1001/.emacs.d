@@ -42,8 +42,6 @@
 (define-key isearch-mode-map (kbd "C-o") 'helm-swoop-from-isearch)
 
 ;; helm-ls-git
-(setq helm-ls-git-status-command 'magit-status
-      helm-ls-git-show-abs-or-relative 'relative)
 (global-set-key (kbd "C-c ;") 'helm-ls-git-ls)
 
 ;; helm-c-yasnippet
