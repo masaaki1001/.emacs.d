@@ -90,9 +90,9 @@
 ;; 以下の書式に従ってモードラインに日付 時刻を表示する
 (setq display-time-string-forms
       '((format "%s/%s/%s(%s) %s:%s"
-          year month day
-          dayname
-          24-hours minutes)))
+                year month day
+                dayname
+                24-hours minutes)))
 (setq display-time-day-and-date t)
 (display-time)
 
