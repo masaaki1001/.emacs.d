@@ -41,7 +41,8 @@
                 prodigy-mode-hook
                 calendar-mode-hook
                 eshell-mode-hook
-                eww-mode-hook))
+                eww-mode-hook
+                minibuffer-setup-hook))
   (add-hook hook 'my/no-trailing-whitespace))
 
 ;; カーソルの設定
