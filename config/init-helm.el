@@ -40,6 +40,8 @@
 
 ;; helm-ls-git
 (global-set-key (kbd "C-c ;") 'helm-ls-git-ls)
+;; helm-ag
+(setq helm-ag-insert-at-point 'symbol)
 
 ;; helm-c-yasnippet
 (setq helm-c-yas-space-match-any-greedy t)
