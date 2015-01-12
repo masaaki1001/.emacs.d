@@ -29,28 +29,27 @@
        helm-source-files-in-current-dir
        helm-source-bm
        helm-source-buffer-not-found))))
-(global-set-key (kbd "C-;") 'my/helm)
 
 ;; helm-swoop
 (setq helm-swoop-pre-input-function 'ignore
       helm-swoop-speed-or-color t
       helm-swoop-use-line-number-face t)
-(global-set-key (kbd "C-c C-o") 'helm-swoop)
 (define-key isearch-mode-map (kbd "C-o") 'helm-swoop-from-isearch)
 
-;; helm-ls-git
-(global-set-key (kbd "C-c ;") 'helm-ls-git-ls)
 ;; helm-ag
 (setq helm-ag-insert-at-point 'symbol)
 
 ;; helm-c-yasnippet
 (setq helm-c-yas-space-match-any-greedy t)
-(global-set-key (kbd "C-c y") 'helm-yas-complete)
 
 ;; helm-bm
 ;; http://rubikitch.com/2014/11/22/helm-bm/
 (setq helm-source-bm (delete '(multiline) helm-source-bm))
 
+(global-set-key (kbd "C-;") 'my/helm)
+(global-set-key (kbd "C-c C-o") 'helm-swoop)
+(global-set-key (kbd "C-c ;") 'helm-ls-git-ls)
+(global-set-key (kbd "C-c y") 'helm-yas-complete)
 (global-set-key (kbd "C-c C-f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "C-x C-m") 'helm-M-x)
