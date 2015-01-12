@@ -7,10 +7,11 @@
       helm-candidate-number-limit 300
       helm-delete-minibuffer-contents-from-point t
       helm-samewindow nil
-      helm-buffer-max-length 50)
 
 (helm-descbinds-mode)
 (helm-match-plugin-mode)
+      helm-buffer-max-length 50
+      helm-M-x-fuzzy-match t)
 
 (custom-set-faces
  '(helm-match ((t (:inherit match))))
