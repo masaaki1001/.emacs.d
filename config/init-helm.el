@@ -47,6 +47,7 @@
 (setq helm-c-yas-space-match-any-greedy t)
 (global-set-key (kbd "C-c y") 'helm-yas-complete)
 
+;; helm-bm
 ;; http://rubikitch.com/2014/11/22/helm-bm/
 (setq helm-source-bm (delete '(multiline) helm-source-bm))
 
