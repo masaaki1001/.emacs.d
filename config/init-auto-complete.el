@@ -4,11 +4,12 @@
       ac-use-menu-map t
       ac-use-fuzzy t
       ac-auto-start nil
-      ;; ac-ignore-case nil
+      ac-ignore-case nil
       ac-comphist-file (expand-file-name "ac-comphist.dat" resource-dir))
 
 (add-to-list 'ac-dictionary-directories
              (expand-file-name  "ac-dict" user-emacs-directory))
+
 (setq-default ac-sources (append '(ac-source-dabbrev
                                    ac-source-words-in-buffer
                                    ac-source-words-in-all-buffer
@@ -24,8 +25,7 @@
 (dolist (mode '(text-mode
                 coffee-mode
                 fundamental-mode
-                org-mode
-                typescript-mode))
+                org-mode))
   (add-to-list 'ac-modes mode))
 
 (ac-ispell-setup)
