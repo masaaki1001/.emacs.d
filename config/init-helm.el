@@ -34,13 +34,11 @@
 (setq helm-swoop-pre-input-function 'ignore
       helm-swoop-speed-or-color t
       helm-swoop-use-line-number-face t)
+
 (define-key isearch-mode-map (kbd "C-o") 'helm-swoop-from-isearch)
 
 ;; helm-ag
 (setq helm-ag-insert-at-point 'symbol)
-
-;; helm-c-yasnippet
-(setq helm-c-yas-space-match-any-greedy t)
 
 ;; helm-bm
 ;; http://rubikitch.com/2014/11/22/helm-bm/
