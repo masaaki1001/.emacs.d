@@ -133,6 +133,9 @@
 ;; electric-indent-mode disable
 (electric-indent-mode -1)
 
+;; electric-pair-mode
+(electric-pair-mode -1)
+
 ;; *complations* バッファにてヘルプメッセージを表示しない．
 (setq completion-show-help nil)
 
