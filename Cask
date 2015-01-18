@@ -103,3 +103,4 @@
 (depends-on "eshell-prompt-extras")
 (depends-on "twittering-mode")
 (depends-on "phi-search")
+(depends-on "edit-server")

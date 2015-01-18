@@ -22,4 +22,9 @@
 ;; move-text
 (move-text-default-bindings)
 
+;; edit-server
+(require 'edit-server)
+(setq edit-server-new-frame nil)
+(edit-server-start)
+
 (provide 'init-edit-util)
