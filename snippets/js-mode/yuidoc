@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: YUI Doc
-# key: yuidoc
+# key: /**
 # --
 /**
 * $1
