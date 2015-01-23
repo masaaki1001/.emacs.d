@@ -11,8 +11,7 @@
 (with-eval-after-load 'multiple-cursors
   (require 'mc-interactive-insert-numbers)
   (define-key mc/keymap (kbd "C-'") 'mc-hide-unmatched-lines-mode)
-  (define-key mc/keymap (kbd "C-s") 'phi-search)
-  (define-key mc/keymap (kbd "C-r") 'phi-search-backward))
+  (define-key mc/keymap (kbd "C-'") 'mc-hide-unmatched-lines-mode))
 
 ;; smartparens
 (require 'smartparens-config)
