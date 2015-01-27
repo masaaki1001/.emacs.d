@@ -9,6 +9,7 @@
 
 ;; ace-jump-zap
 (global-set-key (kbd "M-z") 'ace-jump-zap-to-char)
+(global-set-key (kbd "C-c M-z") 'ace-jump-zap-up-to-char)
 
 ;; goto-chg
 (define-key global-map (kbd "C-c /") 'goto-last-change)
