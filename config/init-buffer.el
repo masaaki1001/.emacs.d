@@ -29,5 +29,9 @@
 
 ;; zlc
 (zlc-mode t)
+(let ((map minibuffer-local-map))
+  ;;; like menu select
+  (define-key map (kbd "C-n")  'zlc-select-next-vertical)
+  (define-key map (kbd "C-p")    'zlc-select-previous-vertical))
 
 (provide 'init-buffer)
