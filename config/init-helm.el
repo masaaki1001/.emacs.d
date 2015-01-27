@@ -6,6 +6,7 @@
       helm-exit-idle-delay 0
       helm-candidate-number-limit 300
       helm-delete-minibuffer-contents-from-point t
+      helm-ff-file-name-history-use-recentf t
       helm-samewindow nil
       helm-buffer-max-length 50
       helm-M-x-fuzzy-match t)
