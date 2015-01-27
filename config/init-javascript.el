@@ -7,7 +7,7 @@
 
 ;; jasmineを除外
 (dolist (jasmine '("jasmine" "describe" "context" "beforeEach" "it" "expect" "afterEach" "spyOn" "spySuperOn"))
-    (add-to-list 'js2-global-externs jasmine))
+  (add-to-list 'js2-global-externs jasmine))
 
 (with-eval-after-load 'js2-mode
   (js2-imenu-extras-setup)
