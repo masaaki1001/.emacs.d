@@ -47,6 +47,7 @@
 
 (global-set-key (kbd "C-;") 'my/helm)
 (global-set-key (kbd "C-c C-o") 'helm-swoop)
+(global-set-key (kbd "C-c C-a") 'helm-ag)
 (global-set-key (kbd "C-c ;") 'helm-ls-git-ls)
 (global-set-key (kbd "C-c y") 'helm-yas-complete)
 (global-set-key (kbd "C-c C-f") 'helm-find-files)
