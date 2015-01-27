@@ -26,4 +26,5 @@
 
 (setq mc/cmds-to-run-once
       '(
+        highlight-symbol-next
         ))
