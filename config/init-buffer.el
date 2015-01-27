@@ -4,7 +4,7 @@
 (defvar last-buffer-saved nil)
 ;; last-bufferで選択しないバッファを設定
 (defvar last-buffer-exclude-name-regexp
-  (rx (or "*mplayer*" "*Completions*" "*Org Export/Publishing Help*" "*Messages*" "*anything*" "*Warnings*" "*Packages*" "TAGS"
+  (rx (or "*mplayer*" "*Completions*" "*Org Export/Publishing Help*" "*Messages*" "*Warnings*" "*Packages*" "TAGS"
           (regexp "^ "))))
 (defun record-last-buffer ()
   (when (and (one-window-p)
