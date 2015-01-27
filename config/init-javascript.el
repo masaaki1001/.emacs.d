@@ -15,7 +15,8 @@
   (define-key js2-mode-map (kbd "C-c C-o") nil) ; enable helm-swoop
   (define-key js2-mode-map (kbd "C-c C-r") 'js2r-rename-var))
 
-(require 'json)
+(with-eval-after-load 'json-mode
+  (setq json-reformat:pretty-string? t))
 
 ;; tern.js
 (autoload 'tern-mode "tern.el" nil t)
