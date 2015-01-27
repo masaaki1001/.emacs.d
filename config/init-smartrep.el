@@ -9,11 +9,13 @@
 ;; multiple-cursors
 (smartrep-define-key
     global-map "C-q"
-  '(("n" . 'mc/mark-next-like-this)
+  '(("n" . '/mark-next-like-this)
     ("p" . 'mc/mark-previous-like-this)
     ("a" . 'mc/mark-all-like-this)
     ("i" . 'mc/interactive-insert-numbers)
-    ("I" . 'mc/insert-numbers)))
+    ("I" . 'mc/insert-numbers)
+    ("j" . 'mc/cycle-forward)
+    ("k" . 'mc/cycle-backward)))
 
 ;; goto-chg
 (smartrep-define-key
