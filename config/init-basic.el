@@ -130,11 +130,14 @@
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-verbose nil)
 
-;; electric-indent-mode disable
+;; electric-indent-mode
 (electric-indent-mode -1)
 
 ;; electric-pair-mode
 (electric-pair-mode -1)
+
+;; electric-layout-mode
+(electric-layout-mode -1)
 
 ;; *complations* バッファにてヘルプメッセージを表示しない．
 (setq completion-show-help nil)
