@@ -9,13 +9,18 @@
 ;; multiple-cursors
 (smartrep-define-key
     global-map "C-q"
-  '(("n" . '/mark-next-like-this)
+  '(("n" . 'mc/mark-next-like-this)
     ("p" . 'mc/mark-previous-like-this)
     ("a" . 'mc/mark-all-like-this)
     ("i" . 'mc/interactive-insert-numbers)
     ("I" . 'mc/insert-numbers)
     ("j" . 'mc/cycle-forward)
-    ("k" . 'mc/cycle-backward)))
+    ("k" . 'mc/cycle-backward)
+    ("u" . 'mc/unmark-next-like-this)
+    ("U" . 'mc/unmark-previous-like-this)
+    ("s" . 'mc/skip-to-next-like-this)
+    ("S" . 'mc/skip-to-previous-like-this)
+    ("'" . 'mc-hide-unmatched-lines-mode)))
 
 ;; goto-chg
 (smartrep-define-key
