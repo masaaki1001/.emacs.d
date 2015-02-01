@@ -10,10 +10,13 @@
 (add-to-list 'ac-dictionary-directories
              (expand-file-name  "ac-dict" user-emacs-directory))
 
-(setq-default ac-sources (append '(ac-source-dabbrev
-                                   ac-source-words-in-buffer
-                                   ac-source-words-in-all-buffer
-                                   ac-source-imenu) ac-sources))
+(setq-default ac-sources '(ac-source-dictionary
+                           ac-source-words-in-buffer
+                           ac-source-words-in-same-mode-buffers
+                           ac-source-words-in-all-buffer
+                           ac-source-imenu
+                           ac-source-dabbrev))
+
 (ac-set-trigger-key "TAB")
 
 (define-key ac-completing-map (kbd "C-n") 'ac-next)
