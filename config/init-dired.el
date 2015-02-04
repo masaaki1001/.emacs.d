@@ -16,7 +16,6 @@
   ;; dired-modeでもC-tで直前のバッファに移動できるようにする
   (define-key dired-mode-map (kbd "C-t") 'switch-to-last-buffer-or-other-window)
   (define-key dired-mode-map (kbd "k") 'dired-do-delete)
-  (define-key dired-mode-map (kbd "K") 'dired-k)
   (define-key dired-mode-map (kbd "r") 'wdired-change-to-wdired-mode))
 
 (provide 'init-dired)
