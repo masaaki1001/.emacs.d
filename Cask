@@ -107,3 +107,5 @@
 (depends-on "ido-vertical-mode")
 (depends-on "flx-ido")
 (depends-on "smex")
+(depends-on "jaword")
+(depends-on "direx")
