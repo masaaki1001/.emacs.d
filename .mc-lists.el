@@ -3,6 +3,8 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        /mark-next-like-this
+        backward-delete-word
         backward-sexp
         cua--prefix-repeat-handler
         cua--shift-control-c-prefix
@@ -26,5 +28,8 @@
 
 (setq mc/cmds-to-run-once
       '(
+        helm-M-x
+        helm-confirm-and-exit-minibuffer
         highlight-symbol-next
+        my/helm
         ))
