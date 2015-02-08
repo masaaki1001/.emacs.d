@@ -26,7 +26,6 @@
      :sources
      `(,(helm-make-source "Buffers" 'helm-source-buffers)
        helm-source-recentf
-       ,(helm-make-source "Git files status" 'helm-ls-git-status-source)
        ,(helm-make-source "Git files" 'helm-ls-git-source)
        helm-source-files-in-current-dir
        helm-source-bm
