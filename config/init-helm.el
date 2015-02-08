@@ -4,9 +4,10 @@
 (setq helm-idle-delay 0.1
       helm-input-idle-delay 0
       helm-exit-idle-delay 0
-      helm-candidate-number-limit 300
+      helm-candidate-number-limit 100
       helm-delete-minibuffer-contents-from-point t
       helm-ff-file-name-history-use-recentf t
+      helm-move-to-line-cycle-in-source nil
       helm-samewindow nil
       helm-buffer-max-length 50
       helm-M-x-fuzzy-match t)
