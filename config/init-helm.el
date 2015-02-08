@@ -63,19 +63,19 @@
 (global-set-key (kbd "C-c C-p") 'helm-projectile)
 (global-set-key (kbd "C-c M-j") 'helm-open-junk-files)
 
-(define-key helm-map (kbd "C-p")   'helm-previous-line)
-(define-key helm-map (kbd "C-n")   'helm-next-line)
-(define-key helm-map (kbd "C-M-n") 'helm-next-source)
-(define-key helm-map (kbd "C-M-p") 'helm-previous-source)
+(with-eval-after-load 'helm
+  (helm-descbinds-mode)
+  (helm-match-plugin-mode)
+
+  (define-key helm-map (kbd "C-p")   'helm-previous-line)
+  (define-key helm-map (kbd "C-n")   'helm-next-line)
+  (define-key helm-map (kbd "C-M-n") 'helm-next-source)
+  (define-key helm-map (kbd "C-M-p") 'helm-previous-source))
 
 ;; http://d.hatena.ne.jp/a_bicky/20140104/1388822688
 (with-eval-after-load 'helm-files
   (define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
   (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action))
-
-(with-eval-after-load 'helm
-  (helm-descbinds-mode)
-  (helm-match-plugin-mode))
 
 (defadvice helm-ff-kill-or-find-buffer-fname (around execute-only-if-exist activate)
   "Execute command only if CANDIDATE exists"
