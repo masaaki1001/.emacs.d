@@ -104,3 +104,6 @@
 (depends-on "twittering-mode")
 (depends-on "phi-search")
 (depends-on "edit-server")
+(depends-on "ido-vertical-mode")
+(depends-on "flx-ido")
+(depends-on "smex")
