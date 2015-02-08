@@ -1,11 +1,6 @@
 ;; http://sheephead.homelinux.org/2011/12/19/6930/
 (require 'smartrep)
 
-(defadvice smartrep-map-internal (around smartrep-silence-echo-keystrokes activate)
-  (let ((echo-keystrokes 0))
-    ad-do-it
-    ))
-
 ;; multiple-cursors
 (smartrep-define-key
     global-map "C-q"

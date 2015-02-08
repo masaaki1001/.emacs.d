@@ -29,7 +29,9 @@
 ;; http://d.hatena.ne.jp/mooz/20100318/p1
 (setq initial-scratch-message "")
 ;; tabは2文字分、改行後に自動インデント
-(setq-default tab-width 2 indent-tabs-mode nil)
+(setq-default tab-width 2)
+;; tabインデントは使用しない
+(setq-default indent-tabs-mode nil)
 ;; 行末の空白を表示
 (setq-default show-trailing-whitespace t)
 
