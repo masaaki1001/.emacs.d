@@ -3,6 +3,7 @@
 
 ;; pomodoro
 (require 'pomodoro)
+(setq pomodoro-play-sounds nil)
 (pomodoro-add-to-mode-line)
 
 ;; open-junk-file
