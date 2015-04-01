@@ -15,10 +15,13 @@
         dabbrev-expand
         delete-word
         forward-sexp
+        highlight-symbol-prev
+        hydra-mc/mc/mark-previous-like-this
         kill-region
         org-yank
         seq-end
         seq-home
+        skk-insert
         skk-mode
         sp--cua-replace-region
         sp--self-insert-command
@@ -31,5 +34,7 @@
         helm-M-x
         helm-confirm-and-exit-minibuffer
         highlight-symbol-next
+        hydra-mc/mc/mark-next-like-this
+        hydra-multiple-cursors/mc/mark-next-like-this
         my/helm
         ))
