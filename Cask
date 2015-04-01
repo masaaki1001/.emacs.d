@@ -26,6 +26,7 @@
 (depends-on "gitignore-mode")
 (depends-on "gh")
 (depends-on "elscreen" :git "https://github.com/emacs-jp/elscreen.git" :branch "fixed")
+(depends-on "elscreen-separate-buffer-list")
 (depends-on "flycheck")
 (depends-on "undohist")
 (depends-on "point-undo")
