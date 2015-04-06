@@ -25,6 +25,7 @@
   (define-key web-mode-map (kbd "C-;") nil)
   ;; web-modeでのjshint実行キーバインドを変更
   (define-key web-mode-map (kbd "C-c C-j") nil)
+  (define-key web-mode-map (kbd "C-c C-o") nil)
   (define-key web-mode-map (kbd "C-c h") 'web-mode-jshint))
 (add-hook 'web-mode-hook 'my/web-mode-hook)
 
