@@ -15,7 +15,6 @@
 (setq skk-show-inline t)
 (setq skk-egg-like-newline t)
 (setq skk-auto-insert-paren t)
-(setq-default skk-kutouten-type 'en)
 (setq skk-henkan-strict-okuri-precedence t)
 (setq skk-check-okurigana-on-touroku 'auto)
 (setq skk-indicator-use-cursor-color nil)
