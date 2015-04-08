@@ -12,6 +12,8 @@
       helm-buffer-max-length 50
       helm-M-x-fuzzy-match t)
 
+(fset 'helm-show-candidate-number 'ignore)
+
 (custom-set-faces
  '(helm-match ((t (:inherit match))))
  '(helm-swoop-target-line-block-face ((t (:background "dark olive green"))))
