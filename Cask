@@ -110,3 +110,4 @@
 (depends-on "smex")
 (depends-on "jaword")
 (depends-on "direx")
+(depends-on "fcopy")

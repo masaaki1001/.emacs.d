@@ -18,6 +18,9 @@
 ;; move-text
 (move-text-default-bindings)
 
+;; fcopy
+(global-set-key (kbd "C-c f") 'fcopy)
+
 ;; edit-server
 (require 'edit-server)
 (setq edit-server-new-frame nil)
