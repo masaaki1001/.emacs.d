@@ -4,7 +4,9 @@
 (add-hook 'git-commit-mode-hook 'turn-off-auto-fill)
 
 (setq magit-save-some-buffers nil
-      magit-unstage-all-confirm nil)
+      magit-unstage-all-confirm nil
+      magit-auto-revert-mode nil
+      magit-last-seen-setup-instructions "1.4.0")
 
 (global-set-key (kbd "C-c g") 'magit-status)
 (global-set-key (kbd "C-c C-c g") 'magit-blame-mode)
