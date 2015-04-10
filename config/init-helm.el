@@ -10,7 +10,8 @@
       helm-move-to-line-cycle-in-source nil
       helm-samewindow nil
       helm-buffer-max-length 50
-      helm-M-x-fuzzy-match t)
+      helm-M-x-fuzzy-match t
+      helm-quick-update t)
 
 (fset 'helm-show-candidate-number 'ignore)
 
