@@ -16,6 +16,7 @@
         delete-word
         forward-sexp
         highlight-symbol-prev
+        hydra-keyboard-quit
         hydra-mc/mc/mark-previous-like-this
         kill-region
         org-yank
@@ -35,6 +36,15 @@
         helm-confirm-and-exit-minibuffer
         highlight-symbol-next
         hydra-mc/mc/mark-next-like-this
+        hydra-multiple-cursors/mc-hide-unmatched-lines-mode
+        hydra-multiple-cursors/mc/cycle-backward
+        hydra-multiple-cursors/mc/cycle-forward
+        hydra-multiple-cursors/mc/mark-all-like-this
         hydra-multiple-cursors/mc/mark-next-like-this
+        hydra-multiple-cursors/mc/mark-previous-like-this
+        hydra-multiple-cursors/mc/skip-to-next-like-this
+        hydra-multiple-cursors/mc/skip-to-previous-like-this
+        hydra-multiple-cursors/mc/unmark-next-like-this
+        hydra-multiple-cursors/mc/unmark-previous-like-this
         my/helm
         ))
