@@ -1,20 +1,6 @@
 (require 'helm-bm)
 (require 'helm-ls-git)
 
-(setq helm-idle-delay 0.1
-      helm-input-idle-delay 0
-      helm-exit-idle-delay 0
-      helm-candidate-number-limit 100
-      helm-delete-minibuffer-contents-from-point t
-      helm-ff-file-name-history-use-recentf t
-      helm-move-to-line-cycle-in-source nil
-      helm-samewindow nil
-      helm-buffer-max-length 50
-      helm-M-x-fuzzy-match t
-      helm-quick-update t)
-
-(fset 'helm-show-candidate-number 'ignore)
-
 (custom-set-faces
  '(helm-match ((t (:inherit match))))
  '(helm-swoop-target-line-block-face ((t (:background "dark olive green"))))
@@ -35,25 +21,29 @@
        helm-source-buffer-not-found))))
 
 ;; helm-swoop
-(setq helm-swoop-pre-input-function 'ignore
-      helm-swoop-speed-or-color t
-      helm-swoop-use-line-number-face t)
+(with-eval-after-load 'helm-swoop
+  (setq helm-swoop-pre-input-function 'ignore
+        helm-swoop-speed-or-color t
+        helm-swoop-use-line-number-face t))
 
 (define-key isearch-mode-map (kbd "C-o") 'helm-swoop-from-isearch)
 
 ;; helm-ag
-(setq helm-ag-insert-at-point 'symbol)
+(with-eval-after-load 'helm-ag
+  (setq helm-ag-insert-at-point 'symbol))
+
 
 ;; helm-bm
 ;; http://rubikitch.com/2014/11/22/helm-bm/
-(setq helm-source-bm (delete '(multiline) helm-source-bm))
+(with-eval-after-load 'helm-bm
+  (setq helm-source-bm (delete '(multiline) helm-source-bm)))
 
 (global-set-key (kbd "C-;") 'my/helm)
 (global-set-key (kbd "C-c C-o") 'helm-swoop)
 (global-set-key (kbd "C-c C-a") 'helm-ag)
 (global-set-key (kbd "C-c ;") 'helm-ls-git-ls)
 (global-set-key (kbd "C-c y") 'helm-yas-complete)
-(global-set-key (kbd "C-x b") 'helm-buffers-list)
+;; (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "C-x C-m") 'helm-M-x)
 ;; (global-set-key [remap execute-extended-command] 'helm-M-x)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
@@ -66,7 +56,20 @@
 (global-set-key (kbd "C-c M-j") 'helm-open-junk-files)
 
 (with-eval-after-load 'helm
+  (fset 'helm-show-candidate-number 'ignore)
   (helm-descbinds-mode)
+
+  (setq helm-idle-delay 0.1
+        helm-input-idle-delay 0
+        helm-exit-idle-delay 0
+        helm-candidate-number-limit 100
+        helm-delete-minibuffer-contents-from-point t
+        helm-ff-file-name-history-use-recentf t
+        helm-move-to-line-cycle-in-source nil
+        helm-samewindow nil
+        helm-buffer-max-length 50
+        helm-M-x-fuzzy-match t
+        helm-quick-update t)
 
   (define-key helm-map (kbd "C-p")   'helm-previous-line)
   (define-key helm-map (kbd "C-n")   'helm-next-line)

@@ -3,12 +3,15 @@
 (global-set-key (kbd "C-M-,") 'er/contract-region)
 
 ;; multiple-cursors
-(require 'mc-interactive-insert-numbers)
-(setq mc/list-file (expand-file-name ".mc-lists.el" user-emacs-directory))
+(with-eval-after-load 'multiple-cursors
+  (require 'mc-interactive-insert-numbers)
+  (setq mc/list-file (expand-file-name ".mc-lists.el" user-emacs-directory))
+  (define-key mc/keymap (kbd "C-'") 'mc-hide-unmatched-lines-mode))
+
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-(define-key mc/keymap (kbd "C-'") 'mc-hide-unmatched-lines-mode)
+
 
 ;; smartparens
 (require 'smartparens-config)

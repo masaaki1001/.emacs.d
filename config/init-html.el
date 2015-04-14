@@ -4,7 +4,8 @@
 (setq cssm-indent-function #'cssm-c-style-indenter)
 
 ;; scss-mode
-(setq scss-compile-at-save nil) ;; 自動コンパイルをオフにする
+(with-eval-after-load 'scss-mode
+  (setq scss-compile-at-save nil))
 
 ;; less-css-mode
 (autoload 'turn-on-css-eldoc "css-eldoc")
