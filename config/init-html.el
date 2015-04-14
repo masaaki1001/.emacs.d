@@ -5,13 +5,8 @@
 
 ;; scss-mode
 (setq scss-compile-at-save nil) ;; 自動コンパイルをオフにする
-(add-hook 'scss-mode-hook 'ac-css-mode-setup)
-(add-to-list 'ac-modes 'scss-mode)
 
 ;; less-css-mode
-(add-to-list 'ac-modes 'less-css-mode)
-(add-hook 'less-css-mode-hook 'ac-css-mode-setup)
-
 (autoload 'turn-on-css-eldoc "css-eldoc")
 (add-hook 'css-mode-hook 'turn-on-css-eldoc)
 

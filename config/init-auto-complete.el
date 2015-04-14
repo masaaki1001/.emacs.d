@@ -27,9 +27,15 @@
 
 (dolist (mode '(text-mode
                 coffee-mode
+                scss-mode
+                less-css-mode
                 fundamental-mode
                 org-mode))
   (add-to-list 'ac-modes mode))
+
+(dolist (hook '(scss-mode-hook
+                less-css-mode-hook))
+  (add-hook hook 'ac-css-mode-setup))
 
 (ac-ispell-setup)
 (dolist (hook '(text-mode-hook git-commit-mode-hook))
