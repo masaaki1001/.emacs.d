@@ -47,6 +47,12 @@
                 minibuffer-setup-hook))
   (add-hook hook 'my/no-trailing-whitespace))
 
+(defun my/subword-mode ()
+  (subword-mode t))
+
+(dolist (hook '(typescript-mode-hook))
+  (add-hook hook 'my/subword-mode))
+
 ;; カーソルの設定
 (custom-set-variables
  '(blink-cursor-mode nil) ;; カーソルの点滅を止める
