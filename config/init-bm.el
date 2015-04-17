@@ -21,12 +21,12 @@
 
 (defun my/bm-after-init-hook ()
   (bm-load-and-restore)
-  (message "Load and Restore bookmarks...done"))
+  (message "Loading and Restore bm...done"))
 (add-hook 'after-init-hook 'my/bm-after-init-hook)
 
 (defun my/bm-kill-emacs-hook ()
   (bm-save)
-  (message "Save bookmarks...done"))
+  (message "Save bm...done"))
 (add-hook 'kill-emacs-hook 'my/bm-kill-emacs-hook)
 
 (global-set-key (kbd "<M-f2>") 'bm-toggle)
