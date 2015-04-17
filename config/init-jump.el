@@ -27,7 +27,7 @@
 
 (when is-linux
   (add-to-list 'zeal-at-point-mode-alist '(web-mode . "html"))
-  (add-to-list 'dash-at-point-mode-alist '(typescript-mode . "backbone,underscore,jquery,javascript"))
+  (add-to-list 'zeal-at-point-mode-alist '(typescript-mode . "backbone,underscore,jquery,javascript"))
   (global-set-key (kbd "C-c C-d") 'zeal-at-point))
 
 (provide 'init-jump)
