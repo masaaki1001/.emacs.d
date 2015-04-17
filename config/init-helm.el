@@ -75,6 +75,18 @@
   (define-key helm-map (kbd "C-n")   'helm-next-line)
   (define-key helm-map (kbd "C-M-n") 'helm-next-source)
   (define-key helm-map (kbd "C-M-p") 'helm-previous-source)
+  (define-key helm-map (kbd "C-'") 'ace-jump-helm-line-and-execute-action)
+
+  (setq ace-jump-helm-line-use-avy-style nil)
+
+  ;; http://rubikitch.com/2015/04/16/ace-jump-helm-line/
+  (defun ace-jump-helm-line-and-execute-action ()
+    "anything-select-with-prefix-shortcut互換"
+    (interactive)
+    (condition-case nil
+        (progn (ace-jump-helm-line)
+               (helm-exit-minibuffer))
+      (error (ajhl--insert-last-char))))
 
   ;; http://rubikitch.com/2014/12/19/helm-buffers-sort-transformer/
   (defadvice helm-buffers-sort-transformer (around ignore activate)

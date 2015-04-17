@@ -67,6 +67,7 @@
 (depends-on "jaunte")
 (depends-on "ace-jump-mode")
 (depends-on "ace-jump-zap")
+(depends-on "ace-jump-helm-line")
 (depends-on "less-css-mode")
 (depends-on "scss-mode")
 (depends-on "css-eldoc")
