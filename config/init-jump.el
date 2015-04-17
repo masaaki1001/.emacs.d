@@ -6,6 +6,7 @@
 
 ;; ace-jump-mode
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
+(global-set-key (kbd "C-c C-c SPC") 'ace-jump-mode-pop-mark)
 
 ;; ace-jump-zap
 (global-set-key (kbd "M-z") 'ace-jump-zap-to-char)
