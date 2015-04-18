@@ -13,13 +13,13 @@
 (global-set-key (kbd "C-c M-z") 'ace-jump-zap-up-to-char)
 
 ;; goto-chg
-(define-key global-map (kbd "C-c /") 'goto-last-change)
-(define-key global-map (kbd "C-c C-/") 'goto-last-change-reverse)
+(global-set-key (kbd "C-c /") 'goto-last-change)
+(global-set-key (kbd "C-c C-/") 'goto-last-change-reverse)
 
 ;; point-undo
 (require 'point-undo)
-(define-key global-map (kbd "C-x /") 'point-undo)
-(define-key global-map (kbd "C-x C-/") 'point-redo)
+(global-set-key (kbd "C-x /") 'point-undo)
+(global-set-key (kbd "C-x C-/") 'point-redo)
 
 (when is-mac
   (add-to-list 'dash-at-point-mode-alist '(web-mode . "html"))
