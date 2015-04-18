@@ -2,7 +2,7 @@
 
 ## 前提条件
 
-`package.el`を利用しているのでemacsのversionは24以上であること．
+emacsのversionは24.4以上であること．
 
 ## setup
 
@@ -10,12 +10,15 @@
 
 ## 初期インストール
 
-[Cask](http://cask.readthedocs.org/en/latest/)を利用するためインストールする．
+`setup.sh`を実行する.
 
-また，同時に[DDSKK](http://openlab.ring.gr.jp/skk/ddskk-ja.html)もインストールされる．
+    cd ~/.emacs.d
+    ./setup.sh
 
-* `cd ~/.emacs.d`
-* `./setup.sh`
+以下がインストールされる.
+
+* [Cask](http://cask.readthedocs.org/en/latest/)
+* [DDSKK](http://openlab.ring.gr.jp/skk/ddskk-ja.html)
 
 
 以下の手順は`setup.sh`にて実行されている．
@@ -31,8 +34,8 @@
 
 [tern](https://github.com/marijnh/tern)を利用しているので以下の手順を実行する．
 
-* repositories/ternに移動する
-* `npm install`を実行
+    cd repositories/tern
+    npm install
 
 
 以下の手順は手動で実行する．
