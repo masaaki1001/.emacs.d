@@ -18,6 +18,7 @@
         highlight-symbol-prev
         hydra-keyboard-quit
         hydra-mc/mc/mark-previous-like-this
+        hydra-multiple-cursors/mc/interactive-insert-numbers
         kill-region
         org-yank
         seq-end

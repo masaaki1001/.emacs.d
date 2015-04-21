@@ -111,4 +111,5 @@
 (depends-on "jaword")
 (depends-on "direx")
 (depends-on "fcopy")
+(depends-on "hydra")
 (depends-on "zop-to-char")
