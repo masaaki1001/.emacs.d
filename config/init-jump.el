@@ -8,9 +8,9 @@
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
 (global-set-key (kbd "C-c C-c SPC") 'ace-jump-mode-pop-mark)
 
-;; ace-jump-zap
-(global-set-key (kbd "M-z") 'ace-jump-zap-to-char)
-(global-set-key (kbd "C-c M-z") 'ace-jump-zap-up-to-char)
+;; zop-to-char
+(global-set-key (kbd "M-z") 'zop-to-char)
+(global-set-key (kbd "C-c M-z") 'zop-up-to-char)
 
 ;; goto-chg
 (global-set-key (kbd "C-c /") 'goto-last-change)

@@ -66,7 +66,6 @@
 (depends-on "smartparens")
 (depends-on "jaunte")
 (depends-on "ace-jump-mode")
-(depends-on "ace-jump-zap")
 (depends-on "ace-jump-helm-line")
 (depends-on "less-css-mode")
 (depends-on "scss-mode")
@@ -112,3 +111,4 @@
 (depends-on "jaword")
 (depends-on "direx")
 (depends-on "fcopy")
+(depends-on "zop-to-char")
