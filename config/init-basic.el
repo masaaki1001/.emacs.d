@@ -50,7 +50,8 @@
 (defun my/subword-mode ()
   (subword-mode t))
 
-(dolist (hook '(typescript-mode-hook))
+(dolist (hook '(java-mode-hook
+                typescript-mode-hook))
   (add-hook hook 'my/subword-mode))
 
 ;; カーソルの設定
