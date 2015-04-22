@@ -32,11 +32,14 @@
 (with-eval-after-load 'helm-ag
   (setq helm-ag-insert-at-point 'symbol))
 
-
 ;; helm-bm
 ;; http://rubikitch.com/2014/11/22/helm-bm/
 (with-eval-after-load 'helm-bm
   (setq helm-source-bm (delete '(multiline) helm-source-bm)))
+
+;; helm-ls-git
+(with-eval-after-load 'helm-ls-git
+  (setq helm-ls-git-status-command 'magit-status))
 
 (global-set-key (kbd "C-;") 'my/helm)
 (global-set-key (kbd "C-c C-o") 'helm-swoop)
