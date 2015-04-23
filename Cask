@@ -53,7 +53,6 @@
 (depends-on "emmet-mode")
 (depends-on "markdown-mode")
 (depends-on "scratch-log")
-(depends-on "session")
 (depends-on "savekill")
 (depends-on "sequential-command")
 (depends-on "duplicate-thing")
