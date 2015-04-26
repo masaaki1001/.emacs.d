@@ -104,11 +104,22 @@
 (depends-on "twittering-mode")
 (depends-on "phi-search")
 (depends-on "edit-server")
-(depends-on "ido-vertical-mode")
-(depends-on "flx-ido")
-(depends-on "smex")
 (depends-on "jaword")
 (depends-on "direx")
 (depends-on "fcopy")
 (depends-on "hydra")
 (depends-on "zop-to-char")
+(depends-on "key-chord")
+
+;; ido
+;; (depends-on "ido-vertical-mode")
+;; (depends-on "flx-ido")
+;; (depends-on "smex")
+
+
+;; trial(
+depends-on "git-ps1-mode")
+
+;; theme
+(depends-on "railscasts-theme")
+(depends-on "zenburn-theme")

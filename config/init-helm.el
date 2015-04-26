@@ -46,7 +46,7 @@
 (global-set-key (kbd "C-c C-a") 'helm-ag)
 (global-set-key (kbd "C-c ;") 'helm-ls-git-ls)
 (global-set-key (kbd "C-c y") 'helm-yas-complete)
-;; (global-set-key (kbd "C-x b") 'helm-buffers-list)
+(global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "C-x C-m") 'helm-M-x)
 ;; (global-set-key [remap execute-extended-command] 'helm-M-x)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)

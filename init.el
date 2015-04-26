@@ -61,7 +61,7 @@
 (require 'init-util)
 (require 'init-edit-util)
 (require 'init-helm)
-(require 'init-ido)
+;; (require 'init-ido)
 (require 'init-eshell)
 (require 'init-git)
 (require 'init-skk)
