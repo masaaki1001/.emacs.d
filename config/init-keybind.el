@@ -69,4 +69,14 @@
 (global-set-key (kbd "C-q i") 'indent-buffer)
 (global-set-key (kbd "C-q C-a") 'align-regexp)
 
+;; key-chord
+(key-chord-mode 1)
+(key-chord-define-global "jk" 'view-mode)
+
+(defadvice key-chord-input-method (around disable-in-minibuffer activate compile)
+  "Disable key chord in minibuffer."
+  (if (window-minibuffer-p)
+      (setq ad-return-value (list first-char))
+    ad-do-it))
+
 (provide 'init-keybind)
