@@ -116,10 +116,6 @@
 ;; (depends-on "flx-ido")
 ;; (depends-on "smex")
 
-
-;; trial(
-depends-on "git-ps1-mode")
-
 ;; theme
 (depends-on "railscasts-theme")
 (depends-on "zenburn-theme")
