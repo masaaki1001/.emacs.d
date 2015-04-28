@@ -77,7 +77,6 @@
 (depends-on "wgrep")
 (depends-on "wgrep-ag")
 (depends-on "smartrep")
-(depends-on "pomodoro")
 (depends-on "zlc")
 (depends-on "revive")
 (depends-on "exec-path-from-shell")

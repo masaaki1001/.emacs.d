@@ -1,8 +1,3 @@
-;; pomodoro
-(require 'pomodoro)
-(setq pomodoro-play-sounds nil)
-(pomodoro-add-to-mode-line)
-
 ;; open-junk-file
 (require 'open-junk-file)
 (global-set-key (kbd "C-x M-j") 'open-junk-file)
