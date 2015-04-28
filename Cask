@@ -30,7 +30,6 @@
 (depends-on "flycheck")
 (depends-on "undohist")
 (depends-on "point-undo")
-(depends-on "quickrun")
 (depends-on "ag")
 (depends-on "expand-region")
 (depends-on "multiple-cursors")

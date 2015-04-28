@@ -1,6 +1,3 @@
-;; quickrun
-(global-set-key [(f5)] 'quickrun)
-
 ;; pomodoro
 (require 'pomodoro)
 (setq pomodoro-play-sounds nil)
